@@ -1,0 +1,1542 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZX Digital — Playbook MIRA · 60 Dias · 2 Ciclos Mensais</title>
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,300;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --c:#1A1A1A;--w:#F2F2F2;--o:#F28C28;--g:#F3C353;--p:#0D1B2A;
+  --o2:rgba(242,140,40,.12);--o3:rgba(242,140,40,.25);
+  --gw:rgba(255,255,255,.055);--gb:rgba(255,255,255,.09);--gs:rgba(0,0,0,.22);
+  --nav-w:292px;--font:'Exo 2',sans-serif;--mono:'Space Mono',monospace;
+  /* Captação e conversão badges */
+  --cap-bg:rgba(13,148,136,.15);--cap-border:rgba(13,148,136,.35);--cap-text:#2dd4bf;
+  --conv-bg:rgba(139,92,246,.15);--conv-border:rgba(139,92,246,.35);--conv-text:#c4b5fd;
+}
+html{scroll-behavior:smooth}
+body{background:var(--c);color:var(--w);font-family:var(--font);min-height:100vh;overflow-x:hidden}
+::selection{background:var(--o);color:#000}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:#111}::-webkit-scrollbar-thumb{background:var(--o);border-radius:3px}
+body::before{content:'';position:fixed;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.035) 1px,transparent 1px);background-size:24px 24px;pointer-events:none;z-index:0}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;width:var(--nav-w);height:100vh;background:rgba(10,20,34,.98);border-right:1px solid rgba(255,255,255,.07);z-index:100;overflow-y:auto;display:flex;flex-direction:column;backdrop-filter:blur(16px)}
+.nav-logo{padding:24px 22px 16px;border-bottom:1px solid rgba(255,255,255,.06);flex-shrink:0}
+.nav-logo .zx{font-weight:900;font-size:26px;letter-spacing:2px;color:var(--o);line-height:1}
+.nav-logo .sub{font-size:9px;letter-spacing:4px;text-transform:uppercase;color:rgba(242,242,242,.3);margin-top:3px}
+.nav-logo .mira-badge{display:inline-flex;align-items:center;gap:6px;background:var(--o2);border:1px solid var(--o3);border-radius:100px;padding:4px 12px;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--o);margin-top:10px;width:fit-content}
+.nav-items{padding:8px 0;flex:1}
+.nav-group-title{font-size:9px;letter-spacing:5px;text-transform:uppercase;color:rgba(242,242,242,.2);padding:12px 22px 5px;font-weight:700}
+.nav-item{display:block;padding:7px 22px;font-size:11.5px;font-weight:600;letter-spacing:.3px;color:rgba(242,242,242,.45);text-decoration:none;transition:all .2s;border-left:2px solid transparent;cursor:pointer}
+.nav-item:hover,.nav-item.active{color:var(--o);border-left-color:var(--o);background:rgba(242,140,40,.05)}
+.nav-sub{padding:5px 22px 5px 34px;font-size:10.5px;font-weight:500}
+.nav-footer{padding:14px 22px;border-top:1px solid rgba(255,255,255,.06);font-size:9px;color:rgba(242,242,242,.18);letter-spacing:1px}
+
+/* LAYOUT */
+.main{margin-left:var(--nav-w);position:relative;z-index:1}
+.progress-bar{position:fixed;top:0;left:var(--nav-w);right:0;height:3px;background:rgba(255,255,255,.04);z-index:200}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--o),var(--g));width:0%;transition:width .1s}
+.section{padding:64px 60px;border-bottom:1px solid rgba(255,255,255,.04);position:relative;overflow:hidden}
+.section-sm{padding:36px 60px}
+.posts-section{padding:28px 52px 52px}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;background:linear-gradient(150deg,var(--c) 0%,var(--p) 100%);padding:80px 60px;position:relative;overflow:hidden}
+.hero-wm{position:absolute;font-weight:900;color:rgba(255,255,255,.012);font-size:clamp(160px,20vw,340px);line-height:1;letter-spacing:-12px;bottom:-20px;right:-20px;pointer-events:none;user-select:none;z-index:0}
+.hero-tag{display:inline-flex;align-items:center;gap:10px;background:var(--o2);border:1px solid var(--o3);border-radius:100px;padding:7px 18px;font-size:10px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--o);width:fit-content;margin-bottom:24px}
+.hero-tag span{width:6px;height:6px;border-radius:50%;background:var(--o);animation:pulse 2s ease infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.8)}}
+.hero-title{font-weight:900;font-size:clamp(40px,5vw,72px);line-height:1.06;letter-spacing:-2px;position:relative;z-index:1}
+.hero-title .ac{color:var(--o)}.hero-title .ag{color:var(--g)}
+.hero-sub{font-size:17px;line-height:1.75;color:rgba(242,242,242,.56);max-width:600px;margin-top:18px;position:relative;z-index:1}
+.hero-meta{display:flex;flex-wrap:wrap;gap:36px;margin-top:44px;position:relative;z-index:1;border-top:1px solid rgba(255,255,255,.07);padding-top:28px}
+.hero-meta-item .label{font-size:9px;letter-spacing:4px;text-transform:uppercase;color:rgba(242,242,242,.28)}
+.hero-meta-item .value{font-size:15px;font-weight:700;margin-top:4px}
+
+/* Ciclo divider */
+.ciclo-div{padding:28px 60px;background:linear-gradient(90deg,rgba(242,140,40,.08),transparent);border-top:1px solid rgba(242,140,40,.14);border-bottom:1px solid rgba(242,140,40,.14);display:flex;align-items:center;gap:18px}
+.ciclo-icon{font-size:26px;flex-shrink:0}
+.ciclo-num{font-family:var(--mono);font-size:10px;color:var(--o);font-weight:700;letter-spacing:4px;margin-bottom:3px}
+.ciclo-title{font-weight:800;font-size:18px;letter-spacing:-.3px}
+.ciclo-desc{font-size:12px;color:rgba(242,242,242,.45);margin-top:2px}
+
+/* WEEK HERO */
+.week-hero{padding:44px 60px;border-bottom:1px solid rgba(255,255,255,.05);position:relative;overflow:hidden}
+.week-hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.03) 1px,transparent 1px);background-size:24px 24px}
+.week-wm{position:absolute;font-weight:900;color:rgba(255,255,255,.02);font-size:160px;line-height:1;letter-spacing:-8px;right:-8px;bottom:-18px;pointer-events:none;z-index:0}
+.week-num{font-family:var(--mono);font-size:11px;letter-spacing:5px;color:var(--o);font-weight:700;margin-bottom:4px}
+.week-phase-label{font-size:9px;letter-spacing:4px;text-transform:uppercase;color:rgba(242,242,242,.3);font-weight:600;margin-bottom:8px}
+.week-title{font-weight:900;font-size:clamp(20px,2.4vw,34px);letter-spacing:-.8px;line-height:1.15;max-width:720px;position:relative;z-index:1;margin-top:6px}
+.week-intro{font-size:13px;line-height:1.8;color:rgba(242,242,242,.5);max-width:640px;margin-top:10px;position:relative;z-index:1}
+.week-stats{display:flex;gap:20px;margin-top:20px;position:relative;z-index:1;flex-wrap:wrap}
+.week-stat{text-align:center}
+.week-stat-num{font-weight:800;font-size:24px;color:var(--o);line-height:1}
+.week-stat-label{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(242,242,242,.28);margin-top:2px}
+
+/* SEC HEADERS */
+.sec-label{font-size:9px;letter-spacing:6px;text-transform:uppercase;color:var(--o);font-weight:700;display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.sec-label::before{content:'//';color:rgba(242,140,40,.4)}
+.sec-title{font-weight:800;font-size:clamp(26px,2.8vw,44px);line-height:1.1;letter-spacing:-.8px}
+.sec-body{font-size:14.5px;line-height:1.8;color:rgba(242,242,242,.56);max-width:680px;margin-top:12px}
+.divider{width:52px;height:3px;background:var(--o);margin:18px 0}
+
+/* GLASS */
+.glass{background:var(--gw);border:1px solid var(--gb);border-radius:13px;box-shadow:0 4px 18px var(--gs),inset 0 1px 0 rgba(255,255,255,.06);position:relative;overflow:hidden}
+.glass-accent::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:var(--o);border-radius:13px 0 0 13px}
+.glass-gold::before{background:var(--g)}
+.glass-none::before{display:none}
+.glass-teal::before{background:#2dd4bf}
+.glass-pad{padding:26px 30px}.glass-pad-sm{padding:16px 22px}
+
+/* TACOH */
+.tacoh{display:inline-flex;align-items:center;gap:6px;padding:6px 13px;border-radius:100px;font-weight:700;font-size:9.5px;letter-spacing:2px;text-transform:uppercase}
+.t-t{background:rgba(13,148,136,.15);border:1px solid rgba(13,148,136,.3);color:#2dd4bf}
+.t-a{background:rgba(15,52,96,.4);border:1px solid rgba(59,130,246,.3);color:#60a5fa}
+.t-c{background:rgba(5,150,105,.15);border:1px solid rgba(5,150,105,.3);color:#34d399}
+.t-o{background:rgba(220,38,38,.1);border:1px solid rgba(220,38,38,.25);color:#f87171}
+.t-h{background:rgba(217,119,6,.1);border:1px solid rgba(217,119,6,.25);color:#fbbf24}
+.tacoh-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.dot-t{background:#2dd4bf}.dot-a{background:#60a5fa}.dot-c{background:#34d399}.dot-o{background:#f87171}.dot-h{background:#fbbf24}
+.tacoh-mix{display:flex;gap:7px;flex-wrap:wrap}
+.tacoh-count{font-size:9.5px;color:rgba(242,242,242,.3);margin-left:2px;font-family:var(--mono)}
+
+/* CAPTAÇÃO / CONVERSÃO BADGES */
+.badge-cap{display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:100px;background:var(--cap-bg);border:1px solid var(--cap-border);color:var(--cap-text);font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase}
+.badge-conv{display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:100px;background:var(--conv-bg);border:1px solid var(--conv-border);color:var(--conv-text);font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase}
+.badge-ambos{display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:100px;background:linear-gradient(90deg,var(--cap-bg),var(--conv-bg));border:1px solid rgba(150,150,200,.3);color:#e0d4ff;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase}
+
+/* FORMAT BADGES */
+.fmt{display:inline-flex;align-items:center;padding:3px 9px;border-radius:5px;font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;white-space:nowrap}
+.fmt-reel{background:rgba(139,92,246,.15);border:1px solid rgba(139,92,246,.3);color:#c4b5fd}
+.fmt-carousel{background:rgba(14,165,233,.12);border:1px solid rgba(14,165,233,.28);color:#7dd3fc}
+.fmt-static{background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.25);color:#6ee7b7}
+.fmt-falado{background:rgba(251,191,36,.1);border:1px solid rgba(251,191,36,.25);color:#fbbf24}
+
+/* ACCOUNT BADGES */
+.acc{display:inline-flex;align-items:center;gap:5px;padding:3px 10px;border-radius:100px;font-size:9px;font-weight:700;letter-spacing:1px;white-space:nowrap}
+.acc-both{background:linear-gradient(90deg,rgba(124,58,237,.12),rgba(242,140,40,.1));border:1px solid rgba(200,100,200,.22);color:#e2c4ff}
+.acc-gabriel{background:rgba(124,58,237,.15);border:1px solid rgba(124,58,237,.3);color:#a78bfa}
+.acc-zx{background:rgba(242,140,40,.1);border:1px solid rgba(242,140,40,.22);color:var(--o)}
+
+/* POST CARDS */
+.post-card{background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.07);border-radius:13px;overflow:hidden;margin-bottom:20px;transition:border-color .2s}
+.post-card:hover{border-color:rgba(242,140,40,.2)}
+.post-card-header{display:flex;align-items:center;justify-content:space-between;padding:12px 20px;background:rgba(0,0,0,.22);border-bottom:1px solid rgba(255,255,255,.06);flex-wrap:wrap;gap:7px}
+.post-header-left{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.post-header-right{display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+.post-num{font-size:10px;color:rgba(242,242,242,.28);font-weight:700;letter-spacing:2px;font-family:var(--mono)}
+.post-card-body{padding:20px 24px;display:flex;flex-direction:column;gap:0}
+
+/* FIELDS */
+.full-width{margin-bottom:14px}
+.fields-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:14px}
+.field-label{font-size:8px;letter-spacing:5px;text-transform:uppercase;color:var(--o);font-weight:700;margin-bottom:5px;margin-top:0}
+.mt12{margin-top:12px}
+.field-value{font-size:12.5px;line-height:1.65;color:rgba(242,242,242,.72)}
+.field-hook{font-weight:800;font-size:15.5px;line-height:1.3;color:var(--w);border-left:3px solid var(--o);padding-left:13px;letter-spacing:-.2px}
+.field-desc{font-size:12.5px;line-height:1.7;color:rgba(242,242,242,.68)}
+.field-hash{font-size:11px;color:rgba(242,242,242,.42);font-family:var(--mono)}
+
+/* SLIDE BODY */
+.slide-label{font-weight:700;font-size:10px;color:var(--o);letter-spacing:2px;text-transform:uppercase;margin-top:9px;margin-bottom:2px}
+.slide-label:first-child{margin-top:0}
+.corpo-box{background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.06);border-radius:7px;padding:12px 15px;font-size:12.5px;line-height:1.75;color:rgba(242,242,242,.7)}
+.estilo-box{background:rgba(16,185,129,.05);border:1px solid rgba(16,185,129,.14);border-radius:7px;padding:12px 15px}
+.estilo-item{font-size:12.5px;color:rgba(242,242,242,.72);line-height:1.65;padding:2px 0}
+.script-meta-row{display:flex;gap:14px;flex-wrap:wrap;padding:9px 13px;background:rgba(242,140,40,.05);border-radius:7px;font-size:11px;color:rgba(242,242,242,.55);margin-bottom:10px;border:1px solid rgba(242,140,40,.1)}
+.script-meta-row strong{color:var(--o)}
+
+/* BEAT TABLE */
+.beat-table-wrap{overflow-x:auto;border-radius:7px;border:1px solid rgba(255,255,255,.07)}
+.beat-table{width:100%;border-collapse:collapse;font-size:11.5px;min-width:620px}
+.beat-table thead tr{background:rgba(13,27,42,.95)}
+.beat-table th{padding:9px 11px;text-align:left;font-size:8.5px;letter-spacing:3px;text-transform:uppercase;color:rgba(242,242,242,.45);font-weight:700;border-bottom:1px solid rgba(242,140,40,.15)}
+.beat-table td{padding:11px;border-bottom:1px solid rgba(255,255,255,.04);vertical-align:top;line-height:1.6}
+.beat-table tr:last-child td{border-bottom:none}
+.beat-even td{background:rgba(255,248,240,.025)}
+.beat-odd td{background:rgba(255,255,255,.01)}
+.beat-time{font-family:var(--mono);font-size:10px;color:var(--o);font-weight:700;white-space:nowrap}
+.beat-label-td{font-weight:700;font-size:10.5px;color:#7dd3fc;letter-spacing:.4px}
+.beat-fala{font-style:italic;color:rgba(242,242,242,.82)}
+.beat-sobreposto{margin-top:5px;font-style:normal;font-size:10px;color:var(--o);font-weight:700;font-family:var(--mono)}
+.beat-dir-td{color:#5eead4;font-size:11.5px;line-height:1.6}
+
+/* CTA / NOTA */
+.cta-box{background:rgba(242,140,40,.09);border:1px solid rgba(242,140,40,.2);border-radius:7px;padding:9px 14px;font-size:12.5px;font-weight:600;color:var(--o);margin-top:5px}
+.nota-box{background:rgba(124,58,237,.08);border:1px solid rgba(124,58,237,.2);border-radius:7px;padding:9px 14px;font-size:11.5px;color:#c4b5fd;margin-top:5px}
+.bench-box{background:rgba(14,165,233,.06);border:1px solid rgba(14,165,233,.15);border-radius:7px;padding:9px 14px;font-size:11.5px;color:#7dd3fc;margin-top:5px}
+.item5-block{margin-bottom:14px}
+
+/* MIRA SECTION */
+.mira-pilares{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
+.mira-pilar{border-radius:12px;padding:24px;position:relative;overflow:hidden}
+.mira-pilar.v{background:linear-gradient(145deg,rgba(59,130,246,.12),rgba(59,130,246,.04));border:1px solid rgba(59,130,246,.22)}
+.mira-pilar.i{background:linear-gradient(145deg,rgba(16,185,129,.12),rgba(16,185,129,.04));border:1px solid rgba(16,185,129,.22)}
+.mira-pilar.p{background:linear-gradient(145deg,rgba(242,140,40,.12),rgba(242,140,40,.04));border:1px solid rgba(242,140,40,.22)}
+.mira-letter{font-weight:900;font-size:64px;line-height:1;margin-bottom:8px}
+.mira-pilar.v .mira-letter{color:#60a5fa}
+.mira-pilar.i .mira-letter{color:#34d399}
+.mira-pilar.p .mira-letter{color:var(--o)}
+.mira-name{font-weight:800;font-size:18px;letter-spacing:-.3px;margin-bottom:8px}
+.mira-desc{font-size:12.5px;line-height:1.75;color:rgba(242,242,242,.62)}
+.mira-resolve{margin-top:14px;padding:10px 13px;border-radius:7px;background:rgba(255,255,255,.04);font-size:11px;color:rgba(242,242,242,.5)}
+.mira-resolve strong{font-size:9px;letter-spacing:2px;text-transform:uppercase;display:block;margin-bottom:3px}
+
+/* 50/50 visual */
+.split-bar{display:flex;border-radius:100px;overflow:hidden;height:12px;margin:16px 0}
+.split-cap{flex:1;background:linear-gradient(90deg,#2dd4bf,#0d9488)}
+.split-conv{flex:1;background:linear-gradient(90deg,#7c3aed,#a78bfa)}
+.split-labels{display:flex;justify-content:space-between;font-size:11px;font-weight:700;margin-bottom:4px}
+.split-labels .cap-label{color:#2dd4bf}
+.split-labels .conv-label{color:#a78bfa}
+
+/* DIST TABLE */
+.dist-table{width:100%;border-collapse:collapse;font-size:12.5px}
+.dist-table th{text-align:left;padding:9px 13px;background:rgba(255,255,255,.03);border-bottom:1px solid rgba(255,255,255,.08);font-size:8px;letter-spacing:4px;text-transform:uppercase;color:rgba(242,242,242,.38);font-weight:700}
+.dist-table td{padding:10px 13px;border-bottom:1px solid rgba(255,255,255,.04);color:rgba(242,242,242,.68);font-size:12.5px;line-height:1.5}
+.dist-table tr:hover td{background:rgba(255,255,255,.018)}
+
+/* HELPERS */
+.rule-box{background:rgba(255,255,255,.022);border:1px solid rgba(255,255,255,.06);border-radius:9px;padding:16px 20px;margin-bottom:10px;display:flex;gap:14px;align-items:flex-start}
+.rule-icon{font-size:20px;flex-shrink:0;line-height:1;margin-top:1px}
+.rule-title{font-weight:700;font-size:13px;margin-bottom:3px}
+.rule-body{font-size:12.5px;line-height:1.7;color:rgba(242,242,242,.58)}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.three-col{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px}
+.info-box{background:rgba(242,140,40,.06);border:1px solid rgba(242,140,40,.14);border-radius:9px;padding:16px 20px;margin:14px 0}
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin:18px 0}
+.kpi-card{background:var(--gw);border:1px solid var(--gb);border-radius:11px;padding:16px 20px;text-align:center}
+.kpi-val{font-weight:900;font-size:30px;color:var(--o);line-height:1;margin:4px 0}
+.kpi-metric{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(242,242,242,.38);font-weight:700}
+.kpi-how{font-size:11px;color:rgba(242,242,242,.4);margin-top:4px;line-height:1.5}
+.mt8{margin-top:8px}.mt16{margin-top:16px}.mt24{margin-top:24px}.mt32{margin-top:32px}
+.to{color:var(--o)}.tg{color:var(--g)}.td{color:rgba(242,242,242,.38)}.mono{font-family:var(--mono)}
+.condensed-table{width:100%;border-collapse:collapse;font-size:12px}
+.condensed-table th{padding:8px 12px;background:rgba(13,27,42,.95);border-bottom:1px solid rgba(242,140,40,.15);font-size:8px;letter-spacing:3px;text-transform:uppercase;color:rgba(242,242,242,.45);font-weight:700;text-align:left}
+.condensed-table td{padding:10px 12px;border-bottom:1px solid rgba(255,255,255,.04);color:rgba(242,242,242,.68);vertical-align:top}
+.condensed-table tr:hover td{background:rgba(255,255,255,.02)}
+
+/* FINAL */
+.final-sec{padding:64px 60px;background:linear-gradient(135deg,var(--p) 0%,#111 100%);position:relative;overflow:hidden}
+.final-sec::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.04) 1px,transparent 1px);background-size:24px 24px}
+.final-wm{position:absolute;font-weight:900;color:rgba(255,255,255,.016);font-size:clamp(180px,20vw,340px);line-height:1;letter-spacing:-10px;bottom:-10px;left:-10px;pointer-events:none}
+.final-content{position:relative;z-index:1;max-width:840px}
+
+/* ANIMATIONS */
+.aos{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}
+.aos.vis{opacity:1;transform:translateY(0)}
+
+/* HAMBURGER */
+.hamburger{display:none;position:fixed;top:13px;left:13px;z-index:200;background:rgba(13,27,42,.9);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:9px 12px;cursor:pointer;flex-direction:column;gap:4px;backdrop-filter:blur(8px)}
+.hamburger span{width:20px;height:2px;background:var(--o);border-radius:2px}
+
+/* RESPONSIVE */
+@media(max-width:1100px){
+  :root{--nav-w:0px}
+  .nav{transform:translateX(-100%);transition:transform .3s}
+  .nav.open{transform:translateX(0);width:292px}
+  .hamburger{display:flex}
+  .section,.section-sm,.week-hero,.ciclo-div,.final-sec,.posts-section{padding-left:22px;padding-right:22px}
+  .hero{padding-left:22px;padding-right:22px}
+  .two-col,.three-col,.fields-grid,.mira-pilares{grid-template-columns:1fr}
+}
+@media(max-width:640px){
+  .week-stats{gap:14px}
+  .post-card-header{flex-direction:column;align-items:flex-start}
+}
+</style>
+</head>
+<body>
+<button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+<div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+<nav class="nav" id="nav">
+  <div class="nav-logo">
+    <div class="zx">ZX Digital</div>
+    <div class="sub">Playbook Estratégico · v3.0</div>
+    <div class="mira-badge">◎ PROTOCOLO MIRA</div>
+  </div>
+  <div class="nav-items">
+    <div class="nav-group-title">Fundação</div>
+    <a class="nav-item" href="#sobre">Sobre Este Playbook</a>
+    <a class="nav-item" href="#mira">Protocolo MIRA</a>
+    <a class="nav-item" href="#tacoh">TACOH 50/50</a>
+    <a class="nav-item" href="#formatos">Formatos Benchmark</a>
+    <a class="nav-item" href="#distribuicao">Distribuição Cross-Account</a>
+
+    <div class="nav-group-title">Ciclo 1 — Dias 1–30</div>
+    <a class="nav-item nav-sub" href="#c1s1">Semana 1 · Atração</a>
+    <a class="nav-item nav-sub" href="#c1s2">Semana 2 · Consideração</a>
+    <a class="nav-item nav-sub" href="#c1s3">Semana 3 · Prova</a>
+    <a class="nav-item nav-sub" href="#c1s4">Semana 4 · Conversão</a>
+
+    <div class="nav-group-title">Ciclo 2 — Dias 31–60</div>
+    <a class="nav-item nav-sub" href="#c2s1">Semana 5 · Atração Aprofundada</a>
+    <a class="nav-item nav-sub" href="#c2s2">Semana 6 · Autoridade Técnica</a>
+    <a class="nav-item nav-sub" href="#c2s3">Semana 7 · Prova Máxima</a>
+    <a class="nav-item nav-sub" href="#c2s4">Semana 8 · Fechamento de Ciclo</a>
+
+    <div class="nav-group-title">Métricas</div>
+    <a class="nav-item" href="#otimizacao">Loop de Otimização</a>
+    <a class="nav-item" href="#kpis">Dashboard de KPIs</a>
+  </div>
+  <div class="nav-footer">Protocolo MIRA · v3.0 · 2026 · @assessoriazx</div>
+</nav>
+
+<main class="main">
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-wm">MIRA</div>
+  <div class="hero-tag"><span></span>PLAYBOOK ESTRATÉGICO · PROTOCOLO MIRA · 60 DIAS · 2 CICLOS</div>
+  <h1 class="hero-title">60 Dias.<br><span class="ac">2 Ciclos.</span><br><span class="ag">Protocolo MIRA.</span></h1>
+  <p class="hero-sub">Planejamento completo de 8 semanas — 40 peças de conteúdo com <strong style="color:var(--w)">50% captação + 50% conversão</strong>, distribuição por ciclos mensais, formatos benchmark-validated e Protocolo MIRA como eixo central da comunicação entre <strong style="color:var(--w)">@assessoriazx</strong> e <strong style="color:var(--w)">@eugabrielgregorio</strong>.</p>
+  <div class="hero-meta">
+    <div class="hero-meta-item"><div class="label">Método</div><div class="value to">Protocolo MIRA</div></div>
+    <div class="hero-meta-item"><div class="label">Pilares Internos</div><div class="value">VIP — Visibilidade · Intenção · Posicionamento</div></div>
+    <div class="hero-meta-item"><div class="label">Posts Totais</div><div class="value">40 peças</div></div>
+    <div class="hero-meta-item"><div class="label">Ciclos</div><div class="value">2 × 30 dias</div></div>
+    <div class="hero-meta-item"><div class="label">Split</div><div class="value">50% Captação · 50% Conversão</div></div>
+    <div class="hero-meta-item"><div class="label">Avatar</div><div class="value">Renata · Clínica Saúde &amp; Estética</div></div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section class="section" id="sobre">
+  <div class="sec-label">SOBRE ESTE PLAYBOOK</div>
+  <h2 class="sec-title">O que mudou.<br><span class="to">Por que mudou.</span></h2>
+  <div class="divider"></div>
+  <p class="sec-body">Este é o Playbook v3.0 da ZX Digital. Três decisões estratégicas foram tomadas antes de qualquer post ser planejado — e cada uma delas muda a estrutura do conteúdo de forma significativa.</p>
+  <div class="three-col mt24">
+    <div class="glass glass-accent glass-pad-sm aos">
+      <div style="font-weight:800;font-size:13px;margin-bottom:7px;color:var(--o)">◎ Protocolo MIRA</div>
+      <div style="font-size:12.5px;line-height:1.75;color:rgba(242,242,242,.62)">O método ganhou nome vendável. <strong style="color:var(--w)">MIRA</strong> é o nome de mercado — preciso, memorável, alinhado ao nicho. Os pilares internos continuam sendo VIP (Visibilidade, Intenção, Posicionamento), agora apresentados como componentes do Protocolo MIRA em todo o conteúdo.</div>
+    </div>
+    <div class="glass glass-gold glass-pad-sm aos">
+      <div style="font-weight:800;font-size:13px;margin-bottom:7px;color:var(--g)">⟳ Ciclos Mensais</div>
+      <div style="font-size:12.5px;line-height:1.75;color:rgba(242,242,242,.62)">O ciclo bimestral foi substituído por <strong style="color:var(--w)">2 ciclos mensais independentes</strong>. Cada ciclo de 30 dias percorre o funil completo (Atração → Consideração → Prova → Conversão). Isso comprime a qualificação e gera oportunidades de negócio mais rapidamente.</div>
+    </div>
+    <div class="glass glass-none glass-pad-sm aos" style="border-color:rgba(45,212,191,.22)">
+      <div style="font-weight:800;font-size:13px;margin-bottom:7px;color:#2dd4bf">⇌ Split 50/50</div>
+      <div style="font-size:12.5px;line-height:1.75;color:rgba(242,242,242,.62)">A distribuição anterior era predominantemente de captação. O novo split é <strong style="color:var(--w)">exato: 10 posts de captação + 10 posts de conversão por ciclo</strong>. A dor da Renata mora no faturamento — não apenas na falta de clientes, mas no que acontece quando eles chegam e não fecham.</div>
+    </div>
+  </div>
+  <div class="info-box mt24">
+    <div style="font-weight:800;font-size:14px;margin-bottom:7px;color:var(--o)">⚡ A Pergunta Que Guia Cada Peça</div>
+    <div style="font-size:15px;font-style:italic;line-height:1.75;color:rgba(242,242,242,.8)">"Quando a Renata ler isso às 23h, com a agenda vazia aberta no celular, ela vai sentir que eu entendo tanto onde os clientes não chegam <em>quanto</em> por que os que chegam não fecham?"</div>
+    <div style="margin-top:7px;font-size:11.5px;color:rgba(242,242,242,.38)">Se a resposta for sim nos dois lados — publica. Se for sim em apenas um — reescreve.</div>
+  </div>
+</section>
+
+<!-- PROTOCOLO MIRA -->
+<section class="section" id="mira">
+  <div class="sec-label">PROTOCOLO MIRA</div>
+  <h2 class="sec-title">O sistema que transforma<br><span class="to">clínica invisível em agenda cheia</span>.</h2>
+  <div class="divider"></div>
+  <p class="sec-body">MIRA é o nome de mercado do método da ZX Digital. Não é um slogan — é o sistema operacional completo de aquisição de clientes para clínicas de saúde e estética. Composto por três pilares inegociáveis que só funcionam juntos.</p>
+
+  <div class="mira-pilares">
+    <div class="mira-pilar v aos">
+      <div class="mira-letter">V</div>
+      <div class="mira-name" style="color:#60a5fa">Visibilidade</div>
+      <div class="mira-desc">Fazer a clínica aparecer para quem quer agendar agora — não apenas para quem está rolando o feed. Google Meu Negócio, tráfego pago local, posicionamento orgânico no nicho certo.</div>
+      <div class="mira-resolve"><strong style="color:#60a5fa">RESOLVE</strong>A clínica existe mas ninguém que precisa dela hoje sabe disso.</div>
+    </div>
+    <div class="mira-pilar i aos">
+      <div class="mira-letter">I</div>
+      <div class="mira-name" style="color:#34d399">Intenção</div>
+      <div class="mira-desc">Atrair a pessoa certa com a mensagem certa — alguém que já quer o serviço, não apenas alguém que achou bonito. Copy calibrada ao avatar, segmentação por intenção de busca, criativo que filtra antes de clicar.</div>
+      <div class="mira-resolve"><strong style="color:#34d399">RESOLVE</strong>WhatsApp cheio de gente que pergunta preço e some sem agendar.</div>
+    </div>
+    <div class="mira-pilar p aos">
+      <div class="mira-letter">P</div>
+      <div class="mira-name" style="color:var(--o)">Posicionamento</div>
+      <div class="mira-desc">Garantir que quando a paciente comparar a clínica com a concorrente, a escolha seja óbvia. Script de atendimento, protocolo de WhatsApp, follow-up estruturado, comunicação de valor antes do preço.</div>
+      <div class="mira-resolve"><strong style="color:var(--o)">RESOLVE</strong>Concorrente cobra menos e a paciente vai embora antes de entender o diferencial.</div>
+    </div>
+  </div>
+
+  <div class="glass glass-pad mt24 aos">
+    <div style="font-weight:800;font-size:14px;margin-bottom:14px">Como comunicar o Protocolo MIRA no conteúdo</div>
+    <div class="dist-table" style="display:table;width:100%">
+      <table class="dist-table" style="width:100%">
+        <thead><tr><th>CONTEXTO</th><th>LINGUAGEM EXTERNA (o que a Renata ouve)</th><th>LINGUAGEM INTERNA (o que é o pilar VIP)</th></tr></thead>
+        <tbody>
+          <tr><td style="font-weight:700;color:var(--o)">Nome completo</td><td>"Protocolo MIRA da ZX Digital"</td><td>Método VIP — Visibilidade, Intenção, Posicionamento</td></tr>
+          <tr><td style="font-weight:700;color:var(--o)">Pilar V</td><td>"A parte do MIRA que faz sua clínica aparecer para quem quer agendar agora"</td><td>Visibilidade — tráfego pago + SEO local</td></tr>
+          <tr><td style="font-weight:700;color:var(--o)">Pilar I</td><td>"A parte que garante que quem chega já quer o serviço — não só 'tá pesquisando'"</td><td>Intenção — segmentação + copy de conversão</td></tr>
+          <tr><td style="font-weight:700;color:var(--o)">Pilar P</td><td>"A parte que faz você ser a escolha óbvia quando comparam — sem precisar baixar preço"</td><td>Posicionamento — protocolo de atendimento + script</td></tr>
+          <tr><td style="font-weight:700;color:var(--o)">Nunca dizer</td><td colspan="2" style="color:rgba(248,113,113,.8)">leads · funil · CTR · CAC · ROAS · escalar · pivotar · taxa de conversão · awareness · engajamento como métrica</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- TACOH 50/50 -->
+<section class="section" id="tacoh">
+  <div class="sec-label">FRAMEWORK TACOH · SPLIT 50/50</div>
+  <h2 class="sec-title">O DNA de cada post.<br><span class="to">Metade capta. Metade converte.</span></h2>
+  <div class="divider"></div>
+  <div class="split-labels"><span class="cap-label">CAPTAÇÃO — 50%</span><span class="conv-label">CONVERSÃO — 50%</span></div>
+  <div class="split-bar"></div>
+  <p class="sec-body aos">A dor da Renata mora no faturamento — não apenas na falta de cliente novo, mas no que acontece quando o cliente chega e não fecha. O split 50/50 garante que o conteúdo resolve os dois lados do problema.</p>
+
+  <div class="two-col mt24">
+    <div>
+      <div style="font-weight:700;font-size:13px;margin-bottom:12px;color:#2dd4bf">🎯 CONTEÚDO DE CAPTAÇÃO</div>
+      <div class="rule-box aos"><div class="rule-icon">🔬</div><div><div class="rule-title" style="color:#2dd4bf">T — TÉCNICO · CAPTAÇÃO</div><div class="rule-body">Educa sobre como funciona o sistema de atração de clientes: tráfego pago, Google Meu Negócio, segmentação, Protocolo MIRA. Ex: "Por que sua clínica não aparece para quem quer agendar agora."</div></div></div>
+      <div class="rule-box aos"><div class="rule-icon">🏆</div><div><div class="rule-title" style="color:#60a5fa">A — AUTORIDADE · CAPTAÇÃO</div><div class="rule-body">Prova com dados de clientes reais — número de agendamentos gerados, ROI de campanha, crescimento de visibilidade. Ex: "R$1.400 → R$18.000 em agendamentos. 30 dias."</div></div></div>
+      <div class="rule-box aos"><div class="rule-icon">🫀</div><div><div class="rule-title" style="color:#34d399">C — CONEXÃO · CAPTAÇÃO</div><div class="rule-body">Espelha a dor da dependência de indicação, a agenda com buracos, a falta de previsibilidade. Ex: "Tem 8 anos de mercado. Excelente profissional. Ainda depende de indicação."</div></div></div>
+      <div class="rule-box aos"><div class="rule-icon">🔥</div><div><div class="rule-title" style="color:#fbbf24">H — HYPE · CAPTAÇÃO</div><div class="rule-body">Abre vagas para diagnóstico, anuncia disponibilidade, cria urgência real. Ex: "3 vagas abertas — Diagnóstico do Sistema de Aquisição. Gratuito. Encerra sexta."</div></div></div>
+    </div>
+    <div>
+      <div style="font-weight:700;font-size:13px;margin-bottom:12px;color:#c4b5fd">⚡ CONTEÚDO DE CONVERSÃO</div>
+      <div class="rule-box aos"><div class="rule-icon">📋</div><div><div class="rule-title" style="color:#2dd4bf">T — TÉCNICO · CONVERSÃO</div><div class="rule-body">Educa sobre processo de atendimento, script de WhatsApp, protocolo de resposta, follow-up estruturado. Ex: "As 3 frases que fazem a paciente sumir antes de agendar."</div></div></div>
+      <div class="rule-box aos"><div class="rule-icon">📊</div><div><div class="rule-title" style="color:#60a5fa">A — AUTORIDADE · CONVERSÃO</div><div class="rule-body">Mostra cases onde o resultado veio de mudar o processo de atendimento, não o tráfego. Ex: "De 8 para 34 agendamentos. Mesmos leads. O que mudamos foi o atendimento."</div></div></div>
+      <div class="rule-box aos"><div class="rule-icon">💬</div><div><div class="rule-title" style="color:#34d399">C — CONEXÃO · CONVERSÃO</div><div class="rule-body">Espelha a dor de receber mensagens e não converter: "30 mensagens na semana. 6 viraram agendamento." Ou emoção do resultado: "A recepcionista não para de atender o WhatsApp."</div></div></div>
+      <div class="rule-box aos"><div class="rule-icon">🛡️</div><div><div class="rule-title" style="color:#f87171">O — OBJEÇÃO · CONVERSÃO</div><div class="rule-body">Resolve objeções que aparecem DURANTE o atendimento da clínica com seus pacientes: "meu concorrente cobra menos", "vou pensar", "precisa de 2 sessões?" Ex: "Sua concorrente cobra menos — e o que você faz com isso."</div></div></div>
+    </div>
+  </div>
+
+  <div class="glass glass-pad mt24 aos">
+    <div style="font-weight:800;font-size:14px;margin-bottom:14px">Distribuição TACOH por Ciclo (20 posts)</div>
+    <table class="dist-table" style="width:100%">
+      <thead><tr><th>CATEGORIA</th><th>% DO CICLO</th><th>Nº DE POSTS</th><th>CAPTAÇÃO</th><th>CONVERSÃO</th><th>FORMATO IDEAL</th></tr></thead>
+      <tbody>
+        <tr><td><span class="tacoh t-t"><span class="tacoh-dot dot-t"></span>TÉCNICO</span></td><td>20%</td><td>4</td><td>2</td><td>2</td><td>Carrossel diagnóstico · Script parcial</td></tr>
+        <tr><td><span class="tacoh t-a"><span class="tacoh-dot dot-a"></span>AUTORIDADE</span></td><td>25%</td><td>5</td><td>3</td><td>2</td><td>Caso real antes/depois · Estático ROI</td></tr>
+        <tr><td><span class="tacoh t-c"><span class="tacoh-dot dot-c"></span>CONEXÃO</span></td><td>25%</td><td>5</td><td>2</td><td>3</td><td>Reel câmera direta · Carrossel falado</td></tr>
+        <tr><td><span class="tacoh t-o"><span class="tacoh-dot dot-o"></span>OBJEÇÃO</span></td><td>15%</td><td>3</td><td>1</td><td>2</td><td>Carrossel reframing · Script parcial</td></tr>
+        <tr><td><span class="tacoh t-h"><span class="tacoh-dot dot-h"></span>HYPE</span></td><td>15%</td><td>3</td><td>2</td><td>1</td><td>Reel urgência · Estático escassez</td></tr>
+        <tr><td style="font-weight:700">TOTAL</td><td>100%</td><td style="font-weight:700;color:var(--o)">20</td><td style="font-weight:700;color:#2dd4bf">10</td><td style="font-weight:700;color:#c4b5fd">10</td><td>—</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- FORMATOS BENCHMARK -->
+<section class="section" id="formatos">
+  <div class="sec-label">FORMATOS & BENCHMARK</div>
+  <h2 class="sec-title">5 formatos validados<br>pelo <span class="to">mercado</span>.</h2>
+  <div class="divider"></div>
+  <div class="three-col mt24">
+    <div class="glass glass-pad aos">
+      <div style="display:flex;align-items:center;gap:9px;margin-bottom:12px"><span class="fmt fmt-carousel">Carrossel</span><span style="font-size:10px;color:rgba(242,242,242,.35)">Diagnóstico</span></div>
+      <div style="font-weight:700;font-size:13.5px;margin-bottom:7px">Diagnóstico → Framework → Case → CTA</div>
+      <div style="font-size:12px;line-height:1.75;color:rgba(242,242,242,.6)">S1: dor + hook. S2-3: contexto com dado de mercado. S4-6: framework de solução. S7: caso real. S8: CTA suave. Gera alto save rate. Fonte: BCX Consultoria, SIS Consultoria.</div>
+    </div>
+    <div class="glass glass-pad aos">
+      <div style="display:flex;align-items:center;gap:9px;margin-bottom:12px"><span class="fmt fmt-reel">Reel</span><span style="font-size:10px;color:rgba(242,242,242,.35)">Situação Nomeada</span></div>
+      <div style="font-weight:700;font-size:13.5px;margin-bottom:7px">Situação → Virada → Dado → CTA de DM</div>
+      <div style="font-size:12px;line-height:1.75;color:rgba(242,242,242,.6)">0-3s: situação real que a Renata viveu. 3-15s: virada contraintuitiva. 15-25s: dado ou caso. 25-30s: "Comenta [PALAVRA] no direct." Duração ideal: 21-27s. Fonte: Pedro Sobral, Juliana Godinho.</div>
+    </div>
+    <div class="glass glass-pad aos">
+      <div style="display:flex;align-items:center;gap:9px;margin-bottom:12px"><span class="fmt fmt-carousel">Carrossel</span><span style="font-size:10px;color:rgba(242,242,242,.35)">Script Parcial</span></div>
+      <div style="font-weight:700;font-size:13.5px;margin-bottom:7px">Erro → Estrutura → Exemplo → Retenção</div>
+      <div style="font-size:12px;line-height:1.75;color:rgba(242,242,242,.6)">Mostra a estrutura do script sem entregar o roteiro completo. Uma frase-exemplo por etapa. Alta taxa de salvamento. CTA: "Comenta SCRIPT que envio completo." Fonte: Divando na Estética, Valentins Digital.</div>
+    </div>
+    <div class="glass glass-pad aos">
+      <div style="display:flex;align-items:center;gap:9px;margin-bottom:12px"><span class="fmt fmt-static">Estático</span><span style="font-size:10px;color:rgba(242,242,242,.35)">Número-Impacto</span></div>
+      <div style="font-weight:700;font-size:13.5px;margin-bottom:7px">Número Grande · Resultado Específico</div>
+      <div style="font-size:12px;line-height:1.75;color:rgba(242,242,242,.6)">Fundo charcoal + dot-grid. Número central em laranja. Contexto em 2 linhas. Rodapé ZX + Protocolo MIRA. Sem foto. Só dado. Fonte: Lucas Renault (#ROInoTalo), BCX Consultoria.</div>
+    </div>
+    <div class="glass glass-pad aos">
+      <div style="display:flex;align-items:center;gap:9px;margin-bottom:12px"><span class="fmt fmt-falado">Carrossel Falado</span><span style="font-size:10px;color:rgba(242,242,242,.35)">Tendência 2026</span></div>
+      <div style="font-weight:700;font-size:13.5px;margin-bottom:7px">Vídeos de 10-12s por Slide · Narrativa Contínua</div>
+      <div style="font-size:12px;line-height:1.75;color:rgba(242,242,242,.6)">5 vídeos curtos em sequência com trilha sonora. Distribui como Reel E como carrossel. Ideal para bastidores e processo. Fonte: Rafael Terra, tendência Meta 2026.</div>
+    </div>
+    <div class="glass glass-pad aos">
+      <div style="display:flex;align-items:center;gap:9px;margin-bottom:12px"><span class="fmt fmt-carousel">Carrossel</span><span style="font-size:10px;color:rgba(242,242,242,.35)">Tricase</span></div>
+      <div style="font-weight:700;font-size:13.5px;margin-bottom:7px">3 Clínicas · 3 Histórias · 1 Protocolo</div>
+      <div style="font-size:12px;line-height:1.75;color:rgba(242,242,242,.6)">Perfis comparáveis ao da Renata — clínicas de Goiás, não multinacionais. Antes/depois financeiro por case. Alta identificação. Fonte: BCX Consultoria, Daniela Fidellis.</div>
+    </div>
+  </div>
+  <div class="info-box mt24 aos">
+    <div style="font-weight:800;font-size:13px;margin-bottom:7px;color:var(--o)">CTA Dominante: Automação de DM</div>
+    <div style="font-size:12.5px;color:rgba(242,242,242,.7);line-height:1.75">O CTA padrão de todos os posts é <strong style="color:var(--w)">"Comenta [PALAVRA] no direct"</strong> ou <strong style="color:var(--w)">"Manda [PALAVRA] no direct"</strong>. Nunca "link na bio" como CTA principal. A palavra-chave ativa automação (ManyChat ou similar) que qualifica o lead antes do contato humano E sinaliza engajamento para o algoritmo. Palavras-chave reservadas: DIAGNÓSTICO · MIRA · WHATSAPP · SCRIPT · PROTOCOLO · VAGA · ROTEIRO · AGENDA · RESULTADO · ROI · CASE · CONVERSÃO.</div>
+  </div>
+</section>
+
+<!-- DISTRIBUIÇÃO -->
+<section class="section" id="distribuicao">
+  <div class="sec-label">DISTRIBUIÇÃO CROSS-ACCOUNT</div>
+  <h2 class="sec-title">Dois perfis.<br><span class="to">Uma precisão</span> afinada.</h2>
+  <div class="divider"></div>
+  <div class="two-col mt24">
+    <div class="glass aos" style="border-color:rgba(124,58,237,.22)">
+      <div style="padding:18px 22px;border-bottom:1px solid rgba(124,58,237,.12);display:flex;align-items:center;gap:13px">
+        <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#7c3aed,#a78bfa);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:14px;color:#fff;flex-shrink:0">G</div>
+        <div><div style="font-weight:800;font-size:14px">@eugabrielgregorio</div><div style="font-size:9px;color:rgba(242,242,242,.38);letter-spacing:2px;text-transform:uppercase;margin-top:2px">Voz Pessoal · Parceiro Empático</div></div>
+      </div>
+      <div style="padding:16px 22px;font-size:12.5px;line-height:1.75;color:rgba(242,242,242,.62)">Tom de amigo especialista. Histórias reais, emoção genuína, bastidores. Nunca soa como vendedor. Os posts de <span style="color:#34d399">Conexão</span> e <span style="color:#34d399">Conexão/Conversão</span> são prioritariamente deste perfil. Reels de câmera direta onde Gabriel fala em primeira pessoa.</div>
+    </div>
+    <div class="glass aos" style="border-color:rgba(242,140,40,.22)">
+      <div style="padding:18px 22px;border-bottom:1px solid rgba(242,140,40,.12);display:flex;align-items:center;gap:13px">
+        <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--o),var(--g));display:flex;align-items:center;justify-content:center;font-weight:900;font-size:11px;color:#000;flex-shrink:0">ZX</div>
+        <div><div style="font-weight:800;font-size:14px">@assessoriazx</div><div style="font-size:9px;color:rgba(242,242,242,.38);letter-spacing:2px;text-transform:uppercase;margin-top:2px">Voz da Marca · Protocolo MIRA</div></div>
+      </div>
+      <div style="padding:16px 22px;font-size:12.5px;line-height:1.75;color:rgba(242,242,242,.62)">Autoridade baseada em dados e resultados específicos. Tom consultivo, direto. Os posts de <span style="color:#60a5fa">Autoridade</span>, <span style="color:#2dd4bf">Técnico</span> e <span style="color:#fbbf24">Hype</span> são prioritariamente deste perfil. Carrosséis de case, posts de ROI, carrosséis de script.</div>
+    </div>
+  </div>
+  <div class="glass glass-pad mt22 aos">
+    <div style="font-weight:800;font-size:14px;margin-bottom:13px">Regras de Distribuição</div>
+    <table class="dist-table" style="width:100%">
+      <thead><tr><th>TIPO DE CONTEÚDO</th><th>CONTA PRIMÁRIA</th><th>CONTA SECUNDÁRIA</th><th>REGRA</th></tr></thead>
+      <tbody>
+        <tr><td>Reel Conexão (dor / emoção)</td><td><span class="acc acc-gabriel">@gabriel</span></td><td><span class="acc acc-zx">@zx</span></td><td>Postar nos 2 perfis — máximo alcance</td></tr>
+        <tr><td>Carrossel Diagnóstico / Técnico</td><td><span class="acc acc-zx">@zx</span></td><td>—</td><td>Exclusivo @zx — autoridade da marca</td></tr>
+        <tr><td>Carrossel Script / Conversão</td><td><span class="acc acc-zx">@zx</span></td><td><span class="acc acc-gabriel">@gabriel</span></td><td>Primário @zx · pode repostar @gabriel com introdução pessoal</td></tr>
+        <tr><td>Estático ROI / Resultado</td><td><span class="acc acc-zx">@zx</span></td><td>—</td><td>Exclusivo @zx — prova da marca</td></tr>
+        <tr><td>Carrossel Falado (bastidores)</td><td><span class="acc acc-gabriel">@gabriel</span></td><td>—</td><td>Exclusivo @gabriel — tom pessoal de bastidor</td></tr>
+        <tr><td>Reel Urgência / Hype</td><td><span class="acc acc-zx">@zx</span></td><td>—</td><td>Exclusivo @zx — CTA institucional</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ══════ CICLO 1 ══════ -->
+<div class="ciclo-div" id="ciclo1">
+  <div class="ciclo-icon">◎</div>
+  <div>
+    <div class="ciclo-num">// CICLO 01 · DIAS 1–30</div>
+    <div class="ciclo-title">Primeiro Ciclo — Construir Autoridade e Gerar Diagnósticos</div>
+    <div class="ciclo-desc">O primeiro ciclo estabelece o Protocolo MIRA, cria reconhecimento com o avatar, prova com cases reais e converte em diagnósticos agendados. 20 posts: 10 captação + 10 conversão.</div>
+  </div>
+</div>
+
+<!-- C1 SEMANA 1 -->
+<div id="c1s1">
+<div class="week-hero" style="background:linear-gradient(135deg,#0D1B2A 0%,#1A1A1A 100%)">
+  <div class="week-wm">S1</div>
+  <div class="week-num mono">SEMANA 01 · CICLO 1</div>
+  <div class="week-phase-label">Fase 1 — Atração</div>
+  <div class="tacoh-mix mt8">
+    <span class="tacoh t-c"><span class="tacoh-dot dot-c"></span>CONEXÃO</span><span class="tacoh-count">×2</span>
+    <span class="tacoh t-t"><span class="tacoh-dot dot-t"></span>TÉCNICO</span><span class="tacoh-count">×2</span>
+    <span class="tacoh t-h"><span class="tacoh-dot dot-h"></span>HYPE</span><span class="tacoh-count">×1</span>
+  </div>
+  <h2 class="week-title">A Ferida Aberta —<br>Empatia de Precisão e Primeiro Diagnóstico</h2>
+  <p class="week-intro">A semana 1 tem missão cirúrgica: entrar na cabeça da Renata antes de qualquer argumento racional. Os posts de captação espelham a dor da agenda vazia. Os posts de conversão espelham a dor do WhatsApp cheio que não converte. Ao fim da semana ela pensa: "esse cara entende os dois lados do meu problema."</p>
+  <div class="week-stats">
+    <div class="week-stat"><div class="week-stat-num">5</div><div class="week-stat-label">Posts</div></div>
+    <div class="week-stat"><div class="week-stat-num">3</div><div class="week-stat-label">Captação</div></div>
+    <div class="week-stat"><div class="week-stat-num">2</div><div class="week-stat-label">Conversão</div></div>
+    <div class="week-stat"><div class="week-stat-num">2</div><div class="week-stat-label">Reels</div></div>
+    <div class="week-stat"><div class="week-stat-num">2</div><div class="week-stat-label">Carrosséis</div></div>
+    <div class="week-stat"><div class="week-stat-num">1</div><div class="week-stat-label">Estático</div></div>
+  </div>
+</div>
+<section class="posts-section">
+
+<!-- POST 1 -->
+<div class="post-card aos" id="c1p1">
+  <div class="post-card-header">
+    <div class="post-header-left">
+      <span class="post-num mono">#01</span>
+      <span class="tacoh t-c"><span class="tacoh-dot dot-c"></span>CONEXÃO</span>
+      <span class="badge-cap">CAPTAÇÃO</span>
+      <span class="fmt fmt-reel">Reel · 30–40s · Câmera Direta</span>
+    </div>
+    <div class="post-header-right"><span class="acc acc-both">@gabriel + @zx</span></div>
+  </div>
+  <div class="post-card-body">
+    <div class="field-block full-width">
+      <div class="field-label">Hook</div>
+      <div class="field-hook">Sexta-feira. 22h. Você abre o WhatsApp da clínica.</div>
+    </div>
+    <div class="fields-grid">
+      <div>
+        <div class="field-label">Tema</div>
+        <div class="field-value">A dor da agenda vazia às sextas — espelho emocional da Renata</div>
+        <div class="field-label mt12">Benchmark</div>
+        <div class="field-value">Situação nomeada — Pedro Sobral · Juliana Godinho</div>
+      </div>
+      <div>
+        <div class="field-label">Caption</div>
+        <div class="field-value field-desc">Você é excelente no que faz. A agenda vazia não é culpa da sua técnica — é um problema de sistema. Me manda DIAGNÓSTICO no direct e te mostro onde está o buraco.</div>
+        <div class="field-label mt12">Hashtags</div>
+        <div class="field-value field-hash">#clinicadestetica #esteticista #agendacheia #marketingparaestética #trafegopago #goiania #aparecidadegoiania #protocolomira #zxdigital #captacaodeclientes</div>
+      </div>
+    </div>
+    <div class="item5-block">
+      <div class="field-label">Roteiro Completo</div>
+      <div class="script-meta-row">
+        <span>⏱ <strong>30–38 segundos</strong></span>
+        <span>🎥 Home office / sala — luz quente de abajur, fundo neutro desfocado</span>
+        <span>📲 @gabriel + @zx</span>
+      </div>
+      <div class="beat-table-wrap">
+        <table class="beat-table">
+          <thead><tr><th>TEMPO</th><th>BEAT</th><th>FALA (Gabriel)</th><th>DIREÇÃO</th></tr></thead>
+          <tbody>
+            <tr class="beat-even"><td class="beat-time">0–3s</td><td class="beat-label-td">FRAME ZERO</td><td class="beat-fala">"Sexta-feira. 22h. Você abre o WhatsApp da clínica."<div class="beat-sobreposto">[TELA: "4 de 30 horários preenchidos"]</div></td><td class="beat-dir-td">Texto sobreposto ANTES de Gabriel falar. Câmera estável no tripé. Rosto levemente fora de foco no fundo.</td></tr>
+            <tr class="beat-odd"><td class="beat-time">3–14s</td><td class="beat-label-td">ESPELHO DA DOR</td><td class="beat-fala">"Quatro horários marcados de trinta possíveis. Você é boa no que faz — seus clientes adoram. Mas o WhatsApp não apita com ninguém novo."</td><td class="beat-dir-td">Tom calmo, quase sussurrado. Cada frase com pausa. A Renata precisa se reconhecer em cada palavra.</td></tr>
+            <tr class="beat-even"><td class="beat-time">14–26s</td><td class="beat-label-td">A PONTE</td><td class="beat-fala">"Eu conheço esse sentimento de perto. Trabalho com isso todo dia — e aprendi onde exatamente o sistema sangra."</td><td class="beat-dir-td">Leve pausa após "sangra". Olhar direto para a câmera. Tom de quem viveu, não de quem leu em livro.</td></tr>
+            <tr class="beat-odd"><td class="beat-time">26–37s</td><td class="beat-label-td">CTA</td><td class="beat-fala">"Se você se reconheceu nessa cena, me manda DIAGNÓSTICO aqui no direct. Sem enrolação — te mostro onde está o buraco."<div class="beat-sobreposto">[TELA: "DIAGNÓSTICO → direct"]</div></td><td class="beat-dir-td">Tom leve, sorriso genuíno. Texto na tela aparece junto com o CTA falado. Corta limpo.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="cta-row">
+      <div class="field-label">CTA</div>
+      <div class="cta-box">Manda 'DIAGNÓSTICO' no direct — te envio o checklist das 3 principais causas de agenda vazia em clínicas de estética.</div>
+    </div>
+    <div class="nota-box">📌 Post âncora emocional da semana. Ativa reconhecimento imediato da dor de captação. Benchmark: situação nomeada com filtro de avatar.</div>
+  </div>
+</div>
+
+<!-- POST 2 -->
+<div class="post-card aos" id="c1p2">
+  <div class="post-card-header">
+    <div class="post-header-left">
+      <span class="post-num mono">#02</span>
+      <span class="tacoh t-t"><span class="tacoh-dot dot-t"></span>TÉCNICO</span>
+      <span class="badge-cap">CAPTAÇÃO</span>
+      <span class="fmt fmt-carousel">Carrossel · 7 slides</span>
+    </div>
+    <div class="post-header-right"><span class="acc acc-zx">@assessoriazx</span></div>
+  </div>
+  <div class="post-card-body">
+    <div class="field-block full-width">
+      <div class="field-label">Hook</div>
+      <div class="field-hook">Por que sua clínica não aparece para quem quer agendar agora mesmo</div>
+    </div>
+    <div class="fields-grid">
+      <div>
+        <div class="field-label">Tema</div>
+        <div class="field-value">5 razões de invisibilidade digital — diagnóstico educacional de captação</div>
+        <div class="field-label mt12">Benchmark</div>
+        <div class="field-value">Carrossel diagnóstico — BCX Consultoria · V4 Company (80% valor / 20% oferta)</div>
+      </div>
+      <div>
+        <div class="field-label">Caption</div>
+        <div class="field-value field-desc">Se as pessoas certas não te encontram, o problema não é a qualidade do seu serviço. É onde e como você aparece. Comente VISIBILIDADE que te mando o checklist completo.</div>
+        <div class="field-label mt12">Hashtags</div>
+        <div class="field-value field-hash">#marketingparaclinicas #trafegopago #instagram #clinicadestetica #captacaodeclientes #zxdigital #goiania #protocolomira #presencadigital #negociodeestética</div>
+      </div>
+    </div>
+    <div class="item5-block">
+      <div class="field-label">Estilo & Design</div>
+      <div class="estilo-box">
+        <div class="estilo-item">▸ Fundo charcoal #1A1A1A com dot-grid em todos os slides.</div>
+        <div class="estilo-item">▸ S1 (capa): número "05" laranja ~8% opacidade como marca d'água atrás do título. Headline Exo 2 ExtraBold branca. Linha laranja 3px. "Salva — você vai precisar mostrar pra alguém." CTA pill laranja "SALVA ↓".</div>
+        <div class="estilo-item">▸ S2–6: Número do ponto em laranja 900 grande no canto sup. esq. Título bold. Barra vertical laranja 3px à esquerda. Explicação em cinza claro 400.</div>
+        <div class="estilo-item">▸ S7 (CTA): Fundo petroleum #0D1B2A. "Comente VISIBILIDADE" centralizado. Handle @assessoriazx + Protocolo MIRA no rodapé.</div>
+      </div>
+    </div>
+    <div class="item5-block">
+      <div class="field-label">Conteúdo dos Slides</div>
+      <div class="corpo-box">
+        <div class="slide-label">S1 — CAPA</div>"Por que sua clínica não aparece para quem quer agendar agora" · Sub: "5 razões — e como o Protocolo MIRA resolve cada uma. Salva antes de fechar."
+        <div class="slide-label">S2 — PONTO 01</div>Google Meu Negócio desatualizado ou inexistente. "76% das buscas locais por clínicas de saúde levam à visita em menos de 24h — mas só se você aparecer na busca."
+        <div class="slide-label">S3 — PONTO 02</div>Anunciar para o público errado. "Alcance alto ≠ agendamento. A diferença está em quem vê — não em quantos veem."
+        <div class="slide-label">S4 — PONTO 03</div>Bio do Instagram que não diz o que faz nem onde está. "Se a pessoa que chegou no seu perfil precisar de 10 segundos para entender o que você faz — ela já foi."
+        <div class="slide-label">S5 — PONTO 04</div>Sem CTA em nenhum post. "Post sem chamada para ação é palestra sem porta de saída. A pessoa acha interessante e some."
+        <div class="slide-label">S6 — PONTO 05</div>Sem diferenciação clara. "Se você parece igual à concorrente, a única variável que resta é o preço. E guerra de preço não tem vencedor."
+        <div class="slide-label">S7 — CTA</div>"Comente VISIBILIDADE no direct. Te envio o checklist completo para auditar a visibilidade da sua clínica agora."
+      </div>
+    </div>
+    <div class="cta-row">
+      <div class="field-label">CTA</div>
+      <div class="cta-box">Comente 'VISIBILIDADE' no direct — te mando o checklist de auditoria de presença digital para clínicas.</div>
+    </div>
+    <div class="nota-box">📌 Save rate alto esperado. Entrega diagnóstico completo sem entregar a solução — gera DMs qualificados de donos de clínica que se reconheceram em pelo menos 3 dos 5 pontos.</div>
+  </div>
+</div>
+
+<!-- POST 3 -->
+<div class="post-card aos" id="c1p3">
+  <div class="post-card-header">
+    <div class="post-header-left">
+      <span class="post-num mono">#03</span>
+      <span class="tacoh t-c"><span class="tacoh-dot dot-c"></span>CONEXÃO</span>
+      <span class="badge-conv">CONVERSÃO</span>
+      <span class="fmt fmt-reel">Reel · 28–35s · Câmera Direta</span>
+    </div>
+    <div class="post-header-right"><span class="acc acc-gabriel">@eugabrielgregorio</span></div>
+  </div>
+  <div class="post-card-body">
+    <div class="field-block full-width">
+      <div class="field-label">Hook</div>
+      <div class="field-hook">Você recebeu 30 mensagens essa semana no WhatsApp da clínica. Quantas viraram agendamento?</div>
+    </div>
+    <div class="fields-grid">
+      <div>
+        <div class="field-label">Tema</div>
+        <div class="field-value">A dor da conversão perdida — novo ângulo de dor pós-captação</div>
+        <div class="field-label mt12">Benchmark</div>
+        <div class="field-value">Afirmação contraintuitiva — Guilherme Machado ("Você não precisa de mais leads")</div>
+      </div>
+      <div>
+        <div class="field-label">Caption</div>
+        <div class="field-value field-desc">O problema da clínica que não cresce raramente é falta de gente interessada. Quase sempre é o que acontece depois da primeira mensagem. Manda WHATSAPP no direct.</div>
+        <div class="field-label mt12">Hashtags</div>
+        <div class="field-value field-hash">#whatsappbusiness #atendimentoclinica #esteticista #clinicadestetica #agendacheia #zxdigital #protocolomira #captacaodeclientes #goiania #conversaodeagendamento</div>
+      </div>
+    </div>
+    <div class="item5-block">
+      <div class="field-label">Roteiro Completo</div>
+      <div class="script-meta-row">
+        <span>⏱ <strong>28–34 segundos</strong></span>
+        <span>🎥 Escritório ou coworking — luz de anel, fundo desfocado limpo</span>
+        <span>📲 @gabriel</span>
+      </div>
+      <div class="beat-table-wrap">
+        <table class="beat-table">
+          <thead><tr><th>TEMPO</th><th>BEAT</th><th>FALA (Gabriel)</th><th>DIREÇÃO</th></tr></thead>
+          <tbody>
+            <tr class="beat-even"><td class="beat-time">0–3s</td><td class="beat-label-td">NÚMERO QUE CHOCA</td><td class="beat-fala">"Você recebeu 30 mensagens essa semana no WhatsApp da clínica. Quantas viraram agendamento?"<div class="beat-sobreposto">[TELA: "30 mensagens → ??? agendamentos"]</div></td><td class="beat-dir-td">Pausa real após a pergunta. Deixa o número assentar. Olha direto para câmera.</td></tr>
+            <tr class="beat-odd"><td class="beat-time">3–14s</td><td class="beat-label-td">VIRADA</td><td class="beat-fala">"Em média, menos de oito. As outras vinte e duas? Foram para a concorrente. Não porque ela é melhor — porque ela respondeu primeiro. Ou porque o atendimento foi diferente."</td><td class="beat-dir-td">Tom neutro, não acusatório. Apresenta o dado como fato, não como julgamento.</td></tr>
+            <tr class="beat-even"><td class="beat-time">14–24s</td><td class="beat-label-td">O PRINCÍPIO</td><td class="beat-fala">"O tráfego traz as pessoas até a porta da clínica. Quem abre a porta — e como abre — é o processo de atendimento. E esse é o lado que a maioria das agências ignora completamente."</td><td class="beat-dir-td">Tom de quem está revelando algo que a Renata não sabia que precisava ouvir.</td></tr>
+            <tr class="beat-odd"><td class="beat-time">24–32s</td><td class="beat-label-td">CTA</td><td class="beat-fala">"Manda WHATSAPP no direct que te envio o protocolo de resposta que usamos com as clínicas que a gente atende."<div class="beat-sobreposto">[TELA: "WHATSAPP → direct"]</div></td><td class="beat-dir-td">Tom amigável. Aponta levemente para câmera. Corta limpo.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="cta-row">
+      <div class="field-label">CTA</div>
+      <div class="cta-box">Manda 'WHATSAPP' no direct — te envio o protocolo de resposta para clínicas que usamos com os nossos clientes.</div>
+    </div>
+    <div class="nota-box">📌 Primeiro post de conversão. Posiciona ZX como especialista no funil completo — não apenas em gerar interesse, mas em não desperdiçar interesse. Alta identificação com a Renata.</div>
+  </div>
+</div>
+
+<!-- POST 4 -->
+<div class="post-card aos" id="c1p4">
+  <div class="post-card-header">
+    <div class="post-header-left">
+      <span class="post-num mono">#04</span>
+      <span class="tacoh t-t"><span class="tacoh-dot dot-t"></span>TÉCNICO</span>
+      <span class="badge-conv">CONVERSÃO</span>
+      <span class="fmt fmt-carousel">Carrossel · 6 slides · Script Parcial</span>
+    </div>
+    <div class="post-header-right"><span class="acc acc-zx">@assessoriazx</span></div>
+  </div>
+  <div class="post-card-body">
+    <div class="field-block full-width">
+      <div class="field-label">Hook</div>
+      <div class="field-hook">As 3 frases que fazem a paciente sumir antes de agendar</div>
+    </div>
+    <div class="fields-grid">
+      <div>
+        <div class="field-label">Tema</div>
+        <div class="field-value">Erros críticos de atendimento no WhatsApp que matam a conversão</div>
+        <div class="field-label mt12">Benchmark</div>
+        <div class="field-value">Script parcial — Divando na Estética · Valentins Digital (entrega estrutura, retém roteiro completo)</div>
+      </div>
+      <div>
+        <div class="field-label">Caption</div>
+        <div class="field-value field-desc">Não é o preço. Não é a concorrência. É o que você diz — ou não diz — nos primeiros minutos depois da mensagem. Comente SCRIPT que te envio o roteiro completo.</div>
+        <div class="field-label mt12">Hashtags</div>
+        <div class="field-value field-hash">#scriptsdevenda #whatsappbusiness #atendimentoclinica #esteticista #clinicadestetica #conversaodeagendamento #zxdigital #protocolomira #agendacheia #vendas</div>
+      </div>
+    </div>
+    <div class="item5-block">
+      <div class="field-label">Conteúdo dos Slides</div>
+      <div class="corpo-box">
+        <div class="slide-label">S1 — CAPA</div>"As 3 frases que fazem a paciente sumir antes de agendar" · Dado de impacto: "79% dos brasileiros fecham serviços pelo WhatsApp — mas 68% desistem antes de confirmar. Aqui está o motivo."
+        <div class="slide-label">S2 — FRASE 01</div><strong>"Nosso valor é R$X"</strong> — resposta de preço sem contexto de valor. O que acontece: a paciente compara com o preço da concorrente, que parece mais barato porque ela não entende o diferencial. A resposta certa: nunca dê preço antes de qualificação.
+        <div class="slide-label">S3 — FRASE 02</div><strong>"Obrigada pelo interesse! Qualquer dúvida, estamos à disposição."</strong> — fecha a conversa sem avançar. O que acontece: a pessoa precisaria dar o próximo passo sozinha. Pouquíssimas darão. A resposta certa: sempre termine com uma pergunta ou proposta de próximo passo.
+        <div class="slide-label">S4 — FRASE 03</div><strong>[Sem resposta por 4+ horas]</strong> — a frase que não foi dita. O que acontece: a pessoa já agendou com outra clínica. O primeiro prestador a responder fecha 78% das vezes. Não existe segunda tentativa.
+        <div class="slide-label">S5 — A ESTRUTURA QUE FUNCIONA</div>Acolhimento (nome + contexto) → Qualificação (1 pergunta sobre o objetivo) → Proposta de valor (o que ela vai ganhar, não só o que vai pagar) → Agendamento (proposta de horário específico, não "quando você quiser").
+        <div class="slide-label">S6 — CTA</div>"Quer o script completo com as frases exatas para cada etapa? Comente SCRIPT — te envio o roteiro que usamos com as clínicas do Protocolo MIRA."
+      </div>
+    </div>
+    <div class="cta-row">
+      <div class="field-label">CTA</div>
+      <div class="cta-box">Comente 'SCRIPT' no direct — te envio o roteiro completo de atendimento via WhatsApp para clínicas.</div>
+    </div>
+    <div class="nota-box">📌 Alto save rate esperado. Entrega valor real (estrutura dos erros + estrutura da solução) sem entregar o script completo. Gera DMs de donos de clínica que já perderam paciente assim.</div>
+  </div>
+</div>
+
+<!-- POST 5 -->
+<div class="post-card aos" id="c1p5">
+  <div class="post-card-header">
+    <div class="post-header-left">
+      <span class="post-num mono">#05</span>
+      <span class="tacoh t-h"><span class="tacoh-dot dot-h"></span>HYPE</span>
+      <span class="badge-cap">CAPTAÇÃO</span>
+      <span class="fmt fmt-static">Estático · Escassez Real</span>
+    </div>
+    <div class="post-header-right"><span class="acc acc-zx">@assessoriazx</span></div>
+  </div>
+  <div class="post-card-body">
+    <div class="field-block full-width">
+      <div class="field-label">Hook / Headline</div>
+      <div class="field-hook">3 vagas — Diagnóstico Gratuito do Sistema de Aquisição da sua Clínica</div>
+    </div>
+    <div class="item5-block">
+      <div class="field-label">Estilo & Design</div>
+      <div class="estilo-box">
+        <div class="estilo-item">▸ Fundo charcoal #1A1A1A + dot-grid + watermark "ZX" 2% opacidade.</div>
+        <div class="estilo-item">▸ Texto central: "DIAGNÓSTICO GRATUITO" em Exo 2 ExtraBold laranja, 72px canvas. Sub: "3 VAGAS" em branco 900.</div>
+        <div class="estilo-item">▸ Linha laranja horizontal 3px como divisor.</div>
+        <div class="estilo-item">▸ Três ítens em branco 400: "◎ Onde você perde visibilidade" · "◎ Onde o atendimento vaza" · "◎ Onde está a maior oportunidade agora".</div>
+        <div class="estilo-item">▸ Rodapé: "ZX Digital · Protocolo MIRA · @assessoriazx". Sem foto, sem pessoa — só texto e dado.</div>
+      </div>
+    </div>
+    <div class="fields-grid">
+      <div>
+        <div class="field-label">Caption</div>
+        <div class="field-value field-desc">Não é consultoria de vendas. É um diagnóstico real do sistema de aquisição da sua clínica — do anúncio ao agendamento. 3 vagas, encerram sexta. Comente VAGA ou manda direto no direct.</div>
+      </div>
+      <div>
+        <div class="field-label">Hashtags</div>
+        <div class="field-value field-hash">#diagnosticogratuito #zxdigital #protocolomira #clinicadestetica #esteticista #goiania #agendacheia #captacaodeclientes #vagas #marketingparaclinicas</div>
+      </div>
+    </div>
+    <div class="cta-row">
+      <div class="field-label">CTA</div>
+      <div class="cta-box">Comente 'VAGA' no direct — as 3 primeiras clínicas que responderem garantem o diagnóstico desta semana.</div>
+    </div>
+    <div class="bench-box">🔍 Benchmark: CTA de automação com escassez real — Filipe Penoni · Juliana Godinho. Palavra-chave ativa DM automatizado + sinaliza engajamento para o algoritmo.</div>
+  </div>
+</div>
+</section>
+</div>
+
+<!-- C1 SEMANA 2 -->
+<div id="c1s2">
+<div class="week-hero" style="background:linear-gradient(135deg,rgba(13,27,42,.95) 0%,#1A1A1A 100%)">
+  <div class="week-wm">S2</div>
+  <div class="week-num mono">SEMANA 02 · CICLO 1</div>
+  <div class="week-phase-label">Fase 2 — Consideração</div>
+  <div class="tacoh-mix mt8">
+    <span class="tacoh t-t"><span class="tacoh-dot dot-t"></span>TÉCNICO</span><span class="tacoh-count">×1</span>
+    <span class="tacoh t-a"><span class="tacoh-dot dot-a"></span>AUTORIDADE</span><span class="tacoh-count">×2</span>
+    <span class="tacoh t-o"><span class="tacoh-dot dot-o"></span>OBJEÇÃO</span><span class="tacoh-count">×1</span>
+    <span class="tacoh t-c"><span class="tacoh-dot dot-c"></span>CONEXÃO</span><span class="tacoh-count">×1</span>
+  </div>
+  <h2 class="week-title">O Protocolo MIRA — Apresentar o Sistema e Plantar Autoridade</h2>
+  <p class="week-intro">Com a confiança emocional construída na semana 1, é hora de apresentar o sistema. A Renata precisa entender que não existe mágica — existe protocolo. Os posts desta semana introduzem o MIRA, mostram o primeiro case de conversão e destroem a barreira da experiência negativa anterior.</p>
+  <div class="week-stats">
+    <div class="week-stat"><div class="week-stat-num">5</div><div class="week-stat-label">Posts</div></div>
+    <div class="week-stat"><div class="week-stat-num">2</div><div class="week-stat-label">Captação</div></div>
+    <div class="week-stat"><div class="week-stat-num">3</div><div class="week-stat-label">Conversão</div></div>
+  </div>
+</div>
+<section class="posts-section">
+
+<!-- POST 6 -->
+<div class="post-card aos" id="c1p6">
+  <div class="post-card-header">
+    <div class="post-header-left">
+      <span class="post-num mono">#06</span>
+      <span class="tacoh t-t"><span class="tacoh-dot dot-t"></span>TÉCNICO</span>
+      <span class="badge-cap">CAPTAÇÃO</span>
+      <span class="fmt fmt-carousel">Carrossel · 8 slides · Protocolo MIRA</span>
+    </div>
+    <div class="post-header-right"><span class="acc acc-both">@gabriel + @zx</span></div>
+  </div>
+  <div class="post-card-body">
+    <div class="field-block full-width">
+      <div class="field-label">Hook</div>
+      <div class="field-hook">Protocolo MIRA: como uma clínica vai de invisível a agenda cheia — o sistema por dentro</div>
+    </div>
+    <div class="fields-grid">
+      <div>
+        <div class="field-label">Tema</div>
+        <div class="field-value">Apresentação formal do Protocolo MIRA com os 3 pilares VIP em linguagem da Renata</div>
+        <div class="field-label mt12">Benchmark</div>
+        <div class="field-value">Carrossel framework proprietário — BCX Consultoria · SIS Consultoria (credencial + método + caso)</div>
+      </div>
+      <div>
+        <div class="field-label">Caption</div>
+        <div class="field-value field-desc">Não existe clínica com agenda cheia por acidente. Existe clínica com o sistema certo funcionando. O Protocolo MIRA é o que estruturamos com cada cliente da ZX. Comente MIRA que te explico como aplicar na sua.</div>
+        <div class="field-label mt12">Hashtags</div>
+        <div class="field-value field-hash">#protocolomira #zxdigital #sistemadeaquisicao #clinicadestetica #agendacheia #marketingparaclinicas #trafegopago #goiania #esteticista #captacaodeclientes</div>
+      </div>
+    </div>
+    <div class="item5-block">
+      <div class="field-label">Conteúdo dos Slides</div>
+      <div class="corpo-box">
+        <div class="slide-label">S1 — CAPA</div>"Protocolo MIRA: como uma clínica vai de invisível a agenda cheia" · Sub: "O sistema que a ZX Digital aplica em clínicas de saúde e estética em Goiás."
+        <div class="slide-label">S2 — O PROBLEMA</div>Clínica invisível × Clínica lotada. "Não é talento, não é sorte, não é antigamente. É protocolo. A clínica ao lado que cresce não tem segredo — tem sistema."
+        <div class="slide-label">S3 — O PROTOCOLO</div>As letras M·I·R·A como mnemônico visual. Cada letra com sua função em uma linha. Design: as 4 letras grandes em laranja com descrição minimalista ao lado.
+        <div class="slide-label">S4 — MIRA · VISIBILIDADE</div>"Aparecer para quem quer agendar agora — não para qualquer pessoa, mas para a pessoa certa, no momento certo, na cidade certa." Google Meu Negócio + tráfego de intenção.
+        <div class="slide-label">S5 — MIRA · INTENÇÃO</div>"Atrair com a mensagem que ressoa com quem já quer o serviço. Copy que fala com a dor real, não com o serviço técnico." Segmentação por comportamento + copy de conversão.
+        <div class="slide-label">S6 — MIRA · POSICIONAMENTO</div>"Ser a escolha óbvia quando comparam você com a concorrente — sem entrar em guerra de preço." Script de atendimento + protocolo de WhatsApp + apresentação de valor.
+        <div class="slide-label">S7 — O QUE MUDA</div>Antes do Protocolo MIRA: depende de indicação, faturamento imprevisível, cada mês do zero. Depois: sistema ativo, cliente novo toda semana, controle do faturamento.
+        <div class="slide-label">S8 — CTA</div>"Comente MIRA no direct — te explico como o Protocolo se aplicaria especificamente à sua clínica."
+      </div>
+    </div>
+    <div class="cta-row">
+      <div class="field-label">CTA</div>
+      <div class="cta-box">Comente 'MIRA' no direct — te explico como o Protocolo se aplicaria especificamente à sua clínica.</div>
+    </div>
+    <div class="nota-box">📌 Post fundacional — ancora o Protocolo MIRA na mente da Renata. Leads que chegam via "MIRA" são os mais qualificados do ciclo.</div>
+  </div>
+</div>
+
+<!-- POST 7 -->
+<div class="post-card aos" id="c1p7">
+  <div class="post-card-header">
+    <div class="post-header-left">
+      <span class="post-num mono">#07</span>
+      <span class="tacoh t-a"><span class="tacoh-dot dot-a"></span>AUTORIDADE</span>
+      <span class="badge-conv">CONVERSÃO</span>
+      <span class="fmt fmt-reel">Reel · 38–45s · Câmera Direta</span>
+    </div>
+    <div class="post-header-right"><span class="acc acc-both">@gabriel + @zx</span></div>
+  </div>
+  <div class="post-card-body">
+    <div class="field-block full-width">
+      <div class="field-label">Hook</div>
+      <div class="field-hook">De 8 para 34 agendamentos. Mesma clínica. Mesmo número de mensagens. O que mudamos não foi o anúncio.</div>
+    </div>
+    <div class="fields-grid">
+      <div>
+        <div class="field-label">Tema</div>
+        <div class="field-value">Case de conversão — mudança no processo de atendimento, não no tráfego pago</div>
+        <div class="field-label mt12">Benchmark</div>
+        <div class="field-value">Caso real com virada contraintuitiva — BCX Consultoria · Lucas Renault (#ROInoTalo)</div>
+      </div>
+      <div>
+        <div class="field-label">Caption</div>
+        <div class="field-value field-desc">O tráfego traz. O processo fecha. Quando os dois estão certos juntos, a conta muda completamente. Manda RESULTADO no direct e te mostro os bastidores desse caso.</div>
+        <div class="field-label mt12">Hashtags</div>
+        <div class="field-value field-hash">#casesucesso #clinicadestetica #atendimento #whatsappbusiness #zxdigital #protocolomira #agendacheia #resultado #goiania #esteticista</div>
+      </div>
+    </div>
+    <div class="item5-block">
+      <div class="field-label">Roteiro Completo</div>
+      <div class="script-meta-row">
+        <span>⏱ <strong>38–44 segundos</strong></span>
+        <span>🎥 Escritório / coworking — luz de anel, fundo clean com logo ZX discreta</span>
+        <span>📲 @gabriel + @zx</span>
+      </div>
+      <div class="beat-table-wrap">
+        <table class="beat-table">
+          <thead><tr><th>TEMPO</th><th>BEAT</th><th>FALA (Gabriel)</th><th>DIREÇÃO</th></tr></thead>
+          <tbody>
+            <tr class="beat-even"><td class="beat-time">0–4s</td><td class="beat-label-td">HOOK NUMÉRICO</td><td class="beat-fala">"De 8 para 34 agendamentos. Mesma clínica. Mesmo número de mensagens por semana."<div class="beat-sobreposto">[TELA: "8 → 34 agendamentos · mesma verba"]</div></td><td class="beat-dir-td">Pausa real entre os números. Texto aparece antes da fala. Olha direto para câmera.</td></tr>
+            <tr class="beat-odd"><td class="beat-time">4–16s</td><td class="beat-label-td">A VIRADA</td><td class="beat-fala">"A gente não mudou o orçamento de anúncio. Não mudou o Instagram. Não mudou nada na campanha. Mudamos o que acontecia depois que a mensagem chegava — o script de resposta, o tempo de retorno, o follow-up dos que disseram 'vou pensar'."</td><td class="beat-dir-td">Tom direto, sem pause dramática artificial. Fatos, não drama. Deixa os números falarem.</td></tr>
+            <tr class="beat-even"><td class="beat-time">16–30s</td><td class="beat-label-td">O PRINCÍPIO</td><td class="beat-fala">"O problema quase nunca é falta de gente interessada. É o que você faz quando essa gente aparece. Melhorar a conversão de 20% para 40% — sem gastar mais no anúncio — dobra o resultado com a mesma verba."</td><td class="beat-dir-td">Tom pedagógico. Este é o insight que a Renata precisa sair daqui lembrando.</td></tr>
+            <tr class="beat-odd"><td class="beat-time">30–42s</td><td class="beat-label-td">CTA</td><td class="beat-fala">"Quer entender exatamente o que mudamos no atendimento dessa clínica? Manda RESULTADO no direct que te mostro o processo completo."<div class="beat-sobreposto">[TELA: "RESULTADO → direct"]</div></td><td class="beat-dir-td">Tom amigável. Não é "venda" — é convite para aprender.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="cta-row">
+      <div class="field-label">CTA</div>
+      <div class="cta-box">Manda 'RESULTADO' no direct — te mostro o processo completo que aplicamos no atendimento dessa clínica.</div>
+    </div>
+    <div class="nota-box">📌 Post mais importante da semana 2. Prova que o diferencial da ZX não é tráfego — é o funil completo. Mede DMs "RESULTADO" como principal KPI de qualificação da semana.</div>
+  </div>
+</div>
+
+<!-- POSTS 8-10 CONDENSADOS -->
+<div class="glass glass-pad aos" style="margin-bottom:20px">
+  <div class="field-label" style="margin-bottom:16px">POSTS 08 · 09 · 10 — SEMANA 2 · RESUMO EXECUTIVO</div>
+  <table class="condensed-table">
+    <thead><tr><th>#</th><th>TACOH</th><th>TIPO</th><th>FORMATO</th><th>HOOK</th><th>TEMA CENTRAL</th><th>CTA</th><th>CONTA</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="mono td" style="font-size:11px">08</td>
+        <td><span class="tacoh t-a" style="font-size:8.5px"><span class="tacoh-dot dot-a"></span>A</span></td>
+        <td><span class="badge-conv">CONV.</span></td>
+        <td><span class="fmt fmt-falado" style="font-size:9px">Carrossel Falado</span></td>
+        <td style="font-size:12px;color:rgba(242,242,242,.8)">"Bastidores: como auditamos o WhatsApp de uma clínica em 48 horas"</td>
+        <td style="font-size:12px;color:rgba(242,242,242,.65)">5 vídeos de 10-12s mostrando o processo de auditoria — sem revelar os critérios completos. Primeiro: "A primeira coisa que fazemos não é anúncio." Distribui como Reel E carrossel.</td>
+        <td><div class="cta-box" style="font-size:11px;padding:6px 10px">AUDITORIA</div></td>
+        <td><span class="acc acc-gabriel">@gabriel</span></td>
+      </tr>
+      <tr>
+        <td class="mono td" style="font-size:11px">09</td>
+        <td><span class="tacoh t-o" style="font-size:8.5px"><span class="tacoh-dot dot-o"></span>O</span></td>
+        <td><span class="badge-cap">CAPT.</span></td>
+        <td><span class="fmt fmt-carousel" style="font-size:9px">Carrossel · 7 slides</span></td>
+        <td style="font-size:12px;color:rgba(242,242,242,.8)">"Já investi em marketing e não funcionou — o que é diferente desta vez"</td>
+        <td style="font-size:12px;color:rgba(242,242,242,.65)">Ataca diretamente a barreira da Renata: experiência negativa com agência anterior. S1: "Você não está errada. A agência estava." Comparação slide a slide: agência genérica vs. assessoria especializada em nicho.</td>
+        <td><div class="cta-box" style="font-size:11px;padding:6px 10px">DIFERENÇA</div></td>
+        <td><span class="acc acc-both">@gabriel + @zx</span></td>
+      </tr>
+      <tr>
+        <td class="mono td" style="font-size:11px">10</td>
+        <td><span class="tacoh t-a" style="font-size:8.5px"><span class="tacoh-dot dot-a"></span>A</span></td>
+        <td><span class="badge-cap">CAPT.</span></td>
+        <td><span class="fmt fmt-static" style="font-size:9px">Estático · ROI</span></td>
+        <td style="font-size:12px;color:rgba(242,242,242,.8)">"R$1.400 investidos → R$18.000 em agendamentos. 30 dias. Clínica em Goiânia."</td>
+        <td style="font-size:12px;color:rgba(242,242,242,.65)">Design: fundo charcoal + dot-grid + WM "ZX". Número central laranja. ROI calculado: 12,8x. Sem foto, sem pessoa — só dado. Contexto: 2 linhas. Rodapé: ZX + Protocolo MIRA.</td>
+        <td><div class="cta-box" style="font-size:11px;padding:6px 10px">ROI</div></td>
+        <td><span class="acc acc-zx">@assessoriazx</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</section>
+</div>
+
+<!-- C1 SEMANA 3 -->
+<div id="c1s3">
+<div class="week-hero" style="background:linear-gradient(135deg,rgba(5,50,30,.6) 0%,rgba(13,27,42,.95) 100%)">
+  <div class="week-wm">S3</div>
+  <div class="week-num mono">SEMANA 03 · CICLO 1</div>
+  <div class="week-phase-label">Fase 3 — Prova Social</div>
+  <div class="tacoh-mix mt8">
+    <span class="tacoh t-a"><span class="tacoh-dot dot-a"></span>AUTORIDADE</span><span class="tacoh-count">×2</span>
+    <span class="tacoh t-c"><span class="tacoh-dot dot-c"></span>CONEXÃO</span><span class="tacoh-count">×2</span>
+    <span class="tacoh t-o"><span class="tacoh-dot dot-o"></span>OBJEÇÃO</span><span class="tacoh-count">×1</span>
+  </div>
+  <h2 class="week-title">Prova Inabalável — Resultados que a Renata Precisa Ver</h2>
+  <p class="week-intro">A Renata já conhece o sistema. Agora precisa ver se funciona para alguém como ela — não para uma grande empresa, mas para uma clínica de estética em Goiás. Esta semana é pura evidência: cases com números, depoimento real, and objeção de preço dissolvida.</p>
+  <div class="week-stats">
+    <div class="week-stat"><div class="week-stat-num">5</div><div class="week-stat-label">Posts</div></div>
+    <div class="week-stat"><div class="week-stat-num">2</div><div class="week-stat-label">Captação</div></div>
+    <div class="week-stat"><div class="week-stat-num">3</div><div class="week-stat-label">Conversão</div></div>
+  </div>
+</div>
+<section class="posts-section">
+<div class="glass glass-pad aos" style="margin-bottom:20px">
+  <div class="field-label" style="margin-bottom:16px">POSTS 11 · 12 · 13 · 14 · 15 — SEMANA 3 · RESUMO EXECUTIVO</div>
+  <table class="condensed-table">
+    <thead><tr><th>#</th><th>TACOH</th><th>TIPO</th><th>FORMATO</th><th>HOOK</th><th>TEMA CENTRAL</th><th>CTA</th><th>CONTA</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="mono td" style="font-size:11px">11</td>
+        <td><span class="tacoh t-a" style="font-size:8.5px"><span class="tacoh-dot dot-a"></span>A</span></td>
+        <td><span class="badge-cap">CAPT.</span></td>
+        <td><span class="fmt fmt-carousel" style="font-size:9px">Carrossel · 8 slides · Tricase</span></td>
+        <td style="font-size:12px;color:rgba(242,242,242,.8)">"3 clínicas de estética em Goiás. 3 histórias reais. 1 protocolo. Os números."</td>
+        <td style="font-size:12px;color:rgba(242,242,242,.65)">3 cases comparáveis ao perfil da Renata — não multinacionais, clínicas de Goiás. Antes/depois financeiro por case. Slide final: "Qual perfil mais parece com o da sua clínica? Manda CASE."</td>
+        <td><div class="cta-box" style="font-size:11px;padding:6px 10px">CASE</div></td>
+        <td><span class="acc acc-zx">@assessoriazx</span></td>
+      </tr>
+      <tr>
+        <td class="mono td" style="font-size:11px">12</td>
+        <td><span class="tacoh t-c" style="font-size:8.5px"><span class="tacoh-dot dot-c"></span>C</span></td>
+        <td><span class="badge-conv">CONV.</span></td>
+        <td><span class="fmt fmt-reel" style="font-size:9px">Reel · 38–45s</span></td>
+        <td style="font-size:12px;color:rgba(242,242,242,.8)">"A mensagem que uma cliente me mandou depois de 30 dias com o Protocolo MIRA"</td>
+        <td style="font-size:12px;color:rgba(242,242,242,.65)">Tom genuinamente emocionado. "Minha recepcionista não para de atender WhatsApp." A emoção do resultado real — agenda cheia como previsibilidade, não como vaidade. Tom vulnerável sem performance.</td>
+        <td><div class="cta-box" style="font-size:11px;padding:6px 10px">AGENDA</div></td>
+        <td><span class="acc acc-gabriel">@gabriel</span></td>
+      </tr>
+      <tr>
+        <td class="mono td" style="font-size:11px">13</td>
+        <td><span class="tacoh t-o" style="font-size:8.5px"><span class="tacoh-dot dot-o"></span>O</span></td>
+        <td><span class="badge-conv">CONV.</span></td>
+        <td><span class="fmt fmt-carousel" style="font-size:9px">Carrossel · 6 slides</span></td>
+        <td style="font-size:12px;color:rgba(242,242,242,.8)">"Sua concorrente cobra menos. E o que você faz com isso?"</td>
+        <td style="font-size:12px;color:rgba(242,242,242,.65)">Script parcial de resposta para objeção de preço. Estrutura: por que justificar preço não funciona → o que funciona (comunicar valor antes do preço chegar) → exemplo de resposta em 3 partes. Retém o script completo.</td>
+        <td><div class="cta-box" style="font-size:11px;padding:6px 10px">PREÇO</div></td>
+        <td><span class="acc acc-both">@gabriel + @zx</span></td>
+      </tr>
+      <tr>
+        <td class="mono td" style="font-size:11px">14</td>
+        <td><span class="tacoh t-a" style="font-size:8.5px"><span class="tacoh-dot dot-a"></span>A</span></td>
+        <td><span class="badge-conv">CONV.</span></td>
+        <td><span class="fmt fmt-carousel" style="font-size:9px">Carrossel · 7 slides · Timeline</span></td>
+        <td style="font-size:12px;color:rgba(242,242,242,.8)">"90 dias com o Protocolo MIRA: antes, durante e depois de uma clínica em Aparecida de Goiânia"</td>
+        <td style="font-size:12px;color:rgba(242,242,242,.65)">Timeline de transformação: Dia 1 (diagnóstico — onde sangrava), Semana 2 (implementação do script), Mês 1 (resultado parcial), Mês 3 (resultado final com faturamento comparado). Case completo com funil inteiro.</td>
+        <td><div class="cta-box" style="font-size:11px;padding:6px 10px">PROTOCOLO</div></td>
+        <td><span class="acc acc-zx">@assessoriazx</span></td>
+      </tr>
+      <tr>
+        <td class="mono td" style="font-size:11px">15</td>
+        <td><span class="tacoh t-c" style="font-size:8.5px"><span class="tacoh-dot dot-c"></span>C</span></td>
+        <td><span class="badge-cap">CAPT.</span></td>
+        <td><span class="fmt fmt-reel" style="font-size:9px">Reel · 30–36s</span></td>
+        <td style="font-size:12px;color:rgba(242,242,242,.8)">"Tem oito anos de mercado. Excelente profissional. Ainda depende de indicação pra fechar o mês."</td>
+        <td style="font-size:12px;color:rgba(242,242,242,.65)">Dor da dependência de indicação — o faturamento imprevisível, o "mês bom mês ruim", a falta de controle. "Depender de indicação é depender da sorte. E negócio que depende de sorte não tem estabilidade — tem oscilação."</td>
+        <td><div class="cta-box" style="font-size:11px;padding:6px 10px">CONTROLE</div></td>
+        <td><span class="acc acc-gabriel">@gabriel</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</section>
+</div>
+
+<!-- C1 SEMANA 4 -->
+<div id="c1s4">
+<div class="week-hero" style="background:linear-gradient(135deg,rgba(50,20,10,.7) 0%,rgba(13,27,42,.95) 100%)">
+  <div class="week-wm">S4</div>
+  <div class="week-num mono">SEMANA 04 · CICLO 1</div>
+  <div class="week-phase-label">Fase 4 — Conversão</div>
+  <div class="tacoh-mix mt8">
+    <span class="tacoh t-o"><span class="tacoh-dot dot-o"></span>OBJEÇÃO</span><span class="tacoh-count">×1</span>
+    <span class="tacoh t-c"><span class="tacoh-dot dot-c"></span>CONEXÃO</span><span class="tacoh-count">×1</span>
+    <span class="tacoh t-a"><span class="tacoh-dot dot-a"></span>AUTORIDADE</span><span class="tacoh-count">×1</span>
+    <span class="tacoh t-t"><span class="tacoh-dot dot-t"></span>TÉCNICO</span><span class="tacoh-count">×1</span>
+    <span class="tacoh t-h"><span class="tacoh-dot dot-h"></span>HYPE</span><span class="tacoh-count">×1</span>
+  </div>
+  <h2 class="week-title">A Decisão — Converter Interesse em Diagnóstico Agendado</h2>
+  <p class="week-intro">Semana final do Ciclo 1. A Renata já te conhece, já viu o método, já viu a prova. O que falta é a permissão interna para dar o próximo passo. Esta semana cria urgência real, reposiciona o problema central e fecha o ciclo com oferta direta e clara.</p>
+  <div class="week-stats">
+    <div class="week-stat"><div class="week-stat-num">5</div><div class="week-stat-label">Posts</div></div>
+    <div class="week-stat"><div class="week-stat-num">1</div><div class="week-stat-label">Captação</div></div>
+    <div class="week-stat"><div class="week-stat-num">4</div><div class="week-stat-label">Conversão</div></div>
+  </div>
+</div>
+<section class="posts-section">
+<div class="glass glass-pad aos" style="margin-bottom:20px">
+  <div class="field-label" style="margin-bottom:16px">POSTS 16 · 17 · 18 · 19 · 20 — SEMANA 4 · RESUMO EXECUTIVO</div>
+  <table class="condensed-table">
+    <thead><tr><th>#</th><th>TACOH</th><th>TIPO</th><th>FORMATO</th><th>HOOK</th><th>TEMA CENTRAL</th><th>CTA</th><th>CONTA</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="mono td" style="font-size:11px">16</td>
+        <td><span class="tacoh t-o" style="font-size:8.5px"><span class="tacoh-dot dot-o"></span>O</span></td>
+        <td><span class="badge-conv">CONV.</span></td>
+        <td><span class="fmt fmt-carousel" style="font-size:9px">Carrossel · 6 slides</span></td>
+        <td style="font-size:12px;color:rgba(242,242,242,.8)">"Por que paciente que pergunta 'ainda tem horário?' some logo depois"</td>
+        <td style="font-size:12px;color:rgba(242,242,242,.65)">O momento mais crítico do atendimento: quando o interesse já existe mas é perdido no processo. Estrutura: resposta errada → o que acontece → resposta certa em 3 partes (confirma interesse + opção específica + micro-urgência) → follow-up em 24h.</td>
+        <td><div class="cta-box" style="font-size:11px;padding:6px 10px">ROTEIRO</div></td>
+        <td><span class="acc acc-both">@gabriel + @zx</span></td>
+      </tr>
+      <tr>
+        <td class="mono td" style="font-size:11px">17</td>
+        <td><span class="tacoh t-c" style="font-size:8.5px"><span class="tacoh-dot dot-c"></span>C</span></td>
+        <td><span class="badge-conv">CONV.</span></td>
+        <td><span class="fmt fmt-reel" style="font-size:9px">Reel · 38–44s</span></td>
+        <td style="font-size:12px;color:rgba(242,242,242,.8)">"Você não precisa de mais gente te procurando. Precisa converter melhor quem já chegou."</td>
+        <td style="font-size:12px;color:rgba(242,242,242,.65)">Reframing total: o problema não é tráfego, é processo. "De cada 5 pessoas que mandam mensagem, 4 foram embora. Melhorar a conversão de 20% para 40% dobra o resultado com a mesma verba." Post mais importante do ciclo para reposicionar a ZX além de "agência de tráfego".</td>
+        <td><div class="cta-box" style="font-size:11px;padding:6px 10px">VAZAR</div></td>
+        <td><span class="acc acc-gabriel">@gabriel</span></td>
+      </tr>
+      <tr>
+        <td class="mono td" style="font-size:11px">18</td>
+        <td><span class="tacoh t-a" style="font-size:8.5px"><span class="tacoh-dot dot-a"></span>A</span></td>
+        <td><span class="badge-conv">CONV.</span></td>
+        <td><span class="fmt fmt-static" style="font-size:9px">Estático · Resultado Mensal</span></td>
+        <td style="font-size:12px;color:rgba(242,242,242,.8)">"Resultado do mês — clínicas atendidas pelo Protocolo MIRA em Goiás"</td>
+        <td style="font-size:12px;color:rgba(242,242,242,.65)">Transparência total: dados reais do mês — agendamentos gerados, clínicas atendidas, resultado médio. Design dashboard premium: fundo escuro, números laranja, logo ZX. "Medimos em agendamentos — não em curtidas."</td>
+        <td><div class="cta-box" style="font-size:11px;padding:6px 10px">MARÇO</div></td>
+        <td><span class="acc acc-zx">@assessoriazx</span></td>
+      </tr>
+      <tr>
+        <td class="mono td" style="font-size:11px">19</td>
+        <td><span class="tacoh t-t" style="font-size:8.5px"><span class="tacoh-dot dot-t"></span>T</span></td>
+        <td><span class="badge-cap">CAPT.</span></td>
+        <td><span class="fmt fmt-carousel" style="font-size:9px">Carrossel · 6 slides</span></td>
+        <td style="font-size:12px;color:rgba(242,242,242,.8)">"O Protocolo MIRA em 3 etapas — e onde 80% das clínicas travam em cada uma"</td>
+        <td style="font-size:12px;color:rgba(242,242,242,.65)">Framework completo com os pontos de travamento por etapa. V: Google desatualizado + anúncio sem segmentação local. I: copy genérica que não filtra. P: sem diferencial claro, entra em guerra de preço. Diagrama simples mostrando como as 3 etapas se conectam.</td>
+        <td><div class="cta-box" style="font-size:11px;padding:6px 10px">MIRA</div></td>
+        <td><span class="acc acc-both">@gabriel + @zx</span></td>
+      </tr>
+      <tr>
+        <td class="mono td" style="font-size:11px">20</td>
+        <td><span class="tacoh t-h" style="font-size:8.5px"><span class="tacoh-dot dot-h"></span>H</span></td>
+        <td><span class="badge-ambos">CAP + CONV</span></td>
+        <td><span class="fmt fmt-reel" style="font-size:9px">Reel · 22–28s · Urgência</span></td>
+        <td style="font-size:12px;color:rgba(242,242,242,.8)">"Últimas vagas do ciclo: Diagnóstico do Sistema de Aquisição — encerra sexta."</td>
+        <td style="font-size:12px;color:rgba(242,242,242,.65)">Tom calmo e confiante — urgência real, não desespero. "60 dias de conteúdo. Método apresentado. Resultados comprovados. A pergunta agora é simples: você quer continuar dependendo de indicação — ou quer um sistema?" Countdown no texto da tela.</td>
+        <td><div class="cta-box" style="font-size:11px;padding:6px 10px">VAGA</div></td>
+        <td><span class="acc acc-zx">@assessoriazx</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</section>
+</div>
+
+<!-- ══════ CICLO 2 ══════ -->
+<div class="ciclo-div" id="ciclo2">
+  <div class="ciclo-icon">⟳</div>
+  <div>
+    <div class="ciclo-num">// CICLO 02 · DIAS 31–60</div>
+    <div class="ciclo-title">Segundo Ciclo — Aprofundar Autoridade e Maximizar Conversão</div>
+    <div class="ciclo-desc">O Ciclo 2 repete a mesma estrutura de 4 fases com conteúdo evoluído: cases mais profundos, objeções mais sofisticadas, prova mais densa. O avatar que chegou ao Ciclo 2 já conhece o Protocolo MIRA — o conteúdo agora fala com alguém que está considerando seriamente.</div>
+  </div>
+</div>
+
+<!-- C2 SEMANA 5 -->
+<div id="c2s1">
+<div class="week-hero" style="background:linear-gradient(135deg,#0D1B2A 0%,#1A1A1A 100%)">
+  <div class="week-wm">S5</div>
+  <div class="week-num mono">SEMANA 05 · CICLO 2</div>
+  <div class="week-phase-label">Fase 1 · Ciclo 2 — Atração Aprofundada</div>
+  <div class="tacoh-mix mt8">
+    <span class="tacoh t-c"><span class="tacoh-dot dot-c"></span>CONEXÃO</span><span class="tacoh-count">×2</span>
+    <span class="tacoh t-t"><span class="tacoh-dot dot-t"></span>TÉCNICO</span><span class="tacoh-count">×2</span>
+    <span class="tacoh t-h"><span class="tacoh-dot dot-h"></span>HYPE</span><span class="tacoh-count">×1</span>
+  </div>
+  <h2 class="week-title">Atração Aprofundada — Novas Dores, Novo Ângulo</h2>
+  <p class="week-intro">O Ciclo 2 abre com dores que não foram exploradas no Ciclo 1. A Renata que chegou até aqui já conhece o MIRA — o conteúdo agora fala com alguém que reconhece o problema mas ainda hesita em agir. Novos ganchos emocionais, novas objeções de conversão, novo ângulo de script.</p>
+</div>
+<section class="posts-section">
+<div class="glass glass-pad aos" style="margin-bottom:20px">
+  <div class="field-label" style="margin-bottom:16px">POSTS 21–25 — SEMANA 5 · CICLO 2</div>
+  <table class="condensed-table">
+    <thead><tr><th>#</th><th>TACOH</th><th>TIPO</th><th>FORMATO</th><th>HOOK</th><th>TEMA</th><th>CTA</th><th>CONTA</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="mono td" style="font-size:11px">21</td>
+        <td><span class="tacoh t-c" style="font-size:8.5px"><span class="tacoh-dot dot-c"></span>C</span></td>
+        <td><span class="badge-cap">CAPT.</span></td>
+        <td><span class="fmt fmt-reel" style="font-size:9px">Reel · 30–38s</span></td>
+        <td style="font-size:12px;color:rgba(242,242,242,.8)">"Você trabalhou a semana toda. No sábado, abre o extrato. E respira fundo."</td>
+        <td style="font-size:12px;color:rgba(242,242,242,.65)">Dor do faturamento imprevisível — o dia 15 que a Renata teme. "Não é falta de talento. É falta de sistema. Negócio que depende de sorte paga conta no mês bom e passa sufoco no mês fraco."</td>
+        <td><div class="cta-box" style="font-size:11px;padding:6px 10px">FATURAMENTO</div></td>
+        <td><span class="acc acc-gabriel">@gabriel</span></td>
+      </tr>
+      <tr>
+        <td class="mono td" style="font-size:11px">22</td>
+        <td><span class="tacoh t-t" style="font-size:8.5px"><span class="tacoh-dot dot-t"></span>T</span></td>
+        <td><span class="badge-conv">CONV.</span></td>
+        <td><span class="fmt fmt-carousel" style="font-size:9px">Carrossel · 7 slides</span></td>
+        <td style="font-size:12px;color:rgba(242,242,242,.8)">"Como configurar o WhatsApp Business da sua clínica para converter mais — sem mudar nada no Instagram"</td>
+        <td style="font-size:12px;color:rgba(242,242,242,.65)">Tutorial técnico de conversão: catálogo de serviços ativo, horário de atendimento correto, mensagem automática de ausência (com CTA), label de organização de conversas, resposta rápida para as 5 perguntas mais frequentes. Alta utilidade prática.</td>
+        <td><div class="cta-box" style="font-size:11px;padding:6px 10px">BUSINESS</div></td>
+        <td><span class="acc acc-zx">@assessoriazx</span></td>
+      </tr>
+      <tr>
+        <td class="mono td" style="font-size:11px">23</td>
+        <td><span class="tacoh t-t" style="font-size:8.5px"><span class="tacoh-dot dot-t"></span>T</span></td>
+        <td><span class="badge-cap">CAPT.</span></td>
+        <td><span class="fmt fmt-carousel" style="font-size:9px">Carrossel · 6 slides</span></td>
+        <td style="font-size:12px;color:rgba(242,242,242,.8)">"Google Meu Negócio: o canal de captação que 90% das clínicas de estética ignoram completamente"</td>
+        <td style="font-size:12px;color:rgba(242,242,242,.65)">Dados de impacto: 76% das buscas locais levam a visita em 24h. Diagnóstico do perfil GMB típico de clínica: fotos desatualizadas, sem respostas a avaliações, sem posts semanais, horário errado. Checklist de otimização em 5 passos.</td>
+        <td><div class="cta-box" style="font-size:11px;padding:6px 10px">GOOGLE</div></td>
+        <td><span class="acc acc-zx">@assessoriazx</span></td>
+      </tr>
+      <tr>
+        <td class="mono td" style="font-size:11px">24</td>
+        <td><span class="tacoh t-c" style="font-size:8.5px"><span class="tacoh-dot dot-c"></span>C</span></td>
+        <td><span class="badge-conv">CONV.</span></td>
+        <td><span class="fmt fmt-falado" style="font-size:9px">Carrossel Falado</span></td>
+        <td style="font-size:12px;color:rgba(242,242,242,.8)">"O que mudou na vida de uma esteticista depois que a recepcionista parou de improvisar o atendimento"</td>
+        <td style="font-size:12px;color:rgba(242,242,242,.65)">5 vídeos de 10-12s narrando a transformação: da recepcionista sem roteiro → script implementado → primeiros resultados → "agora ela não precisa pensar no que responder". Foco na paz de quem tem sistema. Tom: emoção real, sem performance.</td>
+        <td><div class="cta-box" style="font-size:11px;padding:6px 10px">SISTEMA</div></td>
+        <td><span class="acc acc-gabriel">@gabriel</span></td>
+      </tr>
+      <tr>
+        <td class="mono td" style="font-size:11px">25</td>
+        <td><span class="tacoh t-h" style="font-size:8.5px"><span class="tacoh-dot dot-h"></span>H</span></td>
+        <td><span class="badge-cap">CAPT.</span></td>
+        <td><span class="fmt fmt-static" style="font-size:9px">Estático · Abertura Ciclo 2</span></td>
+        <td style="font-size:12px;color:rgba(242,242,242,.8)">"Novas vagas — Diagnóstico do Protocolo MIRA. 3 clínicas de Goiânia esta semana."</td>
+        <td style="font-size:12px;color:rgba(242,242,242,.65)">Abre o ciclo 2 com urgência renovada. Design idêntico ao Post 5 mas com dado de contexto: "Nas últimas 4 semanas, diagnosticamos X clínicas em Goiás. Aqui estão as 3 próximas vagas." Credibilidade acumulada do Ciclo 1.</td>
+        <td><div class="cta-box" style="font-size:11px;padding:6px 10px">VAGA</div></td>
+        <td><span class="acc acc-zx">@assessoriazx</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</section>
+</div>
+
+<!-- C2 SEMANAS 6-8 -->
+<div id="c2s2">
+<div class="week-hero" style="background:linear-gradient(135deg,rgba(13,27,42,.95) 0%,#1A1A1A 100%)">
+  <div class="week-wm">S6</div>
+  <div class="week-num mono">SEMANA 06 · CICLO 2</div>
+  <div class="week-phase-label">Fase 2 · Ciclo 2 — Autoridade Técnica Aprofundada</div>
+  <div class="tacoh-mix mt8">
+    <span class="tacoh t-a"><span class="tacoh-dot dot-a"></span>AUTORIDADE</span><span class="tacoh-count">×2</span>
+    <span class="tacoh t-t"><span class="tacoh-dot dot-t"></span>TÉCNICO</span><span class="tacoh-count">×1</span>
+    <span class="tacoh t-o"><span class="tacoh-dot dot-o"></span>OBJEÇÃO</span><span class="tacoh-count">×1</span>
+    <span class="tacoh t-c"><span class="tacoh-dot dot-c"></span>CONEXÃO</span><span class="tacoh-count">×1</span>
+  </div>
+  <h2 class="week-title">Autoridade Técnica — O Protocolo em Ação</h2>
+</div>
+<section class="posts-section">
+<div class="glass glass-pad aos" style="margin-bottom:20px">
+  <div class="field-label" style="margin-bottom:16px">POSTS 26–30 — SEMANA 6 · CICLO 2</div>
+  <table class="condensed-table">
+    <thead><tr><th>#</th><th>TACOH</th><th>TIPO</th><th>FORMATO</th><th>HOOK</th><th>TEMA</th><th>CTA</th><th>CONTA</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="mono td" style="font-size:11px">26</td>
+        <td><span class="tacoh t-a" style="font-size:8.5px"><span class="tacoh-dot dot-a"></span>A</span></td>
+        <td><span class="badge-conv">CONV.</span></td>
+        <td><span class="fmt fmt-reel" style="font-size:9px">Reel · 40–48s</span></td>
+        <td style="font-size:12px;color:rgba(242,242,242,.8)">"Uma clínica que cobrava menos que a concorrente e ainda perdia paciente. O que a gente encontrou."</td>
+        <td style="font-size:12px;color:rgba(242,242,242,.65)">Case de posicionamento: o problema não era o preço — era a percepção de valor comunicada no atendimento. Diagnóstico real + o que mudamos + resultado em número. Tom: forense, não motivacional.</td>
+        <td><div class="cta-box" style="font-size:11px;padding:6px 10px">VALOR</div></td>
+        <td><span class="acc acc-gabriel">@gabriel</span></td>
+      </tr>
+      <tr>
+        <td class="mono td" style="font-size:11px">27</td>
+        <td><span class="tacoh t-t" style="font-size:8.5px"><span class="tacoh-dot dot-t"></span>T</span></td>
+        <td><span class="badge-conv">CONV.</span></td>
+        <td><span class="fmt fmt-carousel" style="font-size:9px">Carrossel · 7 slides · Script</span></td>
+        <td style="font-size:12px;color:rgba(242,242,242,.8)">"O follow-up que recupera quem disse 'vou pensar' — e o que nunca dizer quando isso acontece"</td>
+        <td style="font-size:12px;color:rgba(242,242,242,.65)">Script parcial de follow-up: quando fazer (24h, 3 dias, 7 dias), o que dizer em cada janela, o que nunca dizer ("oi, sumiu?", pressão), como criar micro-urgência genuína. Alta utilidade, alto save rate esperado.</td>
+        <td><div class="cta-box" style="font-size:11px;padding:6px 10px">FOLLOWUP</div></td>
+        <td><span class="acc acc-zx">@assessoriazx</span></td>
+      </tr>
+      <tr>
+        <td class="mono td" style="font-size:11px">28</td>
+        <td><span class="tacoh t-o" style="font-size:8.5px"><span class="tacoh-dot dot-o"></span>O</span></td>
+        <td><span class="badge-cap">CAPT.</span></td>
+        <td><span class="fmt fmt-carousel" style="font-size:9px">Carrossel · 6 slides</span></td>
+        <td style="font-size:12px;color:rgba(242,242,242,.8)">"'Meu sobrinho faz por R$500' — e por que comparar com isso custa muito mais caro"</td>
+        <td style="font-size:12px;color:rgba(242,242,242,.65)">Objeção de preço de marketing: a comparação com freelancer não especializado. Cálculo do custo real de campanha mal executada (verba perdida + oportunidade perdida) vs. investimento em sistema especializado. Tom honesto, não defensivo.</td>
+        <td><div class="cta-box" style="font-size:11px;padding:6px 10px">CONTA</div></td>
+        <td><span class="acc acc-both">@gabriel + @zx</span></td>
+      </tr>
+      <tr>
+        <td class="mono td" style="font-size:11px">29</td>
+        <td><span class="tacoh t-a" style="font-size:8.5px"><span class="tacoh-dot dot-a"></span>A</span></td>
+        <td><span class="badge-cap">CAPT.</span></td>
+        <td><span class="fmt fmt-static" style="font-size:9px">Estático · ROI Comparativo</span></td>
+        <td style="font-size:12px;color:rgba(242,242,242,.8)">"Antes do Protocolo MIRA: 8 agendamentos/mês. Depois: 34. Mesmo orçamento."</td>
+        <td style="font-size:12px;color:rgba(242,242,242,.65)">Design comparativo: duas colunas (antes / depois) com números. Fundo charcoal. Antes em cor apagada, depois em laranja vibrante. Rodapé: "Goiânia · 90 dias · Protocolo MIRA".</td>
+        <td><div class="cta-box" style="font-size:11px;padding:6px 10px">ANTES</div></td>
+        <td><span class="acc acc-zx">@assessoriazx</span></td>
+      </tr>
+      <tr>
+        <td class="mono td" style="font-size:11px">30</td>
+        <td><span class="tacoh t-c" style="font-size:8.5px"><span class="tacoh-dot dot-c"></span>C</span></td>
+        <td><span class="badge-conv">CONV.</span></td>
+        <td><span class="fmt fmt-reel" style="font-size:9px">Reel · 32–40s</span></td>
+        <td style="font-size:12px;color:rgba(242,242,242,.8)">"A paciente que agendou, confirmou, não apareceu. E o que a clínica que não perde paciente assim faz diferente."</td>
+        <td style="font-size:12px;color:rgba(242,242,242,.65)">Dor do no-show — paciente que agenda e não aparece. Script de confirmação que reduz no-show: quando enviar, o que dizer, como criar comprometimento sem pressão. "Não é falta de educação do paciente — é falta de processo de confirmação."</td>
+        <td><div class="cta-box" style="font-size:11px;padding:6px 10px">CONFIRMAÇÃO</div></td>
+        <td><span class="acc acc-gabriel">@gabriel</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</section>
+</div>
+
+<!-- C2 SEMANA 7 -->
+<div id="c2s3">
+<div class="week-hero" style="background:linear-gradient(135deg,rgba(5,50,30,.6) 0%,rgba(13,27,42,.95) 100%)">
+  <div class="week-wm">S7</div>
+  <div class="week-num mono">SEMANA 07 · CICLO 2</div>
+  <div class="week-phase-label">Fase 3 · Ciclo 2 — Prova Máxima</div>
+  <div class="tacoh-mix mt8">
+    <span class="tacoh t-a"><span class="tacoh-dot dot-a"></span>AUTORIDADE</span><span class="tacoh-count">×2</span>
+    <span class="tacoh t-c"><span class="tacoh-dot dot-c"></span>CONEXÃO</span><span class="tacoh-count">×1</span>
+    <span class="tacoh t-o"><span class="tacoh-dot dot-o"></span>OBJEÇÃO</span><span class="tacoh-count">×1</span>
+    <span class="tacoh t-t"><span class="tacoh-dot dot-t"></span>TÉCNICO</span><span class="tacoh-count">×1</span>
+  </div>
+  <h2 class="week-title">Prova Máxima — Evidência Irrefutável</h2>
+</div>
+<section class="posts-section">
+<div class="glass glass-pad aos" style="margin-bottom:20px">
+  <div class="field-label" style="margin-bottom:16px">POSTS 31–35 — SEMANA 7 · CICLO 2</div>
+  <table class="condensed-table">
+    <thead><tr><th>#</th><th>TACOH</th><th>TIPO</th><th>FORMATO</th><th>HOOK</th><th>TEMA</th><th>CTA</th><th>CONTA</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="mono td" style="font-size:11px">31</td>
+        <td><span class="tacoh t-a" style="font-size:8.5px"><span class="tacoh-dot dot-a"></span>A</span></td>
+        <td><span class="badge-cap">CAPT.</span></td>
+        <td><span class="fmt fmt-carousel" style="font-size:9px">Carrossel · 8 slides</span></td>
+        <td style="font-size:12px;color:rgba(242,242,242,.8)">"60 dias de Protocolo MIRA. O que muda de verdade na vida de uma dona de clínica."</td>
+        <td style="font-size:12px;color:rgba(242,242,242,.65)">Case timeline de 60 dias com foco na transformação de vida, não apenas de números. Dia 1, Dia 15, Dia 30, Dia 45, Dia 60. O antes: taquicardia no dia 15. O depois: olhar o extrato sem ansiedade. Números reais ancorados em emoção real.</td>
+        <td><div class="cta-box" style="font-size:11px;padding:6px 10px">60DIAS</div></td>
+        <td><span class="acc acc-zx">@assessoriazx</span></td>
+      </tr>
+      <tr>
+        <td class="mono td" style="font-size:11px">32</td>
+        <td><span class="tacoh t-c" style="font-size:8.5px"><span class="tacoh-dot dot-c"></span>C</span></td>
+        <td><span class="badge-conv">CONV.</span></td>
+        <td><span class="fmt fmt-reel" style="font-size:9px">Reel · 40–48s</span></td>
+        <td style="font-size:12px;color:rgba(242,242,242,.8)">"12 meses trabalhando com clínicas de saúde e estética. O que aprendi que nenhum curso me ensinou."</td>
+        <td style="font-size:12px;color:rgba(242,242,242,.65)">Reel reflexivo de autoridade pessoal. 3 aprendizados não-óbvios: (1) o problema nunca é o serviço, (2) o follow-up é onde 70% do dinheiro vaza, (3) cliente novo é consequência de sistema — não de esforço isolado. Tom: mentor, não vendedor.</td>
+        <td><div class="cta-box" style="font-size:11px;padding:6px 10px">APRENDIZADOS</div></td>
+        <td><span class="acc acc-gabriel">@gabriel</span></td>
+      </tr>
+      <tr>
+        <td class="mono td" style="font-size:11px">33</td>
+        <td><span class="tacoh t-o" style="font-size:8.5px"><span class="tacoh-dot dot-o"></span>O</span></td>
+        <td><span class="badge-conv">CONV.</span></td>
+        <td><span class="fmt fmt-carousel" style="font-size:9px">Carrossel · 7 slides</span></td>
+        <td style="font-size:12px;color:rgba(242,242,242,.8)">"'Tenho medo de investir e não funcionar de novo' — 5 garantias concretas que a ZX oferece"</td>
+        <td style="font-size:12px;color:rgba(242,242,242,.65)">Ataca a objeção mais profunda da Renata — o trauma da agência anterior. 5 proteções reais (não promessas): diagnóstico antes do contrato, sem contrato preso, meta em agendamentos (não curtidas), acompanhamento quinzenal, auditoria de atendimento incluída.</td>
+        <td><div class="cta-box" style="font-size:11px;padding:6px 10px">GARANTIA</div></td>
+        <td><span class="acc acc-both">@gabriel + @zx</span></td>
+      </tr>
+      <tr>
+        <td class="mono td" style="font-size:11px">34</td>
+        <td><span class="tacoh t-a" style="font-size:8.5px"><span class="tacoh-dot dot-a"></span>A</span></td>
+        <td><span class="badge-conv">CONV.</span></td>
+        <td><span class="fmt fmt-static" style="font-size:9px">Estático · Acumulado 60 dias</span></td>
+        <td style="font-size:12px;color:rgba(242,242,242,.8)">"60 dias de Protocolo MIRA em Goiás. Os números acumulados."</td>
+        <td style="font-size:12px;color:rgba(242,242,242,.65)">Dashboard premium com dados acumulados dos 2 meses: total de agendamentos gerados, clínicas atendidas, ROI médio por clínica. Fundo escuro, três números grandes em laranja. "Sem filtro. Sem Photoshop. Só dado."</td>
+        <td><div class="cta-box" style="font-size:11px;padding:6px 10px">DADOS</div></td>
+        <td><span class="acc acc-zx">@assessoriazx</span></td>
+      </tr>
+      <tr>
+        <td class="mono td" style="font-size:11px">35</td>
+        <td><span class="tacoh t-t" style="font-size:8.5px"><span class="tacoh-dot dot-t"></span>T</span></td>
+        <td><span class="badge-cap">CAPT.</span></td>
+        <td><span class="fmt fmt-carousel" style="font-size:9px">Carrossel · 6 slides</span></td>
+        <td style="font-size:12px;color:rgba(242,242,242,.8)">"Como medir se o seu marketing está funcionando de verdade — sem olhar para curtida"</td>
+        <td style="font-size:12px;color:rgba(242,242,242,.65)">As 3 métricas que realmente importam para clínicas: agendamentos novos por semana, porcentagem de mensagens que viraram agendamento, custo por agendamento (não por "clique"). Como calcular cada uma. Alta utilidade educacional.</td>
+        <td><div class="cta-box" style="font-size:11px;padding:6px 10px">MÉTRICAS</div></td>
+        <td><span class="acc acc-zx">@assessoriazx</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</section>
+</div>
+
+<!-- C2 SEMANA 8 -->
+<div id="c2s4">
+<div class="week-hero" style="background:linear-gradient(135deg,rgba(50,20,10,.7) 0%,rgba(13,27,42,.95) 100%)">
+  <div class="week-wm">S8</div>
+  <div class="week-num mono">SEMANA 08 · CICLO 2</div>
+  <div class="week-phase-label">Fase 4 · Ciclo 2 — Fechamento de Ciclo</div>
+  <div class="tacoh-mix mt8">
+    <span class="tacoh t-o"><span class="tacoh-dot dot-o"></span>OBJEÇÃO</span><span class="tacoh-count">×1</span>
+    <span class="tacoh t-c"><span class="tacoh-dot dot-c"></span>CONEXÃO</span><span class="tacoh-count">×1</span>
+    <span class="tacoh t-a"><span class="tacoh-dot dot-a"></span>AUTORIDADE</span><span class="tacoh-count">×1</span>
+    <span class="tacoh t-t"><span class="tacoh-dot dot-t"></span>TÉCNICO</span><span class="tacoh-count">×1</span>
+    <span class="tacoh t-h"><span class="tacoh-dot dot-h"></span>HYPE</span><span class="tacoh-count">×1</span>
+  </div>
+  <h2 class="week-title">Fechamento de Ciclo — Urgência Final e Legado</h2>
+</div>
+<section class="posts-section">
+<div class="glass glass-pad aos" style="margin-bottom:20px">
+  <div class="field-label" style="margin-bottom:16px">POSTS 36–40 — SEMANA 8 · FECHAMENTO DE CICLO</div>
+  <table class="condensed-table">
+    <thead><tr><th>#</th><th>TACOH</th><th>TIPO</th><th>FORMATO</th><th>HOOK</th><th>TEMA</th><th>CTA</th><th>CONTA</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="mono td" style="font-size:11px">36</td>
+        <td><span class="tacoh t-o" style="font-size:8.5px"><span class="tacoh-dot dot-o"></span>O</span></td>
+        <td><span class="badge-conv">CONV.</span></td>
+        <td><span class="fmt fmt-carousel" style="font-size:9px">Carrossel · 6 slides</span></td>
+        <td style="font-size:12px;color:rgba(242,242,242,.8)">"7 perguntas que você deveria ter feito antes de contratar a última assessoria de marketing — e que deve fazer desta vez"</td>
+        <td style="font-size:12px;color:rgba(242,242,242,.65)">Checklist de due diligence que posiciona a ZX implicitamente. Perguntas sobre especialização no nicho, como medem resultado, o que fazem quando a campanha não performa, se auditam o atendimento. Usa o checklist para revelar o que diferencia a ZX sem dizer explicitamente.</td>
+        <td><div class="cta-box" style="font-size:11px;padding:6px 10px">CHECKLIST</div></td>
+        <td><span class="acc acc-both">@gabriel + @zx</span></td>
+      </tr>
+      <tr>
+        <td class="mono td" style="font-size:11px">37</td>
+        <td><span class="tacoh t-c" style="font-size:8.5px"><span class="tacoh-dot dot-c"></span>C</span></td>
+        <td><span class="badge-conv">CONV.</span></td>
+        <td><span class="fmt fmt-reel" style="font-size:9px">Reel · 40–50s</span></td>
+        <td style="font-size:12px;color:rgba(242,242,242,.8)">"O seu trabalho é bom. Falta o mundo saber disso."</td>
+        <td style="font-size:12px;color:rgba(242,242,242,.65)">Reel de fechamento emocional — o mais importante do Ciclo 2. "Você não tem agenda cheia porque é ruim no que faz. Tem agenda com buracos porque o sistema de aquisição não está ativo." Tom de validação genuína seguida de convite claro. O post que converte quem estava na dúvida.</td>
+        <td><div class="cta-box" style="font-size:11px;padding:6px 10px">MUNDO</div></td>
+        <td><span class="acc acc-gabriel">@gabriel</span></td>
+      </tr>
+      <tr>
+        <td class="mono td" style="font-size:11px">38</td>
+        <td><span class="tacoh t-a" style="font-size:8.5px"><span class="tacoh-dot dot-a"></span>A</span></td>
+        <td><span class="badge-cap">CAPT.</span></td>
+        <td><span class="fmt fmt-carousel" style="font-size:9px">Carrossel · 8 slides</span></td>
+        <td style="font-size:12px;color:rgba(242,242,242,.8)">"Assessoria de tráfego vs. Sistema de aquisição: a diferença que nenhuma das duas vai te explicar"</td>
+        <td style="font-size:12px;color:rgba(242,242,242,.65)">Comparação definitiva de posicionamento: coluna 1 (assessoria genérica) vs. coluna 2 (Protocolo MIRA / ZX). Critérios: foco, como medem resultado, o que fazem quando o lead não converte, especialização, acompanhamento de atendimento. Não menciona concorrentes — só categorias.</td>
+        <td><div class="cta-box" style="font-size:11px;padding:6px 10px">DIFERENÇA</div></td>
+        <td><span class="acc acc-zx">@assessoriazx</span></td>
+      </tr>
+      <tr>
+        <td class="mono td" style="font-size:11px">39</td>
+        <td><span class="tacoh t-t" style="font-size:8.5px"><span class="tacoh-dot dot-t"></span>T</span></td>
+        <td><span class="badge-conv">CONV.</span></td>
+        <td><span class="fmt fmt-carousel" style="font-size:9px">Carrossel · 7 slides</span></td>
+        <td style="font-size:12px;color:rgba(242,242,242,.8)">"O que acontece nos primeiros 30 dias de Protocolo MIRA — semana por semana"</td>
+        <td style="font-size:12px;color:rgba(242,242,242,.65)">Desmistifica o onboarding: semana 1 (diagnóstico e auditoria de atendimento), semana 2 (script + protocolo WhatsApp), semana 3 (campanha ativa), semana 4 (primeira otimização com dados reais). Remove a incerteza de "como seria trabalhar com a ZX".</td>
+        <td><div class="cta-box" style="font-size:11px;padding:6px 10px">ONBOARDING</div></td>
+        <td><span class="acc acc-zx">@assessoriazx</span></td>
+      </tr>
+      <tr>
+        <td class="mono td" style="font-size:11px">40</td>
+        <td><span class="tacoh t-h" style="font-size:8.5px"><span class="tacoh-dot dot-h"></span>H</span></td>
+        <td><span class="badge-ambos">CAP + CONV</span></td>
+        <td><span class="fmt fmt-reel" style="font-size:9px">Reel · 22–28s · Fechamento Final</span></td>
+        <td style="font-size:12px;color:rgba(242,242,242,.8)">"60 dias de conteúdo. O Protocolo MIRA apresentado. A pergunta agora é só uma."</td>
+        <td style="font-size:12px;color:rgba(242,242,242,.65)">Fechamento do ciclo completo. "Você quer continuar dependendo de indicação — ou quer um sistema que traz cliente novo toda semana, de forma previsível, independente do mês?" Urgência serena. Convite direto. Sem pressão, sem desespero. Conta cada vaga com nome do dia e hora de encerramento.</td>
+        <td><div class="cta-box" style="font-size:11px;padding:6px 10px">ÚLTIMA</div></td>
+        <td><span class="acc acc-zx">@assessoriazx</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</section>
+</div>
+
+<!-- OTIMIZAÇÃO -->
+<section class="section" id="otimizacao">
+  <div class="sec-label">LOOP DE OTIMIZAÇÃO</div>
+  <h2 class="sec-title">Toda segunda-feira.<br><span class="to">Sem exceção.</span></h2>
+  <div class="divider"></div>
+  <div class="three-col mt24">
+    <div class="glass glass-pad aos" style="border-color:rgba(248,113,113,.18)">
+      <div style="font-weight:700;font-size:11px;color:#f87171;margin-bottom:10px;letter-spacing:2px;text-transform:uppercase">⏸ PAUSAR</div>
+      <div style="font-size:12.5px;line-height:1.8;color:rgba(242,242,242,.62)">Posts com save rate &lt;1% após 72h · Reels com &lt;200 views em 48h · Keywords que geraram 0 DMs · Retenção &lt;30% até 3s · Posts de conversão sem nenhum DM em 5 dias</div>
+    </div>
+    <div class="glass glass-pad aos" style="border-color:rgba(52,211,153,.18)">
+      <div style="font-weight:700;font-size:11px;color:#34d399;margin-bottom:10px;letter-spacing:2px;text-transform:uppercase">📈 ESCALAR</div>
+      <div style="font-size:12.5px;line-height:1.8;color:rgba(242,242,242,.62)">Save rate &gt;4% → boost R$50–80/dia × 3d · Reels &gt;1.000 views → criar Parte 2 · Keywords &gt;10 DMs/post → replicar formato e tema · Posts de conversão com &gt;5 DMs → usar como modelo para ciclo seguinte</div>
+    </div>
+    <div class="glass glass-pad aos" style="border-color:rgba(242,140,40,.18)">
+      <div style="font-weight:700;font-size:11px;color:var(--o);margin-bottom:10px;letter-spacing:2px;text-transform:uppercase">🔄 REVISAR TODA SEGUNDA</div>
+      <div style="font-size:12.5px;line-height:1.8;color:rgba(242,242,242,.62)">Comparar DMs de captação vs. DMs de conversão · Identificar qual categoria TACOH gerou mais diagnósticos agendados · Ajustar o peso 50/50 se os dados indicarem dominância de um lado · Registrar qual keyword trouxe leads mais qualificados</div>
+    </div>
+  </div>
+</section>
+
+<!-- KPIs -->
+<section class="section" id="kpis">
+  <div class="sec-label">DASHBOARD DE KPIs</div>
+  <h2 class="sec-title">O que medir para<br><span class="to">saber que está funcionando</span>.</h2>
+  <div class="divider"></div>
+  <div class="kpi-grid mt24">
+    <div class="kpi-card aos"><div class="kpi-metric">Alcance Semanal</div><div class="kpi-val">&gt;3k</div><div class="kpi-how">Crescimento progressivo. Escala com boost dos posts de melhor performance.</div></div>
+    <div class="kpi-card aos"><div class="kpi-metric">Save Rate Carrossel</div><div class="kpi-val">&gt;3%</div><div class="kpi-how">Saves ÷ Alcance por post. Acima de 4% = boostear imediatamente.</div></div>
+    <div class="kpi-card aos"><div class="kpi-metric">DMs Captação / sem</div><div class="kpi-val">&gt;10</div><div class="kpi-how">Keywords: DIAGNÓSTICO · VISIBILIDADE · MIRA · VAGA · CONTROLE.</div></div>
+    <div class="kpi-card aos"><div class="kpi-metric">DMs Conversão / sem</div><div class="kpi-val">&gt;8</div><div class="kpi-how">Keywords: SCRIPT · WHATSAPP · ROTEIRO · PREÇO · FOLLOWUP · VAZAR.</div></div>
+    <div class="kpi-card aos"><div class="kpi-metric">Retenção Reels (3s)</div><div class="kpi-val">&gt;40%</div><div class="kpi-how">% que assiste além dos 3 primeiros segundos. Hook define tudo.</div></div>
+    <div class="kpi-card aos"><div class="kpi-metric">DM → Diagnóstico</div><div class="kpi-val">&gt;20%</div><div class="kpi-how">DMs qualificados que se tornam diagnósticos agendados.</div></div>
+    <div class="kpi-card aos"><div class="kpi-metric">Diagnóstico → Proposta</div><div class="kpi-val">&gt;50%</div><div class="kpi-how">Diagnósticos que evoluem para proposta comercial.</div></div>
+    <div class="kpi-card aos"><div class="kpi-metric">Proposta → Contrato</div><div class="kpi-val">&gt;30%</div><div class="kpi-how">Taxa de fechamento pós-proposta. Mede qualidade do diagnóstico.</div></div>
+  </div>
+  <div class="info-box mt24 aos">
+    <div style="font-weight:800;font-size:13px;margin-bottom:7px;color:var(--o)">Meta dos 60 Dias</div>
+    <div style="display:flex;flex-wrap:wrap;gap:28px">
+      <div><div style="font-size:9px;letter-spacing:3px;color:rgba(242,242,242,.3);text-transform:uppercase">DMs totais</div><div style="font-weight:800;font-size:22px;color:var(--w)">&gt;150</div></div>
+      <div><div style="font-size:9px;letter-spacing:3px;color:rgba(242,242,242,.3);text-transform:uppercase">Diagnósticos</div><div style="font-weight:800;font-size:22px;color:var(--w)">&gt;30</div></div>
+      <div><div style="font-size:9px;letter-spacing:3px;color:rgba(242,242,242,.3);text-transform:uppercase">Propostas</div><div style="font-weight:800;font-size:22px;color:var(--w)">&gt;15</div></div>
+      <div><div style="font-size:9px;letter-spacing:3px;color:rgba(242,242,242,.3);text-transform:uppercase">Contratos</div><div style="font-weight:800;font-size:22px;color:var(--o)">4–6</div></div>
+      <div><div style="font-size:9px;letter-spacing:3px;color:rgba(242,242,242,.3);text-transform:uppercase">Split Real</div><div style="font-weight:800;font-size:22px;color:var(--w)">50/50</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL -->
+<div class="final-sec" id="final">
+  <div class="final-wm">MIRA</div>
+  <div class="final-content">
+    <div class="sec-label">NOTA FINAL</div>
+    <h2 style="font-weight:900;font-size:clamp(32px,4vw,56px);line-height:1.08;letter-spacing:-2px;margin-top:10px">Precisão antes<br><span style="color:var(--o)">de</span> volume.<br><span style="color:var(--g)">Sempre.</span></h2>
+    <div style="margin-top:28px;display:flex;flex-direction:column;gap:10px;max-width:640px">
+      <div class="rule-box" style="background:rgba(255,255,255,.018)"><div class="rule-icon">◎</div><div><div class="rule-title">O Protocolo MIRA É o Produto</div><div class="rule-body">Todo o conteúdo existe para levar a Renata ao diagnóstico gratuito. Cada post — seja de captação ou de conversão — aponta para um único destino: uma conversa no WhatsApp onde ela decide se a ZX Digital é certa para ela.</div></div></div>
+      <div class="rule-box" style="background:rgba(255,255,255,.018)"><div class="rule-icon">⇌</div><div><div class="rule-title">50/50 Não É Regra Rígida — É Diagnóstico Contínuo</div><div class="rule-body">Se os dados mostrarem que os posts de conversão geram DMs mais qualificados, aumente o peso. Se os de captação tiverem save rate maior, replique mais. O split é um ponto de partida, não uma prisão.</div></div></div>
+      <div class="rule-box" style="background:rgba(255,255,255,.018)"><div class="rule-icon">⚡</div><div><div class="rule-title">Velocidade de Resposta É Vantagem Competitiva</div><div class="rule-body">Lead que espera 30 minutos tem 80% menos chance de conversão. Configure automação de DM para as keywords principais. O conteúdo traz — o atendimento fecha.</div></div></div>
+      <div class="rule-box" style="background:rgba(255,255,255,.018)"><div class="rule-icon">🫀</div><div><div class="rule-title">Autenticidade Não É Estratégia. É o Diferencial.</div><div class="rule-body">Em um mercado saturado de agências que prometem tudo, ser específico, honesto e humano é a vantagem que ninguém copia. A Renata compra de quem ela confia. Confiança é construída post a post, DM a DM, resultado a resultado.</div></div></div>
+    </div>
+    <div style="margin-top:36px;display:flex;align-items:center;gap:28px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.07);padding-top:28px">
+      <div><div style="font-size:9px;letter-spacing:4px;text-transform:uppercase;color:rgba(242,242,242,.28)">MARCA</div><div style="font-weight:800;font-size:18px;margin-top:4px"><span class="to">ZX</span> Digital</div></div>
+      <div><div style="font-size:9px;letter-spacing:4px;text-transform:uppercase;color:rgba(242,242,242,.28)">MÉTODO</div><div style="font-weight:700;font-size:14px;margin-top:4px;color:var(--o)">Protocolo MIRA · VIP Interno</div></div>
+      <div><div style="font-size:9px;letter-spacing:4px;text-transform:uppercase;color:rgba(242,242,242,.28)">INSTAGRAM</div><div style="font-weight:700;font-size:14px;margin-top:4px">@assessoriazx · @eugabrielgregorio</div></div>
+      <div><div style="font-size:9px;letter-spacing:4px;text-transform:uppercase;color:rgba(242,242,242,.28)">VERSÃO</div><div style="font-weight:700;font-size:14px;margin-top:4px">v3.0 · 60 Dias · 2 Ciclos · 40 Posts</div></div>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<script>
+const pf=document.getElementById('progressFill');
+window.addEventListener('scroll',()=>{const d=document.documentElement;pf.style.width=(window.scrollY/(d.scrollHeight-window.innerHeight)*100)+'%'},{passive:true});
+
+const navItems=document.querySelectorAll('.nav-item[href^="#"]');
+const sections=Array.from(navItems).map(i=>document.querySelector(i.getAttribute('href'))).filter(Boolean);
+const obs=new IntersectionObserver(e=>{e.forEach(en=>{if(en.isIntersecting){navItems.forEach(i=>i.classList.remove('active'));const a=document.querySelector('.nav-item[href="#'+en.target.id+'"]');if(a)a.classList.add('active');}});},{threshold:0.15,rootMargin:'-80px 0px -60% 0px'});
+sections.forEach(s=>obs.observe(s));
+
+const ao=new IntersectionObserver(e=>{e.forEach(en=>{if(en.isIntersecting){en.target.classList.add('vis');ao.unobserve(en.target);}});},{threshold:0.04});
+document.querySelectorAll('.aos').forEach((el,i)=>{el.style.transitionDelay=(Math.min(i%4,3)*0.055)+'s';ao.observe(el);});
+
+const hb=document.getElementById('hamburger'),nav=document.getElementById('nav');
+hb.addEventListener('click',()=>nav.classList.toggle('open'));
+navItems.forEach(item=>item.addEventListener('click',e=>{e.preventDefault();const t=document.querySelector(item.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth',block:'start'});nav.classList.remove('open');}));
+</script>
+</body>
+</html>
