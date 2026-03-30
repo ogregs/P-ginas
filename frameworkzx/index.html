@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZX Digital — Framework RMBC · Empresas de Serviços Brasil</title>
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --c:#1A1A1A;
+  --w:#F2F2F2;
+  --o:#F28C28;
+  --g:#F3C353;
+  --p:#0D1B2A;
+  --gw:rgba(255,255,255,0.055);
+  --gb:rgba(255,255,255,0.08);
+  --gs:rgba(0,0,0,0.18);
+}
+html{scroll-behavior:smooth}
+body{
+  background:linear-gradient(160deg,var(--c) 0%,var(--p) 100%);
+  background-attachment:fixed;
+  font-family:'Exo 2',sans-serif;
+  color:var(--w);
+  min-height:100vh;
+  position:relative;
+}
+body::before{
+  content:'';
+  position:fixed;inset:0;
+  background-image:radial-gradient(circle,rgba(255,255,255,.045) 1px,transparent 1px);
+  background-size:24px 24px;
+  z-index:0;
+  pointer-events:none;
+}
+.page-wm{
+  position:fixed;
+  bottom:-60px;right:-40px;
+  font-weight:800;
+  color:rgba(255,255,255,.018);
+  font-size:520px;
+  line-height:1;
+  letter-spacing:-12px;
+  z-index:0;
+  pointer-events:none;
+  user-select:none;
+  font-family:'Exo 2',sans-serif;
+}
+.wrapper{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:60px 40px 100px}
+.dp{font-weight:800;font-size:56px;line-height:1.08;letter-spacing:1px}
+.st{font-weight:700;font-size:28px;line-height:1.3}
+.lb{font-weight:600;font-size:13px;letter-spacing:6px;text-transform:uppercase;color:var(--o)}
+.bd{font-weight:400;font-size:16px;line-height:1.75;color:rgba(242,242,242,.75)}
+.cp{font-weight:300;font-size:13px;line-height:1.5;color:rgba(242,242,242,.4);letter-spacing:.5px}
+.to{color:var(--o)}.tg{color:var(--g)}.td{color:rgba(242,242,242,.45)}
+.val{font-weight:800;font-size:72px;line-height:1;color:var(--o)}
+.gl{
+  background:var(--gw);
+  border:1px solid var(--gb);
+  border-radius:14px;
+  box-shadow:0 4px 20px var(--gs),inset 0 1px 0 rgba(255,255,255,.06);
+  padding:36px 40px;
+  position:relative;
+}
+.gl::before{
+  content:'';
+  position:absolute;top:0;left:0;
+  width:4px;height:100%;
+  background:var(--o);
+  border-radius:14px 0 0 14px;
+}
+.gl-g::before{background:var(--g)}
+.gl-n::before{display:none}
+.gl-red::before{background:rgba(255,80,80,.65)}
+.hr{height:1px;background:var(--o);opacity:.25;width:100%;margin:32px 0}
+.hrs{width:64px;height:3px;background:var(--o);border-radius:2px}
+.pill{display:inline-flex;align-items:center;padding:8px 20px;border-radius:100px;font-weight:600;font-size:12px;letter-spacing:3px;text-transform:uppercase;white-space:nowrap}
+.pill-o{background:rgba(242,140,40,.12);color:var(--o);border:1px solid rgba(242,140,40,.25)}
+.pill-g{background:rgba(243,195,83,.1);color:var(--g);border:1px solid rgba(243,195,83,.2)}
+.pill-w{background:rgba(255,255,255,.06);color:rgba(242,242,242,.6);border:1px solid rgba(255,255,255,.08)}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px}
+.g4{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:20px}
+.mod-header{
+  display:flex;align-items:center;gap:20px;
+  padding:28px 36px;
+  background:linear-gradient(90deg,rgba(242,140,40,.12) 0%,rgba(242,140,40,.03) 100%);
+  border:1px solid rgba(242,140,40,.2);
+  border-radius:14px;
+  margin-bottom:40px;
+}
+.mod-letter{
+  font-weight:800;font-size:72px;line-height:1;
+  color:var(--o);
+  flex-shrink:0;width:80px;text-align:center;
+}
+.mod-info{flex:1}
+.mod-title{font-weight:800;font-size:32px;line-height:1.1}
+.mod-sub{font-size:15px;color:rgba(242,242,242,.5);margin-top:6px;font-weight:400}
+.sec{margin-bottom:32px;margin-top:48px}
+.sec-label{font-weight:600;font-size:12px;letter-spacing:6px;text-transform:uppercase;color:var(--o);margin-bottom:12px}
+.sec-title{font-weight:700;font-size:24px;line-height:1.3;color:var(--w)}
+.qblock{margin-bottom:24px}
+.qnum{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:36px;height:36px;border-radius:50%;
+  background:rgba(242,140,40,.15);
+  border:1px solid rgba(242,140,40,.3);
+  font-weight:700;font-size:14px;color:var(--o);
+  flex-shrink:0;margin-right:14px;
+}
+.qheader{display:flex;align-items:flex-start;margin-bottom:16px}
+.qtitle{font-weight:600;font-size:17px;line-height:1.4;color:rgba(242,242,242,.9);flex:1}
+.qanswer{
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:10px;
+  padding:20px 24px;
+  font-size:15px;line-height:1.75;
+  color:rgba(242,242,242,.72);
+  border-left:3px solid rgba(242,140,40,.35);
+}
+.qanswer p{margin-bottom:14px}
+.qanswer p:last-child{margin-bottom:0}
+.qanswer strong{color:var(--w);font-weight:700}
+.qanswer em{color:var(--o);font-style:normal;font-weight:600}
+.stat-card{
+  background:var(--gw);
+  border:1px solid var(--gb);
+  border-radius:12px;
+  padding:24px 28px;
+  text-align:center;
+}
+.stat-num{font-weight:800;font-size:48px;line-height:1;color:var(--o)}
+.stat-label{font-size:13px;color:rgba(242,242,242,.55);margin-top:8px;font-weight:400;line-height:1.4}
+.tbl{width:100%;border-collapse:collapse;font-size:14px}
+.tbl th{
+  text-align:left;font-weight:600;font-size:11px;letter-spacing:4px;
+  text-transform:uppercase;color:var(--o);
+  padding:14px 18px;border-bottom:1px solid rgba(242,140,40,.2);
+}
+.tbl td{
+  padding:14px 18px;border-bottom:1px solid rgba(255,255,255,.04);
+  color:rgba(242,242,242,.72);font-size:14px;line-height:1.5;
+}
+.tbl td:first-child{font-weight:600;color:var(--w)}
+.tbl tr:last-child td{border-bottom:none}
+.tbl tr:hover td{background:rgba(255,255,255,.02)}
+.mech-part{
+  background:linear-gradient(135deg,rgba(242,140,40,.06) 0%,rgba(13,27,42,.6) 100%);
+  border:1px solid rgba(242,140,40,.2);
+  border-radius:14px;
+  padding:36px 40px;
+}
+.cover{
+  padding:80px 0 64px;
+  margin-bottom:64px;
+  border-bottom:1px solid rgba(242,140,40,.2);
+}
+.cover-meta{
+  display:flex;gap:48px;flex-wrap:wrap;
+  margin-top:40px;padding-top:32px;
+  border-top:1px solid rgba(255,255,255,.06);
+}
+.cover-meta-item .cp{margin-bottom:4px}
+.cover-meta-item span{font-weight:600;font-size:16px}
+.toc{margin-bottom:64px}
+.toc-item{
+  display:flex;align-items:center;gap:16px;
+  padding:14px 24px;
+  border-bottom:1px solid rgba(255,255,255,.04);
+  text-decoration:none;color:var(--w);
+  transition:background .2s;
+}
+.toc-item:hover{background:rgba(242,140,40,.06)}
+.toc-letter{font-weight:800;font-size:28px;color:var(--o);width:40px;text-align:center;flex-shrink:0}
+.toc-title{font-weight:600;font-size:16px;flex:1}
+.toc-desc{font-size:13px;color:rgba(242,242,242,.4);max-width:320px}
+.quote-block{
+  background:rgba(242,140,40,.04);
+  border-left:4px solid var(--o);
+  border-radius:0 10px 10px 0;
+  padding:20px 28px;
+  margin:16px 0;
+  font-style:italic;
+  color:rgba(242,242,242,.8);
+  font-size:15px;
+  line-height:1.7;
+}
+.quote-block .source{
+  display:block;
+  margin-top:8px;
+  font-style:normal;
+  font-size:12px;
+  color:var(--o);
+  font-weight:600;
+  letter-spacing:1px;
+}
+.copy-impl{
+  background:rgba(243,195,83,.05);
+  border:1px solid rgba(243,195,83,.15);
+  border-radius:10px;
+  padding:16px 20px;
+  margin-top:12px;
+  font-size:14px;
+  line-height:1.6;
+  color:rgba(243,195,83,.85);
+}
+.copy-impl::before{
+  content:'⚡ IMPLICAÇÃO PARA COPY:';
+  display:block;
+  font-weight:700;
+  font-size:11px;
+  letter-spacing:3px;
+  color:var(--g);
+  margin-bottom:8px;
+}
+@media(max-width:900px){
+  .g2,.g3,.g4{grid-template-columns:1fr}
+  .dp{font-size:36px}
+  .wrapper{padding:32px 20px 60px}
+  .mod-header{flex-direction:column;text-align:center}
+  .mod-letter{width:auto}
+  .cover-meta{flex-direction:column;gap:24px}
+}
+</style>
+</head>
+<body>
+<div class="page-wm">ZX</div>
+<div class="wrapper">
+
+<!-- ═══════════════════════ COVER ═══════════════════════ -->
+<div class="cover">
+  <div class="lb" style="margin-bottom:20px">// FRAMEWORK RMBC · STEFAN GEORGI · ZX DIGITAL</div>
+  <div class="dp"><span class="to">Empresas de Serviços</span> Brasil</div>
+  <div class="dp" style="font-size:36px;margin-top:12px;color:rgba(242,242,242,.5)">Estética · Saúde · Consultorias</div>
+  <div style="margin-top:24px"><div class="hrs"></div></div>
+  <div class="bd" style="max-width:700px;margin-top:24px;font-size:18px;line-height:1.8">
+    Pesquisa de avatar ultra-profunda, mecanismo único, brief estratégico e munição de copy para a ZX Digital vender assessoria de tráfego pago para donas de clínicas de estética, profissionais de saúde e consultores no Brasil.
+  </div>
+  <div class="cover-meta">
+    <div class="cover-meta-item"><div class="cp">PRODUTO</div><span>ZX Digital — Assessoria Tráfego Pago</span></div>
+    <div class="cover-meta-item"><div class="cp">AVATAR</div><span>Dona de clínica de estética · 28–42 anos</span></div>
+    <div class="cover-meta-item"><div class="cp">REGIÃO</div><span>Goiânia / Aparecida de Goiânia, GO</span></div>
+    <div class="cover-meta-item"><div class="cp">VERSÃO</div><span>v2.0 · Março 2026</span></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════ TOC ═══════════════════════ -->
+<div class="toc">
+  <div class="lb" style="margin-bottom:24px">// ÍNDICE</div>
+  <a class="toc-item" href="#mod-r1"><div class="toc-letter">R</div><div class="toc-title">Módulo 1 — Radiografia do Avatar</div><div class="toc-desc">Demográfico, biográfico, identidade, psicologia profunda</div></a>
+  <a class="toc-item" href="#mod-r2"><div class="toc-letter">R</div><div class="toc-title">Módulo 2 — Família, Comunidade e Rede</div><div class="toc-desc">Dinâmica familiar, rede de confiança, sinais de identidade</div></a>
+  <a class="toc-item" href="#mod-r3"><div class="toc-letter">R</div><div class="toc-title">Módulo 3 — Dinheiro e Decisão de Compra</div><div class="toc-desc">Psicologia financeira, ciclo de decisão, experiências anteriores</div></a>
+  <a class="toc-item" href="#mod-r4"><div class="toc-letter">R</div><div class="toc-title">Módulo 4 — O Mercado como Sistema</div><div class="toc-desc">Soluções existentes, mitos, corrupção do mercado</div></a>
+  <a class="toc-item" href="#mod-m"><div class="toc-letter">M</div><div class="toc-title">Módulo 5 — Mecanismo Único</div><div class="toc-desc">Causa raiz, arquitetura da solução, Método VIP</div></a>
+  <a class="toc-item" href="#mod-b"><div class="toc-letter">B</div><div class="toc-title">Módulo 6 — Brief Estratégico (12 Perguntas RMBC)</div><div class="toc-desc">As 12 respostas originais de Stefan Georgi</div></a>
+  <a class="toc-item" href="#mod-c1"><div class="toc-letter">C</div><div class="toc-title">Módulo 7 — Headlines · Os 7 Elementos</div><div class="toc-desc">10 headlines com checklist de elementos</div></a>
+  <a class="toc-item" href="#mod-c2"><div class="toc-letter">C</div><div class="toc-title">Módulo 8 — Subject Lines & Criativos</div><div class="toc-desc">Matriz 15 dimensões · 75 ângulos</div></a>
+  <a class="toc-item" href="#mod-c3"><div class="toc-letter">C</div><div class="toc-title">Módulo 9 — Estrutura VSL / Sales Letter</div><div class="toc-desc">Blocos completos: Lead → CTA → FAQ</div></a>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     MÓDULO R1 — RADIOGRAFIA DO AVATAR
+     ═══════════════════════════════════════════════════════ -->
+<div id="mod-r1">
+  <div class="mod-header">
+    <div class="mod-letter">R</div>
+    <div class="mod-info">
+      <div class="mod-title">MÓDULO 1 — RESEARCH</div>
+      <div class="mod-sub">Radiografia Completa do Avatar · Demográfico · Biográfico · Psicológico</div>
+    </div>
+  </div>
+
+  <!-- Dados de mercado -->
+  <div class="g4" style="margin-bottom:40px">
+    <div class="stat-card"><div class="stat-num">1.3M</div><div class="stat-label">Estabelecimentos de beleza/estética no Brasil (Sebrae 2024)</div></div>
+    <div class="stat-card"><div class="stat-num">236k</div><div class="stat-label">Novos negócios de beleza em 2025 — 27 por hora</div></div>
+    <div class="stat-card"><div class="stat-num">R$48bi</div><div class="stat-label">Mercado brasileiro de beleza e cuidados pessoais/ano</div></div>
+    <div class="stat-card"><div class="stat-num">29%</div><div class="stat-label">Taxa de mortalidade em 5 anos para MEIs de beleza</div></div>
+  </div>
+
+  <!-- PARTE 1.1 DEMOGRÁFICO -->
+  <div class="sec">
+    <div class="sec-label">// PARTE 1.1</div>
+    <div class="sec-title">Demográfico e Biográfico — A Trajetória Que Moldou Tudo</div>
+  </div>
+
+  <div class="qblock">
+    <div class="qheader"><div class="qnum">1</div><div class="qtitle">Qual é a trajetória de vida típica que levou esse avatar a estar onde está hoje?</div></div>
+    <div class="qanswer">
+      <p><strong>Renata Cristina de Souza Mendes, 34 anos, Aparecida de Goiânia, GO.</strong> Filha de Dona Márcia (técnica de enfermagem, funcionária pública) e Seu Raimundo (motorista de ônibus aposentado). Cresceu no Jardim América, Goiânia — classe média baixa, família honesta, casa própria simples. Ouviu a vida inteira que "emprego bom é emprego público" e que "estudo é tudo". Fez ensino médio em escola estadual, era aluna mediana. Aos 18, trabalhou 2 anos como vendedora na Havan do Buriti Shopping — odiava, mas precisava do dinheiro.</p>
+      <p>Aos 21, começou faculdade de Estética e Cosmética numa particular (financiamento estudantil + bolsa parcial de 40%). Se apaixonou pela profissão — pela primeira vez algo fazia sentido. Formou em 2016 aos 24 anos. Investiu mais de R$25 mil em formação ao longo dos anos: pós-graduação em Estética Avançada (2019, 24x de R$450), cursos de harmonização facial, microagulhamento, peeling químico, drenagem linfática. Cada certificado pendurado na parede da clínica representa uma parcela paga com aperto.</p>
+      <p>Conseguiu emprego na clínica da Dra. Patrícia, Setor Bueno, Goiânia. Salário R$1.800 + comissão de 10%. Ficou 4 anos e meio. Aprendeu tudo na prática: protocolos, relação com cliente, ritmo de clínica. Era a preferida das clientes. O problema: sentia que construía o sonho de outra pessoa.</p>
+      <p>Em março de 2020 — grávida de 7 meses da Sofia — foi demitida. A clínica da Dra. Patrícia não sobreviveu aos primeiros meses de COVID. Rescisão: R$6.400. Sofia nasceu em julho. Os 4 meses seguintes foram o período mais difícil da vida dela: sem renda própria, dependendo 100% do Leandro (marido, analista de sistemas, R$5.800 CLT), com bebê recém-nascida, sem saber quando poderia voltar a trabalhar.</p>
+      <p>Em março de 2021, com Sofia de 8 meses, tomou a decisão: ia atender em casa. Comprou maca usada por R$400, vapor de ozônio por R$280, investiu R$1.200 em produtos. Montou sala no fundo de casa. Mandou mensagem para 200 contatos. Em 6 meses atendia 3-4 clientes/dia. Em 2023, alugou sala comercial de 40m² no Garavelo Park (R$1.600/mês + condomínio R$280). Contratou esteticista júnior (R$1.800 CLT + comissão) e recepcionista meio-período (R$990). Investiu R$12 mil na reforma e decoração "instagramável".</p>
+      <p>Hoje, março de 2026: fatura R$18-22k/mês nos bons (set-mar) e R$10-14k nos fracos (abr-ago). Média anual ~R$17k/mês. Está presa num platô há 18 meses. Boa profissional, clínica estabelecida, reputação sólida entre quem a conhece — mas <strong>invisível para quem não a conhece</strong>.</p>
+      <div class="copy-impl">A história de origem da Renata é a história de 70% das empreendedoras de estética no Brasil: formação técnica excelente → CLT → evento de ruptura (demissão/pandemia) → começo precário em casa → crescimento orgânico → platô. Essa narrativa é imediatamente reconhecível e deve ser espelhada na copy: "Você começou com uma maca e um sonho. Hoje tem clínica, funcionárias, equipamentos. Mas a agenda continua dependendo de indicação."</div>
+    </div>
+  </div>
+
+  <div class="qblock">
+    <div class="qheader"><div class="qnum">2</div><div class="qtitle">Quais foram os 2-3 eventos definidores que moldaram sua visão de mundo?</div></div>
+    <div class="qanswer">
+      <p><strong>Evento 1 — A demissão grávida na pandemia (março 2020).</strong> Moldou sua crença central: "Se eu depender de empregador, posso ser descartada a qualquer momento." Essa ferida a empurra para o empreendedorismo — mas também a paralisa, porque agora depende de algo igualmente instável: clientes que chegam por indicação. A frase interna: "Nunca mais vou depender de alguém pra decidir meu futuro."</p>
+      <p><strong>Evento 2 — O fracasso com a agência de marketing (2023).</strong> R$11.200 investidos (fee + verba de anúncio) em 4 meses. Resultado tangível: 3 clientes rastreáveis. Custo de aquisição: R$5.300 por cliente. A agência entregou posts genéricos do Canva, anúncios para público amplo (incluindo outras cidades), leads que perguntavam por serviços que ela não oferece, e um relatório PDF mensal com métricas que ela não entendia. Esse evento criou uma cicatriz emocional profunda: desconfiança visceral de qualquer proposta de marketing digital. A frase interna: "Já caí nessa uma vez. Nunca mais."</p>
+      <p><strong>Evento 3 — O dia que viu a Juliana abrir a segunda sala (2025).</strong> Juliana foi colega de faculdade. Abriu a clínica com R$50 mil do marido. Hoje tem fila de espera e está expandindo. Renata sabe que tiveram pontos de partida diferentes. Mas emocionalmente, cada post da Juliana sobre "agenda lotada" é uma faca. Esse evento ativou uma mistura de inveja, admiração e autorreprovação: "Se eu tivesse tido as mesmas condições, seria eu ali. Ou... será que ela faz algo que eu não faço?"</p>
+      <div class="copy-impl">Os 3 eventos são portas de entrada emocionais para a copy. O evento 1 (demissão) conecta com o desejo de independência. O evento 2 (agência) exige que a ZX abra a conversa reconhecendo o trauma ANTES de fazer qualquer promessa. O evento 3 (Juliana) é o gatilho de inveja catalítica que pode ser usado em ads: "Por que clínicas com o mesmo investimento que o seu lotam a agenda?"</div>
+    </div>
+  </div>
+
+  <div class="qblock">
+    <div class="qheader"><div class="qnum">3</div><div class="qtitle">Onde ela mora fisicamente — tipo de bairro, casa, vizinhança? O que tem em casa que revela seus valores?</div></div>
+    <div class="qanswer">
+      <p>Mora em <strong>Aparecida de Goiânia, Setor Garavelo</strong> — condomínio fechado simples, desses com muro baixo e portaria 24h que mais dá sensação de segurança do que segurança de fato. Casa própria financiada pela Caixa: parcela R$1.380/mês, faltam 18 anos. Casa de 3 quartos, 90m², com quintal pequeno onde Davi (2 anos) brinca. Decoração: móveis planejados da MadeiraMadeira (pagos em 12x), quadros motivacionais na parede da sala ("Ela acreditou que podia, então fez"), fotos da família no corredor.</p>
+      <p><strong>Carro:</strong> Hyundai HB20 2019/2020, prata, quitado. Comprou usado em 2022. O ar condicionado faz barulho que ela finge não ouvir. É o carro da família — Leandro usa o dele (Onix 2021, financiado) pra ir ao trabalho.</p>
+      <p><strong>Na geladeira:</strong> marmitas da semana (ela faz no domingo pra levar pra clínica). Iogurte grego, frutas, leite de caixinha. Cerveja do Leandro. Imãs de viagem (Caldas Novas, Pirenópolis, um da Disney que a cunhada trouxe).</p>
+      <p><strong>Na mesinha de cabeceira:</strong> celular (sempre carregando), copo d'água, livro "Mulheres que Correm com os Lobos" (marcador na página 47 há 6 meses — não tem tempo de ler). Blister de melatonina.</p>
+      <p><strong>O que ela veste no trabalho:</strong> scrub branco ou preto da marca Rosa Amazônica, tênis branco, cabelo preso em coque baixo, maquiagem leve (rímel + batom nude). Unhas sempre feitas — é obrigação profissional. Um colar fininho de ouro (presente do Leandro no aniversário de casamento).</p>
+      <p><strong>O que ela veste fora do trabalho:</strong> Vestido midi florido (Shein), sandália rasteira, bolsa de couro sintético. Óculos escuros grandes. No churrasco de família, solta o cabelo (cacheado natural, finalizado com leave-in da Salon Line).</p>
+      <div class="copy-impl">Os objetos físicos revelam: ela aspira qualidade mas compra dentro do orçamento (MadeiraMadeira, não Tok&Stok; Shein, não Zara; HB20, não Creta). Os quadros motivacionais mostram que ela consome narrativa de empoderamento feminino. O livro abandonado mostra que autocuidado é desejo mas não prioridade. A marmita do domingo mostra que ela otimiza tempo. Use essas referências visuais em criativos de anúncio para criar identificação imediata.</div>
+    </div>
+  </div>
+
+  <div class="qblock">
+    <div class="qheader"><div class="qnum">4</div><div class="qtitle">Quais são seus rituais diários, desde acordar até dormir?</div></div>
+    <div class="qanswer">
+      <p><strong>5h40</strong> — Alarme do Davi (chora pedindo água). Levanta automaticamente. Leandro continua dormindo.</p>
+      <p><strong>6h00-6h45</strong> — Prepara café, arruma crianças. Sofia come cereal com leite. Davi toma mamadeira. Ela come 2 fatias de pão com café preto em pé na cozinha.</p>
+      <p><strong>7h15</strong> — Leva Sofia na escola (5 min de carro). <strong>7h30</strong> — Davi na creche (10 min).</p>
+      <p><strong>7h50-8h00</strong> — Chega na clínica. Abre, liga ar condicionado, organiza sala, separa produtos do dia. Olha agenda no celular (WhatsApp Business). Responde mensagens que chegaram durante a noite.</p>
+      <p><strong>8h30-12h30</strong> — Atendimentos da manhã (3-4 clientes). Entre um e outro: responde WhatsApp, confirma horários, negocia com fornecedor.</p>
+      <p><strong>12h30-13h15</strong> — Almoça marmita na "copa" da clínica (uma mesinha no canto da recepção). Enquanto come, olha Instagram: vê reels de concorrentes, tenta pensar em conteúdo pra postar, vê Stories de mentoras de estética.</p>
+      <p><strong>13h30-18h30</strong> — Atendimentos da tarde (3-4 clientes). A recepcionista sai às 14h (meio-período). Depois disso, Renata atende WhatsApp, agenda, abre porta, e faz procedimento — tudo simultâneo.</p>
+      <p><strong>18h30-19h00</strong> — Fecha clínica. Limpa sala (quando a funcionária já foi). Confere caixa (quando lembra).</p>
+      <p><strong>19h15</strong> — Busca crianças. Davi na creche, Sofia na natação (terça e quinta) ou direto em casa.</p>
+      <p><strong>19h30-20h30</strong> — Janta (Leandro cozinhou ou pediram iFood). Banho das crianças. Brincadeira rápida. Davi já está caindo de sono.</p>
+      <p><strong>20h30-21h00</strong> — Rotina de cama: história pra Sofia, embala Davi. Liga a TV no quarto (desenho do Disney+ como ruído branco).</p>
+      <p><strong>21h00-23h00</strong> — O "segundo turno". Sentada no sofá ou na cama: responde WhatsApp de clientes que mandaram mensagem à noite, tenta criar conteúdo pro Instagram (filma Reel, edita no CapCut, escreve legenda), pesquisa tendências, assiste reels de marketing. Leandro ao lado assistindo série ou jogando no celular.</p>
+      <p><strong>23h00-23h30</strong> — Deveria dormir. Mas abre Instagram "só pra dar uma olhadinha". 40 minutos depois tá vendo reel de mentora prometendo faturamento de R$50k. Mistura de esperança e descrença.</p>
+      <p><strong>23h30-00h00</strong> — Dorme com celular na mão. Sono leve, entrecortado. Acorda 1-2x por causa do Davi. Às vezes acorda às 3h e não consegue voltar a dormir — fica fazendo conta de cabeça.</p>
+
+      <div class="quote-block">
+        "Acordar cedo para chegar na empresa antes de todo mundo; começar a apagar os incêndios e as pendências que só você consegue resolver; ter poucos minutos para almoçar uma refeição na maioria das vezes nada saudável; lidar com conflitos de funcionários, fornecedores e, principalmente, clientes insatisfeitos."
+        <span class="source">— EAG Educação, sobre a rotina do empreendedor brasileiro</span>
+      </div>
+
+      <div class="copy-impl">A rotina revela que ela trabalha ~15h/dia (8h na clínica + 2-3h de "segundo turno" digital + deslocamento + rotina familiar). Não tem tempo sobrando. QUALQUER solução que exija mais tempo dela será rejeitada. A promessa central precisa ser: "Você cuida dos seus clientes. A gente cuida de trazer os próximos." O horário de maior receptividade para ads e conteúdo é 21h-23h (o "segundo turno" no sofá).</div>
+    </div>
+  </div>
+
+  <!-- PARTE 1.2 IDENTIDADE -->
+  <div class="sec">
+    <div class="sec-label">// PARTE 1.2</div>
+    <div class="sec-title">Identidade e Autoconceito — O Gap Entre Quem Ela É e Quem Quer Ser</div>
+  </div>
+
+  <div class="qblock">
+    <div class="qheader"><div class="qnum">5</div><div class="qtitle">Como ela se define para si mesma vs. para os outros? Qual é o gap?</div></div>
+    <div class="qanswer">
+      <p><strong>Para si mesma:</strong> "Sou boa no que faço. Minhas clientes amam meu trabalho. Estou lutando. Falta só uma peça pra deslanchar." Essa narrativa é parcialmente verdadeira e parcialmente defesa psicológica. A "peça que falta" é um curinga que muda de forma: às vezes é a especialização em harmonização, às vezes é mais seguidores, às vezes é "o momento certo". Nunca é "não sei vender" — porque admitir isso ameaça sua identidade de profissional competente.</p>
+      <p><strong>Para os outros:</strong> "Tá indo bem, graças a Deus. Tô crescendo devagar mas com qualidade." A versão pública é otimista, controlada, digna. Ela NUNCA admitiria para colegas de profissão que tem meses que tira menos que a recepcionista. Nunca diria para a mãe que a conta tá no vermelho. Nunca postaria no Instagram que a agenda tá vazia. A fachada de "empreendedora que tá dando certo" é sagrada.</p>
+      <p><strong>O gap:</strong></p>
+      <p><em>Como ela SE VÊ:</em> Profissional competente, mãe dedicada, esposa esforçada, empresária fazendo o melhor possível com o que tem.</p>
+      <p><em>Como ela REALMENTE É:</em> Excelente técnica, péssima comercial. Não sabe precificar (cobra menos que deveria por medo de perder cliente). Não sabe delegar (centraliza tudo). Não sabe se posicionar (compete por preço quando deveria competir por resultado). Tem pavor de se expor — por isso não faz vídeos mostrando o rosto.</p>
+      <p><em>Como ela ACHA que outros a veem:</em> "Uma esteticista esforçada mas que não decolou."</p>
+      <p><em>Como outros REALMENTE a veem:</em> As clientes a adoram e indicam com entusiasmo. Leandro a respeita mais do que ela percebe. A Dra. Patrícia (ex-chefe) indicou clientes 3 vezes. A Juliana admira a técnica dela. Ela tem mais capital social do que imagina — só não sabe converter isso em crescimento.</p>
+
+      <div class="copy-impl">O gap entre autoimagem e realidade é a maior alavanca de copy. Ela subestima seu capital social e superestima suas deficiências. A copy deve validar o que ela faz bem ("Seu trabalho é excelente — suas clientes provam isso") e nomear o que falta sem culpá-la ("O que falta não é talento — é um sistema que faça o mundo saber que você existe"). Nunca dizer "você não sabe vender" — isso ataca a identidade. Dizer "você não deveria precisar vender — seu trabalho deveria vender por você".</div>
+    </div>
+  </div>
+
+  <div class="qblock">
+    <div class="qheader"><div class="qnum">6</div><div class="qtitle">Qual é o maior insulto que alguém poderia lhe fazer? E o maior elogio?</div></div>
+    <div class="qanswer">
+      <p><strong>Maior insulto:</strong> "Você é só uma esteticista." Ou, variação familiar: "Você largou emprego pra isso?" — O "pra isso" implica que a clínica é menor que o CLT. Que o sacrifício não valeu. Que ela regrediu. Toca na ferida da validação materna e na insegurança sobre a decisão de empreender.</p>
+      <p>Segundo maior insulto: ser chamada de <em>amadora</em> ou <em>aventureira</em> por qualquer profissional de saúde. Ela investiu R$25 mil em formação. Cada certificado é uma resposta a quem acha que esteticista "não é profissão séria".</p>
+      <p><strong>Maior elogio:</strong> "Renata, você é a melhor profissional que eu já fui." Ou: "Nossa, sua clínica parece de São Paulo." Ou ainda: "Vi que você tá com fila de espera, né? Parabéns!" — Fila de espera = validação máxima. Significa que ela não precisa ir atrás — as pessoas vão até ela. É a inversão completa da dinâmica atual.</p>
+
+      <div class="copy-impl">O maior elogio ("fila de espera") deve ser a visão de futuro pintada na copy. O maior insulto ("só uma esteticista") deve ser o inimigo implícito que a ZX ajuda a derrotar. A promessa emocional é: "Com agenda lotada e previsível, ninguém vai questionar se você fez a escolha certa."</div>
+    </div>
+  </div>
+
+  <!-- PARTE 1.3 PSICOLOGIA PROFUNDA -->
+  <div class="sec">
+    <div class="sec-label">// PARTE 1.3</div>
+    <div class="sec-title">Psicologia Profunda e Medos Não-Ditos</div>
+  </div>
+
+  <div class="qblock">
+    <div class="qheader"><div class="qnum">7</div><div class="qtitle">Quais são os 3 medos que ela NUNCA verbalizaria para um estranho?</div></div>
+    <div class="qanswer">
+      <p><strong>Medo 1 — "Talvez eu não tenha perfil de empresária."</strong> Ela sabe fazer estética. Não sabe fazer empresa. Cada vez que erra na precificação, perde uma negociação, mistura conta pessoal com PJ, ou é enganada por uma agência, esse medo ganha força. A formação técnica nunca ensinou gestão, vendas ou marketing — e ela sente essa lacuna como defeito pessoal, não como lacuna do sistema educacional. Pesquisa da João Tassinary (10 anos de mercado) confirma: "A nossa profissão está repleta de pessoas que entendem muito da parte técnica, dos recursos e das afecções, mas conhecem pouco sobre o que é preciso para manter uma clínica."</p>
+      <p><strong>Medo 2 — "Se eu investir e perder mais dinheiro, vou ter que fechar."</strong> A margem é estreita. Nos meses fracos, ela tira R$2-3k de lucro. Um investimento de R$3k que não funcione = um mês trabalhando de graça. E se repetir o fracasso da agência (R$11.200 perdidos), não há reserva para absorver. A matemática do medo: custo fixo R$9.450/mês + custo variável ~R$2.000 = ela precisa faturar R$15.500 apenas para empatar. Qualquer investimento a mais que não retorne é existencial.</p>
+      <p><strong>Medo 3 — "Talvez eu devesse ter ficado no CLT."</strong> O pensamento proibido. Ela nunca diria em voz alta. Mas nas noites de insônia, quando o faturamento cai e as contas apertam, a comparação aparece: R$3.200 garantido + FGTS + férias + 13° vs. R$2.000 de lucro variável com 15h/dia de trabalho. A pesquisa do Vox Populi/CUT confirma: 56% dos autônomos brasileiros voltariam para a carteira assinada. Reportagens de 2025 documentam brasileiros se arrependendo do negócio próprio. Para ela, voltar seria admitir derrota publicamente — principalmente diante da mãe que sempre sugeriu "concurso público".</p>
+
+      <div class="quote-block">
+        "Me vi refém, entregando meu melhor, não tendo retorno financeiro nem reconhecimento profissional. A minha principal dificuldade foi encontrar profissionais que pudessem me orientar."
+        <span class="source">— Clener Nogueira, esteticista empreendedora (depoimento Folha Max/MT)</span>
+      </div>
+
+      <div class="copy-impl">Esses medos nunca devem ser nomeados diretamente na copy — isso seria agressivo e quebraria rapport. Em vez disso, a copy deve agir como espelho invertido: mostrar a versão positiva do medo. Medo 1 → "Você é uma profissional excepcional. Só precisa de um sistema que faça jus ao seu talento." Medo 2 → "Diferente de agências, nossos primeiros resultados aparecem em 14 dias." Medo 3 → "Para que você tenha a liberdade que o CLT nunca daria."</div>
+    </div>
+  </div>
+
+  <div class="qblock">
+    <div class="qheader"><div class="qnum">8</div><div class="qtitle">O que a faz acordar às 3h da manhã com ansiedade? Monólogo interno sem filtro.</div></div>
+    <div class="qanswer">
+      <p><em>3h17 da madrugada. Davi chorou, ela levantou pra dar água. Voltou pra cama mas não consegue dormir. Leandro ronca do lado:</em></p>
+      <p>"Tá, deixa eu fazer a conta. Aluguel R$1.880 com condomínio. Folha R$3.200. Produtos e insumos R$2.200. Parcela do laser R$890. Simples Nacional R$680. Telefone, internet, água, luz da clínica: R$400. Contador R$200. Só de custo fixo são R$9.450. Pra eu tirar R$4 mil pra mim, preciso faturar no mínimo R$14 mil. E se o mês que vem for igual a esse? Se cair pra R$10 mil? Aí eu tiro R$500? Menos que a recepcionista?"</p>
+      <p>"O Leandro vai falar de novo pra eu 'considerar voltar pro CLT'. Ele não fala com essas palavras, mas eu sei o que ele tá pensando. 'Renata, a empresa dá menos que seu salário antigo.'"</p>
+      <p>"Meu Deus, a Sofia precisa de óculos, a consulta do oftalmo é particular, R$380. E o IPVA do carro? Paguei R$1.200 e parcelei no cartão. O cartão tá em R$4.700. Se eu pagar o mínimo... não. Não posso pagar o mínimo. Rotativo é 400% ao ano. Eu li isso."</p>
+      <p>"E a Juliana postou hoje que tá abrindo uma SEGUNDA sala. Uma segunda sala. Ela formou comigo. Ela era mediana nas provas. Mas ela tem um marido que investiu R$50 mil na clínica dela no começo. Eu comecei com uma maca no fundo de casa."</p>
+      <p>"E a minha mãe no domingo: 'E a clínica, filha? Tá indo?' Com aquele tom. Aquele tom que diz 'eu sabia que não ia dar certo'."</p>
+      <p>"Talvez eu devesse ter ficado na clínica da Dra. Patrícia. Estaria ganhando R$3.200 garantido, sem dor de cabeça..."</p>
+      <p>"...Eu sou boa. Eu SEI que sou boa. Minhas clientes voltam. O resultado é visível. Eu estudo, me atualizo, faço tudo certo dentro da sala. Mas fora da sala... eu não sei vender. Eu não sei como a Juliana faz."</p>
+      <p><em>Pega o celular. Abre Instagram. Vê reel de mentora falando "sua clínica pode faturar R$50 mil por mês". Assiste 60 segundos. Segue. Vê preço da mentoria: R$4.997. Fecha. Vira pro lado. Não dorme até as 4h12.</em></p>
+
+      <div class="copy-impl">Este monólogo é ouro puro. Contém os gatilhos emocionais mais poderosos: comparação com concorrente, pressão familiar, medo de depender do marido, custo fixo vs. faturamento instável. Um VSL que reproduza essa dinâmica emocional nos primeiros 90 segundos (com linguagem adaptada) vai gerar identificação visceral instantânea. Exemplo de hook: "Se você já ficou acordada de madrugada fazendo conta de cabeça enquanto todo mundo dormia..."</div>
+    </div>
+  </div>
+
+  <!-- PARTE 1.4 ESPERANÇAS -->
+  <div class="sec">
+    <div class="sec-label">// PARTE 1.4</div>
+    <div class="sec-title">Esperanças, Sonhos e Visão de Futuro</div>
+  </div>
+
+  <div class="qblock">
+    <div class="qheader"><div class="qnum">9</div><div class="qtitle">Qual é a fantasia de vida — o melhor cenário possível daqui a 5 anos?</div></div>
+    <div class="qanswer">
+      <p>Renata tem uma imagem mental muito específica do "sucesso":</p>
+      <p><strong>A Clínica:</strong> Espaço maior (80-100m²), duas salas de procedimento, uma sala de harmonização facial dedicada. Equipe de 4-5 pessoas. Decoração que parece capa de revista de arquitetura. Logo na entrada em acrílico retroiluminado. Vitrine de dermocosméticos própria marca (sonho distante). Agenda lotada 3 semanas à frente. Lista de espera real.</p>
+      <p><strong>O Financeiro:</strong> Faturamento R$50-80k/mês. Lucro líquido R$15-25k. Conta PJ sempre no azul. Cartão sem dívida. Reserva de emergência de 6 meses. Consegue tirar férias sem medo.</p>
+      <p><strong>A Rotina:</strong> Chega na clínica às 9h (não às 8h). Atende 4 clientes premium por dia (ticket alto), não 7 clientes baratos. Tem gerente que cuida do operacional. Sai às 17h. Pega filhos na escola. Janta COM a família, não DEPOIS da família.</p>
+      <p><strong>O Status:</strong> Ser reconhecida como referência em estética avançada na região. Ser convidada pra palestrar em congresso. Ter coluna ou participação em portal de estética. Instagram com 30k+ seguidores orgânicos. Ser chamada de "Dra. Renata" mesmo sem ser médica (no nicho de estética, esse título informal é marca de respeito).</p>
+      <p><strong>A Família:</strong> Sofia num colégio particular bom (R$1.800/mês). Davi na mesma escola. Leandro orgulhoso — dizendo pros amigos "minha esposa é empresária, tem clínica própria". A mãe contando na mesa de domingo: "A Renata tá muito bem, sabia?" — sem aquele tom.</p>
+      <p><strong>O Momento "Chegou":</strong> Ela sabe que "venceu" quando puder: (1) comprar o equipamento de harmonização sem parcelar; (2) tirar férias de 15 dias sem abrir o WhatsApp Business; (3) ouvir "sua agenda só tem vaga daqui 3 semanas" da recepcionista.</p>
+
+      <div class="copy-impl">A fantasia de "agenda lotada 3 semanas à frente" é mais poderosa que qualquer número de faturamento. Use future pacing com esse cenário específico: "Imagine abrir sua agenda segunda-feira e ver que já está cheia até o dia 25. Imagine sua recepcionista dizendo 'só temos vaga daqui 3 semanas' com naturalidade." Isso é mais real e aspiracional do que "fature R$50k/mês".</div>
+    </div>
+  </div>
+
+  <!-- PARTE 1.5 ATITUDES E CRENÇAS -->
+  <div class="sec">
+    <div class="sec-label">// PARTE 1.5</div>
+    <div class="sec-title">Atitudes e Crenças — Religião, Política, Dinheiro, Trabalho</div>
+  </div>
+
+  <div class="qblock">
+    <div class="qheader"><div class="qnum">10</div><div class="qtitle">Qual é sua relação com religião? Como influencia decisões?</div></div>
+    <div class="qanswer">
+      <p>Renata é <strong>evangélica não-praticante</strong> — foi criada na Assembleia de Deus, foi batizada aos 14, mas parou de frequentar regularmente quando abriu a clínica ("não tenho tempo"). Vai no culto de domingo quando a mãe insiste. Mantém fé pessoal forte: ora antes de dormir, agradece quando fecha um bom mês, pede orientação quando está perdida. Tem versículos salvos no celular. O WhatsApp de bom dia é "Bom dia! Que Deus abençoe nosso dia!" para as clientes próximas.</p>
+      <p><strong>Como afeta decisões:</strong> A Teologia da Prosperidade (predominante nas igrejas evangélicas brasileiras) moldou sua relação com trabalho e dinheiro. Ela acredita que "Deus ajuda quem se ajuda" — trabalho duro + fé = prosperidade. Mas quando o resultado não vem, a culpa internalizada também é teológica: "será que Deus tá provando minha fé?" ou "será que eu não tô fazendo minha parte?". Nunca atribui fracasso a fatores estruturais. Sempre a si mesma.</p>
+      <p>Implicação: ela é receptiva a linguagem de "merecimento" e "recompensa pelo esforço". "Você já fez a sua parte — trabalhou, estudou, investiu. Agora é hora de colher." Essa estrutura narrativa conecta com o framework religioso implícito.</p>
+    </div>
+  </div>
+
+  <div class="qblock">
+    <div class="qheader"><div class="qnum">11</div><div class="qtitle">O que ela acha sobre trabalho duro vs. sorte vs. sistema? Quais mitos limitantes ela carrega?</div></div>
+    <div class="qanswer">
+      <p><strong>Crenças sobre trabalho:</strong> "Sucesso vem pra quem trabalha mais" — meritocracia pura. Ela trabalha 15h/dia e acredita que isso deveria ser suficiente. Quando não é, não questiona o sistema — questiona a si mesma. A ideia de que "trabalhar inteligente" pode superar "trabalhar mais" é contraintuitiva pra ela. Investir em marketing é "pagar pra não trabalhar" na primeira leitura emocional.</p>
+      <p><strong>10 mitos limitantes que ela TEM CERTEZA que são verdade:</strong></p>
+      <p>1. "Se meu serviço for bom, o boca a boca cuida." → Realidade: boca a boca tem teto (~30-40 indicações/ano). Não escala. Não é previsível.</p>
+      <p>2. "Marketing digital é pra empresa grande." → Realidade: empresas locais com R$30-50/dia em Meta Ads + Google conseguem retorno expressivo.</p>
+      <p>3. "Preciso de muitos seguidores no Instagram pra ter clientes." → Realidade: 2.800 seguidores orgânicos + anúncios bem segmentados > 50k seguidores genéricos.</p>
+      <p>4. "Investir em marketing é gastar, não investir." → Realidade: se R$2k em anúncios traz 15 clientes a R$200 de ticket médio, são R$3k de receita nova.</p>
+      <p>5. "Se não funcionou antes, não vai funcionar agora." → Realidade: ela contratou agência genérica. O problema foi a execução, não a ferramenta.</p>
+      <p>6. "O Instagram decide quem aparece." → Realidade: Google (busca ativa) é ignorado. 76% de quem busca "perto de mim" visita em 24h.</p>
+      <p>7. "Eu preciso aprender marketing pra depois contratar alguém." → Realidade: precisa de parceiro que entenda o nicho, não se tornar especialista.</p>
+      <p>8. "Se cobrar mais caro, perco cliente." → Realidade: posicionamento premium atrai cliente melhor. Cobrar barato atrai quem pechincha.</p>
+      <p>9. "Preciso de equipamento novo pra crescer." → Realidade: precisa de DEMANDA antes de equipamento.</p>
+      <p>10. "Mulher que pede ajuda é fraca." → Realidade: delegação é sinal de maturidade empresarial.</p>
+    </div>
+  </div>
+
+  <!-- PARTE 1.6 COMPORTAMENTO DIGITAL -->
+  <div class="sec">
+    <div class="sec-label">// PARTE 1.6</div>
+    <div class="sec-title">Comportamento Digital Detalhado — Onde, Quando, Como</div>
+  </div>
+
+  <div class="qblock">
+    <div class="qheader"><div class="qnum">12</div><div class="qtitle">Em quais plataformas específicas ela passa tempo? Horários? Comportamento?</div></div>
+    <div class="qanswer">
+      <p><strong>WhatsApp (6-8h/dia, constante):</strong> É o escritório, a loja e o CRM. 84-95% das empresas brasileiras usam WhatsApp para comunicação com clientes. Para ela, é onde chega o agendamento, onde manda foto do procedimento, onde recebe (ou não) a indicação. Usa WhatsApp Business com catálogo básico. Não tem CRM. Não tem chatbot. Responde manualmente, alternando entre pessoal e profissional no mesmo aparelho. O tempo médio de resposta: 30-120 minutos (quando está atendendo) — perdendo conversões porque empresas que respondem em até 1 minuto convertem até 7x mais.</p>
+      <p><strong>Instagram (2-3h/dia, picos às 12h30 e 21h-23h):</strong> Plataforma primária de consumo e tentativa de produção. Segue: @nataliabeauty (11M), perfis de biomédicas estetas, mentoras de estética, concorrentes locais. Consome: Reels de procedimentos (antes/depois), dicas de gestão de clínica, conteúdo motivacional feminino. Produz (com dificuldade): 2-3 posts/semana, Stories irregulares, Reels esporádicos filmados entre atendimentos. Tem 2.800 seguidores — 80% são amigos, família, colegas. Não são clientes potenciais. Resultado: curtidas de conhecidos, zero conversão.</p>
+      <p><strong>YouTube (30-60min/dia, noite):</strong> Consome no "segundo turno" (21h-23h). Assiste: tutoriais de procedimentos estéticos, aulas de biomédicas sobre protocolos, vlogs de donas de clínica ("um dia comigo na clínica"), podcasts Jota Jota, conteúdo da EAG (Empresa Autogerenciável). Busca: "como captar clientes para clínica de estética", "marketing digital para esteticistas", "como usar o Google Meu Negócio".</p>
+      <p><strong>Google (busca eventual, reativa):</strong> Busca quando tem um problema específico: "como precificar tratamento estético", "quanto cobrar peeling", "melhor equipamento laser corporal 2026". Não pesquisa ativamente por agências de marketing — essa busca só acontece quando a dor fica insuportável (mês muito ruim).</p>
+      <p><strong>TikTok (20-30min/dia, passivo):</strong> Consome mas não produz. Acha que "TikTok é pra jovem". Vê conteúdo que viraliza de outras esteticistas e pensa "eu deveria fazer isso" mas nunca faz.</p>
+      <p><strong>Facebook (quase abandonado):</strong> Entra 1-2x/semana. Está em 3-4 grupos de esteticistas (ex: "Esteticistas Empreendedoras do Brasil", "Profissionais de Estética — Goiás"). Lê posts mas raramente comenta. Os grupos são onde ela vê desabafos de outras profissionais com os mesmos problemas — e onde valida que "não é só comigo".</p>
+      <p><strong>O que ela consome mas não admite:</strong> Perfis de "mentorias de estética" que prometem faturamento de R$50k/mês. Ela sabe que é exagerado. Mas assiste porque acende uma fagulha de esperança. Também consome conteúdo de lifestyle de influenciadoras (viagens, roupas, casas) e sente mistura de aspiração e frustração.</p>
+
+      <div class="copy-impl">O melhor horário para ads que convertem: 21h-23h (segundo turno no sofá). O melhor canal para remarketing: WhatsApp (ela vive lá). O melhor formato: vídeo curto (Reel/Story de 30-60s) com depoimento de outra dona de clínica. O pior formato: texto longo ou e-mail (ela não lê e-mail). A busca no Google só acontece em momento de crise — Google Ads deve estar ativo permanentemente para capturar essa janela.</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     MÓDULO R2 — FAMÍLIA, COMUNIDADE, REDE
+     ═══════════════════════════════════════════════════════ -->
+<div id="mod-r2" style="margin-top:80px">
+  <div class="mod-header">
+    <div class="mod-letter">R</div>
+    <div class="mod-info">
+      <div class="mod-title">MÓDULO 2 — RESEARCH</div>
+      <div class="mod-sub">Família, Comunidade e Rede de Confiança</div>
+    </div>
+  </div>
+
+  <div class="qblock">
+    <div class="qheader"><div class="qnum">13</div><div class="qtitle">Qual é a dinâmica do casal em relação a dinheiro e decisões de negócio? Quem tem poder de veto?</div></div>
+    <div class="qanswer">
+      <p><strong>Leandro (37, analista de sistemas, R$5.800 CLT)</strong> é o pilar financeiro silencioso. Seu salário paga a casa (financiamento R$1.380), escola das crianças (R$1.570), carro dele (parcela R$780), e parte das contas domésticas. A clínica da Renata deveria ser autossustentável + gerar renda pessoal pra ela. Nos meses bons, funciona. Nos fracos, o salário do Leandro cobre o déficit — e isso corrói a autoestima dela.</p>
+      <p><strong>Dinâmica de decisão:</strong> Renata tem autonomia formal sobre a clínica. Mas investimentos acima de ~R$2.000 passam pelo crivo emocional do Leandro. Ela não "pede permissão" — ela "comenta" o investimento e lê a reação dele. Se ele franze a testa, ela recua. Se ele fala "faz sentido", ela avança. Depois do fracasso da agência (R$11.200), o limiar de tolerância do Leandro caiu drasticamente. Ele não disse "eu avisei" — mas o silêncio de 3 meses sobre o assunto comunicou o mesmo.</p>
+      <p><strong>O que o convence:</strong> Leandro é analista de sistemas — pensa em termos de dados, ROI, lógica. Não se convence com "vai dar certo" ou "eu sinto que é bom". Precisa de: (1) números concretos de quanto custou e quanto retornou; (2) case real comparável; (3) garantia de saída (sem contrato longo); (4) demonstração de que não vai repetir o padrão anterior.</p>
+      <p><strong>Insight crítico:</strong> 67% das mulheres se sentem inseguras em decisões financeiras sozinhas (CMI Research). O "vou falar com meu marido" é código para: preciso de validação externa porque não confio no meu julgamento depois do último fracasso. Se a ZX não fornecer material que ela possa mostrar ao Leandro, a venda morre na consulta ao cônjuge.</p>
+
+      <div class="copy-impl">A ZX precisa de dois materiais de venda: (1) a peça emocional para a Renata (vídeo, stories, conversa por WhatsApp), e (2) um one-pager com ROI projetado, comparativo de custos, garantias e case com números para o Leandro. Ele é o "revisor financeiro" invisível. Armar ela com esse material é destravar 40%+ das vendas que travam no "preciso pensar".</div>
+    </div>
+  </div>
+
+  <div class="qblock">
+    <div class="qheader"><div class="qnum">14</div><div class="qtitle">Como a confiança se forma nessa comunidade? Como a reputação se propaga ou destrói?</div></div>
+    <div class="qanswer">
+      <p>O ecossistema de confiança da empreendedora de estética goiana opera em 4 camadas concêntricas:</p>
+      <p><strong>Camada 1 — Família nuclear (confiança máxima):</strong> Leandro, mãe, irmã. Decisões grandes passam por aqui. A mãe opina mesmo sem ser consultada. A irmã (que trabalha de CLT) tem uma visão "segura" que reforça o viés de risco zero.</p>
+      <p><strong>Camada 2 — Colegas de profissão (confiança técnica):</strong> 3-5 esteticistas que ela respeita e troca informações. Grupos de WhatsApp de profissionais ("Esteticistas GO", "Biomédicas Estetas Goiânia"). Aqui circulam recomendações de fornecedores, alertas sobre golpes, e — crucialmente — experiências com agências de marketing. Se uma colega de confiança disser "testei a ZX e funcionou", vale mais que 100 anúncios.</p>
+      <p><strong>Camada 3 — Clientes próximas (confiança relacional):</strong> 10-15 clientes que viraram "amigas de salão". Conversam sobre vida pessoal durante o procedimento. Indicam com entusiasmo. São o "conselho informal" dela. Se uma cliente que é empresária disser "investe nessa agência", ela considera.</p>
+      <p><strong>Camada 4 — Comunidade digital (confiança aspiracional):</strong> Mentoras que ela segue no Instagram, podcasters que ouve, influenciadores de estética. Confiança baseada em autoridade percebida, não em relacionamento pessoal. Vulnerável a promessas exageradas.</p>
+      <p><strong>Propagação de reputação:</strong> Uma experiência positiva com a ZX, contada no grupo de WhatsApp de esteticistas, alcança 50-200 profissionais em horas. Uma experiência negativa — destruição imediata e irrecuperável no grupo. A lógica é idêntica à das comunidades religiosas evangélicas (onde 72.6% das empreendedoras de serviços operam): confiança se constrói por testemunho e se destrói por traição.</p>
+
+      <div class="copy-impl">Estratégia de aquisição mais poderosa: transformar 1 cliente satisfeita em case público que circule nos grupos de WhatsApp de esteticistas. Cada depoimento espontâneo de uma dona de clínica dizendo "contratei a ZX e meu telefone não para" vale mais que R$10 mil em anúncios. O programa de indicação deveria ser a prioridade nº 1 após os 3 primeiros meses de resultado.</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     MÓDULO R3 — DINHEIRO E DECISÃO DE COMPRA
+     ═══════════════════════════════════════════════════════ -->
+<div id="mod-r3" style="margin-top:80px">
+  <div class="mod-header">
+    <div class="mod-letter">R</div>
+    <div class="mod-info">
+      <div class="mod-title">MÓDULO 3 — RESEARCH</div>
+      <div class="mod-sub">Psicologia Financeira e Ciclo de Decisão de Compra</div>
+    </div>
+  </div>
+
+  <div class="qblock">
+    <div class="qheader"><div class="qnum">15</div><div class="qtitle">Qual é o gatilho que faz ela abrir a carteira sem questionar vs. fechar independente do argumento?</div></div>
+    <div class="qanswer">
+      <p><strong>Abre a carteira sem questionar para:</strong></p>
+      <p>• <strong>Formação técnica</strong> — R$800 num curso de microagulhamento avançado? Paga na hora. Porque é investimento na COMPETÊNCIA dela — onde ela se sente segura. Já investiu R$25k+ em cursos.</p>
+      <p>• <strong>Equipamento</strong> — Se apareceu um novo laser que promete "resultado em 1 sessão", ela parcela no cartão. Equipamento é tangível, ela VÊ e TOCA. Sente que está progredindo.</p>
+      <p>• <strong>Filhos</strong> — Qualquer coisa para Sofia e Davi. Escola, saúde, roupa. Sem hesitação.</p>
+      <p><strong>Fecha a carteira independente do argumento para:</strong></p>
+      <p>• <strong>Marketing digital</strong> — Depois do trauma da agência, qualquer proposta de "gestão de tráfego" ou "marketing digital" aciona o mecanismo de defesa imediato. Ela ouve a proposta já esperando ser enganada.</p>
+      <p>• <strong>Assinatura/contrato longo</strong> — Fidelidade de 6 ou 12 meses é barreira quase intransponível. Ela foi "presa" em contrato antes. Agora, a palavra "contrato" gera reação fisiológica de rejeição.</p>
+      <p>• <strong>Qualquer coisa que pareça "agência"</strong> — Se o vendedor usar linguagem de agência ("leads", "funil", "awareness", "CPM"), ela desliga emocionalmente em 30 segundos. Mesmo que a proposta seja boa.</p>
+      <p><strong>A linha psicológica entre "gasto" e "investimento":</strong> Gasto = algo que ela não controla e não entende (marketing, anúncios, métricas abstratas). Investimento = algo que ela controla e entende (equipamento, curso, reforma). A ZX precisa mover "assessoria de tráfego" da coluna "gasto" para a coluna "investimento" — e a única forma é: resultado rápido visível + dashboard simples + linguagem que ela entende.</p>
+
+      <div class="copy-impl">Nunca usar a palavra "lead" na comunicação com o avatar. Substituir por "cliente novo" ou "agendamento". Nunca usar "funil" — substituir por "sistema de captação". Nunca falar "awareness" — falar "visibilidade". A linguagem técnica de marketing não é filtrada pelo avatar como expertise — é filtrada como AMEAÇA (associada à agência que a enganou).</div>
+    </div>
+  </div>
+
+  <div class="qblock">
+    <div class="qheader"><div class="qnum">16</div><div class="qtitle">Ciclo completo de decisão: do gatilho ao "sim". Quanto tempo? Quantos touchpoints?</div></div>
+    <div class="qanswer">
+      <p><strong>Gatilho (Dia 0):</strong> Semana com agenda vazia. Ou mês que fechou abaixo de R$12k. Ou post da Juliana mostrando "agenda fechada". A dor é o catalisador — não o desejo. Ela não busca crescimento quando está bem. Busca socorro quando está mal.</p>
+      <p><strong>Pesquisa passiva (Dia 1-7):</strong> Começa a prestar atenção em anúncios de marketing no Instagram que antes ignorava. Assiste Reels sobre "como captar clientes para estética". Pesquisa "gestor de tráfego para clínica" no Google (raramente). Pergunta no grupo de WhatsApp de esteticistas: "Alguém conhece alguém bom pra cuidar do marketing?"</p>
+      <p><strong>Avaliação (Dia 7-21):</strong> Conversa com 1-3 prestadores de serviço por WhatsApp. Compara preços. Analisa o Instagram do prestador (profissionalismo, depoimentos). Tenta identificar se é "agência genérica" ou "alguém que entende meu nicho". Leva a proposta pro Leandro (ou comenta casualmente no jantar). Pergunta pra 1-2 colegas se conhecem o prestador.</p>
+      <p><strong>Paralisia (Dia 14-28):</strong> Mesmo se gostar da proposta, trava. Não é objeção racional — é medo emocional. "E se não funcionar?" domina. Ela volta a pesquisar. Compara de novo. Pede "mais um tempinho pra pensar". O follow-up do vendedor nesse momento é CRÍTICO — se não fizer, ela esfria e volta ao status quo.</p>
+      <p><strong>Decisão (Dia 21-42):</strong> Fecha com o prestador que transmitiu mais CONFIANÇA PESSOAL — não necessariamente o menor preço. A garantia explícita e o atendimento personalizado pesam mais que qualquer promessa técnica. Se ela sentir que é "mais uma conta" num portfólio de 50 clientes, não fecha. Se sentir que o profissional realmente entende estética e vai cuidar do caso dela pessoalmente, fecha.</p>
+      <p><strong>Touchpoints necessários para conversão:</strong> 5-8. Típico: (1) Ad no Instagram; (2) Visita ao perfil; (3) Conteúdo orgânico (Reel/Story); (4) Mensagem no WhatsApp; (5) Conversa inicial; (6) Proposta com números; (7) Follow-up após consulta ao marido; (8) Fechamento.</p>
+      <p><strong>Duração total:</strong> 2-6 semanas. Pode ser encurtada para 7-14 dias com: diagnóstico gratuito mostrando oportunidade perdida + case de clínica idêntica + garantia de resultado em 14 dias + material de apoio para o cônjuge.</p>
+
+      <div class="copy-impl">O ciclo revela que a venda NÃO acontece no primeiro contato. É preciso nutrir com 3-5 touchpoints antes de fazer a oferta. Sequência ideal: (1) Ad com dor/identificação → (2) Landing page com caso + garantia → (3) WhatsApp com diagnóstico rápido → (4) Proposta com números claros + material pro marido → (5) Follow-up 48h depois → (6) Fechamento com garantia de 14 dias.</div>
+    </div>
+  </div>
+
+  <div class="qblock">
+    <div class="qheader"><div class="qnum">17</div><div class="qtitle">As 10 objeções em ordem de frequência e intensidade — com resposta estratégica</div></div>
+    <div class="qanswer">
+      <table class="tbl">
+        <thead><tr><th>#</th><th>Objeção</th><th>Intensidade</th><th>Resposta Estratégica</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>"Já fui enganada antes. Já contratei e não funcionou."</td><td style="color:var(--o)">🔴🔴🔴🔴🔴</td><td>Reconhecer o trauma ANTES de vender. "Eu entendo. A maioria das agências vende lead — a gente constrói sistema. Por isso mostramos exatamente o que será feito, com dashboard transparente, e os primeiros resultados em 14 dias."</td></tr>
+          <tr><td>2</td><td>"Está caro / Não tenho dinheiro agora."</td><td style="color:var(--o)">🔴🔴🔴🔴</td><td>Reframing: "Quanto custa uma cadeira vazia por dia? Se cada horário vazio te custa R$300 em procedimentos perdidos, em 5 dias sem cliente você 'gastou' mais que a assessoria inteira."</td></tr>
+          <tr><td>3</td><td>"Preciso pensar / Vou falar com meu marido."</td><td style="color:var(--o)">🔴🔴🔴🔴</td><td>"Faz sentido. Inclusive preparei esse material com os números pra vocês olharem juntos." [Enviar one-pager com ROI projetado pro Leandro]</td></tr>
+          <tr><td>4</td><td>"Eu mesma faço meu marketing / Sei fazer posts."</td><td style="color:var(--o)">🔴🔴🔴</td><td>"Postar no Instagram é 10% do marketing. Os outros 90% — estratégia de captura, Google, conversão no WhatsApp — é onde está o dinheiro que você tá deixando na mesa."</td></tr>
+          <tr><td>5</td><td>"Marketing digital não funciona pro meu nicho."</td><td style="color:var(--o)">🔴🔴🔴</td><td>Mostrar case de clínica idêntica. "76% das pessoas que buscam 'clínica de estética perto de mim' no Google visitam em 24 horas. O marketing funciona — o que não funciona é anúncio genérico."</td></tr>
+          <tr><td>6</td><td>"Não tenho tempo para acompanhar mais uma coisa."</td><td style="color:var(--o)">🔴🔴🔴</td><td>"Você não precisa de mais uma hora no seu dia. A ZX faz 100% por você. Você atende. A gente traz quem precisa de você."</td></tr>
+          <tr><td>7</td><td>"Tenho sobrinho/conhecido que faz mais barato."</td><td style="color:var(--o)">🔴🔴</td><td>"Seu sobrinho sabe a diferença entre peeling químico e microagulhamento? Sabe que inverno é baixa pra corporal e alta pra facial? Expertise de nicho é o que separa resultado de dinheiro jogado fora."</td></tr>
+          <tr><td>8</td><td>"Vou esperar o movimento melhorar."</td><td style="color:var(--o)">🔴🔴</td><td>"O movimento não melhora sozinho — melhora quando você decide mudar o que causa ele. Esperar é fazer a mesma coisa e esperar resultado diferente."</td></tr>
+          <tr><td>9</td><td>"Não vou ver resultado rápido."</td><td style="color:var(--o)">🔴🔴</td><td>"Nossos clientes veem os primeiros agendamentos em 7-14 dias. Se em 30 dias você não vir diferença, cancela sem custo."</td></tr>
+          <tr><td>10</td><td>"Tenho medo de contrato / compromisso longo."</td><td style="color:var(--o)">🔴</td><td>"Sem contrato de fidelidade. A gente confia no próprio trabalho — se o resultado não vier, não faz sentido pra ninguém continuar."</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     MÓDULO R4 — MERCADO COMO SISTEMA
+     ═══════════════════════════════════════════════════════ -->
+<div id="mod-r4" style="margin-top:80px">
+  <div class="mod-header">
+    <div class="mod-letter">R</div>
+    <div class="mod-info">
+      <div class="mod-title">MÓDULO 4 — RESEARCH</div>
+      <div class="mod-sub">O Mercado como Sistema · Soluções Existentes · Corrupção do Mercado</div>
+    </div>
+  </div>
+
+  <div class="qblock">
+    <div class="qheader"><div class="qnum">18</div><div class="qtitle">Todas as soluções que o avatar usa ou já usou — e por que cada uma falha</div></div>
+    <div class="qanswer">
+      <table class="tbl">
+        <thead><tr><th>Solução</th><th>Custo</th><th>O que gosta</th><th>O que odeia</th><th>Por que falha</th></tr></thead>
+        <tbody>
+          <tr><td>Indicação / boca a boca</td><td>Grátis</td><td>Clientes pré-qualificados, alta conversão (50-70%)</td><td>Imprevisível, sazonal, tem teto</td><td>Não escala. 30-40 indicações/ano é o máximo. Cria dependência.</td></tr>
+          <tr><td>Instagram orgânico (posts, Reels, Stories)</td><td>R$0 (+ 2h/dia de tempo)</td><td>Sente que está "fazendo alguma coisa"</td><td>Resultado zero. 200 curtidas, 0 agendamentos</td><td>Alcance orgânico de 5-10% da base. Base pequena (2.800 seg). Público é amigos/família, não clientes.</td></tr>
+          <tr><td>Boost de post (Instagram/Facebook)</td><td>R$50-200/mês</td><td>Fácil de fazer, "impulsionar" parece controle</td><td>Gasta dinheiro sem entender o resultado</td><td>Campanha de alcance não é campanha de conversão. Público amplo, sem segmentação geográfica precisa.</td></tr>
+          <tr><td>Sobrinho/conhecido que "mexe com isso"</td><td>R$300-800/mês</td><td>Barato, "tá na família"</td><td>Vergonha de cobrar resultado, amadorismo</td><td>Sem expertise no nicho. Posts genéricos. Não entende Google, WhatsApp comercial, conversão.</td></tr>
+          <tr><td>Agência genérica de marketing digital</td><td>R$1.500-4.000/mês + verba</td><td>Parecia profissional na venda</td><td>Leads frios, relatórios incompreensíveis, sumiço pós-pagamento</td><td>Atende 30-50 clientes simultaneamente. Mesmo pacote pra clínica e pra padaria. Não integra com comercial.</td></tr>
+          <tr><td>Curso/mentoria de marketing para esteticistas</td><td>R$497-5.000 (avulso)</td><td>Sente que está se capacitando</td><td>"Ensinou a fazer dancinha" — nada prático</td><td>Ensina ELA a fazer, mas ela não tem tempo. Precisaria de alguém fazendo POR ela.</td></tr>
+          <tr><td>Parcerias com outros profissionais</td><td>Grátis (em teoria)</td><td>Ideia elegante, "ganha-ganha"</td><td>Ninguém manda cliente de verdade</td><td>Sem sistema de tracking. Sem incentivo. Todo mundo "topa em tese" mas esquece.</td></tr>
+          <tr><td>Google Meu Negócio</td><td>Grátis</td><td>Aparece quando pesquisam</td><td>Não sabe otimizar, perfil abandonado</td><td>Perfil incompleto, poucas avaliações, sem posts. Não aparece nas primeiras posições.</td></tr>
+          <tr><td>Panfleto, cartão de visita</td><td>R$100-300</td><td>Tangível, "distribui na vizinhança"</td><td>Resultado zero rastreável</td><td>Retorno de 0.5-1% em conversão. Em 2026, quase obsoleto para o nicho.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="qblock">
+    <div class="qheader"><div class="qnum">19</div><div class="qtitle">Quando o problema piorou? Havia um tempo em que era mais fácil? Quais forças externas mudaram o jogo?</div></div>
+    <div class="qanswer">
+      <p><strong>Antes de 2020:</strong> A dona de clínica de estética conseguia clientes com relativa facilidade via indicação + presença local + Instagram orgânico. O alcance do Instagram era maior (15-20% vs. 5-8% atual), a concorrência era menor, e a pandemia não tinha acelerado a digitalização forçada. Uma esteticista boa, com localização razoável, lotava agenda sem precisar de anúncios.</p>
+      <p><strong>O que mudou — linha do tempo:</strong></p>
+      <p><em>2020-2021:</em> Pandemia fecha clínicas → demissões em massa → boom de novas clínicas caseiras. O Sebrae registrou 170 mil novos negócios de beleza só nos primeiros 9 meses de 2024. Resultado: hipercompetição local. Em Goiânia, 753 clínicas de estética ativas disputam o mesmo público.</p>
+      <p><em>2021-2023:</em> Instagram reduz alcance orgânico drasticamente para forçar investimento em ads. O algoritmo de 2016 (15-20% de alcance) virou 5-8% em 2023. Quem não paga, não aparece. A esteticista que dependia do orgânico ficou invisível da noite pro dia.</p>
+      <p><em>2023-2025:</em> Boom de "mentorias de estética" e "gestores de tráfego" predatórios. O mercado se encheu de promessas de "agenda lotada em 30 dias" vendidas por pessoas sem experiência real. Resultado: onda de traumas com marketing digital que criou uma barreira emocional massiva no avatar. Quem foi enganada agora é cética por padrão.</p>
+      <p><em>2025-2026:</em> Entrada de franquias de estética (Royal Face, Botocenter, Emagrecentro) com orçamentos de marketing de R$50-100k/mês por unidade. A dona de clínica independente agora compete com máquinas de marketing que dominam Google e Instagram na região. Franquia tem equipe de marketing dedicada; ela tem 2 horas à noite no CapCut.</p>
+      <p><strong>O avatar tem consciência dessas forças?</strong> Parcialmente. Ela percebe que "o Instagram mudou" e que "tem mais concorrência", mas atribui o problema a si mesma ("eu não sei fazer conteúdo bom") em vez de identificar a causa estrutural (plataforma forçando investimento + hipercompetição local + profissionalização do setor). Essa autoculpa paralisante é a brecha que a copy deve endereçar: "Não é você. O mercado mudou. Quem não tem sistema, fica invisível."</p>
+
+      <div class="copy-impl">A narrativa de "corrupção do mercado" é poderosa para copy: "Em 2018, bastava postar um antes/depois bonito e o Instagram mostrava pra todo mundo. Hoje, esse mesmo post alcança 5% dos seus seguidores — e seus seguidores são sua mãe e suas amigas. O jogo mudou. Quem não tem sistema, fica pra trás." Nomear a causa externa (Instagram reduziu alcance, franquias entraram, mercado saturou) retira a culpa dela e posiciona a ZX como quem tem a solução para o problema ESTRUTURAL.</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     MÓDULO M — MECANISMO ÚNICO
+     ═══════════════════════════════════════════════════════ -->
+<div id="mod-m" style="margin-top:80px">
+  <div class="mod-header">
+    <div class="mod-letter">M</div>
+    <div class="mod-info">
+      <div class="mod-title">MÓDULO 5 — MECHANISM</div>
+      <div class="mod-sub">Mecanismo Único · Causa Raiz · Arquitetura da Solução</div>
+    </div>
+  </div>
+
+  <div class="mech-part" style="margin-bottom:32px">
+    <div class="lb" style="margin-bottom:16px">// DIAGNÓSTICO DO PROBLEMA REAL</div>
+    <div class="st" style="margin-bottom:20px">A <span class="to">Inversão Fatal</span> — Por Que 95% do Marketing Para Clínicas Falha</div>
+    <div class="bd">
+      <p>O marketing digital falha para clínicas de estética pequenas porque opera com um <strong>modelo invertido</strong>: investe primeiro em tráfego (anúncios) sem antes construir posicionamento, captura de intenção e processo de conversão. O resultado é um ciclo destrutivo:</p>
+      <p style="text-align:center;font-size:18px;font-weight:700;color:var(--o);margin:20px 0">Dinheiro em anúncio genérico → Leads frios → Atendimento lento no WhatsApp → Sem follow-up → Agenda vazia → "Marketing não funciona"</p>
+    </div>
+  </div>
+
+  <div class="qblock">
+    <div class="qheader"><div class="qnum">20</div><div class="qtitle">As 5 causas-raiz que 99% do mercado não consegue nomear</div></div>
+    <div class="qanswer">
+      <p><strong>Causa 1 — Falta de posicionamento antes do tráfego.</strong> Clínicas investem em anúncios sem ter presença digital otimizada (Google Meu Negócio, redes atualizadas, diferenciação clara). 70% dos consumidores de estética consideram depoimentos e avaliações online essenciais na escolha. Sem posicionamento, ela compete por preço numa cidade com 753 concorrentes. "Seu negócio precisa ter uma presença digital básica antes de investir em tráfego pago; se não, as chances de não ter resultado são grandes."</p>
+      <p><strong>Causa 2 — Tráfego genérico vs. tráfego de intenção.</strong> Agências rodam anúncios no Instagram para público amplo. Mas estética é serviço presencial e local. A diferença fundamental: 76% das pessoas que buscam "clínica de estética perto de mim" no Google visitam o negócio em 24 horas e 28% compram (Google). Lead do Google = busca ativa com intenção de compra. Lead do Instagram = interrupção do feed de alguém que nem estava pensando em tratamento estético. Agências vendem volume de leads; a clínica precisa de clientes prontos.</p>
+      <p><strong>Causa 3 — Hemorragia no WhatsApp.</strong> Mesmo quando o lead chega qualificado, a clínica perde na conversão. Empresas que respondem em até 1 minuto convertem até 7x mais. Atraso de 5 minutos reduz probabilidade em até 80%. 78% dos clientes compram do primeiro fornecedor que responde. A clínica pequena atende WhatsApp no pessoal, sem CRM, sem padronização, sem follow-up. Lead esfria e some.</p>
+      <p><strong>Causa 4 — Ausência de funil estruturado.</strong> 7 em cada 10 pequenos negócios no Brasil não possuem processo de vendas. Sem funil, apenas 30% dos leads são qualificados. Com funil estruturado, esse número sobe para 90% (case documentado: clínica foi de R$40k para R$180k/mês após implementar sistema completo).</p>
+      <p><strong>Causa 5 — Agências generalistas vendendo pacote padrão.</strong> O mesmo pacote que vendem pra padaria, vendem pra clínica de estética. Não entendem que peeling facial tem sazonalidade diferente de procedimento corporal. Não sabem que harmonização facial tem ticket de R$2.000-15.000. Apresentam relatórios com impressões e cliques — métricas que nada dizem sobre agendamentos reais.</p>
+    </div>
+  </div>
+
+  <div class="mech-part" style="margin-top:32px">
+    <div class="lb" style="margin-bottom:16px">// MECANISMO ÚNICO — MÉTODO VIP</div>
+    <div class="st" style="margin-bottom:20px">A ZX Digital Inverte a Lógica: <span class="to">Posiciona Antes de Anunciar</span></div>
+    <div class="bd">
+      <p>O Método VIP (Visibilidade, Intenção, Posicionamento) funciona porque corrige a sequência:</p>
+      <p><strong style="color:var(--o);font-size:18px">P → I → V</strong> (na prática, começa pelo Posicionamento)</p>
+      <p>Primeiro <strong>Posiciona</strong> (autoridade, diferenciação, presença digital otimizada, Google Meu Negócio impecável). Depois captura <strong>Intenção</strong> (quem já está buscando a solução — demanda ativa no Google). Depois escala <strong>Visibilidade</strong> (anúncios para público frio, mas agora com sistema de conversão pronto).</p>
+      <p>Cada real investido em tráfego chega a quem já quer comprar, no momento certo, com a clínica preparada para converter.</p>
+      <p style="margin-top:16px"><strong>Metáfora:</strong> "Anunciar sem sistema é como abrir a torneira sem ter o balde. A água (leads) vem — mas escorre tudo pelo ralo (WhatsApp sem resposta, perfil sem autoridade, preço sem posicionamento). O VIP primeiro coloca o balde no lugar. Depois abre a torneira."</p>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     MÓDULO B — BRIEF (12 PERGUNTAS RMBC)
+     ═══════════════════════════════════════════════════════ -->
+<div id="mod-b" style="margin-top:80px">
+  <div class="mod-header">
+    <div class="mod-letter">B</div>
+    <div class="mod-info">
+      <div class="mod-title">MÓDULO 6 — BRIEF</div>
+      <div class="mod-sub">As 12 Perguntas Originais do Brief RMBC de Stefan Georgi</div>
+    </div>
+  </div>
+
+  <div class="qblock">
+    <div class="qheader"><div class="qnum">B3</div><div class="qtitle">Ao reverter os pontos de dor, qual é a GRANDE PROMESSA em 1-3 frases?</div></div>
+    <div class="qanswer">
+      <p><strong>"Sua clínica não precisa de mais anúncios. Precisa de um sistema de aquisição de clientes que faça o telefone tocar com gente nova toda semana — sem você precisar virar marketeira, sem jogar dinheiro em agência genérica, e sem depender de indicação pra fechar o mês."</strong></p>
+    </div>
+  </div>
+
+  <div class="qblock">
+    <div class="qheader"><div class="qnum">B5</div><div class="qtitle">Qual é a nova causa raiz / o 1% que falta? [MECANISMO ÚNICO]</div></div>
+    <div class="qanswer">
+      <p>O 1% que falta é a <strong>sequência correta</strong>. 99% das agências vendem tráfego (Visibilidade) como se fosse o começo. Mas sem Posicionamento + captura de Intenção primeiro, o tráfego gera lead frio — não cliente. O Método VIP inverte: Posiciona → captura Intenção → escala Visibilidade. Cada etapa prepara a próxima. O resultado: cada real investido chega a quem já quer comprar, no momento certo, com a clínica preparada para converter.</p>
+      <p><strong>Nome do mecanismo do problema:</strong> "Inversão Fatal" — investir em tráfego sem sistema de conversão.</p>
+      <p><strong>Nome do mecanismo da solução:</strong> "Método VIP" — Visibilidade, Intenção, Posicionamento (aplicados na ordem inversa).</p>
+    </div>
+  </div>
+
+  <div class="qblock">
+    <div class="qheader"><div class="qnum">B6</div><div class="qtitle">Qual é a pergunta paradoxal que desafia a lógica convencional?</div></div>
+    <div class="qanswer">
+      <p><strong>"E se o problema da sua clínica não for falta de anúncio — mas excesso de marketing errado?"</strong></p>
+      <p>Variações: "E se investir MENOS em anúncios e MAIS em sistema de conversão triplicasse seus agendamentos?" / "Por que a clínica com menos seguidores que a sua lota a agenda — e a sua não?"</p>
+    </div>
+  </div>
+
+  <div class="qblock">
+    <div class="qheader"><div class="qnum">B7</div><div class="qtitle">Qual é a metáfora que torna o mecanismo memorável?</div></div>
+    <div class="qanswer">
+      <p><strong>Metáfora primária — "A Torneira e o Balde":</strong> "Anunciar sem sistema é como abrir a torneira sem ter o balde. A água vem, mas escorre pelo ralo. O VIP primeiro coloca o balde. Depois abre a torneira."</p>
+      <p><strong>Metáfora secundária — "O GPS":</strong> "Você é uma clínica excelente numa rua sem placa. As pessoas passam na frente e não sabem que você existe. O VIP coloca o GPS apontando pra sua porta."</p>
+      <p><strong>Metáfora terciária — "A Engrenagem":</strong> "Indicação, tráfego e conversão não são peças isoladas. São engrenagens. Se uma trava, o sistema inteiro para. A ZX constrói o motor completo."</p>
+    </div>
+  </div>
+
+  <div class="qblock">
+    <div class="qheader"><div class="qnum">B8</div><div class="qtitle">Qual é a reclamação ousada (BOLD CLAIM) sobre os resultados?</div></div>
+    <div class="qanswer">
+      <p><strong>"Em 14 dias, você vai ver agendamentos de pessoas que nunca ouviram falar de você — vindos diretamente do sistema que a gente constrói. Se não ver, cancela sem custo."</strong></p>
+      <p>Por que funciona: (1) prazo curto e específico (14 dias, não "alguns meses"); (2) resultado tangível (agendamentos, não "leads" ou "impressões"); (3) garantia de risco zero (cancela sem custo); (4) diretamente conectado à dor principal (gente NOVA, não as mesmas 30 clientes).</p>
+    </div>
+  </div>
+
+  <div class="qblock">
+    <div class="qheader"><div class="qnum">B11</div><div class="qtitle">5 ideias de headlines / títulos</div></div>
+    <div class="qanswer">
+      <p>1. <strong>"Se Você Já Pagou Agência de Marketing e Só Recebeu Lead Frio, Leia Isto"</strong> — Anti-agência + dor + curiosidade</p>
+      <p>2. <strong>"O Problema da Sua Clínica Não É Falta de Anúncio. É Falta de Sistema."</strong> — Mecanismo + paradoxo</p>
+      <p>3. <strong>"76% Das Pessoas Que Buscam 'Clínica de Estética Perto de Mim' Visitam em 24h. Você Está Aparecendo?"</strong> — Dado + pergunta + urgência</p>
+      <p>4. <strong>"Como Clínicas de Estética Estão Lotando a Agenda Sem Depender de Indicação"</strong> — Promessa + especificidade</p>
+      <p>5. <strong>"Por Menos Que Um Preenchimento Facial, Sua Clínica Pode Ter Agenda Cheia o Mês Inteiro"</strong> — Ancoragem de preço + promessa</p>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     MÓDULO C1 — HEADLINES
+     ═══════════════════════════════════════════════════════ -->
+<div id="mod-c1" style="margin-top:80px">
+  <div class="mod-header">
+    <div class="mod-letter">C</div>
+    <div class="mod-info">
+      <div class="mod-title">MÓDULO 7 — HEADLINES</div>
+      <div class="mod-sub">10 Headlines com Os 7 Elementos de Stefan Georgi</div>
+    </div>
+  </div>
+
+  <div class="gl gl-n" style="overflow-x:auto;padding:0">
+    <table class="tbl" style="min-width:900px">
+      <thead><tr><th>#</th><th>Foco</th><th>Headline</th><th>Elementos Presentes</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>Curiosity + Pain</td><td>"Se Sua Agenda Tem Mais Buracos Que Horários Preenchidos, Existe 1 Erro Que Você Não Sabe Que Está Cometendo"</td><td>①③⑦</td></tr>
+        <tr><td>2</td><td>Curiosity + Pain</td><td>"Sua Clínica É Boa. Suas Clientes Amam Você. Mas Ninguém Novo Sabe Que Você Existe — E a Culpa Não É Sua"</td><td>①②⑦</td></tr>
+        <tr><td>3</td><td>Promise + Specificity</td><td>"Como Gerar 15-25 Agendamentos Novos Por Mês Com Pessoas Que Nunca Ouviram Falar da Sua Clínica"</td><td>③④⑥⑦</td></tr>
+        <tr><td>4</td><td>Promise + Specificity</td><td>"Por R$50/Dia, Sua Clínica Pode Ter Agenda Previsível — Sem Depender de Indicação, Sem Contrato Longo"</td><td>③④⑥⑦</td></tr>
+        <tr><td>5</td><td>Credibility + Skepticism</td><td>"Já Gastou Dinheiro Com Marketing e Só Recebeu Relatório Bonito? A Diferença Entre Agência e Engenharia de Aquisição"</td><td>②⑤⑦</td></tr>
+        <tr><td>6</td><td>Credibility + Skepticism</td><td>"76% Das Buscas 'Clínica de Estética Perto de Mim' Viram Visita em 24h. Quantas Dessas Estão Chegando Até Você?"</td><td>④⑤⑥</td></tr>
+        <tr><td>7</td><td>Mechanism</td><td>"O Método VIP: Por Que Posicionar Antes de Anunciar Muda Tudo Para Clínicas de Estética"</td><td>①③⑤⑦</td></tr>
+        <tr><td>8</td><td>Mechanism</td><td>"A Inversão Fatal: Você Está Pagando Pra Trazer Gente Que Nunca Vai Virar Cliente (E Como Corrigir Em 14 Dias)"</td><td>①②⑥⑦</td></tr>
+        <tr><td>9</td><td>Transformation</td><td>"De Agenda Vazia e Insônia Às 3h Da Manhã Para Lista de Espera e Faturamento Previsível — O Que Mudou"</td><td>②③⑥⑦</td></tr>
+        <tr><td>10</td><td>Transformation</td><td>"Ela Já Tinha Sido Enganada Por 2 Agências. Depois de 90 Dias Com o Método VIP, Abriu a Segunda Sala"</td><td>②③⑤⑥</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="bd" style="margin-top:20px;font-size:13px;color:rgba(242,242,242,.4)">
+    Legenda: ① Curiosity · ② Call Out Pain Point · ③ Promise Solution · ④ Specificity · ⑤ Credibility · ⑥ Time Frame · ⑦ Simplicity
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     MÓDULO C3 — ESTRUTURA VSL
+     ═══════════════════════════════════════════════════════ -->
+<div id="mod-c3" style="margin-top:80px">
+  <div class="mod-header">
+    <div class="mod-letter">C</div>
+    <div class="mod-info">
+      <div class="mod-title">MÓDULO 9 — ESTRUTURA VSL / SALES LETTER</div>
+      <div class="mod-sub">Blocos completos: Lead → Problema → Agitação → Mecanismo → Solução → CTA</div>
+    </div>
+  </div>
+
+  <div class="qblock">
+    <div class="qheader"><div class="qnum">→</div><div class="qtitle">LEAD (Hook + Future Pacing + Big Promise)</div></div>
+    <div class="qanswer">
+      <p><em>[Câmera em Gabriel, fundo escuro, identidade ZX]</em></p>
+      <p>"Você abriu sua clínica com um sonho. Investiu em equipamentos. Fez especialização. Reformou o espaço. Mas quando você olha pra agenda da semana que vem..."</p>
+      <p><em>[Pausa de 2 segundos]</em></p>
+      <p>"Tem dia que o WhatsApp não toca. Tem semana que o único agendamento é de uma amiga. E quando você lembra daquela agência que prometeu 'lotar sua agenda' e te entregou leads frios e relatórios bonitos... dá até um nó no estômago."</p>
+      <p>"Se você se identificou com isso, fica comigo nos próximos 4 minutos. Porque o que eu vou te mostrar não é mais um curso, não é mais uma promessa vazia, e definitivamente não é mais uma agência de marketing genérica. É um sistema. E ele pode mudar a realidade da sua clínica nos próximos 14 dias."</p>
+    </div>
+  </div>
+
+  <div class="qblock">
+    <div class="qheader"><div class="qnum">→</div><div class="qtitle">PROBLEMA (Dimensionalização da Dor)</div></div>
+    <div class="qanswer">
+      <p>"Olha, eu vou ser direto. Se você é dona de clínica de estética, eu sei exatamente o que você tá vivendo. Porque eu trabalho exclusivamente com clínicas como a sua."</p>
+      <p>"Você é excelente no que faz. Suas clientes voltam. Indicam a mãe, a irmã, a amiga. Mas indicação tem teto. Tem mês que vem 5 clientes novos. Tem mês que vem 1. E você nunca sabe qual vai ser."</p>
+      <p>"Aí você posta no Instagram todo dia. Gasta 2 horas filmando, editando, pensando em legenda — pra 200 curtidas da sua mãe e das suas amigas. Zero agendamento."</p>
+      <p>"Aí alguém te convence a 'investir em tráfego pago'. Você junta coragem, gasta R$2 mil, R$3 mil... e o que volta? Gente perguntando preço pelo WhatsApp e sumindo. Ou pior: gente perguntando por procedimento que você nem faz."</p>
+      <p>"E aí você conclui: 'marketing digital não funciona pra mim'."</p>
+      <p>"Só que não é verdade. O que não funcionou foi o MÉTODO."</p>
+    </div>
+  </div>
+
+  <div class="qblock">
+    <div class="qheader"><div class="qnum">→</div><div class="qtitle">MECANISMO ÚNICO (Revelação do 1% que falta)</div></div>
+    <div class="qanswer">
+      <p>"Vou te explicar em 60 segundos por que 95% do marketing para clínicas de estética falha. E não é por causa do Instagram. Não é por causa do Google. Não é por causa do seu conteúdo."</p>
+      <p>"É por causa da SEQUÊNCIA."</p>
+      <p>"A maioria das agências faz assim: primeiro, roda anúncio. Depois, torce pra alguém clicar. Depois, torce pra alguém mandar mensagem. Depois, torce pra você responder rápido. Depois, torce pra fechar."</p>
+      <p>"Sabe o que isso é? Esperança. Não é sistema."</p>
+      <p>"Na ZX, a gente inverte. Primeiro a gente posiciona sua clínica como referência na sua região — Google Meu Negócio impecável, perfil que transmite autoridade, diferenciação clara. Depois, a gente captura quem JÁ está buscando tratamento estético na sua cidade — 76% dessas pessoas visitam a clínica em 24 horas. Depois, com o sistema de conversão pronto, aí sim a gente escala visibilidade pra público novo."</p>
+      <p>"Isso é o Método VIP. Visibilidade, Intenção, Posicionamento — aplicados na ordem certa. Cada real investido chega a quem já quer comprar. Não a quem tá passando o feed sem pensar em tratamento."</p>
+    </div>
+  </div>
+
+  <div class="qblock">
+    <div class="qheader"><div class="qnum">→</div><div class="qtitle">GARANTIA + CTA</div></div>
+    <div class="qanswer">
+      <p>"E eu sei que você tá pensando: 'Já ouvi promessa bonita antes.' Eu respeito isso. Por isso a gente não tem contrato de fidelidade. Não tem multa de cancelamento. Os primeiros resultados — agendamentos reais de pessoas novas — aparecem em 14 dias. Se não aparecer, você cancela. Sem custo. Sem burocracia."</p>
+      <p>"O próximo passo é simples: clica no link abaixo e faz o diagnóstico gratuito da sua clínica. Em 15 minutos, a gente mostra exatamente onde estão as oportunidades que você tá deixando na mesa. Sem compromisso."</p>
+      <p>"Você já fez a parte mais difícil: abriu a clínica, construiu reputação, investiu em formação. Agora é hora do mundo saber que você existe."</p>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<div style="margin-top:80px;padding:60px 0;border-top:1px solid rgba(242,140,40,.2);text-align:center">
+  <div class="lb" style="margin-bottom:20px">// ENCERRAMENTO</div>
+  <div class="st" style="max-width:700px;margin:0 auto">Este documento é o mapa estratégico completo. O próximo passo é execução: criativos de anúncio, landing page, sequência de WhatsApp, e script de diagnóstico comercial para donas de clínicas de estética.</div>
+  <div class="hr" style="max-width:200px;margin:40px auto"></div>
+  <div style="display:flex;gap:48px;justify-content:center;flex-wrap:wrap;margin-top:32px">
+    <div><div class="cp">MARCA</div><div style="font-weight:700;font-size:18px;margin-top:4px"><span class="to">ZX</span> Digital</div></div>
+    <div><div class="cp">INSTAGRAM</div><div style="font-weight:700;font-size:18px;margin-top:4px">@assessoriazx</div></div>
+    <div><div class="cp">VERSÃO</div><div style="font-weight:700;font-size:18px;margin-top:4px">v2.0 — Março 2026</div></div>
+  </div>
+</div>
+
+</div>
+</body>
+</html>
