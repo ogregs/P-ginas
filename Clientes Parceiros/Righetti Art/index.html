@@ -1,0 +1,1399 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SEARCH 1 — Righetti Art</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0a0a0a;
+    --parchment: #f5f0e8;
+    --gold: #c9a84c;
+    --gold-dim: #8a6f2e;
+    --ash: #1c1c1c;
+    --smoke: #2a2a2a;
+    --ghost: #3d3d3d;
+    --mist: #6b6b6b;
+    --light: #b8b8b8;
+    --white: #f0ece4;
+    --accent: #d4863a;
+    --red-dark: #8b2020;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--ink);
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  /* ── COVER ── */
+  .cover {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 40px;
+    position: relative;
+    background:
+      radial-gradient(ellipse 70% 50% at 50% 0%, rgba(201,168,76,0.07) 0%, transparent 60%),
+      linear-gradient(180deg, #0a0a0a 0%, #111 100%);
+    border-bottom: 1px solid var(--ghost);
+  }
+
+  .cover::before {
+    content: 'R';
+    position: absolute;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(300px, 40vw, 500px);
+    font-weight: 900;
+    color: rgba(201,168,76,0.025);
+    letter-spacing: -20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .cover-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 6px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 32px;
+    opacity: 0.8;
+  }
+
+  .cover h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(48px, 7vw, 96px);
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1;
+    letter-spacing: -2px;
+    margin-bottom: 12px;
+  }
+
+  .cover h1 span {
+    color: var(--gold);
+    font-style: italic;
+  }
+
+  .cover-sub {
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    color: var(--mist);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 48px;
+  }
+
+  .cover-divider {
+    width: 60px;
+    height: 1px;
+    background: var(--gold);
+    margin: 0 auto 40px;
+    opacity: 0.5;
+  }
+
+  .cover-meta {
+    display: flex;
+    gap: 48px;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--ghost);
+    text-transform: uppercase;
+  }
+
+  .cover-meta span { color: var(--mist); }
+
+  /* ── LAYOUT ── */
+  .container {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  /* ── CHAPTER HEADER ── */
+  .chapter {
+    padding: 80px 0 20px;
+  }
+
+  .chapter-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 5px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .chapter-label::after {
+    content: '';
+    flex: 1;
+    max-width: 40px;
+    height: 1px;
+    background: var(--gold);
+    opacity: 0.4;
+  }
+
+  /* ── SECTION ── */
+  .section {
+    border-left: 2px solid var(--ghost);
+    padding: 40px 0 40px 36px;
+    position: relative;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+
+  .section:last-child { border-bottom: none; }
+
+  .section::before {
+    content: '';
+    position: absolute;
+    left: -5px;
+    top: 44px;
+    width: 8px;
+    height: 8px;
+    background: var(--gold);
+    border-radius: 50%;
+    opacity: 0.6;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 6px;
+    line-height: 1.2;
+  }
+
+  .section-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--gold-dim);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .section-body {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--light);
+    font-weight: 300;
+  }
+
+  .section-body p { margin-bottom: 14px; }
+  .section-body p:last-child { margin-bottom: 0; }
+
+  .section-body strong {
+    color: var(--white);
+    font-weight: 500;
+  }
+
+  .section-body em {
+    color: var(--gold);
+    font-style: italic;
+    font-family: 'Playfair Display', serif;
+  }
+
+  /* ── PULL QUOTE ── */
+  .pull-quote {
+    border-left: 3px solid var(--gold);
+    padding: 16px 24px;
+    margin: 24px 0;
+    background: rgba(201,168,76,0.04);
+    border-radius: 0 4px 4px 0;
+  }
+
+  .pull-quote p {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-style: italic;
+    color: var(--white);
+    line-height: 1.6;
+    margin: 0 !important;
+  }
+
+  /* ── LIST ── */
+  .search-list {
+    list-style: none;
+    margin: 16px 0;
+  }
+
+  .search-list li {
+    font-size: 15px;
+    color: var(--light);
+    padding: 8px 0 8px 20px;
+    position: relative;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    line-height: 1.6;
+  }
+
+  .search-list li:last-child { border-bottom: none; }
+
+  .search-list li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+  }
+
+  /* ── ACCENT BLOCK ── */
+  .accent-block {
+    background: rgba(201,168,76,0.06);
+    border: 1px solid rgba(201,168,76,0.15);
+    border-radius: 4px;
+    padding: 24px 28px;
+    margin: 24px 0;
+  }
+
+  .accent-block-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .accent-block p {
+    font-size: 14px;
+    color: var(--light);
+    line-height: 1.7;
+    margin-bottom: 8px;
+  }
+
+  .accent-block p:last-child { margin-bottom: 0; }
+
+  /* ── CHAPTER DIVIDER ── */
+  .chapter-divider {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 60px 0 20px;
+  }
+
+  .chapter-divider::before,
+  .chapter-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--ghost);
+  }
+
+  .chapter-divider-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: var(--ghost);
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  /* ── FOOTER ── */
+  .doc-footer {
+    border-top: 1px solid var(--ghost);
+    padding: 48px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 80px;
+  }
+
+  .doc-footer-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    color: var(--mist);
+  }
+
+  .doc-footer-brand span { color: var(--gold); }
+
+  .doc-footer-meta {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--ghost);
+    text-transform: uppercase;
+    text-align: right;
+  }
+
+  /* ── HIGHLIGHT ── */
+  .hl-gold { color: var(--gold); }
+  .hl-accent { color: var(--accent); }
+  .hl-red { color: var(--red-dark); }
+
+  /* ── GRID 2 ── */
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin: 20px 0;
+  }
+
+  .grid-card {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid var(--ghost);
+    border-radius: 4px;
+    padding: 20px;
+  }
+
+  .grid-card-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--gold-dim);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .grid-card p {
+    font-size: 13px;
+    color: var(--light);
+    line-height: 1.6;
+  }
+
+  @media (max-width: 640px) {
+    .grid-2 { grid-template-columns: 1fr; }
+    .container { padding: 0 20px; }
+    .cover-meta { flex-direction: column; gap: 16px; }
+    .section { padding: 32px 0 32px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-label">Documento Estratégico · Framework SEARCH 1</div>
+  <h1>Righetti <span>Art</span></h1>
+  <p class="cover-sub">Bruno Righetti · Realistic Black Work · Australia</p>
+  <div class="cover-divider"></div>
+  <div class="cover-meta">
+    <div>Produzido por <span>ZX Digital</span></div>
+    <div>Versão <span>1.0</span></div>
+    <div>2026</div>
+  </div>
+</div>
+
+<!-- BODY -->
+<div class="container">
+
+  <!-- ── BLOCO 1: FUNDAÇÃO ── -->
+  <div class="chapter">
+    <div class="chapter-label">// Bloco 01</div>
+  </div>
+
+  <!-- NICHE -->
+  <div class="section">
+    <h2 class="section-title">Nicho</h2>
+    <span class="section-tag">Niche</span>
+    <div class="section-body">
+      <p>Colecionadores sérios de arte corporal residentes na Austrália — especificamente aqueles que já perceberam que <strong>a diferença entre uma tatuagem competente e uma tatuagem extraordinária é permanente</strong>. Não tem like para desfazer. Não tem filtro que salva. Não tem "a gente tenta de novo".</p>
+      <p>Pessoas que entendem que a pele é o único museu que vai onde você vai, e que têm critério suficiente para recusar o artista mais próximo em favor do artista certo — mesmo que o artista certo seja brasileiro, esteja do outro lado do mundo e exija meses de espera.</p>
+      <p>O nicho não é definido por faixa etária nem por classe social. É definido por <em>mentalidade</em>: quem vê tatuagem como arte permanente, não como decoração temporária do humor do momento.</p>
+      <div class="accent-block">
+        <div class="accent-block-title">Posicionamento de nicho em uma frase</div>
+        <p>"Para quem já parou de tatuar por impulso e só tatua por convicção — com o artista que prova, no portfólio e na pele, que consegue executar o que você imagina."</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- AVATAR -->
+  <div class="section">
+    <h2 class="section-title">Avatar</h2>
+    <span class="section-tag">Avatar</span>
+    <div class="section-body">
+      <p><strong>Nome:</strong> Marcus. 33 anos. Mora em Melbourne, bairro de Fitzroy ou Richmond. Trabalha como designer sênior, desenvolvedor de produto, arquiteto ou profissional criativo. Renda entre AUD 90k e 160k por ano. Tem 4 a 8 tatuagens, mas <strong>nenhuma que para o tempo quando aparece no braço numa reunião ou numa praia</strong>.</p>
+      <p>Marcus segue cerca de 30 artistas de tatuagem no Instagram — metade deles internacionais. Sabe a diferença entre pontilhismo, blackwork, realism e trash polka. Já discutiu composição de tatuagem com o mesmo nível de seriedade que discute tipografia ou paleta de cor.</p>
+      <p>Ele encontrou o perfil de Bruno Righetti há 3 meses. Salvou o post. Voltou uma semana depois. Salvou mais dois. Já sabe qual referência quer usar. Já tem uma ideia do posicionamento no corpo. <em>Ainda não enviou mensagem</em>.</p>
+
+      <div class="pull-quote">
+        <p>"Eu sei o que quero. Só preciso ter certeza de que a pessoa que vai executar vai chegar lá."</p>
+      </div>
+
+      <p>Marcus não é impulsivo. Ele pesquisa. Ele espera. Ele compara portfólios com a atenção que outras pessoas dão a reviews de produto. E quando ele finalmente aperta o botão — ele está comprometido de verdade.</p>
+
+      <div class="grid-2">
+        <div class="grid-card">
+          <div class="grid-card-title">Perfil primário</div>
+          <p>Australiano ou expat (incluindo brasileiros) vivendo em Sydney ou Melbourne. Homem ou mulher, 27–42 anos, renda estável, sem filhos dependentes ou com autonomia financeira suficiente para tomar decisões de AUD 1.000+ sem trauma.</p>
+        </div>
+        <div class="grid-card">
+          <div class="grid-card-title">Perfil secundário</div>
+          <p>Brasileiro expatriado na Austrália com conexão emocional adicional: quer levar no corpo uma obra feita por um artista da mesma cultura. Identidade + qualidade. Uma tatuagem que conta duas histórias ao mesmo tempo.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRIMARY GOAL -->
+  <div class="section">
+    <h2 class="section-title">Objetivo Primário</h2>
+    <span class="section-tag">Primary Goal</span>
+    <div class="section-body">
+      <p>Ter uma tatuagem que — quando aparecer — faz a pessoa do lado parar o que está fazendo e perguntar: <strong>"Quem fez isso?"</strong> com genuína reverência.</p>
+      <p>Não é vaidade. É a busca por uma peça que esteja à altura do que Marcus imaginou. Que corresponda ao nível de seriedade com que ele pensa sobre arte. Que seja, sem precisar dizer, a prova física de que ele encontrou o artista certo.</p>
+      <p>O objetivo primário é sair da sessão com algo que <em>nem ele mesmo acreditou que seria possível executar nesse nível na pele humana.</em></p>
+    </div>
+  </div>
+
+  <!-- PRIMARY COMPLAINT -->
+  <div class="section">
+    <h2 class="section-title">Queixa Primária</h2>
+    <span class="section-tag">Primary Complaint</span>
+    <div class="section-body">
+      <p><strong>"Encontrei artistas bons. Nunca encontrei alguém que me fizesse sentir, antes mesmo de começar, que a peça ia sair exatamente como eu imagino."</strong></p>
+      <p>A queixa não é técnica — é de confiança. Marcus já viu portfólios bonitos de artistas que na hora da execução entregaram algo "quase certo". E "quase certo" numa tatuagem realista é a diferença entre uma obra e um erro permanente com boa intenção.</p>
+      <p>Ele já passou pela experiência de olhar para uma tatuagem finalizada e sentir aquele aperto no peito — não porque ficou horrível, mas porque não ficou <em>exatamente o que ele havia imaginado.</em> E isso, no contexto permanente, pesa de forma diferente de qualquer outra decepção.</p>
+    </div>
+  </div>
+
+  <!-- SECONDARY GOALS -->
+  <div class="section">
+    <h2 class="section-title">Objetivos Secundários</h2>
+    <span class="section-tag">Secondary Goals</span>
+    <div class="section-body">
+      <ul class="search-list">
+        <li>Construir uma coleção de tatuagens curada — onde cada peça tem uma história, um artista com nome, um nível de execução que ele sente orgulho de mostrar.</li>
+        <li>Ser reconhecido dentro da comunidade de tatuagem como alguém com gosto refinado. Não seguidor de tendência — colecionador com critério.</li>
+        <li>Ter pelo menos uma peça feita por um artista internacional de reputação estabelecida. Alguém que tatuou em vários países. Algo que eleva o nível da coleção.</li>
+        <li>Documentar o processo — antes, durante, cicatrizado. Conteúdo para Instagram que não é vaidade mas é curadoria de arte.</li>
+        <li>Ter uma experiência de sessão à altura do nível da arte: conversa real, respeito pelo projeto, não ser tratado como mais um cliente da fila.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SECONDARY COMPLAINTS -->
+  <div class="section">
+    <h2 class="section-title">Queixas Secundárias</h2>
+    <span class="section-tag">Secondary Complaints</span>
+    <div class="section-body">
+      <ul class="search-list">
+        <li><strong>Artistas que apressam.</strong> A sessão começa com 45 minutos de atraso e termina com a sensação de que o artista já estava pensando no próximo cliente.</li>
+        <li><strong>Consultas que parecem transações.</strong> "Me manda a referência no Instagram." Sem conversa sobre composição, sem perguntas sobre o que a peça significa, sem troca real.</li>
+        <li><strong>Portfólio impecável, execução diferente.</strong> A foto tem luz, ângulo, edição. Na pele, ao vivo, a história muda.</li>
+        <li><strong>Agendas impossíveis sem protocolo claro.</strong> Meses de espera sem comunicação. Sem confirmação. Sem resposta.</li>
+        <li><strong>Artistas que não conseguem adaptar a referência.</strong> Copiam a imagem, não traduzem para a pele. Não entendem que tatuagem não é impressão.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ── BLOCO 2: PROMESSAS E MEDOS ── -->
+  <div class="chapter-divider">
+    <span class="chapter-divider-label">// Bloco 02 — Promessas · Medos · Crenças</span>
+  </div>
+
+  <!-- PROMISES -->
+  <div class="section">
+    <h2 class="section-title">Promessas</h2>
+    <span class="section-tag">Promises</span>
+    <div class="section-body">
+      <p>As promessas que Marcus quer ouvir — mas que só acredita quando vê provadas no portfólio e confirmadas no processo:</p>
+      <ul class="search-list">
+        <li>"Você vai sair dessa sessão com algo que você vai querer mostrar para todo mundo pelo resto da vida."</li>
+        <li>"Eu entendo o que você imagina. E tenho portfólio para provar que consigo chegar lá."</li>
+        <li>"Você não é mais um cliente. Seu projeto importa do ponto de vista artístico, não só comercial."</li>
+        <li>"A consulta é onde a gente alinha. A sessão é onde eu entrego. Sem surpresas negativas."</li>
+        <li>"Trabalhei em 10+ países. Sei adaptar a referência para a pele real — não para a foto com filtro."</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- BENEFITS -->
+  <div class="section">
+    <h2 class="section-title">Benefícios</h2>
+    <span class="section-tag">Benefits</span>
+    <div class="section-body">
+      <ul class="search-list">
+        <li><strong>Arte que envelhece bem.</strong> Black Work Realism feito com técnica correta não esmaece da mesma forma que colorido. O investimento no artista certo se manifesta décadas depois.</li>
+        <li><strong>Execução que respeita a referência sem ser uma cópia.</strong> Bruno adapta — entende luz, sombra, contraste na pele viva, não em monitor calibrado.</li>
+        <li><strong>Processo com comunicação real.</strong> Consulta que parece conversa entre quem entende de arte, não formulário de atendimento.</li>
+        <li><strong>Portfólio internacional validado.</strong> Trabalhos em países com mercados de tatuagem exigentes (Holanda, Alemanha, Reino Unido) — o nível foi aprovado por públicos com critério.</li>
+        <li><strong>Peça que gera reconhecimento dentro da comunidade.</strong> "Quem fez?" é a pergunta que valida o investimento sem você precisar justificar o preço para ninguém.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- OBJECTIONS -->
+  <div class="section">
+    <h2 class="section-title">Objeções</h2>
+    <span class="section-tag">Objections</span>
+    <div class="section-body">
+      <ul class="search-list">
+        <li><strong>"É muito dinheiro para uma sessão."</strong> — Enquanto compara com o valor de um eletrônico ou férias que acabam. Não com o valor de algo que dura a vida inteira.</li>
+        <li><strong>"E se não ficar como eu imagino?"</strong> — O medo do "quase certo" que já aconteceu antes com outro artista.</li>
+        <li><strong>"Não sei se posso confiar numa consulta remota/rápida."</strong> — Precisa de evidências além do portfólio para baixar a guarda.</li>
+        <li><strong>"Tem artistas tão bons quanto aqui em Melbourne/Sydney."</strong> — Verdade parcial usada para evitar o processo de decisão.</li>
+        <li><strong>"E o tempo de cicatrização? E se der problema?"</strong> — Ansiedade técnica que mascara ansiedade emocional sobre o resultado.</li>
+        <li><strong>"Preciso pensar melhor sobre o design."</strong> — Paralisia de análise. A peça já existe na cabeça dele há meses. O que falta é confiança no executante.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- CONFUSIONS -->
+  <div class="section">
+    <h2 class="section-title">Confusões</h2>
+    <span class="section-tag">Confusions</span>
+    <div class="section-body">
+      <ul class="search-list">
+        <li><strong>Confunde portfólio bem fotografado com execução consistente.</strong> Não sabe distinguir qual parte do processo o artista controla vs. o que o filtro e a luz fazem.</li>
+        <li><strong>Não sabe o que perguntar na consulta.</strong> Fica no superficial porque não quer parecer ignorante sobre o processo.</li>
+        <li><strong>Acha que "Black Work" e "Blackout" são a mesma coisa.</strong> Não entende que Realistic Black Work é um subcampo técnico completamente diferente de cobertura sólida.</li>
+        <li><strong>Não entende por que artistas de mesmo "nível" cobram preços tão diferentes.</strong> Não sabe ler o que diferencia profissionalismo de carreira internacional vs. Instagram bem gerenciado.</li>
+        <li><strong>Confunde cicatrização ruim com execução ruim.</strong> Não sabe que o resultado final depende de cuidado pós-tatuagem que muitos artistas nunca explicam direito.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ULTIMATE FEAR -->
+  <div class="section">
+    <h2 class="section-title">Medo Definitivo</h2>
+    <span class="section-tag">Ultimate Fear</span>
+    <div class="section-body">
+      <div class="pull-quote">
+        <p>"Investir dinheiro real, tempo real, dor real — e olhar para o resultado no espelho sabendo que não é o que eu imaginava. E não ter como desfazer."</p>
+      </div>
+      <p>O medo definitivo não é a dor da sessão, não é o dinheiro, não é a espera. É a irreversibilidade de uma decepção. É carregar no corpo, para o resto da vida, a prova física de que ele não foi criterioso o suficiente na hora de escolher o artista.</p>
+      <p>É um medo que não tem paralelo em nenhuma outra categoria de consumo. Você troca o celular. Você cancela a assinatura. Você pinta a parede de novo. <strong>Tatuagem não.</strong></p>
+    </div>
+  </div>
+
+  <!-- FALSE SOLUTIONS -->
+  <div class="section">
+    <h2 class="section-title">Falsas Soluções</h2>
+    <span class="section-tag">False Solutions</span>
+    <div class="section-body">
+      <ul class="search-list">
+        <li><strong>Ir no artista mais famoso do Instagram local.</strong> Seguidores não são garantia de execução. Fama de rede social é uma coisa; reputação construída em mercados exigentes internacionais é outra.</li>
+        <li><strong>Esperar ter "certeza absoluta" do design antes de contatar o artista.</strong> O design ideal nasce da conversa com quem vai executar — não de uma referência do Pinterest escolhida em isolamento.</li>
+        <li><strong>Tatuar algo "mais simples" primeiro para testar o artista.</strong> Artistas de nível não exibem talento em peças simples. Você precisa ver a categoria certa do portfólio para avaliar a categoria certa de risco.</li>
+        <li><strong>Ir no estúdio mais próximo porque "é conveniente".</strong> Conveniência geográfica é o critério mais caro que existe numa decisão permanente.</li>
+        <li><strong>Decidir baseado no preço mais baixo.</strong> O desconto que parece atraente hoje é o custo de remoção a laser ou de cobertura amanhã — e ambos custam mais do que a diferença.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- MISTAKEN BELIEFS -->
+  <div class="section">
+    <h2 class="section-title">Crenças Equivocadas</h2>
+    <span class="section-tag">Mistaken Beliefs</span>
+    <div class="section-body">
+      <ul class="search-list">
+        <li><strong>"Artista brasileiro = padrão diferente."</strong> Preconceito residual. O mercado internacional de tatuagem avalia pelo portfólio, não pelo passaporte. Bruno trabalhou em mercados onde o padrão é implacável.</li>
+        <li><strong>"Black Work não envelhece bem."</strong> Black Work executado corretamente envelhece melhor que colorido. O problema é técnica, não estilo.</li>
+        <li><strong>"Consulta online não é suficiente para alinhar o projeto."</strong> Consulta mal conduzida não é. Consulta com artista que sabe o que perguntar e o que mostrar — é.</li>
+        <li><strong>"Artistas internacionais não têm tempo para projetos customizados."</strong> Artistas de nível alto têm tempo proporcional ao nível do projeto. Projetos genéricos se perdem. Projetos sérios abrem espaço.</li>
+        <li><strong>"Dói mais do que vale."</strong> Pessoas que disseram isso depois de uma tatuagem ruim. Pessoas que disseram isso depois de uma tatuagem extraordinária dizem o oposto.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- EXPENSIVE ALTERNATIVES -->
+  <div class="section">
+    <h2 class="section-title">Alternativas Caras</h2>
+    <span class="section-tag">Expensive Alternatives</span>
+    <div class="section-body">
+      <ul class="search-list">
+        <li><strong>Remoção a laser:</strong> AUD 200–600 por sessão, com 6 a 12 sessões para remoção completa. Total: AUD 1.200–7.200 — para desfazer o que foi feito barato.</li>
+        <li><strong>Cobertura (cover-up):</strong> Limita o que você pode tatuar para o resto da vida naquela área. O erro do artista errado cria restrições permanentes de design.</li>
+        <li><strong>Ir atrás de artistas em turnê internacional sem preparação:</strong> Pagar voo + hospedagem para sessão em outro país quando o mesmo nível de artista está disponível na Austrália.</li>
+        <li><strong>Tatuar múltiplas peças medianas:</strong> O custo total de 4 tatuagens "ok" frequentemente supera o de 2 tatuagens extraordinárias — com a diferença de que as medianas geram arrependimento acumulado.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- COMPARISONS -->
+  <div class="section">
+    <h2 class="section-title">Comparações</h2>
+    <span class="section-tag">Comparisons</span>
+    <div class="section-body">
+      <p>As comparações que Marcus faz mentalmente antes de tomar a decisão:</p>
+      <ul class="search-list">
+        <li><strong>Bruno vs. artistas locais de Melbourne/Sydney:</strong> Portfólio comparado post a post. Procura diferença em textura, transição de sombra, detalhe em superfícies complexas (pele, metal, tecido).</li>
+        <li><strong>Bruno vs. artistas internacionais em turnê:</strong> Pergunta se vale mais esperar Bruno ou viajar para encontrar outro artista de nível equivalente em outro país.</li>
+        <li><strong>Essa sessão vs. outras formas de gastar AUD 1.000–1.500:</strong> Equipamento fotográfico que deprecia, férias que acabam, gadgets que ficam obsoletos. Versus algo permanente no corpo.</li>
+        <li><strong>Realistic Black Work vs. outros estilos:</strong> Escolheu esse estilo com critério — entende que o nível técnico exigido é mais alto e que artistas capazes de entregar são menores em número.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ── BLOCO 3: PSICOLOGIA PROFUNDA ── -->
+  <div class="chapter-divider">
+    <span class="chapter-divider-label">// Bloco 03 — Psicologia Profunda</span>
+  </div>
+
+  <!-- FRUSTRATIONS -->
+  <div class="section">
+    <h2 class="section-title">Frustrações</h2>
+    <span class="section-tag">Frustrations</span>
+    <div class="section-body">
+      <ul class="search-list">
+        <li>Artistas que pegam referências do Procreate, apresentam um sketch genérico e chamam de "personalizado".</li>
+        <li>Stúdios que tratam a consulta como pré-venda, não como colaboração artística.</li>
+        <li>Comunidade de tatuagem no Instagram que hipersatura o feed com conteúdo de baixa qualidade — fica difícil separar o extraordinário do competente com filtro bom.</li>
+        <li>A sensação de que quanto mais ele pesquisa, mais difícil fica decidir — porque o padrão interno foi elevado por ver trabalho realmente bom.</li>
+        <li>Amigos que tatam sem pesquisa e dizem "ficou incrível" em coisas que Marcus avalia como medianas — ele se sente isolado no critério.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- EVERYDAY LIFE RELATABILITY -->
+  <div class="section">
+    <h2 class="section-title">Cotidiano Identificável</h2>
+    <span class="section-tag">Everyday Life Relatability</span>
+    <div class="section-body">
+      <p>Marcus tem uma pasta no telefone chamada "Referências" — 47 imagens. Algumas ali há mais de 6 meses. Ele abre a pasta às 22h depois de uma semana longa e fica passando as imagens por 20 minutos. Não está decidindo ainda. Está mantendo a ideia viva.</p>
+      <p>Ele cobre tatuagens com manga em contextos profissionais — não por vergonha, mas porque sabe que explicar para quem não entende o nível certo de arte é mais cansativo do que simplesmente não abrir o assunto.</p>
+      <p>Quando alguém com uma tatuagem extraordinária aparece na vida dele, ele olha antes de perguntar. Avalia a composição, a transição de sombra, como cicatrizou. <em>Só depois pergunta o artista.</em></p>
+    </div>
+  </div>
+
+  <!-- STUBBORNNESS -->
+  <div class="section">
+    <h2 class="section-title">Teimosia</h2>
+    <span class="section-tag">Stubbornness</span>
+    <div class="section-body">
+      <ul class="search-list">
+        <li>Uma vez que decidiu o artista, dificilmente muda. A pesquisa foi longa demais para ser revertida por um desconto ou por conveniência geográfica.</li>
+        <li>Recusa tatuar no impulso — mesmo quando vê uma peça extraordinária no feed e o artista tem agenda aberta. Quer ter o design certo antes de marcar qualquer coisa.</li>
+        <li>Não aceita ser apressado na consulta. Se sentir que o artista não está ouvindo de verdade, cancela — mesmo que o portfólio seja impecável.</li>
+        <li>Prefere esperar 4 meses com o artista certo a tatuar em 2 semanas com o artista disponível.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- IDEOLOGICAL BELIEFS -->
+  <div class="section">
+    <h2 class="section-title">Crenças Ideológicas</h2>
+    <span class="section-tag">Ideological Beliefs</span>
+    <div class="section-body">
+      <ul class="search-list">
+        <li>"Tatuagem é arte. Quem não vê assim não entende o que está fazendo no próprio corpo."</li>
+        <li>"O corpo é meu e o que eu coloco nele representa quem eu sou — não o que está na moda."</li>
+        <li>"Artista bom cobra preço justo. Preço baixo é sinal de alerta, não de oportunidade."</li>
+        <li>"Originalidade importa. Não quero tatuar algo que já vi em 200 outras pessoas."</li>
+        <li>"A experiência da sessão faz parte da obra. Artista que trata você como número contamina o resultado."</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- COMMON ENEMY -->
+  <div class="section">
+    <h2 class="section-title">Inimigo Comum</h2>
+    <span class="section-tag">Common Enemy</span>
+    <div class="section-body">
+      <p>O inimigo comum de Marcus e de Bruno Righetti é o mesmo: <strong>a mediocridade normalizada no mercado de tatuagem.</strong></p>
+      <p>Estúdios que produzem em volume. Artistas que cobraram da loja de conveniência uma franquia de tatuagem. Portfólios construídos para o algoritmo, não para o cliente. Consultas de 5 minutos que terminam com "manda a referência no DM".</p>
+      <p>O inimigo é o sistema que fez com que tatuar bem se tornasse exceção — e que criou em Marcus a desconfiança estrutural que o impede de apertar o botão mesmo depois de meses de pesquisa.</p>
+    </div>
+  </div>
+
+  <!-- TRIBE -->
+  <div class="section">
+    <h2 class="section-title">Tribo</h2>
+    <span class="section-tag">Tribe</span>
+    <div class="section-body">
+      <p>Marcus pertence a um grupo pequeno e não-formal: <strong>o colecionador criterioso que vê tatuagem como curadoria de vida.</strong></p>
+      <p>Esse grupo reconhece os próprios pares imediatamente — não pelo número de tatuagens, mas pela qualidade do repertório. Um integrante dessa tribo olha para um braço e enxerga a trajetória de decisões do colecionador, não apenas a soma de imagens na pele.</p>
+      <p>Eles aparecem em convenções de tatuagem não para tatuar na hora, mas para avaliar artistas. Seguem 40+ artistas internacionais. Compartilham portfólios em grupos pequenos com curadoria — não em feeds públicos. <em>A aprovação do grupo importa. O julgamento dos de fora — não.</em></p>
+    </div>
+  </div>
+
+  <!-- DEEP OCCULT DESIRE -->
+  <div class="section">
+    <h2 class="section-title">Desejo Oculto Profundo</h2>
+    <span class="section-tag">Deep Occult Desire</span>
+    <div class="section-body">
+      <div class="pull-quote">
+        <p>"Quero que meu corpo conte, sem eu precisar falar, que eu tenho critério. Que eu faço escolhas de nível. Que eu encontrei o artista certo enquanto outros foram no mais próximo."</p>
+      </div>
+      <p>O desejo profundo que ele nunca vai admitir em voz alta é este: <strong>ele quer ser reconhecido como alguém de gosto.</strong> Não de dinheiro — de gosto. A diferença é fundamental para ele.</p>
+      <p>Uma tatuagem de Bruno Righetti não é só arte na pele. É uma referência silenciosa que comunica, para quem tem olho calibrado, que aqui tem um colecionador real. Que a escolha foi intencional. Que o padrão é alto.</p>
+    </div>
+  </div>
+
+  <!-- ── BLOCO 4: DIMENSÕES SOCIAIS E EMOCIONAIS ── -->
+  <div class="chapter-divider">
+    <span class="chapter-divider-label">// Bloco 04 — Social · Emocional · Identidade</span>
+  </div>
+
+  <!-- SOCIAL CONFORMITY PRESSURE -->
+  <div class="section">
+    <h2 class="section-title">Pressão de Conformidade Social</h2>
+    <span class="section-tag">Social Conformity Pressure</span>
+    <div class="section-body">
+      <ul class="search-list">
+        <li>Amigos e família que não entendem tatuagem como arte — e que vocalizam preocupação com "arrependimento futuro" sem repertório para avaliar o nível da obra.</li>
+        <li>Colegas de trabalho que associam tatuagem a fase juvenil, não a escolha estética adulta e consciente.</li>
+        <li>Pressão implícita para tatuar no estilo "aceitável" — minimalista, discreto, escondível. Marcus quer o oposto: visível, denso, declarativo.</li>
+        <li>O julgamento da própria tribo — que ele respeita mais do que qualquer outro. E justamente por isso, a decisão de qual artista escolher tem peso de curadoria, não apenas de preferência pessoal.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- COGNITIVE DISSONANCE -->
+  <div class="section">
+    <h2 class="section-title">Dissonância Cognitiva</h2>
+    <span class="section-tag">Cognitive Dissonance</span>
+    <div class="section-body">
+      <p>Marcus se diz racional nas decisões financeiras — mas já gastou AUD 2.000 em equipamento fotográfico que usa raramente, AUD 1.800 em fones de ouvido, AUD 900 em teclado mecânico. Objetos que depreciam, ficam obsoletos ou simplesmente somem na vida moderna.</p>
+      <p>Ao mesmo tempo, hesita em investir AUD 1.200 em algo que vai carregar no corpo pelo resto da vida, nunca vai depreciar e vai gerar conversas por décadas.</p>
+      <p>A dissonância é real: ele aplica critérios de escassez emocional exatamente na decisão onde a permanência justifica o maior investimento.</p>
+    </div>
+  </div>
+
+  <!-- FEAR OF SOCIAL JUDGMENT -->
+  <div class="section">
+    <h2 class="section-title">Medo de Julgamento Social</h2>
+    <span class="section-tag">Fear of Social Judgment</span>
+    <div class="section-body">
+      <ul class="search-list">
+        <li>Medo de mostrar a tatuagem finalizada para a tribo e ouvir silêncio — ou pior, um "ficou legal" sem entusiasmo.</li>
+        <li>Medo de postar o resultado e não receber a reação que a peça merece — porque o design não ficou ao nível que ele imaginou.</li>
+        <li>Medo de que pessoas de fora da comunidade façam piada do investimento: "pagou quanto por isso?"</li>
+        <li>Medo oposto: medo de não tatuar e continuar sendo alguém que pesquisa infinitamente mas nunca age. Medo de virar o cara que fala sobre tatuagem mas não tem coleção à altura da conversa.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PRIDE POINTS -->
+  <div class="section">
+    <h2 class="section-title">Pontos de Orgulho</h2>
+    <span class="section-tag">Pride Points</span>
+    <div class="section-body">
+      <ul class="search-list">
+        <li>Nunca tatuou por impulso. Toda peça tem história e critério por trás.</li>
+        <li>Sabe distinguir estilos, técnicas e qualidade de execução — coisa rara até dentro da comunidade.</li>
+        <li>Pesquisou artistas internacionais de verdade, não só seguiu o que o algoritmo empurrou.</li>
+        <li>Quando alguém pede indicação de artista de tatuagem, ele tem uma resposta com repertório, não um nome aleatório.</li>
+        <li>A coleção atual — mesmo incompleta — já tem peças que fazem outras pessoas perguntarem "quem fez?".</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ENVY TRIGGERS -->
+  <div class="section">
+    <h2 class="section-title">Gatilhos de Inveja</h2>
+    <span class="section-tag">Envy Triggers</span>
+    <div class="section-body">
+      <ul class="search-list">
+        <li>Ver alguém da tribo com uma peça que para o tempo. Não inveja destrutiva — inveja que motiva. A sensação: "Quero ter algo nesse nível."</li>
+        <li>Ver no Instagram um cliente de Bruno com a peça finalizada e cicatrizada — e sentir que aquilo deveria estar no corpo dele.</li>
+        <li>Encontrar alguém que tatuou com o artista certo na primeira tentativa, sem pesquisa longa, e acertou. Inveja da certeza, não do resultado.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ANGER TRIGGERS -->
+  <div class="section">
+    <h2 class="section-title">Gatilhos de Raiva</h2>
+    <span class="section-tag">Anger Triggers</span>
+    <div class="section-body">
+      <ul class="search-list">
+        <li>Artistas que respondem consultas com "quanto você quer gastar?" antes de perguntar o que você quer tatuar.</li>
+        <li>Estúdios que cobram "valor de artista" mas entregam "resultado de estúdio de shopping".</li>
+        <li>Portfólios fotográficos que escondem linhas irregulares com ângulo e edição — e você só descobre depois na pele.</li>
+        <li>Pessoas que sugerem "tatuar de novo por cima" como se fosse solução para uma execução ruim.</li>
+        <li>A própria hesitação. Marcus às vezes fica bravo consigo mesmo por pesquisar tanto e não agir.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- IDENTITY ANCHORS -->
+  <div class="section">
+    <h2 class="section-title">Âncoras de Identidade</h2>
+    <span class="section-tag">Identity Anchors</span>
+    <div class="section-body">
+      <p>Marcus se define, em partes diferentes da vida, como:</p>
+      <ul class="search-list">
+        <li><strong>Colecionador com critério</strong> — não entusiasta, não aficionado. Colecionador. A palavra carrega curadoria.</li>
+        <li><strong>Profissional criativo</strong> — que aplica o mesmo olhar analítico ao próprio corpo que aplica ao trabalho.</li>
+        <li><strong>Pessoa que faz escolhas intencionais</strong> — em oposição a seguir tendência, impulso ou conveniência.</li>
+        <li><strong>Alguém que respeita o processo artístico</strong> — e por isso não abre mão de tempo, pesquisa e investimento adequado.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ── BLOCO 5: DINÂMICA DE DECISÃO ── -->
+  <div class="chapter-divider">
+    <span class="chapter-divider-label">// Bloco 05 — Decisão · Autoridade · Paralisia</span>
+  </div>
+
+  <!-- DECISION TRIGGERS -->
+  <div class="section">
+    <h2 class="section-title">Gatilhos de Decisão</h2>
+    <span class="section-tag">Decision Triggers</span>
+    <div class="section-body">
+      <p>O que finalmente faz Marcus apertar o botão e entrar em contato:</p>
+      <ul class="search-list">
+        <li><strong>Ver a peça certa no portfólio.</strong> Não uma peça parecida com o que ele quer — a peça que prova que o artista consegue fazer o que ele tem na cabeça. Um momento de "é exatamente isso".</li>
+        <li><strong>Encontrar depoimento real de alguém que ele respeita.</strong> Não review anônimo de 5 estrelas — alguém da tribo, com coleção reconhecível, que fala sobre a experiência.</li>
+        <li><strong>Escassez real.</strong> Agenda com poucas vagas, janela de tempo no estado, turnê com data. Ele sabe que artistas internacionais nem sempre estão disponíveis — e quando percebe que a janela fecha, age.</li>
+        <li><strong>Consulta que o surpreende.</strong> Se o processo de contato for diferente do esperado — perguntas certas, comunicação que soa como artista falando com cliente, não vendedor falando com comprador — a desconfiança cai.</li>
+        <li><strong>A própria impaciência com a paralisia.</strong> Às vezes ele age não porque encontrou a certeza, mas porque ficou cansado de não agir.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ANALYSIS PARALYSIS POINTS -->
+  <div class="section">
+    <h2 class="section-title">Pontos de Paralisia de Análise</h2>
+    <span class="section-tag">Analysis Paralysis Points</span>
+    <div class="section-body">
+      <ul class="search-list">
+        <li><strong>"Ainda não tenho certeza do design final."</strong> — Usa isso para adiar contato. Na prática, o design nunca vai estar 100% antes da consulta com o artista.</li>
+        <li><strong>"Preciso ver mais trabalhos cicatrizados."</strong> — Critério válido que se torna escudo para evitar decidir.</li>
+        <li><strong>"E se tiver um artista ainda melhor que eu não descobri?"</strong> — A FOMO invertida: medo de ter sido criterioso demais e ainda assim não ter escolhido o ótimo.</li>
+        <li><strong>"Não sei se o posicionamento no braço/perna/costela é o ideal."</strong> — Dúvida de anatomia que mascara dúvida de compromisso.</li>
+        <li><strong>"Vou esperar a próxima convenção para ver mais artistas ao vivo."</strong> — Adiamento com justificativa plausível.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- RISK TOLERANCE -->
+  <div class="section">
+    <h2 class="section-title">Perfil de Tolerância ao Risco</h2>
+    <span class="section-tag">Risk Tolerance Profile</span>
+    <div class="section-body">
+      <p>Marcus tem <strong>tolerância moderada ao risco financeiro</strong> — gasta bem quando convencido da qualidade — mas <strong>tolerância baixíssima ao risco permanente.</strong></p>
+      <p>Ele paga AUD 400 por jantar especial sem pestanejar. Compra equipamento sem pechinchar. Mas num investimento que fica no corpo para sempre, o threshold de certeza necessário é exponencialmente mais alto do que em qualquer outra categoria de compra da vida dele.</p>
+      <p>Para reduzir o risco percebido, Marcus precisa de: <strong>portfólio com peças da mesma categoria, processo de consulta transparente, e alguma forma de prova social da qualidade da experiência — não apenas do resultado visual.</strong></p>
+    </div>
+  </div>
+
+  <!-- AUTHORITY BIASES -->
+  <div class="section">
+    <h2 class="section-title">Vieses de Autoridade</h2>
+    <span class="section-tag">Authority Biases</span>
+    <div class="section-body">
+      <ul class="search-list">
+        <li><strong>Autoridade por portfólio internacional.</strong> Artista que trabalhou em múltiplos países com mercados exigentes (Holanda, Alemanha, Reino Unido) tem autoridade automaticamente mais alta para Marcus. O padrão europeu de tatuagem é reconhecido como benchmark.</li>
+        <li><strong>Autoridade por convite para eventos.</strong> Artista que é convidado para convenções internacionais — não que apenas participa, mas que é convidado — tem outro nível de credibilidade.</li>
+        <li><strong>Autoridade por consistência.</strong> Portfólio onde todas as peças têm o mesmo nível. Não uma boa, três medianas. Consistência é o sinal mais difícil de falsificar.</li>
+        <li><strong>Autoridade por processo.</strong> Artista que faz perguntas certas na consulta demonstra domínio do ofício, não apenas da técnica.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- CONVINCING EVIDENCE -->
+  <div class="section">
+    <h2 class="section-title">Evidências Convincentes</h2>
+    <span class="section-tag">Convincing Evidence</span>
+    <div class="section-body">
+      <ul class="search-list">
+        <li><strong>Fotos cicatrizadas das peças.</strong> Foto na hora é a mais bonita de todas. Cicatrizado é o teste real — Marcus sabe disso e procura especificamente.</li>
+        <li><strong>Vídeo do processo.</strong> Artista que mostra como trabalha — de onde vem a linha, como constrói a sombra — demonstra confiança no processo que não tem em artista que só mostra o resultado.</li>
+        <li><strong>Depoimento detalhado sobre a consulta e a sessão.</strong> Não "amei o resultado" — "o artista fez X e Y que outros nunca tinham feito". Especificidade é prova.</li>
+        <li><strong>Consistência entre países diferentes.</strong> Peça feita na Austrália no mesmo nível da peça feita na Alemanha. Qualidade que não depende do país — depende do artista.</li>
+        <li><strong>Portfólio da mesma categoria técnica que ele quer.</strong> Não peças bonitas em geral — peças específicas em Realistic Black Work com o tipo de referência que ele usa (retrato, natureza, arquitetura).</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ── BLOCO 6: DIMENSÕES PSICOLÓGICAS AVANÇADAS ── -->
+  <div class="chapter-divider">
+    <span class="chapter-divider-label">// Bloco 06 — Psicologia Avançada · Dores · Aspirações</span>
+  </div>
+
+  <!-- LIFE STORY -->
+  <div class="section">
+    <h2 class="section-title">História de Vida</h2>
+    <span class="section-tag">Life Story</span>
+    <div class="section-body">
+      <p>Marcus cresceu em ambiente onde arte era acessório, não linguagem. Família funcional, cidade grande, educação formal. Ninguém ao redor via tatuagem como expressão séria — era coisa de fase, de rebeldia, de "quando você crescer vai arrepender".</p>
+      <p>Ele cresceu. E não arrependeu. Primeiro tatuagem com 22 anos, num estúdio médio, de algo que era bonito mas não era dele de verdade. Ficou com aquela peça no braço por anos sabendo que não era bem isso que queria expressar. <em>Não horrível. Não ele.</em></p>
+      <p>Com o tempo, foi entendendo que tatuagem é linguagem — e que a escolha do artista é tão fundamental quanto a escolha do que tatuar. Passou por 2 ou 3 experiências de "quase certo" até decidir que a próxima seria diferente. <strong>Só ia tatuar de novo quando tivesse o artista certo, o design certo, a clareza certa.</strong></p>
+      <p>Bruno Righetti apareceu no feed num sábado à noite. Marcus ficou 40 minutos rolando o portfólio. Nunca tinha feito isso com nenhum outro artista.</p>
+    </div>
+  </div>
+
+  <!-- VALUE HIERARCHY -->
+  <div class="section">
+    <h2 class="section-title">Hierarquia de Valores</h2>
+    <span class="section-tag">Value Hierarchy</span>
+    <div class="section-body">
+      <p>Em ordem de prioridade para Marcus ao tomar decisões:</p>
+      <ul class="search-list">
+        <li><strong>1. Qualidade de execução</strong> — acima de tudo. Preço, conveniência e prazo se ajustam. Qualidade não é negociável.</li>
+        <li><strong>2. Autenticidade do processo</strong> — artista que parece um empresário o repele. Artista que parece um artista o atrai.</li>
+        <li><strong>3. Singularidade</strong> — a peça precisa ser irrepetível. Design que aparece em outra pessoa é falha de curadoria.</li>
+        <li><strong>4. Experiência da sessão</strong> — o processo importa tanto quanto o resultado. Sessão traumática com resultado bonito ainda é sessão traumática.</li>
+        <li><strong>5. Reconhecimento</strong> — não precisa de aprovação de todos. Precisa que quem tem olho calibrado reconheça o nível.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SELF-IMAGE GAP -->
+  <div class="section">
+    <h2 class="section-title">Lacuna de Autoimagem</h2>
+    <span class="section-tag">Self-Image Gap</span>
+    <div class="section-body">
+      <div class="pull-quote">
+        <p>"Me vejo como alguém com gosto refinado e critério real. Mas quando olho para a minha coleção atual, ainda não está completamente à altura de quem me considero."</p>
+      </div>
+      <p>A lacuna entre quem Marcus é e o que o corpo dele comunica visualmente ainda está aberta. Ele tem coleção boa — mas ainda não tem a peça que fecha o gap. A peça que faz o conjunto fazer sentido. A que eleva tudo ao redor.</p>
+      <p>Uma sessão com Bruno Righetti é, no fundo, um investimento nessa lacuna. É comprar a peça que faz a coleção falar quem ele é — finalmente.</p>
+    </div>
+  </div>
+
+  <!-- CORE WOUNDS -->
+  <div class="section">
+    <h2 class="section-title">Feridas Centrais</h2>
+    <span class="section-tag">Core Wounds</span>
+    <div class="section-body">
+      <ul class="search-list">
+        <li><strong>A tatuagem que "ficou quase certa".</strong> Carrega aquela peça no corpo como lembrete físico de que uma boa intenção com o artista errado é um erro permanente.</li>
+        <li><strong>O momento em que mostrou algo da coleção e a reação foi "hm, bonito"</strong> — sem entusiasmo real. Aquela frieza ficou.</li>
+        <li><strong>A consulta onde o artista não fez uma pergunta sequer sobre o que a peça significava.</strong> Tratou como ordem de serviço. Marcus pagou e saiu sentindo que a pele dele não importou.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ACUTE PAINS -->
+  <div class="section">
+    <h2 class="section-title">Dores Agudas</h2>
+    <span class="section-tag">Acute Pains</span>
+    <div class="section-body">
+      <ul class="search-list">
+        <li>Olhar para a área do corpo onde quer tatuar e sentir o vazio de algo que deveria estar lá.</li>
+        <li>Ver alguém com exatamente o tipo de peça que ele quer e sentir o peso de não ter agido ainda.</li>
+        <li>Abrir a pasta de referências e perceber que continua no mesmo lugar há meses.</li>
+        <li>A sensação de que o artista certo pode estar com agenda lotada quando ele finalmente decidir agir.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- CHRONIC PAINS -->
+  <div class="section">
+    <h2 class="section-title">Dores Crônicas</h2>
+    <span class="section-tag">Chronic Pains</span>
+    <div class="section-body">
+      <ul class="search-list">
+        <li>A paralisia de análise que acompanha toda decisão grande da vida. Ele sabe que pesquisa demais. Sabe que isso tem custo.</li>
+        <li>O padrão interno que foi elevado por consumir arte de nível alto — e que agora torna quase impossível se satisfazer com o mediano.</li>
+        <li>A solidão do critério: quase ninguém ao redor compartilha o mesmo nível de análise sobre tatuagem, então as conversas ficam rasas.</li>
+        <li>A peça que ficou quase certa no passado. Não some. Está lá toda manhã.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- HIDDEN PAINS -->
+  <div class="section">
+    <h2 class="section-title">Dores Ocultas</h2>
+    <span class="section-tag">Hidden Pains</span>
+    <div class="section-body">
+      <ul class="search-list">
+        <li><strong>Medo de envelhecer sem ter construído a coleção que imaginou.</strong> O corpo muda. A pele envelhece. Existe uma janela para certas decisões — e ele sabe disso.</li>
+        <li><strong>Medo de que o critério alto seja, na prática, autossabotagem.</strong> Que a busca pela perfeição seja uma forma elegante de nunca arriscar.</li>
+        <li><strong>Medo de que a tribo que ele respeita o veja como alguém que fala mas não age.</strong> Status dentro do grupo importa mais do que ele admite.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SOCIAL PAINS -->
+  <div class="section">
+    <h2 class="section-title">Dores Sociais</h2>
+    <span class="section-tag">Social Pains</span>
+    <div class="section-body">
+      <ul class="search-list">
+        <li>Explicar o preço de uma sessão para alguém que não entende tatuagem como arte e ouvir "mas é só uma tatuagem".</li>
+        <li>Ter que defender a escolha de um artista estrangeiro quando "tem tanto artista bom aqui".</li>
+        <li>Sentir que a coleção atual não comunica, para quem encontra pela primeira vez, o nível de repertório e critério que ele tem.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- EXISTENTIAL PAINS -->
+  <div class="section">
+    <h2 class="section-title">Dores Existenciais</h2>
+    <span class="section-tag">Existential Pains</span>
+    <div class="section-body">
+      <div class="pull-quote">
+        <p>"Daqui a 20 anos, quero olhar para o meu corpo e ver uma galeria que conta quem eu fui — não uma série de impulsos bem-intencionados."</p>
+      </div>
+      <p>Marcus pensa sobre legado visual de forma mais séria do que admite. A tatuagem está conectada à pergunta sobre o que quer que represente sua passagem — o que fica, o que fala, o que comunica sobre seus valores e escolhas.</p>
+      <p>Essa é a razão real por trás de toda a pesquisa: <strong>não é perfeccionismo. É responsabilidade com a própria narrativa.</strong></p>
+    </div>
+  </div>
+
+  <!-- ── BLOCO 7: ASPIRAÇÕES ── -->
+  <div class="chapter-divider">
+    <span class="chapter-divider-label">// Bloco 07 — Aspirações · Status · Legado</span>
+  </div>
+
+  <!-- IDENTITY ASPIRATIONS -->
+  <div class="section">
+    <h2 class="section-title">Aspirações de Identidade</h2>
+    <span class="section-tag">Identity Aspirations</span>
+    <div class="section-body">
+      <ul class="search-list">
+        <li>Ser reconhecido como alguém que faz escolhas com critério — não que tem dinheiro, mas que tem gosto.</li>
+        <li>Ter uma coleção que, quando mostrada ao artista certo, gera respeito genuíno — não educação superficial.</li>
+        <li>Ser a pessoa que a tribo consulta quando quer indicação de artista. A referência do grupo em curadoria.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- STATUS ASPIRATIONS -->
+  <div class="section">
+    <h2 class="section-title">Aspirações de Status</h2>
+    <span class="section-tag">Status Aspirations</span>
+    <div class="section-body">
+      <ul class="search-list">
+        <li>Ter no corpo trabalho de artista com reputação internacional verificada — não Instagram fame, mas presença real em múltiplos mercados exigentes.</li>
+        <li>Ser o tipo de cliente que artistas de nível mencionam com respeito: "tive um cliente que sabia exatamente o que queria e deu liberdade criativa dentro do escopo".</li>
+        <li>Dentro da tribo, ter a coleção que gera conversa — não por quantidade, mas por nível.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- LIFESTYLE ASPIRATIONS -->
+  <div class="section">
+    <h2 class="section-title">Aspirações de Estilo de Vida</h2>
+    <span class="section-tag">Lifestyle Aspirations</span>
+    <div class="section-body">
+      <ul class="search-list">
+        <li>Uma vida onde as escolhas estéticas — roupa, arte, tatuagem, ambiente — contam uma narrativa coerente sobre quem ele é.</li>
+        <li>Ter experiências de sessão que ele lembra e descreve como marcos — não como transações.</li>
+        <li>Documentar a coleção crescendo com o tempo: o corpo como arquivo vivo de escolhas intencionais.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- LEGACY ASPIRATIONS -->
+  <div class="section">
+    <h2 class="section-title">Aspirações de Legado</h2>
+    <span class="section-tag">Legacy Aspirations</span>
+    <div class="section-body">
+      <p>Marcus não pensa em deixar tatuagem como herança. Mas pensa — às vezes de forma não articulada — em <strong>ser lembrado como alguém com uma visão estética coerente e corajosa.</strong></p>
+      <p>A pessoa que não seguiu tendência. Que pesquisou, escolheu com critério, investiu no artista certo quando todos iam no mais barato ou no mais próximo. Que construiu algo no próprio corpo que é, ao mesmo tempo, arte e autobiografia.</p>
+    </div>
+  </div>
+
+  <!-- ── BLOCO 8: COMUNICAÇÃO ── -->
+  <div class="chapter-divider">
+    <span class="chapter-divider-label">// Bloco 08 — Comunicação · Linguagem · Gatilhos</span>
+  </div>
+
+  <!-- VERBAL TRIGGERS -->
+  <div class="section">
+    <h2 class="section-title">Gatilhos Verbais</h2>
+    <span class="section-tag">Verbal Triggers</span>
+    <div class="section-body">
+      <p>Palavras e frases que ativam atenção e interesse imediato em Marcus:</p>
+      <ul class="search-list">
+        <li>"Só aceito projetos que me desafiam tecnicamente."</li>
+        <li>"Cada peça é feita uma vez — nunca repito design."</li>
+        <li>"O portfólio cicatrizado fala por si."</li>
+        <li>"Trabalhei em mercados onde o padrão não permite erro."</li>
+        <li>"Consulta é onde a gente decide juntos se faz sentido — não é venda."</li>
+        <li>"Tenho poucas vagas abertas — e escolho projetos, não clientes."</li>
+        <li>"Realistic Black Work é técnica, não estilo. Poucos entendem a diferença."</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- COMMUNICATION STYLE -->
+  <div class="section">
+    <h2 class="section-title">Estilo de Comunicação</h2>
+    <span class="section-tag">Communication Style</span>
+    <div class="section-body">
+      <p>Marcus responde a comunicação que soa como artista falando com artista — não como prestador de serviço falando com cliente.</p>
+      <ul class="search-list">
+        <li><strong>Direta.</strong> Sem floreio, sem exagero de adjetivos. Uma frase que diz o que precisa dizer.</li>
+        <li><strong>Técnica quando necessário.</strong> Ele apecia quando alguém fala sobre "transição de sombra", "textura de pele cicatrizada", "saturação de tinta em diferentes tons de pele".</li>
+        <li><strong>Respeitosa da inteligência dele.</strong> Ele detecta imediatamente quando está sendo tratado como leigo — e se afasta.</li>
+        <li><strong>Sem pressão.</strong> Qualquer urgência falsa ou táticas de escassez fabricada o fecham completamente. Escassez real — ele respeita e age.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- JARGON USAGE -->
+  <div class="section">
+    <h2 class="section-title">Vocabulário Nativo</h2>
+    <span class="section-tag">Jargon Usage</span>
+    <div class="section-body">
+      <p><strong>Palavras que Marcus usa e que devem aparecer na comunicação de Bruno Righetti:</strong></p>
+      <ul class="search-list">
+        <li>Coleção / peça / trabalho / referência / composição / posicionamento / cicatrizado</li>
+        <li>Artista / técnica / execução / portfólio / estilo / linework / shading / blackwork realista</li>
+        <li>"Esse nível" / "feito com criterio" / "artista que assina" / "pele como suporte"</li>
+        <li>"Já pesquisei muito" / "estou decidido no estilo" / "quero entender o processo de consulta"</li>
+      </ul>
+      <p><strong>Vocabulário que o repele imediatamente:</strong></p>
+      <ul class="search-list">
+        <li>"Promoção" / "desconto" / "pacote" / "atendimento rápido" / "sem fila de espera"</li>
+        <li>"Fazemos de tudo" / "todos os estilos" / "galeria aberta" / "walk-in bem-vindo"</li>
+        <li>Qualquer linguagem que equipara tatuagem a serviço de conveniência.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- METAPHOR MAPPING -->
+  <div class="section">
+    <h2 class="section-title">Mapeamento de Metáforas</h2>
+    <span class="section-tag">Metaphor Mapping</span>
+    <div class="section-body">
+      <p>As metáforas que ressoam com Marcus — e que devem aparecer em copy, legendas e narrativa de marca:</p>
+      <ul class="search-list">
+        <li><strong>Curadoria de museu.</strong> "Você não entra num museu e aceita qualquer coisa na parede. Por que aceitaria no próprio corpo?"</li>
+        <li><strong>Arquivo vivo.</strong> "O corpo envelhece. O que você coloca nele conta a história de quem você escolheu ser."</li>
+        <li><strong>A única tela que vai onde você vai.</strong> "Sua pele não fica na parede. Vai a reuniões, praias, funerais, encontros. Ela fala mesmo quando você não está falando."</li>
+        <li><strong>O artista que o mundo convidou.</strong> "Quando mercados em 10 países pedem um artista de volta, não é coincidência. É reputação."</li>
+        <li><strong>O custo do errado.</strong> "O artista barato não sai barato. Ele sai com o preço da remoção mais o preço da cobertura mais o preço de olhar pra isso todo dia por anos."</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- STORY RECEPTION -->
+  <div class="section">
+    <h2 class="section-title">Recepção de Narrativa</h2>
+    <span class="section-tag">Story Reception</span>
+    <div class="section-body">
+      <p>Marcus responde a histórias que têm a estrutura: <strong>busca → padrão elevado → encontro com o artista certo → resultado que nenhum outro teria entregue.</strong></p>
+      <p>Ele se identifica com o narrador que também pesquisou muito antes de decidir. Que também passou pelo artista mediano. Que sabe o que é "quase certo" e que por isso valoriza profundamente o "exatamente isso".</p>
+      <p>A narrativa de Bruno Righetti que mais ressoa com Marcus é esta:</p>
+      <div class="accent-block">
+        <div class="accent-block-title">A narrativa central</div>
+        <p>Um artista brasileiro que não ficou no mercado fácil — foi para os mercados mais exigentes do mundo e foi convidado de volta. Que chegou à Austrália não para atender volume, mas para continuar fazendo o único tipo de trabalho que o satisfaz: aquele que desafia a técnica e respeita o que o cliente imaginou.</p>
+        <p>Não é a história de um artista famoso. É a história de um artista <em>consistente</em> — e consistência em Realistic Black Work, ao longo de uma década e múltiplos continentes, é mais rara e mais valiosa do que fama.</p>
+      </div>
+      <p>Essa narrativa entra fundo em Marcus porque é a mesma que ele usa para si mesmo: ele não quer ser o que tem mais tatuagens — quer ser o que fez as escolhas certas.</p>
+    </div>
+  </div>
+
+  <!-- ── BLOCO FINAL: MAPA DE CRENÇAS E VIESES ── -->
+  <div class="chapter-divider">
+    <span class="chapter-divider-label">// Bloco 09 — Crenças · Vieses · Modelos Mentais</span>
+  </div>
+
+  <!-- MORAL FRAMEWORK -->
+  <div class="section">
+    <h2 class="section-title">Framework Moral</h2>
+    <span class="section-tag">Moral Framework</span>
+    <div class="section-body">
+      <ul class="search-list">
+        <li>Integridade artística importa mais que conveniência comercial. Artista que vende o que o cliente quer ouvir é desonesto — artista que diz o que é tecnicamente possível é honesto.</li>
+        <li>O corpo é sagrado no sentido estético: o que você coloca nele é uma declaração de valores, não apenas de gosto.</li>
+        <li>Pagar o preço certo pelo trabalho certo é respeito ao artista — barganhar em arte permanente é falta de entendimento do que está comprando.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SACRED VALUES -->
+  <div class="section">
+    <h2 class="section-title">Valores Sagrados</h2>
+    <span class="section-tag">Sacred Values</span>
+    <div class="section-body">
+      <ul class="search-list">
+        <li><strong>Singularidade.</strong> Nenhum design repetido. Nenhuma tendência seguida sem digestão.</li>
+        <li><strong>Processo honesto.</strong> Consulta real, expectativa alinhada, resultado previsível.</li>
+        <li><strong>Respeito ao suporte.</strong> Pele humana não é papel. Artista que trata assim — e executa assim — tem outro nível.</li>
+        <li><strong>Curadoria com critério.</strong> Não tatuar só porque deu vontade. Tatuar porque chegou a conclusão segura.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- COGNITIVE BIASES -->
+  <div class="section">
+    <h2 class="section-title">Vieses Cognitivos</h2>
+    <span class="section-tag">Cognitive Biases</span>
+    <div class="section-body">
+      <ul class="search-list">
+        <li><strong>Viés de confirmação:</strong> Uma vez que decidiu que Bruno é o artista certo, busca ativamente evidências que confirmam — e é mais resistente às que contradizem.</li>
+        <li><strong>Efeito IKEA invertido:</strong> Quanto mais pesquisou, mais valoriza o que encontrou. O processo longo de pesquisa aumenta o valor percebido da decisão final.</li>
+        <li><strong>Viés de custo irrecuperável:</strong> A peça "quase certa" do passado pesa na decisão atual — aumenta a determinação de não repetir o erro.</li>
+        <li><strong>Heurística de representatividade:</strong> Artistas com portfólio internacional automaticamente parecem mais confiáveis — independente de análise técnica pormenorizada.</li>
+        <li><strong>Efeito de disponibilidade:</strong> As histórias de tatuagens ruins que conhece pesam mais do que a probabilidade estatística de um artista de nível entregar resultado ruim.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- MENTAL MODELS -->
+  <div class="section">
+    <h2 class="section-title">Modelos Mentais</h2>
+    <span class="section-tag">Mental Models</span>
+    <div class="section-body">
+      <ul class="search-list">
+        <li><strong>"Artista bom sempre tem agenda cheia."</strong> — Se tem disponibilidade imediata, algo está errado. Escassez de agenda é sinal de qualidade, não de arrogância.</li>
+        <li><strong>"O que não aparece no portfólio, não existe."</strong> — Não aceita "consigo fazer isso" sem ver evidência visual. Palavras de artista sem portfólio que prova são ruído.</li>
+        <li><strong>"Referência é ponto de partida, não destino."</strong> — Artista que reproduz a referência sem adaptar para a pele não entende o ofício. Artista que transforma a referência entende.</li>
+        <li><strong>"A consulta é o artista se mostrando."</strong> — O jeito que o artista conduz a consulta é o indicador mais confiável de como vai ser a sessão.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- COMFORT ZONE -->
+  <div class="section">
+    <h2 class="section-title">Zona de Conforto</h2>
+    <span class="section-tag">Comfort Zone</span>
+    <div class="section-body">
+      <p>A zona de conforto de Marcus não é inação — é <strong>pesquisa infinita.</strong> Continuar salvando posts, comparando portfólios, abrindo a pasta de referências. É movimento sem risco.</p>
+      <p>O desconforto real é apertar o botão de contato — porque apertar o botão é o primeiro passo de um processo que vai terminar com algo permanente no próprio corpo. E permanência é o maior desconforto para alguém que pesquisa tanto justamente para evitar erros permanentes.</p>
+    </div>
+  </div>
+
+  <!-- STATUS QUO BIAS -->
+  <div class="section">
+    <h2 class="section-title">Viés do Status Quo</h2>
+    <span class="section-tag">Status Quo Bias</span>
+    <div class="section-body">
+      <p>Marcus prefere continuar pesquisando a tomar a decisão errada. Isso é racional em categorias de compra reversíveis — e se torna sabotagem numa categoria onde a pesquisa nunca vai eliminar 100% do risco.</p>
+      <p>O status quo é: área do corpo vazia, pasta de referências cheia, pergunta sem resposta. O custo do status quo é invisível mas real — <strong>cada mês passado é um mês que poderia ter começado a cicatrização da peça certa.</strong></p>
+    </div>
+  </div>
+
+  <!-- ROLE MODELS -->
+  <div class="section">
+    <h2 class="section-title">Modelos de Referência</h2>
+    <span class="section-tag">Role Models</span>
+    <div class="section-body">
+      <ul class="search-list">
+        <li><strong>O colecionador que ele segue no Instagram</strong> — não o que tem mais peças, mas o que tem as peças mais deliberadas. Cada tatuagem com artista, data e história.</li>
+        <li><strong>O amigo da tribo que tatuou no artista certo</strong> — e que agora é a referência silenciosa de como se faz.</li>
+        <li><strong>Artistas de tatuagem que ele respeita como criadores</strong> — que falam sobre o processo com a seriedade de quem leva arte a sério, não de quem leva serviço a sério.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ANTI-MODELS -->
+  <div class="section">
+    <h2 class="section-title">Anti-Modelos</h2>
+    <span class="section-tag">Anti-Models</span>
+    <div class="section-body">
+      <ul class="search-list">
+        <li><strong>O colega que tatua toda semana</strong> — sem critério, sem curadoria, acumulando peças que não contam história coerente.</li>
+        <li><strong>O influenciador de tatuagem</strong> — que virou marca, não artista. Que tem 500k seguidores mas cujo portfólio foi construído por algoritmo.</li>
+        <li><strong>Qualquer pessoa que defende o "mas ficou baratinho"</strong> — a mentalidade que Marcus considera incompatível com entender o que significa ter algo permanente no corpo.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SOCIAL CURRENCY -->
+  <div class="section">
+    <h2 class="section-title">Moeda Social</h2>
+    <span class="section-tag">Social Currency</span>
+    <div class="section-body">
+      <p>Para Marcus, a moeda social não é dinheiro — é <strong>curadoria reconhecível.</strong></p>
+      <p>Dentro da tribo, a pessoa que tem a coleção mais deliberada, com os artistas mais criteriosamente escolhidos, tem mais moeda do que a pessoa que tem a coleção maior ou a mais cara.</p>
+      <p>Uma peça de Bruno Righetti — com sua reputação verificada em múltiplos países — entra diretamente nessa moeda. <em>Não é status financeiro. É status de critério.</em> E para Marcus, essa é a única moeda que importa dentro dos grupos que ele respeita.</p>
+    </div>
+  </div>
+
+  <!-- LOSS AVERSION -->
+  <div class="section">
+    <h2 class="section-title">Aversão à Perda</h2>
+    <span class="section-tag">Loss Aversion</span>
+    <div class="section-body">
+      <ul class="search-list">
+        <li><strong>Perda de oportunidade:</strong> A sessão com Bruno que não aconteceu porque a agenda fechou antes de ele decidir. Essa imagem o assombra mais do que o custo financeiro da sessão.</li>
+        <li><strong>Perda de integridade:</strong> Tatuar com o artista errado por conveniência — e depois ter que conviver com o custo visível dessa decisão no próprio braço.</li>
+        <li><strong>Perda de confiança própria:</strong> Pesquisou tanto, esperou tanto, e ainda assim escolheu errado? Isso é uma derrota de identidade, não só de consumo.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- HOPE ANCHORS -->
+  <div class="section">
+    <h2 class="section-title">Âncoras de Esperança</h2>
+    <span class="section-tag">Hope Anchors</span>
+    <div class="section-body">
+      <ul class="search-list">
+        <li>A certeza de que, quando encontrar o artista certo, vai saber. E o portfólio de Bruno trouxe exatamente essa sensação.</li>
+        <li>A crença de que pesquisa longa demais finalmente paga dividendo — na forma da decisão mais certa possível.</li>
+        <li>A imagem mental do resultado cicatrizado: a peça no corpo, visível, irreversivelmente certa. O fim da pasta de referências. O começo do capítulo seguinte.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- JOY CATALYSTS -->
+  <div class="section">
+    <h2 class="section-title">Catalisadores de Alegria</h2>
+    <span class="section-tag">Joy Catalysts</span>
+    <div class="section-body">
+      <ul class="search-list">
+        <li>Ver um trabalho cicatrizado de Bruno que é exatamente a categoria de peça que ele quer — e sentir o "sim, é possível".</li>
+        <li>Uma consulta onde o artista faz a pergunta que nenhum outro nunca fez — e Marcus percebe que está sendo tratado como colaborador, não como cliente.</li>
+        <li>O momento pós-sessão onde olha no espelho antes de cobrir com o curativo — e sente que está exatamente certo.</li>
+        <li>O primeiro dia com a peça cicatrizada. O braço comprido no espelho. A sensação de que a coleção agora faz sentido.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- DAILY RITUALS -->
+  <div class="section">
+    <h2 class="section-title">Rituais Diários</h2>
+    <span class="section-tag">Daily Rituals</span>
+    <div class="section-body">
+      <ul class="search-list">
+        <li>Rola o Instagram às 22h e filtra o feed de tatuagem antes de dormir — um ritual de curadoria inconsciente.</li>
+        <li>Abre a pasta de referências no telefone pelo menos uma vez por semana. Às vezes adiciona algo. Às vezes só olha.</li>
+        <li>Quando está num lugar com muitas pessoas, involuntariamente faz um inventário visual de tatuagens ao redor.</li>
+        <li>No chuveiro, às vezes olha para a área do corpo onde quer tatuar e a imagina finalizada. É uma imagem que já tem detalhes. Já tem textura. Só não tem data.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- OPPORTUNITY COSTS -->
+  <div class="section">
+    <h2 class="section-title">Custos de Oportunidade</h2>
+    <span class="section-tag">Opportunity Costs</span>
+    <div class="section-body">
+      <p>O custo real de não agir que Marcus nunca calcula de forma explícita:</p>
+      <ul class="search-list">
+        <li>Cada mês que passa sem tatuar é um mês a mais de cicatrização que não começou.</li>
+        <li>A agenda de Bruno que pode fechar antes que ele decida — e o próximo artista com esse portfólio pode não estar na Austrália tão cedo.</li>
+        <li>O corpo muda. Tonicidade muda. A janela para certas áreas com certos designs é real e tem prazo.</li>
+        <li>O custo emocional de continuar acumulando pesquisa sem resolução — que Marcus subestima mas sente todo dia.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ENVIRONMENT INFLUENCES -->
+  <div class="section">
+    <h2 class="section-title">Influências do Ambiente</h2>
+    <span class="section-tag">Environment Influences</span>
+    <div class="section-body">
+      <ul class="search-list">
+        <li><strong>Convenções de tatuagem</strong> — onde vê ao vivo o que é possível e refina o critério interno.</li>
+        <li><strong>Instagram e TikTok de artistas internacionais</strong> — principal janela de pesquisa. Salvamentos são o equivalente digital de uma lista de desejos.</li>
+        <li><strong>Grupo da tribo</strong> — onde troca referências, opiniões e às vezes o artista certo aparece por indicação de alguém que já passou pelo processo.</li>
+        <li><strong>Melbourne/Sydney como mercados maduros de tatuagem</strong> — cidades com público criterioso que eleva o padrão mínimo aceitável.</li>
+      </ul>
+    </div>
+  </div>
+
+</div><!-- /container -->
+
+<!-- FOOTER -->
+<div class="doc-footer">
+  <div class="doc-footer-brand">
+    <span>Righetti Art</span> — SEARCH 1 · Framework Estratégico de Avatar
+  </div>
+  <div class="doc-footer-meta">
+    ZX Digital · @assessoriazx<br>
+    Versão 1.0 · 2026
+  </div>
+</div>
+
+</body>
+</html>
