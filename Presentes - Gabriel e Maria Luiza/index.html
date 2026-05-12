@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lista de Presentes · Gabriel &amp; Maria Luiza · 20/07/2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --cream: #FAF7F2;
+    --white: #FFFFFF;
+    --gold: #B8985A;
+    --gold-light: #F5EDD8;
+    --gold-border: #DBC98A;
+    --text: #2B2318;
+    --text-mid: #6B5D4F;
+    --text-light: #9C8C7E;
+    --border: #E8E0D4;
+    --card-bg: #FFFFFF;
+  }
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    min-height: 100vh;
+    padding-bottom: 3rem;
+  }
+
+  /* HEADER */
+  .header {
+    background: var(--white);
+    text-align: center;
+    padding: 3.5rem 1.5rem 2.5rem;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+  }
+  .header::before {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 2px;
+    background: var(--gold);
+    margin: 0 auto 1.5rem;
+  }
+  .header-eyebrow {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+  .header-names {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 44px;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    color: var(--text);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+  .header-amp {
+    font-style: italic;
+    color: var(--gold);
+    margin: 0 0.35em;
+  }
+  .header-tagline {
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--text-light);
+    letter-spacing: 0.04em;
+    margin-top: 1rem;
+    font-style: italic;
+    font-family: 'Cormorant Garamond', serif;
+  }
+  .header-ornament {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 1.5rem;
+    color: var(--gold-border);
+    font-size: 18px;
+  }
+  .header-ornament::before,
+  .header-ornament::after {
+    content: '';
+    width: 60px;
+    height: 1px;
+    background: var(--gold-border);
+  }
+
+  /* MAIN */
+  .container { max-width: 960px; margin: 0 auto; padding: 0 1.5rem; }
+
+  /* SECTION */
+  .section { margin-top: 3rem; }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 1.5rem;
+  }
+  .section-icon { font-size: 18px; }
+  .section-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    color: var(--text-mid);
+    text-transform: uppercase;
+  }
+  .section-header::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* GRID */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 14px;
+  }
+
+  /* CARD */
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.2s, border-color 0.2s;
+  }
+  .card:hover {
+    border-color: var(--gold-border);
+    box-shadow: 0 4px 20px rgba(184, 152, 90, 0.12);
+  }
+  .card-visual {
+    height: 120px;
+    background: var(--cream);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+  .card-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+  }
+  .card:hover .card-visual img { transform: scale(1.04); }
+  .card-icon-wrap {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--gold-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+  }
+  .card-body { padding: 0.9rem; flex: 1; display: flex; flex-direction: column; gap: 5px; }
+  .card-name {
+    font-size: 12.5px;
+    font-weight: 500;
+    color: var(--text);
+    line-height: 1.4;
+  }
+  .card-brand { font-size: 11px; color: var(--text-light); }
+  .stars {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    margin-top: 2px;
+  }
+  .star { color: var(--gold); font-size: 11px; }
+  .star-score { font-size: 10.5px; color: var(--text-light); margin-left: 3px; }
+  .card-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 9px;
+    background: var(--cream);
+    border-top: 1px solid var(--border);
+    text-decoration: none;
+    font-size: 11.5px;
+    font-weight: 500;
+    color: var(--gold);
+    letter-spacing: 0.04em;
+    transition: background 0.15s, color 0.15s;
+  }
+  .card-cta:hover { background: var(--gold-light); }
+  .card-cta svg { width: 13px; height: 13px; flex-shrink: 0; }
+
+  /* PIX */
+  .pix-section {
+    margin: 3rem 0 0;
+    background: var(--gold-light);
+    border: 1px solid var(--gold-border);
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+  }
+  .pix-eyebrow {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+  }
+  .pix-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+  }
+  .pix-desc { font-size: 13px; color: var(--text-mid); font-style: italic; font-family: 'Cormorant Garamond', serif; margin-bottom: 1.5rem; }
+  .pix-key {
+    display: inline-block;
+    font-family: 'Courier New', monospace;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    color: var(--text);
+    background: var(--white);
+    border: 1px solid var(--gold-border);
+    border-radius: 8px;
+    padding: 10px 20px;
+    margin-bottom: 0.6rem;
+  }
+  .pix-holder { font-size: 12px; color: var(--text-mid); }
+
+  /* FOOTER */
+  .footer {
+    margin-top: 3rem;
+    text-align: center;
+    padding: 2rem 1.5rem;
+    border-top: 1px solid var(--border);
+  }
+  .footer-heart { font-size: 18px; color: var(--gold); margin-bottom: 0.5rem; }
+  .footer p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    font-style: italic;
+    color: var(--text-light);
+    line-height: 1.7;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <p class="header-eyebrow">Lista de Presentes &nbsp;·&nbsp; 20 de Julho de 2026</p>
+  <h1 class="header-names">Gabriel<span class="header-amp">&amp;</span>Maria Luiza</h1>
+  <p class="header-tagline">Cada presente, grande ou pequeno, será recebido com muito amor e gratidão</p>
+  <div class="header-ornament">&#10022;</div>
+</div>
+
+<div class="container">
+
+  <!-- SECTION 1 -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-label">🏠 Para o Lar</span>
+    </div>
+    <div class="grid">
+
+      <div class="card">
+        <div class="card-visual">
+          <img src="https://http2.mlstatic.com/D_NQ_NP_898084-MLB74062208898_012024-O.webp" alt="Jogo de panelas Tramontina" onerror="this.style.display='none'">
+          <div class="card-icon-wrap" style="position:absolute">🥘</div>
+        </div>
+        <div class="card-body">
+          <p class="card-name">Jogo de Panelas</p>
+          <p class="card-brand">Tramontina Allegra Inox 5 pcs</p>
+          <div class="stars">
+            <span class="star">★★★★★</span><span class="star-score">4.8</span>
+          </div>
+        </div>
+        <a class="card-cta" href="https://www.mercadolivre.com.br/jogo-de-panelas-tramontina-allegra-em-aco-inox-com-fundo-triplo-5-pecas/p/MLB32607021" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3"/></svg>
+          Ver no Mercado Livre
+        </a>
+      </div>
+
+      <div class="card">
+        <div class="card-visual"><div class="card-icon-wrap">🛁</div></div>
+        <div class="card-body">
+          <p class="card-name">Jogo de Toalhas – Banho &amp; Rosto</p>
+          <p class="card-brand">Buddemeyer Bella Extra Soft 4 pcs</p>
+          <div class="stars"><span class="star">★★★★★</span><span class="star-score">4.9</span></div>
+        </div>
+        <a class="card-cta" href="https://www.mercadolivre.com.br/jogo-de-toalhas-buddemeyer-bella-extra-soft-banho-4-pecas-brancobege/p/MLB48919203" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3"/></svg>
+          Ver no Mercado Livre
+        </a>
+      </div>
+
+      <div class="card">
+        <div class="card-visual"><div class="card-icon-wrap">🛏️</div></div>
+        <div class="card-body">
+          <p class="card-name">Jogo de Lençol Casal</p>
+          <p class="card-brand">Percal 400 Fios</p>
+          <div class="stars"><span class="star">★★★★</span><span class="star" style="opacity:.4">★</span><span class="star-score">4.7</span></div>
+        </div>
+        <a class="card-cta" href="https://lista.mercadolivre.com.br/jogo-lencol-casal-400-fios" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3"/></svg>
+          Ver no Mercado Livre
+        </a>
+      </div>
+
+      <div class="card">
+        <div class="card-visual"><div class="card-icon-wrap">🌙</div></div>
+        <div class="card-body">
+          <p class="card-name">Jogo de Cama Completo</p>
+          <p class="card-brand">Edredom + Fronhas Casal</p>
+          <div class="stars"><span class="star">★★★★</span><span class="star" style="opacity:.4">★</span><span class="star-score">4.7</span></div>
+        </div>
+        <a class="card-cta" href="https://lista.mercadolivre.com.br/jogo-de-cama-casal-400-fios" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3"/></svg>
+          Ver no Mercado Livre
+        </a>
+      </div>
+
+      <div class="card">
+        <div class="card-visual"><div class="card-icon-wrap">🍽️</div></div>
+        <div class="card-body">
+          <p class="card-name">Jogo de Pratos</p>
+          <p class="card-brand">Oxford Ryo Maresia 20 pcs</p>
+          <div class="stars"><span class="star">★★★★★</span><span class="star-score">4.8</span></div>
+        </div>
+        <a class="card-cta" href="https://www.mercadolivre.com.br/aparelho-de-jantar-e-cha-ryo-maresia-20-pecas-branco-e-marrom-oxford/p/MLB33630217" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3"/></svg>
+          Ver no Mercado Livre
+        </a>
+      </div>
+
+      <div class="card">
+        <div class="card-visual"><div class="card-icon-wrap">🍴</div></div>
+        <div class="card-body">
+          <p class="card-name">Jogo de Talheres</p>
+          <p class="card-brand">Tramontina Malibu 24 pcs</p>
+          <div class="stars"><span class="star">★★★★★</span><span class="star-score">4.8</span></div>
+        </div>
+        <a class="card-cta" href="https://lista.mercadolivre.com.br/faqueiro-tramontina-malibu" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3"/></svg>
+          Ver no Mercado Livre
+        </a>
+      </div>
+
+      <div class="card">
+        <div class="card-visual"><div class="card-icon-wrap">🔪</div></div>
+        <div class="card-body">
+          <p class="card-name">Faqueiro Completo</p>
+          <p class="card-brand">Tramontina Laguna 36 pcs</p>
+          <div class="stars"><span class="star">★★★★★</span><span class="star-score">4.9</span></div>
+        </div>
+        <a class="card-cta" href="https://lista.mercadolivre.com.br/faqueiro-tramontina" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3"/></svg>
+          Ver no Mercado Livre
+        </a>
+      </div>
+
+      <div class="card">
+        <div class="card-visual"><div class="card-icon-wrap">🥂</div></div>
+        <div class="card-body">
+          <p class="card-name">Jogo de Taças</p>
+          <p class="card-brand">Cristal Bohemia Xtra 6 pcs</p>
+          <div class="stars"><span class="star">★★★★</span><span class="star" style="opacity:.4">★</span><span class="star-score">4.7</span></div>
+        </div>
+        <a class="card-cta" href="https://lista.mercadolivre.com.br/jogo-tacas-cristal-bohemia" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3"/></svg>
+          Ver no Mercado Livre
+        </a>
+      </div>
+
+      <div class="card">
+        <div class="card-visual"><div class="card-icon-wrap">🍟</div></div>
+        <div class="card-body">
+          <p class="card-name">Fritadeira Air Fryer</p>
+          <p class="card-brand">Philips Walita Série 1000 XL 6,2L</p>
+          <div class="stars"><span class="star">★★★★★</span><span class="star-score">4.9</span></div>
+        </div>
+        <a class="card-cta" href="https://www.mercadolivre.com.br/fritadeira-eletrica-airfryer-philips-walita-serie-1000-xl-na130-sem-oleo-62-litros-1700w-preto/p/MLB39291988" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3"/></svg>
+          Ver no Mercado Livre
+        </a>
+      </div>
+
+      <div class="card">
+        <div class="card-visual"><div class="card-icon-wrap">📡</div></div>
+        <div class="card-body">
+          <p class="card-name">Micro-ondas</p>
+          <p class="card-brand">Brastemp / Electrolux</p>
+          <div class="stars"><span class="star">★★★★</span><span class="star" style="opacity:.4">★</span><span class="star-score">4.7</span></div>
+        </div>
+        <a class="card-cta" href="https://lista.mercadolivre.com.br/micro-ondas-brastemp" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3"/></svg>
+          Ver no Mercado Livre
+        </a>
+      </div>
+
+      <div class="card">
+        <div class="card-visual"><div class="card-icon-wrap">🤖</div></div>
+        <div class="card-body">
+          <p class="card-name">Aspirador de Pó</p>
+          <p class="card-brand">Robô Dreame / Roborock</p>
+          <div class="stars"><span class="star">★★★★★</span><span class="star-score">4.8</span></div>
+        </div>
+        <a class="card-cta" href="https://lista.mercadolivre.com.br/robo-aspirador" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3"/></svg>
+          Ver no Mercado Livre
+        </a>
+      </div>
+
+      <div class="card">
+        <div class="card-visual"><div class="card-icon-wrap">🪞</div></div>
+        <div class="card-body">
+          <p class="card-name">Espelho para Sala</p>
+          <p class="card-brand">Decorativo</p>
+          <div class="stars"><span class="star">★★★★</span><span class="star" style="opacity:.4">★</span><span class="star-score">4.7</span></div>
+        </div>
+        <a class="card-cta" href="https://lista.mercadolivre.com.br/espelho-decorativo-sala" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3"/></svg>
+          Ver no Mercado Livre
+        </a>
+      </div>
+
+      <div class="card">
+        <div class="card-visual"><div class="card-icon-wrap">🖼️</div></div>
+        <div class="card-body">
+          <p class="card-name">Quadros Decorativos</p>
+          <p class="card-brand">Conjunto para sala</p>
+          <div class="stars"><span class="star">★★★★</span><span class="star" style="opacity:.4">★</span><span class="star-score">4.7</span></div>
+        </div>
+        <a class="card-cta" href="https://lista.mercadolivre.com.br/quadros-decorativos-sala" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3"/></svg>
+          Ver no Mercado Livre
+        </a>
+      </div>
+
+      <div class="card">
+        <div class="card-visual"><div class="card-icon-wrap">📺</div></div>
+        <div class="card-body">
+          <p class="card-name">Smart TV</p>
+          <p class="card-brand">4K 55" Samsung / LG</p>
+          <div class="stars"><span class="star">★★★★★</span><span class="star-score">4.8+</span></div>
+        </div>
+        <a class="card-cta" href="https://lista.mercadolivre.com.br/smart-tv-55-polegadas-4k" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3"/></svg>
+          Ver no Mercado Livre
+        </a>
+      </div>
+
+      <div class="card">
+        <div class="card-visual"><div class="card-icon-wrap">🛋️</div></div>
+        <div class="card-body">
+          <p class="card-name">Sofá</p>
+          <p class="card-brand">Para sala</p>
+          <div class="stars"><span class="star">★★★★</span><span class="star" style="opacity:.5">★</span><span class="star-score">4.6+</span></div>
+        </div>
+        <a class="card-cta" href="https://lista.mercadolivre.com.br/sofa-sala" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3"/></svg>
+          Ver no Mercado Livre
+        </a>
+      </div>
+
+      <div class="card">
+        <div class="card-visual"><div class="card-icon-wrap">☕</div></div>
+        <div class="card-body">
+          <p class="card-name">Máquina de Café Expresso</p>
+          <p class="card-brand">Nespresso</p>
+          <div class="stars"><span class="star">★★★★★</span><span class="star-score">4.9</span></div>
+        </div>
+        <a class="card-cta" href="https://lista.mercadolivre.com.br/nespresso" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3"/></svg>
+          Ver no Mercado Livre
+        </a>
+      </div>
+
+      <div class="card">
+        <div class="card-visual"><div class="card-icon-wrap">🪑</div></div>
+        <div class="card-body">
+          <p class="card-name">Mesa de Jantar</p>
+          <p class="card-brand">6 lugares</p>
+          <div class="stars"><span class="star">★★★★</span><span class="star" style="opacity:.5">★</span><span class="star-score">4.6+</span></div>
+        </div>
+        <a class="card-cta" href="https://lista.mercadolivre.com.br/mesa-de-jantar" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3"/></svg>
+          Ver no Mercado Livre
+        </a>
+      </div>
+
+      <div class="card">
+        <div class="card-visual"><div class="card-icon-wrap">🪑</div></div>
+        <div class="card-body">
+          <p class="card-name">Jogo de Cadeiras</p>
+          <p class="card-brand">Para mesa de jantar</p>
+          <div class="stars"><span class="star">★★★★</span><span class="star" style="opacity:.5">★</span><span class="star-score">4.6+</span></div>
+        </div>
+        <a class="card-cta" href="https://lista.mercadolivre.com.br/jogo-cadeiras-jantar" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3"/></svg>
+          Ver no Mercado Livre
+        </a>
+      </div>
+
+      <div class="card">
+        <div class="card-visual"><div class="card-icon-wrap">🔊</div></div>
+        <div class="card-body">
+          <p class="card-name">Alexa</p>
+          <p class="card-brand">Amazon Echo Dot 4ª geração</p>
+          <div class="stars"><span class="star">★★★★★</span><span class="star-score">4.8</span></div>
+        </div>
+        <a class="card-cta" href="https://lista.mercadolivre.com.br/alexa-echo-dot-4" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3"/></svg>
+          Ver no Mercado Livre
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 2 -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-label">🛁 Enxoval de Banheiro</span>
+    </div>
+    <div class="grid">
+
+      <div class="card">
+        <div class="card-visual"><div class="card-icon-wrap">🧖</div></div>
+        <div class="card-body">
+          <p class="card-name">Jogo de Toalhas de Banho</p>
+          <p class="card-brand">Buddemeyer Village 4 pcs</p>
+          <div class="stars"><span class="star">★★★★★</span><span class="star-score">4.9</span></div>
+        </div>
+        <a class="card-cta" href="https://www.mercadolivre.com.br/jogo-de-toalhas-banho-village-com-4-pecas-lilas-e-roxo-buddemeyer/p/MLB50179038" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3"/></svg>
+          Ver no Mercado Livre
+        </a>
+      </div>
+
+      <div class="card">
+        <div class="card-visual"><div class="card-icon-wrap">🟫</div></div>
+        <div class="card-body">
+          <p class="card-name">Tapete de Banheiro</p>
+          <p class="card-brand">Antiderrapante</p>
+          <div class="stars"><span class="star">★★★★</span><span class="star" style="opacity:.4">★</span><span class="star-score">4.7</span></div>
+        </div>
+        <a class="card-cta" href="https://lista.mercadolivre.com.br/tapete-banheiro-antiderrapante" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3"/></svg>
+          Ver no Mercado Livre
+        </a>
+      </div>
+
+      <div class="card">
+        <div class="card-visual"><div class="card-icon-wrap">🧴</div></div>
+        <div class="card-body">
+          <p class="card-name">Porta-shampoo / Organizador</p>
+          <p class="card-brand">Banheiro</p>
+          <div class="stars"><span class="star">★★★★</span><span class="star" style="opacity:.4">★</span><span class="star-score">4.7</span></div>
+        </div>
+        <a class="card-cta" href="https://lista.mercadolivre.com.br/organizador-banheiro" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3"/></svg>
+          Ver no Mercado Livre
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 3 -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-label">🍽️ Para Receber Visitas</span>
+    </div>
+    <div class="grid">
+
+      <div class="card">
+        <div class="card-visual"><div class="card-icon-wrap">🥛</div></div>
+        <div class="card-body">
+          <p class="card-name">Jogo de Copos</p>
+          <p class="card-brand">Vidro / Cristal</p>
+          <div class="stars"><span class="star">★★★★</span><span class="star" style="opacity:.4">★</span><span class="star-score">4.7</span></div>
+        </div>
+        <a class="card-cta" href="https://lista.mercadolivre.com.br/jogo-copos-vidro" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3"/></svg>
+          Ver no Mercado Livre
+        </a>
+      </div>
+
+      <div class="card">
+        <div class="card-visual"><div class="card-icon-wrap">🥗</div></div>
+        <div class="card-body">
+          <p class="card-name">Jogo de Travessas</p>
+          <p class="card-brand">Porcelana / Cerâmica</p>
+          <div class="stars"><span class="star">★★★★</span><span class="star" style="opacity:.4">★</span><span class="star-score">4.7</span></div>
+        </div>
+        <a class="card-cta" href="https://lista.mercadolivre.com.br/jogo-travessas-porcelana" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3"/></svg>
+          Ver no Mercado Livre
+        </a>
+      </div>
+
+      <div class="card">
+        <div class="card-visual"><div class="card-icon-wrap">🍜</div></div>
+        <div class="card-body">
+          <p class="card-name">Jogo de Bowls</p>
+          <p class="card-brand">Cerâmica</p>
+          <div class="stars"><span class="star">★★★★★</span><span class="star-score">4.8</span></div>
+        </div>
+        <a class="card-cta" href="https://lista.mercadolivre.com.br/jogo-bowls-ceramica" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3"/></svg>
+          Ver no Mercado Livre
+        </a>
+      </div>
+
+      <div class="card">
+        <div class="card-visual"><div class="card-icon-wrap">🫖</div></div>
+        <div class="card-body">
+          <p class="card-name">Conjunto de Xícaras</p>
+          <p class="card-brand">Oxford Floreal</p>
+          <div class="stars"><span class="star">★★★★★</span><span class="star-score">4.8</span></div>
+        </div>
+        <a class="card-cta" href="https://lista.mercadolivre.com.br/conjunto-xicaras-cafe-oxford" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3"/></svg>
+          Ver no Mercado Livre
+        </a>
+      </div>
+
+      <div class="card">
+        <div class="card-visual"><div class="card-icon-wrap">✨</div></div>
+        <div class="card-body">
+          <p class="card-name">Conjunto Mesa Posta Completa</p>
+          <p class="card-brand">Conjunto completo</p>
+          <div class="stars"><span class="star">★★★★</span><span class="star" style="opacity:.4">★</span><span class="star-score">4.7</span></div>
+        </div>
+        <a class="card-cta" href="https://lista.mercadolivre.com.br/mesa-posta-completa" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3"/></svg>
+          Ver no Mercado Livre
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PIX -->
+  <div class="pix-section">
+    <p class="pix-eyebrow">Presente em dinheiro</p>
+    <h2 class="pix-title">Chave Pix</h2>
+    <p class="pix-desc">Caso prefira nos presentear com um valor em dinheiro para realizarmos nossos sonhos, ficaremos muito felizes!</p>
+    <p class="pix-key">086.609.385.00</p>
+    <p class="pix-holder">Titular: Maria Luiza Gomides Gonçalves de Brito</p>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <p class="footer-heart">♡</p>
+    <p>Não há obrigatoriedade de presente.<br>Sua presença já é o nosso maior presente.</p>
+  </div>
+
+</div>
+</body>
+</html>
