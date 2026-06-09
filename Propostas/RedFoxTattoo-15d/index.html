@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Red Fox Tattoo — Plano de Ação 15 Dias</title>
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="presentation" id="app">
+
+  <!-- ── UI Chrome ── -->
+  <div class="chrome">
+    <div class="progress-track"><div class="progress-fill" id="pFill"></div></div>
+    <div class="counter"><span id="cNum">01</span><span class="c-sep">/</span><span id="cTotal">14</span></div>
+    <div class="corner-id">THE RED FOX × EIKON</div>
+  </div>
+
+  <!-- ── Nav ── -->
+  <button class="nav nav-prev" id="btnPrev" onclick="go(-1)" aria-label="Anterior">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="15 18 9 12 15 6"/></svg>
+  </button>
+  <button class="nav nav-next" id="btnNext" onclick="go(1)" aria-label="Próximo">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="9 18 15 12 9 6"/></svg>
+  </button>
+
+  <!-- ══════════════════════════════════════════
+       SLIDE 01 — COVER
+  ══════════════════════════════════════════ -->
+  <div class="slide slide-bg-cover active" data-i="0">
+    <div class="bg-img" style="background-image:url('images/palladium-fisheye.png')"></div>
+    <div class="overlay cover-ov"></div>
+    <div class="inner center-col">
+      <img src="images/logo.png" alt="The Red Fox Tattoo" class="cover-logo">
+      <h1 class="cover-h1">Plano de Ação <span class="metallic">15 Dias</span></h1>
+      <p class="cover-loc">Shopping Palladium · Curitiba–PR</p>
+      <div class="cover-tag">
+        <span>Eikon Marketing</span>
+        <span class="rdot">·</span>
+        <span>Squad Alta Performance</span>
+        <span class="rdot">·</span>
+        <span>Junho 2026</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       SLIDE 02 — A PROPOSTA
+  ══════════════════════════════════════════ -->
+  <div class="slide" data-i="1">
+    <div class="inner pad">
+      <div class="eyebrow">O Plano</div>
+      <h2 class="stitle">A Proposta</h2>
+      <div class="prop-grid">
+        <div class="card">
+          <div class="card-icon">◈</div>
+          <div class="card-label">FOCO</div>
+          <div class="card-val">Shopping<br>Palladium</div>
+          <div class="card-desc">Uma unidade. Energia total. Zero distração durante os 15 dias.</div>
+        </div>
+        <div class="card">
+          <div class="card-icon">◈</div>
+          <div class="card-label">DURAÇÃO</div>
+          <div class="card-val">15 Dias</div>
+          <div class="card-desc">Zero custo operacional para o parceiro. Só energia e entrega.</div>
+        </div>
+        <div class="card card-red">
+          <div class="card-icon">◈</div>
+          <div class="card-label">INVESTIMENTO</div>
+          <div class="card-val red">R$ 1.200</div>
+          <div class="card-desc">Exclusivamente tráfego pago. Nenhum outro custo envolvido.</div>
+        </div>
+      </div>
+      <div class="manifesto">
+        <p>Erro nosso, correção nossa. Este plano representa energia real, estratégia testada e a entrega que o projeto The Red Fox Tattoo merecia desde o início.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       SLIDE 03 — ESTRUTURA 1-5-1 ABO
+  ══════════════════════════════════════════ -->
+  <div class="slide" data-i="2">
+    <div class="inner pad">
+      <div class="eyebrow">Meta Ads</div>
+      <h2 class="stitle">Estrutura 1-5-1 ABO</h2>
+      <div class="funnel">
+        <div class="f-level">
+          <div class="f-box f-top">
+            <span class="f-big">1</span>
+            <span class="f-lbl">CAMPANHA</span>
+            <span class="f-sub">Objetivo: Mensagens → WhatsApp</span>
+          </div>
+        </div>
+        <div class="f-arrow">↓</div>
+        <div class="f-level">
+          <div class="f-five">
+            <div class="f-box f-mid"><span class="f-big-sm">AS</span><span class="f-sub-sm">C1</span><span class="f-budget">R$16/dia</span></div>
+            <div class="f-box f-mid"><span class="f-big-sm">AS</span><span class="f-sub-sm">C2</span><span class="f-budget">R$16/dia</span></div>
+            <div class="f-box f-mid"><span class="f-big-sm">AS</span><span class="f-sub-sm">C3</span><span class="f-budget">R$16/dia</span></div>
+            <div class="f-box f-mid"><span class="f-big-sm">AS</span><span class="f-sub-sm">C4</span><span class="f-budget">R$16/dia</span></div>
+            <div class="f-box f-mid"><span class="f-big-sm">AS</span><span class="f-sub-sm">C5</span><span class="f-budget">R$16/dia</span></div>
+          </div>
+          <div class="f-note">5 Conjuntos ABO — mesmo público — 1 criativo cada — variável única: o criativo</div>
+        </div>
+        <div class="f-arrow">↓</div>
+        <div class="f-level">
+          <div class="f-box f-bot">
+            <span class="f-big">1</span>
+            <span class="f-lbl">CRIATIVO</span>
+            <span class="f-sub">por conjunto — dado limpo para escala</span>
+          </div>
+        </div>
+      </div>
+      <div class="math-bar">
+        <span class="m-item">R$16 × 5 conjuntos</span>
+        <span class="m-eq">=</span>
+        <span class="m-item">R$80 / dia</span>
+        <span class="m-eq">×</span>
+        <span class="m-item">15 dias</span>
+        <span class="m-eq">=</span>
+        <span class="m-total">R$ 1.200</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       SLIDE 04 — CONFIGURAÇÃO TÉCNICA
+  ══════════════════════════════════════════ -->
+  <div class="slide" data-i="3">
+    <div class="inner pad">
+      <div class="eyebrow">Meta Ads</div>
+      <h2 class="stitle">Configuração dos Conjuntos</h2>
+      <div class="cfg-grid">
+        <div class="cfg-table">
+          <div class="cfg-row"><span class="cfg-k">Objetivo</span><span class="cfg-v">Mensagens (WhatsApp)</span></div>
+          <div class="cfg-row"><span class="cfg-k">Localização</span><span class="cfg-v">Curitiba + 20 km de raio</span></div>
+          <div class="cfg-row"><span class="cfg-k">Idade</span><span class="cfg-v">20 a 40 anos</span></div>
+          <div class="cfg-row"><span class="cfg-k">Gênero</span><span class="cfg-v">Todos</span></div>
+          <div class="cfg-row"><span class="cfg-k">Segmentação</span><span class="cfg-v cfg-hi">Broad — sem interesses manuais</span></div>
+          <div class="cfg-row"><span class="cfg-k">Posicionamentos</span><span class="cfg-v">Advantage+ (Reels e Stories prioritários)</span></div>
+          <div class="cfg-row"><span class="cfg-k">CTA do anúncio</span><span class="cfg-v">"Enviar mensagem" → abre WhatsApp direto</span></div>
+          <div class="cfg-row"><span class="cfg-k">Budget / conjunto</span><span class="cfg-v red">R$ 16,00 / dia</span></div>
+        </div>
+        <div class="cfg-note">
+          <div class="note-ttl">Por que Broad?</div>
+          <p>Com R$16/dia e ~600 mil pessoas em Curitiba 20–40, segmentação por interesse estreita o pool e eleva CPM sem ganho real de qualidade. O objetivo de Mensagens já é o sinal de conversão mais forte disponível — o algoritmo encontra o perfil certo com muito mais eficiência do que segmentação manual nessa verba.</p>
+          <div class="checklist-ttl">Checklist pré-LIVE</div>
+          <div class="check-item"><span class="ck">☐</span> WhatsApp Business vinculado ao Gerenciador</div>
+          <div class="check-item"><span class="ck">☐</span> Legendas ativadas em todos os vídeos</div>
+          <div class="check-item"><span class="ck">☐</span> Vídeos em 9:16, mínimo 1080×1920</div>
+          <div class="check-item"><span class="ck">☐</span> Conta sem pendências de pagamento</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       SLIDE 05 — OS 5 CRIATIVOS
+  ══════════════════════════════════════════ -->
+  <div class="slide" data-i="4">
+    <div class="inner pad">
+      <div class="eyebrow">Criativos</div>
+      <h2 class="stitle">5 Ângulos · 5 Avatares · 1 Público</h2>
+      <div class="ct-wrap">
+        <div class="ct-head">
+          <span>#</span><span>ÂNGULO</span><span>GANCHO</span><span>PERSONA</span>
+        </div>
+        <div class="ct-row"><span class="ct-n">01</span><span class="ct-a">Localização</span><span class="ct-h">"Você sabia que tem tatuagem dentro do Palladium?"</span><span class="ct-p">Quem não sabe que existe</span></div>
+        <div class="ct-row"><span class="ct-n">02</span><span class="ct-a">Cobertura</span><span class="ct-h">"Aquela tatuagem que você esconde..."</span><span class="ct-p">Quem tem tattoo ruim</span></div>
+        <div class="ct-row"><span class="ct-n">03</span><span class="ct-a">Processo</span><span class="ct-h">"Antes de tocar na sua pele..."</span><span class="ct-p">Quem duvida da qualidade</span></div>
+        <div class="ct-row"><span class="ct-n">04</span><span class="ct-a">Ambiente</span><span class="ct-h">"Sem heavy metal. Sem cara de mau."</span><span class="ct-p">Quem teme o ambiente</span></div>
+        <div class="ct-row"><span class="ct-n">05</span><span class="ct-a">Urgência</span><span class="ct-h">"Faz quantos meses que essa pasta tá aqui?"</span><span class="ct-p">Quem procrastina</span></div>
+      </div>
+      <p class="ct-foot">Todos os 5 conjuntos testam o mesmo público — variável única é o criativo. Dado limpo para decisão de escala pós-período.</p>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       SLIDE 06 — SCRIPT C1: LOCALIZAÇÃO
+  ══════════════════════════════════════════ -->
+  <div class="slide" data-i="5">
+    <div class="inner pad">
+      <div class="eyebrow">Criativo 01</div>
+      <h2 class="stitle">Localização · Descoberta</h2>
+      <div class="sc-layout">
+        <div class="sc-main">
+          <div class="hook-lbl">GANCHO</div>
+          <div class="hook-box">"Dentro do Shopping Palladium tem um estúdio de tatuagem profissional que a maioria das pessoas passa na frente todo dia — e ainda não entrou."</div>
+          <div class="narr-lbl">NARRAÇÃO COMPLETA — COPIAR PARA IA (ElevenLabs / similar)</div>
+          <div class="narr-box">
+            Dentro do Shopping Palladium tem um estúdio de tatuagem profissional que a maioria das pessoas passa na frente todo dia — e ainda não entrou. <strong>The Red Fox Tattoo.</strong> Realismo, fineline, blackwork, cobertura. Tudo num espaço que você já conhece, feito por quem leva cada traço a sério. Manda mensagem, pede orçamento. A gente te atende sem enrolação.
+          </div>
+          <div class="sc-meta"><span>~52 palavras</span><span class="sm-sep">·</span><span>20–21 segundos</span><span class="sm-sep">·</span><span>Reels / Stories 9:16</span></div>
+        </div>
+        <div class="sc-vis">
+          <div class="vis-lbl">DIREÇÃO VISUAL</div>
+          <div class="vi"><span class="vt">0–3s</span><span>Corredor do Palladium. Vitrine do estúdio aparecendo ao fundo. Movimento de pessoas.</span></div>
+          <div class="vi"><span class="vt">3–8s</span><span>Porta sendo aberta. Interior: limpo, iluminado, organizado.</span></div>
+          <div class="vi"><span class="vt">8–16s</span><span>Bancada + materiais. Close de tatuagem finalizada no braço ou pulso.</span></div>
+          <div class="vi"><span class="vt">16–22s</span><span>Cliente saindo satisfeito. Fachada do estúdio com logo visível.</span></div>
+          <div class="vi"><span class="vt">22–25s</span><span>Tela final: @the_red_fox_tattoo + WhatsApp + "Shopping Palladium"</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       SLIDE 07 — SCRIPT C2: COBERTURA
+  ══════════════════════════════════════════ -->
+  <div class="slide" data-i="6">
+    <div class="inner pad">
+      <div class="eyebrow">Criativo 02</div>
+      <h2 class="stitle">Cobertura · Dor Direta</h2>
+      <div class="sc-layout">
+        <div class="sc-main">
+          <div class="hook-lbl">GANCHO</div>
+          <div class="hook-box">"Aquela tatuagem que você esconde... a gente cobre."</div>
+          <div class="narr-lbl">NARRAÇÃO COMPLETA — COPIAR PARA IA</div>
+          <div class="narr-box">
+            A gente cobre. Com técnica, com cuidado e com um resultado que você vai querer mostrar — não esconder. <strong>The Red Fox Tattoo</strong> fica dentro do Shopping Palladium, em Curitiba. Cobertura feita por quem entende que cada pele tem uma história — e que ela pode ser reescrita. Manda foto da sua tattoo pelo WhatsApp. A gente avalia e te diz o que é possível fazer.
+          </div>
+          <div class="sc-meta"><span>~64 palavras</span><span class="sm-sep">·</span><span>22–24 segundos</span><span class="sm-sep">·</span><span>Reels / Stories 9:16</span></div>
+        </div>
+        <div class="sc-vis">
+          <div class="vis-lbl">DIREÇÃO VISUAL</div>
+          <div class="vi"><span class="vt">0–3s</span><span>Close de braço com tatuagem antiga / borrada. Texto na tela: "Aquela tatuagem que você esconde..."</span></div>
+          <div class="vi"><span class="vt">3–10s</span><span>Tatuador aplicando cobertura. Tattoo antiga sumindo sob o novo traço.</span></div>
+          <div class="vi"><span class="vt">10–18s</span><span>Antes e depois real de cobertura. Close limpo do resultado final.</span></div>
+          <div class="vi"><span class="vt">18–23s</span><span>Fachada + logo + número WhatsApp.</span></div>
+          <div class="vi"><span class="vt">23–25s</span><span>Texto na tela: "Sem compromisso. Só uma conversa."</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       SLIDE 08 — SCRIPT C3: PROCESSO
+  ══════════════════════════════════════════ -->
+  <div class="slide" data-i="7">
+    <div class="inner pad">
+      <div class="eyebrow">Criativo 03</div>
+      <h2 class="stitle">Processo · Autoridade</h2>
+      <div class="sc-layout">
+        <div class="sc-main">
+          <div class="hook-lbl">GANCHO</div>
+          <div class="hook-box">"Antes de tocar na sua pele, o traço já está calculado."</div>
+          <div class="narr-lbl">NARRAÇÃO COMPLETA — COPIAR PARA IA</div>
+          <div class="narr-box">
+            Antes de tocar na sua pele, o traço já está calculado. O posicionamento, testado. A referência, aprovada por você. Aqui nada é improvisado. Fineline que não borra, realismo que para qualquer um na rua, blackwork com profundidade real. <strong>The Red Fox Tattoo.</strong> Shopping Palladium, Curitiba. Vem conversar com a gente antes de decidir qualquer coisa.
+          </div>
+          <div class="sc-meta"><span>~59 palavras</span><span class="sm-sep">·</span><span>21–23 segundos</span><span class="sm-sep">·</span><span>Reels / Stories 9:16</span></div>
+        </div>
+        <div class="sc-vis">
+          <div class="vis-lbl">DIREÇÃO VISUAL</div>
+          <div class="vi"><span class="vt">0–3s</span><span>Texto aparecendo letra a letra: "Antes de tocar na sua pele..."</span></div>
+          <div class="vi"><span class="vt">3–8s</span><span>Tatuador fazendo stencil, posicionando no cliente. Expressão concentrada.</span></div>
+          <div class="vi"><span class="vt">8–16s</span><span>Agulha em processo. Traço surgindo progressivamente. Close das mãos do tatuador.</span></div>
+          <div class="vi"><span class="vt">16–22s</span><span>Resultado final. Cliente observando no espelho com satisfação visível.</span></div>
+          <div class="vi"><span class="vt">22–25s</span><span>Tela final: CTA + "Orçamento gratuito pelo WhatsApp"</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       SLIDE 09 — SCRIPTS C4 & C5
+  ══════════════════════════════════════════ -->
+  <div class="slide" data-i="8">
+    <div class="inner pad">
+      <div class="eyebrow">Criativos 04 & 05</div>
+      <h2 class="stitle">Ambiente & Urgência</h2>
+      <div class="dual-grid">
+        <div class="dual-card">
+          <div class="dc-badge">C4 · ACOLHIMENTO</div>
+          <div class="dc-hook">"Sem heavy metal. Sem cara de mau. Só arte."</div>
+          <div class="dc-narr-lbl">NARRAÇÃO COMPLETA — COPIAR PARA IA</div>
+          <div class="dc-narr">O The Red Fox Tattoo fica dentro do Shopping Palladium. Um estúdio profissional num espaço que você já frequenta — sem cerimônia, sem julgamento, sem aquela sensação de não pertencer. Aqui qualquer ideia é recebida a sério. Do fineline mais delicado ao realismo mais impactante — a gente trabalha o que é seu, do jeito que é seu. Manda mensagem. Sem compromisso. Só uma conversa.</div>
+          <div class="dc-meta">~68 palavras · 24–25s</div>
+        </div>
+        <div class="dual-card">
+          <div class="dc-badge">C5 · ESPELHO</div>
+          <div class="dc-hook">"Faz quantos meses que essa pasta tá aqui?"</div>
+          <div class="dc-narr-lbl">NARRAÇÃO COMPLETA — COPIAR PARA IA</div>
+          <div class="dc-narr">Você já escolheu. Já sabe onde. Já sabe o estilo. O que tá faltando não é certeza — é o lugar certo pra fazer. The Red Fox Tattoo fica dentro do Shopping Palladium, em Curitiba. A gente pega a sua referência, trabalha com você, e entrega o traço que vai ser seu pra sempre. Manda mensagem hoje. Pode ser só pra perguntar.</div>
+          <div class="dc-meta">~57 palavras · 20–22s</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       SLIDE 10 — ATENDIMENTO: INSTAGRAM DM
+  ══════════════════════════════════════════ -->
+  <div class="slide" data-i="9">
+    <div class="inner pad">
+      <div class="eyebrow">Atendimento</div>
+      <h2 class="stitle">Instagram DM</h2>
+      <div class="att-layout">
+        <div class="chat-win">
+          <div class="chat-hd">Instagram Direct — @the_red_fox_tattoo</div>
+          <div class="chat-body">
+            <div class="msg rcv"><div class="bbl">Quanto custa uma tatuagem?</div></div>
+            <div class="msg snt"><div class="bbl">Oi! Bem-vinda ao The Red Fox 🦊 O valor varia bastante — por isso a gente faz orçamento personalizado, olhando a referência de perto. Me chama no WhatsApp, consigo te atender melhor por lá 😊 <em>[link direto]</em></div></div>
+            <div class="msg rcv"><div class="bbl">Vocês fazem fineline?</div></div>
+            <div class="msg snt"><div class="bbl">Fazemos sim — fineline é um dos nossos fortes aqui no Palladium 🎨 Manda a referência no WhatsApp que a gente passa o orçamento certeiro. <em>[link direto]</em></div></div>
+            <div class="msg rcv"><div class="bbl">Vi o post de vocês e fiquei interessada</div></div>
+            <div class="msg snt"><div class="bbl">Que bom que chegou até a gente! Tem algum estilo ou referência em mente, ou ainda tá na fase de pesquisa?</div></div>
+          </div>
+        </div>
+        <div class="att-rules">
+          <div class="rules-ttl">REGRAS DE OURO</div>
+          <div class="rule"><span class="rn">01</span><span>Sempre redirecionar para WhatsApp com link direto. Nunca atender pelo Direct.</span></div>
+          <div class="rule"><span class="rn">02</span><span>Nunca dar preço sem contexto de estilo, local e tamanho.</span></div>
+          <div class="rule"><span class="rn">03</span><span>Se está pesquisando: perguntar referência e engajar antes de redirecionar.</span></div>
+          <div class="rule"><span class="rn">04</span><span>Tom caloroso — não robótico. Cada resposta parece humana e presente.</span></div>
+          <div class="rule"><span class="rn">05</span><span>Resposta em até <strong>30 minutos</strong> em horário comercial.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       SLIDE 11 — ATENDIMENTO: WHATSAPP
+  ══════════════════════════════════════════ -->
+  <div class="slide" data-i="10">
+    <div class="inner pad">
+      <div class="eyebrow">Atendimento</div>
+      <h2 class="stitle">WhatsApp · Lead do Anúncio</h2>
+      <div class="att-layout">
+        <div class="chat-win">
+          <div class="chat-hd">WhatsApp Business · Palladium</div>
+          <div class="chat-body">
+            <div class="msg snt"><div class="bbl auto-bbl">AUTO-REPLY — Oi! Aqui é o The Red Fox Tattoo 🦊 — Shopping Palladium, Curitiba. Em poucos minutos falamos com você 😊 Enquanto isso, pode me contar qual estilo você tá pensando?</div></div>
+            <div class="msg rcv"><div class="bbl">Quero fineline no pulso, vi o Reel de vocês</div></div>
+            <div class="msg snt"><div class="bbl">Oi! Que bom que chegou 🦊 Fineline no pulso fica lindo! Pra te dar o orçamento certeiro:<br>→ Tem referência? Pode mandar aqui<br>→ Tamanho aproximado? (palma da mão serve de parâmetro)</div></div>
+            <div class="msg rcv"><div class="bbl">[envia foto de referência]</div></div>
+            <div class="msg snt"><div class="bbl">Incrível escolha! Nesse estilo e tamanho, fica em torno de R$[X]. Parcelamos em até 4x sem juros 😊 Quer marcar uma consulta aqui no Palladium? Leva ~20min e é sem compromisso.</div></div>
+          </div>
+        </div>
+        <div class="att-rules">
+          <div class="rules-ttl">5 REGRAS DO PERÍODO</div>
+          <div class="rule"><span class="rn">01</span><span>Resposta em até <strong>30 min</strong> em horário comercial. Após 2h: conversão cai 60%.</span></div>
+          <div class="rule"><span class="rn">02</span><span>Nunca dar preço sem contexto de estilo + local + tamanho.</span></div>
+          <div class="rule"><span class="rn">03</span><span>Mencionar parcelamento proativamente em tickets acima de R$400.</span></div>
+          <div class="rule"><span class="rn">04</span><span>Follow-up em <strong>48h</strong> para leads que disseram "vou pensar".</span></div>
+          <div class="rule"><span class="rn">05</span><span>Pedir avaliação no Google após toda sessão concluída.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       SLIDE 12 — KPIs
+  ══════════════════════════════════════════ -->
+  <div class="slide" data-i="11">
+    <div class="inner pad">
+      <div class="eyebrow">Metas</div>
+      <h2 class="stitle">KPIs dos 15 Dias</h2>
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-val">50–80</div>
+          <div class="kpi-lbl">Mensagens<br>Iniciadas</div>
+          <div class="kpi-sub">R$15–24 / mensagem</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-val">25–65</div>
+          <div class="kpi-lbl">Orçamentos<br>Enviados</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-val">8–25</div>
+          <div class="kpi-lbl">Agendamentos<br>Confirmados</div>
+        </div>
+        <div class="kpi-card kpi-red">
+          <div class="kpi-val red">4–15</div>
+          <div class="kpi-lbl">Tatuagens<br>Realizadas</div>
+          <div class="kpi-sub">ROAS est. 1,3× – 2,5×</div>
+        </div>
+      </div>
+      <div class="kpi-note">
+        Meta realista supera a conservadora com atendimento responsivo. <strong>O criativo traz o lead. O atendimento fecha a venda.</strong> Cada hora de resposta perdida é conversão que não volta.
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       SLIDE 13 — PROTOCOLO DE ANÁLISE
+  ══════════════════════════════════════════ -->
+  <div class="slide" data-i="12">
+    <div class="inner pad">
+      <div class="eyebrow">Análise</div>
+      <h2 class="stitle">Protocolo por Fase</h2>
+      <div class="phases">
+        <div class="ph-card">
+          <div class="ph-num">01</div>
+          <div class="ph-period">DIAS 1–5</div>
+          <div class="ph-ttl">Coleta</div>
+          <div class="ph-desc">Todos os 5 criativos rodando. Zero intervenção. O algoritmo precisa de 3–5 dias para sair da fase de aprendizado. Monitorar: CTR (link), CPM e custo por mensagem iniciada. Não pausar nada ainda.</div>
+        </div>
+        <div class="ph-card">
+          <div class="ph-num">02</div>
+          <div class="ph-period">DIAS 6–10</div>
+          <div class="ph-ttl">Leitura</div>
+          <div class="ph-desc">Identificar os 2 criativos com menor CPL e maior volume. Pausar conjunto com CPM 40%+ acima da média e zero mensagens — só com dado suficiente (+3 mensagens por conjunto). Redistribuir budget se necessário.</div>
+        </div>
+        <div class="ph-card ph-red">
+          <div class="ph-num">03</div>
+          <div class="ph-period">DIAS 11–15</div>
+          <div class="ph-ttl">Consolidação</div>
+          <div class="ph-desc">Manter vencedores intocados. Registrar quais ângulos converteram, quais hooks geraram mais cliques, quais foram rejeitados. Entregar relatório de criativos e playbook de escala ao parceiro para o mês seguinte.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       SLIDE 14 — CLOSING
+  ══════════════════════════════════════════ -->
+  <div class="slide slide-bg-close" data-i="13">
+    <div class="bg-img" style="background-image:url('images/palladium-horizontal.png')"></div>
+    <div class="overlay close-ov"></div>
+    <div class="inner center-col">
+      <img src="images/logo.png" alt="The Red Fox Tattoo" class="close-logo">
+      <div class="close-quote">"O projeto merecia mais.<br>A partir de agora, vai ter."</div>
+      <div class="close-div"></div>
+      <div class="close-info">
+        <span>Shopping Palladium · Curitiba–PR</span>
+        <span class="rdot">·</span>
+        <span>@the_red_fox_tattoo</span>
+        <span class="rdot">·</span>
+        <span>Junho 2026</span>
+      </div>
+      <div class="close-credit">Eikon Marketing · Squad Alta Performance</div>
+    </div>
+  </div>
+
+</div><!-- /presentation -->
+
+<script>
+(function(){
+  const slides  = document.querySelectorAll('.slide');
+  const total   = slides.length;
+  let   current = 0;
+  let   locked  = false;
+
+  document.getElementById('cTotal').textContent = String(total).padStart(2,'0');
+
+  function go(dir){
+    if(locked) return;
+    const next = current + dir;
+    if(next < 0 || next >= total) return;
+
+    locked = true;
+    slides[current].classList.remove('active');
+    slides[current].classList.add(dir > 0 ? 'out-left' : 'out-right');
+
+    if(dir < 0) slides[next].classList.add('from-left');
+    current = next;
+
+    // force reflow
+    slides[current].getBoundingClientRect();
+    slides[current].classList.remove('from-left');
+    slides[current].classList.add('active');
+
+    setTimeout(()=>{
+      document.querySelectorAll('.slide.out-left,.slide.out-right').forEach(s=>{
+        s.classList.remove('out-left','out-right');
+      });
+      locked = false;
+    }, 550);
+
+    sync();
+  }
+
+  function sync(){
+    document.getElementById('cNum').textContent = String(current + 1).padStart(2,'0');
+    document.getElementById('pFill').style.width = ((current+1)/total*100)+'%';
+    document.getElementById('btnPrev').classList.toggle('nav-off', current === 0);
+    document.getElementById('btnNext').classList.toggle('nav-off', current === total-1);
+  }
+
+  document.addEventListener('keydown', e=>{
+    if(['ArrowRight','ArrowDown','Space',' '].includes(e.key)||e.key==='ArrowRight'){
+      if(e.key!=='ArrowLeft'&&e.key!=='ArrowUp') go(1);
+    }
+    if(e.key==='ArrowLeft'||e.key==='ArrowUp') go(-1);
+  });
+
+  // Touch swipe
+  let tx = 0;
+  document.addEventListener('touchstart', e=>{ tx = e.touches[0].clientX; },{passive:true});
+  document.addEventListener('touchend', e=>{
+    const dx = tx - e.changedTouches[0].clientX;
+    if(Math.abs(dx) > 50) go(dx > 0 ? 1 : -1);
+  });
+
+  // Click slides to advance
+  document.getElementById('app').addEventListener('click', e=>{
+    if(e.target.closest('.nav')) return;
+    go(1);
+  });
+
+  // expose for buttons
+  window.go = go;
+  sync();
+})();
+</script>
+</body>
+</html>
