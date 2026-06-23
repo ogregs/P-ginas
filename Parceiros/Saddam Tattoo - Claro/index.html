@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saddam Tattoo House — Tatuagem Autoral no ABC Paulista | +30 anos</title>
+<meta name="description" content="Estúdio referência em tatuagem autoral no ABC Paulista desde 1992. Realismo, Fineline e Aquarela com projeto criado do zero, biossegurança certificada e 4,9★ no Google (+490 avaliações). Crie seu projeto pelo WhatsApp.">
+<meta property="og:title" content="Saddam Tattoo House — A sua história na pele">
+<meta property="og:description" content="+30 anos transformando histórias reais em arte na pele. ABC Paulista. 4,9★ Google.">
+<meta property="og:image" content="https://www.saddamtattoo.com.br/assets/R1gIpLHn8UXhWQsBHFsKlz66U3o.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* Tema claro — paper premium quente (M3 craft-de-shades: branco puro estoura; tom bone reduz glare) */
+    --bg:#f7f4ed; --bg-2:#efeae0; --bg-3:#e6e0d3;
+    --ink:#1a1613; --ink-soft:#585047; --ink-mute:#8a8174;
+    --line:rgba(26,22,19,.12);
+    /* acento bronze ESCURO: no claro o gold claro sumiria — CTA precisa do maior contraste de luminância */
+    --accent:#9a6518; --accent-hi:#b9842e; --accent-ink:#fbf7ef;
+    --gold-lite:#ecd49a; /* ouro claro: texto sobre mídia/escuro (ex.: eyebrow do hero) */
+    --gold-grad:linear-gradient(135deg,#e6c172 0%,#c89a3f 46%,#a5751c 100%); /* botões */
+    --maxw:1180px; --radius:16px;
+    --serif:'Fraunces',Georgia,serif; --sans:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  img,video{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.08;letter-spacing:-.01em}
+  h2{font-size:clamp(28px,4.4vw,46px)}
+  h3{font-size:clamp(20px,2.4vw,26px)}
+  p{max-width:64ch}
+  .eyebrow{font-family:var(--sans);font-weight:600;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+  .soft{color:var(--ink-soft)}
+  .center{text-align:center}.center p{margin-left:auto;margin-right:auto}
+  section{padding:clamp(64px,9vw,120px) 0;position:relative}
+  .divider{height:1px;background:var(--line);max-width:var(--maxw);margin:0 auto}
+
+  /* Buttons — accent reserved only for the single conversion action (saliência = contraste) */
+  .btn{display:inline-flex;align-items:center;gap:10px;background:var(--gold-grad);color:#241b0d;
+    font-family:var(--sans);font-weight:700;font-size:16px;letter-spacing:.01em;
+    padding:17px 30px;border-radius:999px;transition:transform .15s ease,box-shadow .2s ease,filter .2s ease;will-change:transform;
+    box-shadow:0 1px 0 rgba(255,255,255,.38) inset,0 10px 24px -10px rgba(120,80,15,.55)}
+  .btn:hover{filter:brightness(1.06);transform:translateY(-2px);box-shadow:0 1px 0 rgba(255,255,255,.45) inset,0 15px 32px -10px rgba(120,80,15,.62)}
+  .btn svg{width:20px;height:20px;fill:currentColor}
+  .btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--line);font-weight:600;box-shadow:none}
+  .btn-ghost:hover{filter:none}
+  .btn-ghost:hover{background:var(--bg-3);border-color:var(--ink-mute)}
+
+  /* Header */
+  header{position:fixed;top:0;left:0;right:0;z-index:50;backdrop-filter:blur(10px);
+    background:rgba(247,244,237,.55);border-bottom:1px solid transparent;transition:background .3s,border-color .3s}
+  header.scrolled{background:rgba(247,244,237,.94);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:70px}
+  .brand{display:flex;align-items:center;gap:12px;font-family:var(--serif);font-size:20px;font-weight:600;letter-spacing:.02em}
+  .brand img{height:30px;width:auto}
+  .nav-links{display:flex;gap:30px;font-size:14px;font-weight:500;color:var(--ink-soft)}
+  .nav-links a:hover{color:var(--ink)}
+  .nav .btn{padding:11px 20px;font-size:14px}
+  .nav-cta-d{display:inline-flex}
+  @media(max-width:860px){.nav-links{display:none}.nav-cta-d{display:none}}
+
+  /* Hero */
+  .hero{min-height:100svh;display:flex;align-items:flex-end;padding-bottom:64px;overflow:hidden}
+  .hero>.wrap{width:100%}
+  .hero .eyebrow{color:var(--gold-lite);text-shadow:0 1px 14px rgba(8,6,3,.6)}
+  .hero h1{color:#f6f1e8;text-shadow:0 2px 30px rgba(8,6,3,.6),0 1px 4px rgba(8,6,3,.45)}
+  .hero .lead{color:#c6a566;text-shadow:0 1px 16px rgba(8,6,3,.6)}      /* subheadline: bege/ouro escuro */
+  .hero .sub{color:#ecddb6;text-shadow:0 1px 14px rgba(8,6,3,.55)}      /* entre subline e botão: bege/ouro claro */
+  .hero .rating{color:#ecddb6;text-shadow:0 1px 10px rgba(8,6,3,.5)}
+  .hero-media{position:absolute;inset:0;z-index:-2}
+  .hero-media video{width:100%;height:100%;object-fit:cover;filter:brightness(.7) saturate(1.03)}
+  .hero-scrim{position:absolute;inset:0;z-index:-1;
+    background:rgba(10,9,7,.06)}
+  .hero h1{font-size:clamp(40px,7vw,82px);font-weight:500;max-width:16ch;margin-bottom:22px;text-wrap:balance}
+  .hero .lead{font-size:clamp(18px,2.2vw,22px);color:#c6a566;max-width:46ch;margin-bottom:14px}
+  .hero .sub{color:#ecddb6;max-width:52ch;margin-bottom:30px}
+  .hero-actions{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+  .rating{display:inline-flex;align-items:center;gap:10px;font-size:14px;color:var(--ink-soft)}
+  .stars{color:var(--accent-hi);letter-spacing:2px;font-size:15px}
+
+  /* Proof bar */
+  .proof{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:30px 0}
+  .proof-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:18px;text-align:center}
+  .proof .n{font-family:var(--serif);font-size:clamp(22px,2.6vw,30px);color:var(--ink);line-height:1}
+  .proof .l{font-size:12.5px;color:var(--ink-mute);margin-top:8px;letter-spacing:.02em}
+  @media(max-width:860px){.proof-grid{grid-template-columns:repeat(2,1fr);gap:26px}}
+
+  /* Section heading */
+  .head{max-width:62ch;margin-bottom:48px}
+  .head .eyebrow{margin-bottom:16px;display:block}
+
+  /* Stories */
+  .stories{display:grid;grid-template-columns:repeat(12,1fr);gap:22px}
+  .story{position:relative;border-radius:var(--radius);overflow:hidden;background:var(--bg-2);border:1px solid var(--line);min-height:420px;display:flex;align-items:flex-end}
+  .story video,.story img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+  .story::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(12,12,13,0) 30%,rgba(12,12,13,.9) 100%)}
+  .story .cap{position:relative;z-index:2;padding:26px;color:#f4f1ea}
+  .story .cap .t{font-family:var(--serif);font-size:23px;margin-bottom:6px}
+  .story .cap .d{font-size:14.5px;color:rgba(244,241,234,.82)}
+  .s-7{grid-column:span 7}.s-5{grid-column:span 5}.s-6{grid-column:span 6}.s-4{grid-column:span 4}
+  @media(max-width:860px){.s-7,.s-5,.s-6,.s-4{grid-column:span 12}}
+  .story.play{cursor:pointer}
+  .pbtn{position:absolute;z-index:3;top:50%;left:50%;transform:translate(-50%,-50%);width:66px;height:66px;border-radius:50%;
+    background:rgba(12,12,13,.42);border:1.5px solid rgba(245,242,236,.9);backdrop-filter:blur(3px);
+    display:grid;place-items:center;transition:transform .25s,background .25s,border-color .25s;pointer-events:none}
+  .pbtn::after{content:"";border-style:solid;border-width:10px 0 10px 17px;border-color:transparent transparent transparent #f5f2ec;margin-left:5px;transition:border-color .25s}
+  .story.play:hover .pbtn{transform:translate(-50%,-50%) scale(1.09);background:var(--accent);border-color:var(--accent)}
+  .story.play:hover .pbtn::after{border-left-color:var(--accent-ink)}
+  /* Video lightbox */
+  .vmodal{position:fixed;inset:0;z-index:100;background:rgba(8,8,9,.93);backdrop-filter:blur(6px);
+    display:none;align-items:center;justify-content:center;padding:24px}
+  .vmodal.open{display:flex}
+  .vmodal video{max-width:min(92vw,520px);max-height:88vh;border-radius:14px;box-shadow:0 24px 70px rgba(0,0,0,.6);background:#000}
+  .vmodal-close{position:absolute;top:18px;right:22px;width:46px;height:46px;border-radius:50%;border:1px solid var(--line);
+    background:rgba(20,20,22,.85);color:#f4f1ea;font-size:26px;line-height:1;cursor:pointer;z-index:101;transition:background .2s}
+  .vmodal-close:hover{background:var(--bg-3)}
+
+  /* Why different */
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+  .cell{background:var(--bg);padding:34px 30px}
+  .cell .k{font-family:var(--serif);font-size:21px;margin-bottom:10px}
+  .cell p{font-size:15px;color:var(--ink-soft)}
+  @media(max-width:860px){.grid-3{grid-template-columns:1fr}}
+
+  /* Team */
+  .team{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .member{border-radius:var(--radius);overflow:hidden;background:var(--bg-2);border:1px solid var(--line)}
+  .member .ph{aspect-ratio:4/5;position:relative;overflow:hidden}
+  .member .ph img{width:100%;height:100%;object-fit:cover;filter:grayscale(.25) contrast(1.03);transition:filter .4s,transform .5s}
+  .member:hover .ph img{filter:grayscale(0);transform:scale(1.04)}
+  .member .info{padding:20px 22px 24px}
+  .member .nm{font-family:var(--serif);font-size:22px}
+  .member .role{font-size:14px;color:var(--accent);margin-top:4px;font-weight:500}
+  .member .bio{font-size:14px;color:var(--ink-soft);margin-top:10px}
+  .tag{display:inline-block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-ink);background:var(--accent);padding:3px 9px;border-radius:99px;font-weight:700;margin-top:14px}
+  @media(max-width:860px){.team{grid-template-columns:1fr 1fr}.member .bio{display:none}}
+  @media(max-width:520px){.team{grid-template-columns:1fr}}
+
+  /* Process */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;counter-reset:s}
+  .step{padding:30px;border:1px solid var(--line);border-radius:var(--radius);background:var(--bg-2);position:relative}
+  .step .num{font-family:var(--serif);font-size:46px;color:var(--accent);line-height:1;opacity:.9}
+  .step .t{font-family:var(--serif);font-size:21px;margin:14px 0 8px}
+  .step p{font-size:15px;color:var(--ink-soft)}
+  @media(max-width:860px){.steps{grid-template-columns:1fr}}
+
+  /* About split */
+  .split{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+  .split img{border-radius:var(--radius);width:100%;aspect-ratio:4/3;object-fit:cover}
+  @media(max-width:860px){.split{grid-template-columns:1fr;gap:30px}}
+  .benefits.flist{grid-template-columns:1fr 1fr;max-width:none;margin:0 0 28px;gap:13px 22px}
+  @media(max-width:560px){.benefits.flist{grid-template-columns:1fr}}
+  /* elevação sutil dos cards no tema claro */
+  .member,.step,.story{box-shadow:0 12px 34px -16px rgba(26,22,19,.22)}
+  .split img{box-shadow:0 18px 44px -20px rgba(26,22,19,.28)}
+
+  /* Reviews band */
+  .reviews{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .reviews h2{max-width:18ch}
+  .gmap{max-width:820px;margin:0 auto 28px;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);box-shadow:0 18px 44px -22px rgba(26,22,19,.32)}
+  .gmap iframe{width:100%;height:430px;border:0;display:block;filter:saturate(1.02)}
+  @media(max-width:600px){.gmap iframe{height:330px}}
+  .reviews .gmap{max-width:none;margin:0}
+  .reviews .split{align-items:center}
+  /* Depoimentos (cards) */
+  .tcards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:28px}
+  .tcard{background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);padding:26px 24px;box-shadow:0 10px 30px -16px rgba(26,22,19,.18);display:flex;flex-direction:column}
+  .tcard .qs{color:var(--accent-hi);letter-spacing:2px;font-size:14px;margin-bottom:12px}
+  .tcard p{font-size:15.5px;color:var(--ink-soft);font-style:italic;margin:0 0 16px}
+  .tcard .who{margin-top:auto;font-size:14px;font-weight:600;color:var(--ink)}
+  .tcard .who .g{font-weight:500;color:var(--ink-mute);font-size:12.5px}
+  @media(max-width:860px){.tcards{grid-template-columns:1fr}}
+
+  /* Final CTA */
+  .final{background:
+    radial-gradient(900px 500px at 70% 10%,rgba(200,155,90,.12),transparent 60%),var(--bg)}
+  .benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:16px 30px;margin:36px 0 38px;max-width:760px}
+  .benefits li{list-style:none;display:flex;gap:11px;font-size:15px;color:var(--ink-soft);align-items:flex-start}
+  .benefits svg{width:19px;height:19px;flex:0 0 19px;margin-top:2px;fill:var(--accent)}
+  @media(max-width:860px){.benefits{grid-template-columns:1fr;max-width:420px;margin-inline:auto;text-align:left}}
+  /* CTA final: grid centrado + chips ouro-claro */
+  .final .benefits{margin:34px auto 38px}
+  .final .benefits li{background:linear-gradient(135deg,#f8edd2,#efe0bc);border:1px solid rgba(154,101,24,.30);border-radius:12px;padding:15px 18px;color:var(--ink);align-items:center;justify-content:center;text-align:center;box-shadow:0 6px 16px -12px rgba(120,80,15,.45)}
+  @media(max-width:860px){.final .benefits li{justify-content:flex-start;text-align:left}}
+
+  /* FAQ */
+  .faq{max-width:820px;margin:0 auto}
+  details{border-bottom:1px solid var(--line);padding:22px 0}
+  summary{font-family:var(--serif);font-size:19px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px;align-items:center}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";color:var(--accent);font-size:26px;font-family:var(--sans);transition:transform .2s}
+  details[open] summary::after{transform:rotate(45deg)}
+  details p{margin-top:14px;color:var(--ink-soft);font-size:15.5px}
+
+  /* Footer */
+  footer{background:var(--bg-2);border-top:1px solid var(--line);padding:64px 0 40px;font-size:14.5px;color:var(--ink-soft)}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px;margin-bottom:40px}
+  .foot-grid a:hover{color:var(--ink)}
+  .foot-grid h4{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:14px;font-weight:600;font-family:var(--sans)}
+  .foot-grid li{list-style:none;margin-bottom:9px}
+  .foot-bottom{border-top:1px solid var(--line);padding-top:24px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--ink-mute);font-size:13px}
+  @media(max-width:860px){.foot-grid{grid-template-columns:1fr;gap:28px}}
+
+  /* Sticky mobile CTA — thumb zone */
+  .sticky{position:fixed;left:0;right:0;bottom:0;z-index:60;padding:12px 16px calc(12px + env(safe-area-inset-bottom));
+    background:linear-gradient(180deg,rgba(247,244,237,0),rgba(247,244,237,.97) 26%);display:none}
+  .sticky .btn{width:100%;justify-content:center}
+  @media(max-width:860px){.sticky{display:block}body{padding-bottom:86px}}
+
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+
+<!-- WhatsApp pre-qualifying link reused across the single conversion path -->
+<!-- phone 5511971693455 + pré-preenchimento que já inicia a qualificação (estilo/ideia) -->
+
+<header id="hdr">
+  <div class="wrap nav">
+    <a class="brand" href="#topo">
+      <img src="assets/MVKVy4QxPQkuPRSiQvu8hVNi9Q.png" alt="Saddam Tattoo House" onerror="this.style.display='none'">
+      Saddam Tattoo
+    </a>
+    <nav class="nav-links">
+      <a href="#estudio">Nosso estúdio</a>
+      <a href="#historias">Histórias</a>
+      <a href="#equipe">Equipe</a>
+      <a href="#avaliacoes">Avaliações</a>
+    </nav>
+    <a class="btn nav-cta-d" href="https://api.whatsapp.com/send?phone=5511971693455&text=Ol%C3%A1!%20Vim%20pelo%20site%20do%20Saddam%20Tattoo.%20Quero%20criar%20um%20projeto%20autoral.%20Minha%20ideia%2Festilo%20%C3%A9%3A%20" target="_blank" rel="noopener">Criar meu projeto</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="topo">
+  <div class="hero-media">
+    <video autoplay muted loop playsinline poster="assets/R1gIpLHn8UXhWQsBHFsKlz66U3o.jpg">
+      <source src="assets/hero.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="hero-scrim"></div>
+  <div class="wrap">
+    <span class="eyebrow">ABC Paulista · São Bernardo do Campo · desde 1992</span>
+    <h1>A sua história merece ser eternizada na pele.</h1>
+    <p class="lead">Tatuagem autoral em Realismo, Fineline e Aquarela — cada projeto criado do zero, só para você.</p>
+    <p class="sub">Mais de 30 anos transformando histórias reais em arte que dura para sempre. Precisão artística e biossegurança certificada.</p>
+    <div class="hero-actions">
+      <a class="btn" href="https://api.whatsapp.com/send?phone=5511971693455&text=Ol%C3%A1!%20Vim%20pelo%20site%20do%20Saddam%20Tattoo.%20Quero%20criar%20um%20projeto%20autoral.%20Minha%20ideia%2Festilo%20%C3%A9%3A%20" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.488-.916zm5.683-7.74c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.521.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.074-.149-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg>
+        Criar meu projeto personalizado
+      </a>
+      <span class="rating"><span class="stars">★★★★★</span> 4,9 no Google · +490 avaliações</span>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF BAR -->
+<div class="proof">
+  <div class="wrap proof-grid">
+    <div><div class="n">+30</div><div class="l">anos de história</div></div>
+    <div><div class="n">+5.000</div><div class="l">artes únicas</div></div>
+    <div><div class="n">4,9★</div><div class="l">no Google</div></div>
+    <div><div class="n">+490</div><div class="l">avaliações 5 estrelas</div></div>
+    <div><div class="n">5</div><div class="l">especialistas premiados</div></div>
+    <div><div class="n">100%</div><div class="l">biossegurança certificada</div></div>
+  </div>
+</div>
+
+<!-- STORIES (índice = evidência: histórias reais; mídia ancorada por headline) -->
+<section id="historias">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow">Histórias reais</span>
+      <h2>Tatuagens que nascem de uma história — não de um catálogo.</h2>
+      <p class="soft">Cada peça abaixo começou numa conversa. A arte veio depois.</p>
+    </div>
+    <div class="stories">
+      <div class="story s-7 reveal play">
+        <video autoplay muted loop playsinline preload="none" poster="assets/R1gIpLHn8UXhWQsBHFsKlz66U3o.jpg">
+          <source src="assets/g0xKul2QJviQQprsOnvJ2zAMmI.mp4" type="video/mp4"></video><span class="pbtn" aria-hidden="true"></span>
+        <div class="cap"><div class="t">"Uma peça que faltava"</div><div class="d">Giovanna — uma homenagem ao filho, eternizada em traço.</div></div>
+      </div>
+      <div class="story s-5 reveal play">
+        <video autoplay muted loop playsinline preload="none" poster="assets/R1gIpLHn8UXhWQsBHFsKlz66U3o.jpg">
+          <source src="assets/QmHGbnCpdXeJrPPo7V48AoD73Hw.mp4" type="video/mp4"></video><span class="pbtn" aria-hidden="true"></span>
+        <div class="cap"><div class="t">"Três borboletas. Três filhos."</div><div class="d">Carol — uma tatuagem antiga revitalizada com novo significado.</div></div>
+      </div>
+      <div class="story s-5 reveal play">
+        <video autoplay muted loop playsinline preload="none" poster="assets/R1gIpLHn8UXhWQsBHFsKlz66U3o.jpg">
+          <source src="assets/iByiCsWCGRIxk3oJRhSVyXWfLTg.mp4" type="video/mp4"></video><span class="pbtn" aria-hidden="true"></span>
+        <div class="cap"><div class="t">"Um nome. Uma língua ancestral."</div><div class="d">Sônia — raízes traduzidas em arte sobre a pele.</div></div>
+      </div>
+      <div class="story s-7 reveal play">
+        <video autoplay muted loop playsinline preload="none" poster="assets/R1gIpLHn8UXhWQsBHFsKlz66U3o.jpg">
+          <source src="assets/BGJw6yqjbWxM8TMnjYRFofEERg.mp4" type="video/mp4"></video><span class="pbtn" aria-hidden="true"></span>
+        <div class="cap"><div class="t">"A placa que ficou na memória"</div><div class="d">André — uma lembrança transformada em peça autoral. Cru, expressivo, único.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ABOUT + DIFERENCIAIS (fundidos) -->
+<section id="estudio">
+  <div class="wrap split">
+    <img class="reveal" src="assets/estudio.jpg" alt="Fachada do estúdio Saddam Tattoo House no ABC Paulista">
+    <div class="reveal">
+      <span class="eyebrow">Desde 1992 · ABC Paulista</span>
+      <h2 style="margin:16px 0 16px">Trinta anos depois, o que importa não mudou.</h2>
+      <p class="soft" style="margin-bottom:22px">O que começou em São Bernardo do Campo virou referência regional em tatuagem autoral. Você entra com uma história e sai com uma obra de arte feita para durar a vida toda — nunca uma cópia.</p>
+      <ul class="benefits flist">
+        <li><svg viewBox="0 0 20 20"><path d="M7.5 13.5L4 10l-1.4 1.4 4.9 4.9L18 5.8 16.6 4.4z"/></svg> Projeto criado do zero</li>
+        <li><svg viewBox="0 0 20 20"><path d="M7.5 13.5L4 10l-1.4 1.4 4.9 4.9L18 5.8 16.6 4.4z"/></svg> Especialista por estilo</li>
+        <li><svg viewBox="0 0 20 20"><path d="M7.5 13.5L4 10l-1.4 1.4 4.9 4.9L18 5.8 16.6 4.4z"/></svg> Biossegurança certificada</li>
+        <li><svg viewBox="0 0 20 20"><path d="M7.5 13.5L4 10l-1.4 1.4 4.9 4.9L18 5.8 16.6 4.4z"/></svg> Atendimento que escuta</li>
+        <li><svg viewBox="0 0 20 20"><path d="M7.5 13.5L4 10l-1.4 1.4 4.9 4.9L18 5.8 16.6 4.4z"/></svg> +30 anos de referência</li>
+        <li><svg viewBox="0 0 20 20"><path d="M7.5 13.5L4 10l-1.4 1.4 4.9 4.9L18 5.8 16.6 4.4z"/></svg> Ambiente acolhedor e seguro</li>
+      </ul>
+      <a class="btn-ghost btn" href="#equipe">Conhecer a equipe</a>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- TEAM (realismo/alto ticket primeiro) -->
+<section id="equipe">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow">Nossa equipe</span>
+      <h2>Escolhidos pelo talento — e pela paixão em ouvir a sua história.</h2>
+    </div>
+    <div class="team">
+      <div class="member reveal">
+        <div class="ph"><img src="assets/paCx3uGfJqcOJBv1OwvmHIp4GOw.webp" alt="Saddam — fundador do estúdio"></div>
+        <div class="info"><div class="nm">Saddam</div><div class="role">O fundador · O legado</div><p class="bio">Mais de 30 anos de ofício. A origem do estúdio e da nossa forma de tatuar.</p></div>
+      </div>
+      <div class="member reveal">
+        <div class="ph"><img src="assets/RCAPTwaPphupbJAfl4qLIceC8.webp" alt="W.Booyy — especialista em realismo"></div>
+        <div class="info"><div class="nm">W.Booyy</div><div class="role">Realismo que respira</div><p class="bio">Pele, luz e textura levadas ao detalhe. Especialista em peças realistas de grande porte.</p><span class="tag">Realismo</span></div>
+      </div>
+      <div class="member reveal">
+        <div class="ph"><img src="assets/1YfYgracxgQUWW9bff2wMsM7bsA.webp" alt="Clayton — especialista em fineline"></div>
+        <div class="info"><div class="nm">Clayton</div><div class="role">Precisão em cada traço</div><p class="bio">Domínio absoluto do fineline — linhas finas, delicadas e perfeitas.</p><span class="tag">Fineline</span></div>
+      </div>
+      <div class="member reveal">
+        <div class="ph"><img src="assets/oeDunQj2RH9y27vBvjy01B3YzI.webp" alt="Favoretto — versatilidade de estilos"></div>
+        <div class="info"><div class="nm">Favoretto</div><div class="role">Arte sem limite de estilo</div><p class="bio">Versátil entre técnicas, adapta a linguagem à ideia de cada cliente.</p></div>
+      </div>
+      <div class="member reveal">
+        <div class="ph"><img src="assets/KcavzjEmSGW0snTNNjnXZ2WbSA.webp" alt="Miranda — fineline e whipshading"></div>
+        <div class="info"><div class="nm">Miranda</div><div class="role">Delicadeza e profundidade</div><p class="bio">Fineline e whipshading com sensibilidade e técnica refinada.</p><span class="tag">Fineline · Whip</span></div>
+      </div>
+      <div class="member reveal">
+        <div class="ph"><img src="assets/qZZsBWEjVixpEXyx3ovsyKl9YdE.webp" alt="Renan Muza — body piercing"></div>
+        <div class="info"><div class="nm">Renan Muza</div><div class="role">Body piercing com cuidado</div><p class="bio">Piercing com a mesma higiene e atenção que definem a casa.</p><span class="tag">Piercing</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PROCESS -->
+<section id="processo">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow">Como funciona</span>
+      <h2>Da sua história à sua tatuagem: 3 passos simples.</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="num">01</div><div class="t">Fale com a gente</div><p>Mande uma mensagem no WhatsApp contando a sua ideia. Sem compromisso, sem pressa.</p></div>
+      <div class="step reveal"><div class="num">02</div><div class="t">Criação gratuita do projeto</div><p>Desenhamos uma proposta autoral, feita do zero para a sua história. O orçamento é gratuito.</p></div>
+      <div class="step reveal"><div class="num">03</div><div class="t">Sua obra na pele</div><p>Agendamos a sessão e eternizamos a arte com precisão e total biossegurança.</p></div>
+    </div>
+    <div class="center" style="margin-top:42px">
+      <a class="btn" href="https://api.whatsapp.com/send?phone=5511971693455&text=Ol%C3%A1!%20Vim%20pelo%20site%20do%20Saddam%20Tattoo.%20Quero%20come%C3%A7ar%20meu%20projeto.%20Minha%20ideia%2Festilo%20%C3%A9%3A%20" target="_blank" rel="noopener">Começar agora pelo WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews" id="avaliacoes">
+  <div class="wrap split">
+    <div class="reveal">
+      <span class="eyebrow">Quem confiou, voltou</span>
+      <h2 style="margin:14px 0 16px">Mais de 490 clientes deram nota máxima ao Saddam no Google.</h2>
+      <p class="soft" style="margin-bottom:12px">4,9 ★ de média — a maior prova do nosso trabalho são as pessoas que voltam e indicam.</p>
+      <p style="margin-bottom:26px"><span class="stars" style="font-size:22px;letter-spacing:3px">★★★★★</span></p>
+      <a class="btn-ghost btn" href="https://share.google/y9fYSFzWVqgP7Ja4Y" target="_blank" rel="noopener">Ver perfil e avaliações no Google</a>
+    </div>
+    <div class="gmap reveal">
+      <iframe src="https://www.google.com/maps?q=Saddam%20Tattoo%20House%2C%20R.%20Carlos%20Del%20Prete%2C%2088%2C%20Centro%2C%20S%C3%A3o%20Bernardo%20do%20Campo%20-%20SP&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen title="Saddam Tattoo House no Google — perfil e avaliações"></iframe>
+    </div>
+  </div>
+  <div class="wrap reveal" style="margin-top:54px">
+    <div style="text-align:center;margin-bottom:6px"><span class="eyebrow">Depoimentos</span></div>
+    <h3 style="text-align:center;margin-bottom:6px">O que dizem quem já marcou na pele</h3>
+    <!-- Avaliações REAIS do perfil do Google (verbatim, levemente aparadas). Fonte: 5 estrelas. -->
+    <div class="tcards">
+      <div class="tcard">
+        <div class="qs">★★★★★</div>
+        <p>"Fui com uma ideia que se transformou e se adequou muito além do que eu imaginava — ficou uma arte incrível, que descreveu tudo que eu desejava. Super indico para quem tem o desejo de fazer tatuagens únicas e com identidade."</p>
+        <div class="who">Rosana Barbosa <span class="g">· Local Guide no Google</span></div>
+      </div>
+      <div class="tcard">
+        <div class="qs">★★★★★</div>
+        <p>"Experiência impecável! O estúdio é extremamente limpo e organizado, o que me deixou muito segura. Fui atendida pelo Miranda, super paciente na criação do desenho, e entregou um traço fino e perfeito. Com certeza voltarei para as próximas!"</p>
+        <div class="who">Claudia Laurindo <span class="g">· via Google</span></div>
+      </div>
+      <div class="tcard">
+        <div class="qs">★★★★★</div>
+        <p>"O espaço é muito bonito, organizado e a limpeza é impecável. A equipe é muito capacitada — eles têm especialistas em vários estilos. Saddam dispensa comentários, o cara é fera. Recomendo muito!"</p>
+        <div class="who">Rafael Montemurro <span class="g">· Local Guide no Google</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final">
+  <div class="wrap reveal center">
+    <span class="eyebrow">Vagas limitadas por semana</span>
+    <h2 style="margin:16px auto 10px;max-width:20ch">Sua história está esperando para ser contada. Que tal começar hoje?</h2>
+    <p class="soft">A agenda é limitada para garantir a atenção que cada projeto merece. Comece pela conversa — leva 2 minutos.</p>
+    <ul class="benefits">
+      <li><svg viewBox="0 0 20 20"><path d="M7.5 13.5L4 10l-1.4 1.4 4.9 4.9L18 5.8 16.6 4.4z"/></svg> Consulta 100% gratuita</li>
+      <li><svg viewBox="0 0 20 20"><path d="M7.5 13.5L4 10l-1.4 1.4 4.9 4.9L18 5.8 16.6 4.4z"/></svg> Orçamento sem compromisso</li>
+      <li><svg viewBox="0 0 20 20"><path d="M7.5 13.5L4 10l-1.4 1.4 4.9 4.9L18 5.8 16.6 4.4z"/></svg> +30 anos de experiência</li>
+      <li><svg viewBox="0 0 20 20"><path d="M7.5 13.5L4 10l-1.4 1.4 4.9 4.9L18 5.8 16.6 4.4z"/></svg> Biossegurança certificada</li>
+      <li><svg viewBox="0 0 20 20"><path d="M7.5 13.5L4 10l-1.4 1.4 4.9 4.9L18 5.8 16.6 4.4z"/></svg> Especialista no seu estilo</li>
+      <li><svg viewBox="0 0 20 20"><path d="M7.5 13.5L4 10l-1.4 1.4 4.9 4.9L18 5.8 16.6 4.4z"/></svg> Agende em 2 min pelo WhatsApp</li>
+    </ul>
+    <a class="btn" href="https://api.whatsapp.com/send?phone=5511971693455&text=Ol%C3%A1!%20Vim%20pelo%20site%20do%20Saddam%20Tattoo.%20Quero%20criar%20meu%20projeto%20personalizado.%20Minha%20ideia%2Festilo%20%C3%A9%3A%20" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.488-.916zm5.683-7.74c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.521.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.074-.149-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg>
+      Criar meu projeto personalizado
+    </a>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="head center reveal" style="margin-inline:auto">
+      <span class="eyebrow">Dúvidas comuns</span>
+      <h2 style="margin-top:16px">Perguntas frequentes</h2>
+    </div>
+    <div class="faq reveal">
+      <details open><summary>Como funciona o agendamento?</summary><p>É simples: você manda uma mensagem no WhatsApp com a sua ideia, criamos uma proposta de projeto e, se você gostar, agendamos a sessão. Tudo começa pela conversa.</p></details>
+      <details><summary>O orçamento é grátis?</summary><p>Sim. A consulta e a criação da proposta do seu projeto são 100% gratuitas e sem compromisso. Você só decide depois de ver a ideia no papel.</p></details>
+      <details><summary>Quanto custa uma tatuagem autoral?</summary><p>Cada peça é única, então o valor depende do tamanho, do estilo e da complexidade. Como trabalhamos com projeto autoral criado do zero e especialistas por estilo, atendemos quem busca um trabalho de qualidade para durar a vida toda. Mande sua ideia que passamos um orçamento justo e transparente.</p></details>
+      <details><summary>Posso levar uma referência de outra tatuagem?</summary><p>Pode, e incentivamos. A referência nos ajuda a entender o que você gosta — mas o projeto final é sempre criado do zero para você, nunca uma cópia.</p></details>
+      <details><summary>Como é a biossegurança do estúdio?</summary><p>Material 100% descartável, tintas importadas e protocolos rigorosos de higiene em cada sessão. Sua segurança é inegociável.</p></details>
+      <details><summary>Quanto tempo leva para cicatrizar?</summary><p>Em média de 15 a 30 dias para a cicatrização superficial, variando conforme a região e os cuidados. Entregamos todas as orientações de pós-sessão para o melhor resultado.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="brand" style="margin-bottom:14px">
+          <img src="assets/MVKVy4QxPQkuPRSiQvu8hVNi9Q.png" alt="Saddam Tattoo House" style="height:28px" onerror="this.style.display='none'"> Saddam Tattoo House
+        </div>
+        <p style="font-size:14px">Estúdio de tatuagem autoral referência no ABC Paulista desde 1992. Roberto Ferraraccio Tatuagens.</p>
+      </div>
+      <div>
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="#estudio">Nosso estúdio</a></li>
+          <li><a href="#historias">Histórias</a></li>
+          <li><a href="#equipe">Equipe</a></li>
+          <li><a href="#faq">Dúvidas</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="https://api.whatsapp.com/send?phone=5511971693455" target="_blank" rel="noopener">WhatsApp: (11) 9 7169-3455</a></li>
+          <li><a href="mailto:contato@saddam.com.br">contato@saddam.com.br</a></li>
+          <li><a href="https://www.instagram.com/saddamtattoo/" target="_blank" rel="noopener">@saddamtattoo</a></li>
+          <li>R. Carlos Del Prete, 88 — Centro, São Bernardo do Campo/SP</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2025 Saddam Tattoo House — Roberto Ferraraccio Tatuagens. Todos os direitos reservados.</span>
+      <span>Tatuagem autoral · ABC Paulista</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Video lightbox -->
+<div class="vmodal" id="vmodal" aria-hidden="true" role="dialog" aria-label="Vídeo da história">
+  <button class="vmodal-close" id="vclose" aria-label="Fechar vídeo">&times;</button>
+  <video id="vplayer" controls playsinline preload="auto"></video>
+</div>
+
+<!-- Sticky mobile CTA -->
+<div class="sticky">
+  <a class="btn" href="https://api.whatsapp.com/send?phone=5511971693455&text=Ol%C3%A1!%20Vim%20pelo%20site%20do%20Saddam%20Tattoo.%20Quero%20criar%20um%20projeto%20autoral.%20Minha%20ideia%2Festilo%20%C3%A9%3A%20" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.488-.916zm5.683-7.74c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.521.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.074-.149-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg>
+    Criar meu projeto no WhatsApp
+  </a>
+</div>
+
+<script>
+  // header scroll state
+  var hdr=document.getElementById('hdr');
+  addEventListener('scroll',function(){hdr.classList.toggle('scrolled',scrollY>40)},{passive:true});
+  // reveal on scroll
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.14});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+
+  // Video lightbox — story videos open in a player with sound (no Instagram redirect)
+  var vmodal=document.getElementById('vmodal'),vplayer=document.getElementById('vplayer');
+  function openV(src){if(!src)return;vplayer.src=src;vplayer.muted=false;vplayer.currentTime=0;
+    vmodal.classList.add('open');vmodal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';
+    vplayer.play().catch(function(){});}
+  function closeV(){vplayer.pause();vmodal.classList.remove('open');vmodal.setAttribute('aria-hidden','true');
+    vplayer.removeAttribute('src');vplayer.load();document.body.style.overflow='';}
+  document.querySelectorAll('.story.play').forEach(function(s){
+    s.addEventListener('click',function(){var src=s.querySelector('source');openV(src&&src.src);});});
+  document.getElementById('vclose').addEventListener('click',closeV);
+  vmodal.addEventListener('click',function(e){if(e.target===vmodal)closeV();});
+  addEventListener('keydown',function(e){if(e.key==='Escape'&&vmodal.classList.contains('open'))closeV();});
+</script>
+</body>
+</html>
