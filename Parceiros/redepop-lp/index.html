@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rede POP Aparecida Centro — Tudo pro seu pet num lugar só | Vet, ração, banho &amp; mais</title>
+<meta name="description" content="Tudo que seu pet precisa num lugar só: veterinário (Dr. Deyve), ração, banho &amp; tosa, remédios e brinquedos. No Centro de Aparecida de Goiânia, com preço de bairro. Chame no WhatsApp.">
+
+<!-- TODO deploy: trocar o domínio real em canonical + OG + JSON-LD (placeholder abaixo). -->
+<link rel="canonical" href="https://redepopaparecida.com.br/">
+
+<!-- Favicon inline (patinha) — zero arquivo -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%90%BE%3C/text%3E%3C/svg%3E">
+
+<!-- Open Graph / Twitter — link no WhatsApp/Insta abre com preview -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Rede POP Aparecida Centro">
+<meta property="og:title" content="Tudo que o seu pet precisa, num lugar só — Rede POP Aparecida Centro">
+<meta property="og:description" content="Veterinário (Dr. Deyve), ração, banho &amp; tosa, remédios e mais. No Centro de Aparecida, preço de bairro. Chame no WhatsApp.">
+<meta property="og:url" content="https://redepopaparecida.com.br/">
+<meta property="og:image" content="https://redepopaparecida.com.br/img/og.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Tudo que o seu pet precisa, num lugar só — Rede POP Aparecida Centro">
+<meta name="twitter:description" content="Veterinário, ração, banho &amp; tosa e mais. No Centro de Aparecida, preço de bairro.">
+<meta name="twitter:image" content="https://redepopaparecida.com.br/img/og.webp">
+
+<!-- Fonte da internet -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<!-- Preload da 1ª imagem do hero (LCP) -->
+<link rel="preload" as="image" href="img/hero-1.webp" fetchpriority="high">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- LOGO: salvar a logo em landing-page/img/logo.webp (RedePOP_Perfil.png do Drive).
+     Se o arquivo existir, aparece; se não, mostra a logo em texto (fallback automático). -->
+<header>
+  <div class="wrap">
+    <div class="logo">
+      <img src="img/logo.webp" alt="Rede POP Aparecida Centro"
+           onload="document.getElementById('brandTxt').style.display='none'" onerror="this.remove()">
+      <span id="brandTxt">REDE <span>POP</span></span>
+    </div>
+    <a class="btn-zap" href="https://wa.me/556296878312?text=Oi!%20Vim%20pelo%20site%20da%20Rede%20POP%20e%20quero%20cuidar%20do%20meu%20pet%20%F0%9F%90%BE"><img class="wa-ico" src="img/Whatsapp_Apple_App_Icon_Light_2026.webp" alt=""> WhatsApp</a>
+  </div>
+</header>
+
+<!-- ============ HERO (2 colunas: texto esquerda / imagem direita) ============ -->
+<section class="hero">
+  <div class="wrap">
+    <!-- COLUNA ESQUERDA: texto -->
+    <div class="hero-copy">
+      <span class="selo">🐾 Sua agropet de bairro · Centro de Aparecida</span>
+      <h1>Tudo que o seu pet precisa, <span>num lugar só.</span></h1>
+      <p class="sub">Ração, banho &amp; tosa, brinquedos, remédios... e <strong>veterinário de verdade</strong>. Na Rede POP você resolve tudo do seu pet sem rodar a cidade — com o cuidado de quem é do bairro e o preço que cabe no seu orçamento.</p>
+      <a class="btn-zap grande" href="https://wa.me/556296878312?text=Oi!%20Vim%20pelo%20site%20da%20Rede%20POP%20e%20quero%20cuidar%20do%20meu%20pet%20%F0%9F%90%BE"><img class="wa-ico" src="img/Whatsapp_Apple_App_Icon_Light_2026.webp" alt="">Chamar no WhatsApp</a>
+      <div class="mini-trust">
+        <span>Veterinário no local</span>
+        <span>Preço de bairro</span>
+        <span>Atendimento sem pressa</span>
+      </div>
+    </div>
+
+    <!-- COLUNA DIREITA: card de imagem em destaque (carrossel de 4 imagens) -->
+    <div class="hero-media">
+      <span class="paw" aria-hidden="true" style="top:-24px;right:-10px;transform:rotate(18deg)">🐾</span>
+      <span class="paw" aria-hidden="true" style="bottom:-20px;left:-16px;transform:rotate(-14deg);font-size:5rem">🐾</span>
+      <div class="hero-card">
+        <!-- Fotos REAIS da loja (visita 16/06) — otimizadas em img/ -->
+        <div class="hero-track">
+          <img class="hero-slide" alt="Prateleiras de ração da Rede POP" src="img/hero-1.webp" fetchpriority="high" onerror="this.onerror=null;this.style.opacity=0">
+          <img class="hero-slide" alt="Parede de brinquedos e acessórios" src="img/hero-2.webp" onerror="this.onerror=null;this.style.opacity=0">
+          <img class="hero-slide" alt="Corredor de coleiras e guias" src="img/hero-3.webp" onerror="this.onerror=null;this.style.opacity=0">
+          <img class="hero-slide" alt="Ração a granel na Rede POP" src="img/hero-4.webp" onerror="this.onerror=null;this.style.opacity=0">
+          <img class="hero-slide" alt="" aria-hidden="true" src="img/hero-1.webp" onerror="this.onerror=null;this.style.opacity=0">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BARRA DE CONFIANÇA ============ -->
+<div class="trust" aria-label="Conveniências da Rede POP">
+  <div class="marquee">
+    <div class="trust-group">
+      <div><span aria-hidden="true">🐶🐱</span> Cães e gatos</div>
+      <div><span aria-hidden="true">💳</span> Pix e cartão</div>
+      <div><span aria-hidden="true">💊</span> Farmácia pet</div>
+      <div><span aria-hidden="true">🛁</span> Banho com hora marcada</div>
+      <div><span aria-hidden="true">🥣</span> Rações das marcas boas</div>
+      <div><span aria-hidden="true">🩺</span> Veterinário no local</div>
+      <div><span aria-hidden="true">🦴</span> Brinquedos e acessórios</div>
+    </div>
+    <div class="trust-group" aria-hidden="true">
+      <div><span aria-hidden="true">🐶🐱</span> Cães e gatos</div>
+      <div><span aria-hidden="true">💳</span> Pix e cartão</div>
+      <div><span aria-hidden="true">💊</span> Farmácia pet</div>
+      <div><span aria-hidden="true">🛁</span> Banho com hora marcada</div>
+      <div><span aria-hidden="true">🥣</span> Rações das marcas boas</div>
+      <div><span aria-hidden="true">🩺</span> Veterinário no local</div>
+      <div><span aria-hidden="true">🦴</span> Brinquedos e acessórios</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ A DOR ============ -->
+<section class="bloco">
+  <span class="paw" aria-hidden="true" style="top:24px;right:40px;transform:rotate(18deg)">🐾</span>
+  <span class="paw" aria-hidden="true" style="bottom:-10px;left:30px;transform:rotate(-12deg);font-size:5.5rem">🐾</span>
+  <span class="paw" aria-hidden="true" style="top:46%;right:140px;transform:rotate(-32deg);font-size:6rem">🐾</span>
+  <div class="wrap">
+    <h2>Cansou de rodar a cidade pra cuidar do seu pet?</h2>
+    <p class="lead">Um lugar pra ração, outro pro banho, outro pro remédio... e no fim ainda fica aquela dúvida: <em>será que tô fazendo o certo pro meu bichinho?</em></p>
+    <p class="lead">A gente entende. Quem ama um pet não quer só resolver rápido — quer a tranquilidade de saber que está cuidando bem. E isso não devia ser um jogo de adivinhação.</p>
+  </div>
+</section>
+
+<!-- ============ SOLUÇÃO (foto + texto) ============ -->
+<section class="bloco destaque solucao">
+  <div class="wrap grid">
+    <!-- TODO cliente: trocar pela foto REAL do Dr. Deyve (salvar como img/veterinario.jpg e apontar aqui).
+         Por ora = imagem de referência p/ preview (único asset externo restante). -->
+    <img src="https://images.pexels.com/photos/6234610/pexels-photo-6234610.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=700&amp;h=500&amp;fit=crop"
+         width="700" height="500" loading="lazy" decoding="async" alt="Veterinário atendendo um pet">
+    <div>
+      <h2>Tudo num lugar — e com veterinário de verdade</h2>
+      <p>Na Rede POP você acha tudo pro seu pet num lugar só. Mas tem uma coisa que pet shop de bairro quase nenhum tem: um <strong>veterinário</strong> ali, pertinho, pra te orientar.</p>
+      <p>O <strong>Dr. Deyve</strong> escuta a história do seu pet e te explica, com clareza, o que o seu pet precisa de verdade — antes de indicar qualquer coisa. É o cuidado certo, sem susto no fim.</p>
+      <a class="btn-zap" href="https://wa.me/556296878312?text=Oi!%20Vim%20pelo%20site%20da%20Rede%20POP%20e%20quero%20cuidar%20do%20meu%20pet%20%F0%9F%90%BE"><img class="wa-ico" src="img/Whatsapp_Apple_App_Icon_Light_2026.webp" alt=""> Tirar minha dúvida no WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVIÇOS ============ -->
+<section class="bloco servicos">
+  <span class="paw" aria-hidden="true" style="top:30px;left:24px;transform:rotate(-20deg);font-size:6rem">🐾</span>
+  <span class="paw" aria-hidden="true" style="bottom:24px;right:36px;transform:rotate(25deg)">🐾</span>
+  <span class="paw" aria-hidden="true" style="top:55%;left:90px;transform:rotate(12deg);font-size:5rem">🐾</span>
+  <div class="wrap">
+    <h2>O que você encontra na Rede POP</h2>
+    <p class="lead">Tudo pro seu pet, num lugar só.</p>
+    <div class="split">
+      <!-- GRADE DE IMAGENS (rotaciona via JS) — fotos REAIS da loja em img/ -->
+      <div class="serv-media">
+        <div class="serv-tile big"><img id="st0" alt="Produtos da Rede POP" src="img/serv-1.webp" onerror="this.onerror=null;this.style.opacity=0"></div>
+        <div class="serv-tile"><img id="st1" alt="" aria-hidden="true" src="img/serv-2.webp" onerror="this.onerror=null;this.style.opacity=0"></div>
+        <div class="serv-tile"><img id="st2" alt="" aria-hidden="true" src="img/serv-3.webp" onerror="this.onerror=null;this.style.opacity=0"></div>
+      </div>
+      <!-- LISTA COMPACTA DE SERVIÇOS -->
+      <div class="serv-list">
+        <div class="serv-item"><div class="ico" aria-hidden="true">🩺</div><div><h3>Veterinário</h3><p>Consulta, vacina e orientação com o Dr. Deyve.</p></div></div>
+        <div class="serv-item"><div class="ico" aria-hidden="true">🥣</div><div><h3>Rações &amp; alimentação</h3><p>A ração certa, das marcas boas, no seu orçamento.</p></div></div>
+        <div class="serv-item"><div class="ico" aria-hidden="true">🛁</div><div><h3>Banho &amp; tosa</h3><p>Seu pet limpo e cheiroso, com hora marcada.</p></div></div>
+        <div class="serv-item"><div class="ico" aria-hidden="true">💊</div><div><h3>Remédios &amp; farmácia pet</h3><p>Vermífugo, antipulgas e medicamentos.</p></div></div>
+        <div class="serv-item"><div class="ico" aria-hidden="true">🦴</div><div><h3>Brinquedos &amp; acessórios</h3><p>Coleira, comedouro, caminha e mais.</p></div></div>
+        <div class="serv-item"><div class="ico" aria-hidden="true">✨</div><div><h3>E muito mais</h3><p>Higiene, suplementos, petiscos e o que faltar.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DIFERENCIAL ============ -->
+<section class="bloco destaque solucao">
+  <div class="wrap grid">
+    <div>
+      <h2>Padrão de rede, preço de bairro</h2>
+      <p>Você não precisa ir até o shopping nem pagar preço de loja grande pra cuidar bem do seu pet.</p>
+      <p>A Rede POP é a sua agropet de bairro: tudo o que você acha numa grande rede, mas pertinho de casa, com o preço que cabe no seu orçamento e o atendimento de quem te conhece pelo nome.</p>
+    </div>
+    <!-- Vídeo REAL da loja (visita 16/06) — pan das rações de marca, mudo em loop -->
+    <video src="img/loja.mp4" poster="img/loja-poster.jpg" autoplay muted loop playsinline preload="metadata"
+           aria-label="Prateleiras de ração de marca da Rede POP"></video>
+  </div>
+</section>
+
+<!-- ============ PROVA SOCIAL — avaliações REAIS do Google Meu Negócio (coletadas 2026-07-03) ============ -->
+<section class="bloco depo">
+  <div class="wrap">
+    <h2>Quem confia, recomenda</h2>
+    <p class="sub-google">⭐ 4,6 no Google · 94 avaliações reais dos nossos clientes</p>
+  </div>
+  <div class="depo-carousel">
+      <button class="depo-nav prev" type="button" aria-label="Ver depoimento anterior">‹</button>
+      <div class="depo-track">
+
+      <!-- Card 1 -->
+      <div class="g-card">
+        <div class="g-head">
+          <div class="g-av" style="background:var(--verde)">M</div>
+          <div>
+            <div class="g-name">Milady Espindula</div>
+            <div class="g-src">Avaliação no Google</div>
+          </div>
+          <svg class="g-logo" viewBox="0 0 48 48" aria-hidden="true"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"/><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/></svg>
+        </div>
+        <div class="g-stars" aria-hidden="true">★★★★★</div>
+        <p>Bom atendimento e bom preço!</p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="g-card">
+        <div class="g-head">
+          <div class="g-av" style="background:var(--dourado)">G</div>
+          <div>
+            <div class="g-name">Gilberto Lobo</div>
+            <div class="g-src">Avaliação no Google</div>
+          </div>
+          <svg class="g-logo" viewBox="0 0 48 48" aria-hidden="true"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"/><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/></svg>
+        </div>
+        <div class="g-stars" aria-hidden="true">★★★★★</div>
+        <p>Ótimo atendimento, tem de tudo e os preços são muito bons, lugar de ótimo acesso.</p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="g-card">
+        <div class="g-head">
+          <div class="g-av" style="background:var(--verde-esc)">A</div>
+          <div>
+            <div class="g-name">Alline Camargo Moreira</div>
+            <div class="g-src">Avaliação no Google</div>
+          </div>
+          <svg class="g-logo" viewBox="0 0 48 48" aria-hidden="true"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"/><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/></svg>
+        </div>
+        <div class="g-stars" aria-hidden="true">★★★★★</div>
+        <p>Ótimo atendimento, variedade de itens e rações de qualidade para nossos pets. Super recomendo! Sou cliente assídua.</p>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="g-card">
+        <div class="g-head">
+          <div class="g-av" style="background:var(--verde)">C</div>
+          <div>
+            <div class="g-name">Camilla Araújo</div>
+            <div class="g-src">Avaliação no Google</div>
+          </div>
+          <svg class="g-logo" viewBox="0 0 48 48" aria-hidden="true"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"/><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/></svg>
+        </div>
+        <div class="g-stars" aria-hidden="true">★★★★★</div>
+        <p>Excelente atendimento, tem tudo na loja, ótimos preços.</p>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="g-card">
+        <div class="g-head">
+          <div class="g-av" style="background:var(--dourado)">T</div>
+          <div>
+            <div class="g-name">Tulio Duarte</div>
+            <div class="g-src">Avaliação no Google</div>
+          </div>
+          <svg class="g-logo" viewBox="0 0 48 48" aria-hidden="true"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"/><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/></svg>
+        </div>
+        <div class="g-stars" aria-hidden="true">★★★★★</div>
+        <p>Bom atendimento, lugar organizado e atendentes simpáticos.</p>
+      </div>
+
+      </div><!-- /depo-track -->
+      <button class="depo-nav next" type="button" aria-label="Ver próximo depoimento">›</button>
+  </div><!-- /depo-carousel -->
+</section>
+
+<!-- ============ LOCALIZAÇÃO ============ -->
+<section class="bloco local">
+  <span class="paw" aria-hidden="true" style="top:20px;left:36px;transform:rotate(15deg);font-size:5.5rem">🐾</span>
+  <span class="paw" aria-hidden="true" style="bottom:18px;right:30px;transform:rotate(-18deg)">🐾</span>
+  <span class="paw" aria-hidden="true" style="top:50%;right:130px;transform:rotate(28deg);font-size:6rem">🐾</span>
+  <div class="wrap">
+    <h2>Onde a gente fica</h2>
+    <div class="grid">
+      <div class="info">
+        <p class="end">📍 Rede POP Aparecida Centro</p>
+        <p class="addr">Av. das Nações, Qd 08 – Lt 04 · Bairro Vera Cruz<br>Aparecida de Goiânia – GO · CEP 74976-190</p>
+        <ul class="facts">
+          <li><span aria-hidden="true">🅿️</span> Fácil de chegar, com lugar pra parar</li>
+          <li><span aria-hidden="true">🩺</span> Veterinário no local (Dr. Deyve)</li>
+          <li><span aria-hidden="true">🐶🐱</span> Cães e gatos — tudo num lugar só</li>
+        </ul>
+        <a class="btn-zap" href="https://www.google.com/maps/search/?api=1&amp;query=Rede+Pop+Aparecida+Centro%2C+Aparecida+de+Goi%C3%A2nia%2C+GO" target="_blank" rel="noopener">📍 Como chegar</a>
+      </div>
+      <div class="mapbox">
+        <iframe title="Mapa — Rede POP Aparecida Centro" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Rede+Pop+Aparecida+Centro%2C+Aparecida+de+Goi%C3%A2nia%2C+GO&output=embed"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="bloco destaque faq">
+  <div class="wrap" style="max-width:720px">
+    <h2>Perguntas frequentes</h2>
+    <details><summary>Preciso agendar?</summary><p>Pode chamar no WhatsApp que a gente organiza o melhor horário pra você.</p></details>
+    <details><summary>Quanto custa a consulta?</summary><p>Preço de bairro, sem surpresa. Chama no WhatsApp que a gente te passa certinho.</p></details>
+    <details><summary>Atende cães e gatos?</summary><p>Sim! O Dr. Deyve cuida do seu pet com o mesmo carinho, seja cão ou gato.</p></details>
+    <details><summary>É longe?</summary><p>Estamos no Centro de Aparecida de Goiânia, fácil de chegar e com lugar pra parar.</p></details>
+  </div>
+</section>
+
+<!-- ============ CTA FINAL ============ -->
+<section class="cta-final" id="contato">
+  <div class="wrap">
+    <h2>O cuidado do seu pet começa com uma conversa</h2>
+    <p>Manda uma mensagem agora. Sem compromisso — é só dizer o que seu pet precisa e a gente cuida do resto. <strong>A gente responde rapidinho 🐾</strong></p>
+    <a class="btn-zap grande" href="https://wa.me/556296878312?text=Oi!%20Vim%20pelo%20site%20da%20Rede%20POP%20e%20quero%20cuidar%20do%20meu%20pet%20%F0%9F%90%BE"><img class="wa-ico" src="img/Whatsapp_Apple_App_Icon_Light_2026.webp" alt="">Chamar no WhatsApp</a>
+  </div>
+</section>
+
+<footer>
+  <div class="logo"><img src="img/logo.webp" alt="Rede POP Aparecida Centro" onerror="this.replaceWith(document.createTextNode('REDE POP'))"></div>
+  <p>Sua agropet de bairro, no Centro de Aparecida de Goiânia 🐾</p>
+  <div class="foot-links">
+    <a href="https://wa.me/556296878312?text=Oi!%20Vim%20pelo%20site%20da%20Rede%20POP%20%F0%9F%90%BE">WhatsApp</a>
+    <a href="https://www.instagram.com/agropop_aparecidacentro" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://www.google.com/maps/search/?api=1&amp;query=Rede+Pop+Aparecida+Centro%2C+Aparecida+de+Goi%C3%A2nia%2C+GO" target="_blank" rel="noopener">Como chegar</a>
+  </div>
+  <p class="foot-copy">© 2026 Rede POP Aparecida Centro · Todos os direitos reservados</p>
+</footer>
+
+<!-- WhatsApp flutuante (TODO cliente: confirmar número real) -->
+<a class="float-zap" href="https://wa.me/556296878312?text=Oi!%20Vim%20pelo%20site%20da%20Rede%20POP%20%F0%9F%90%BE" aria-label="Falar no WhatsApp"><img src="img/Whatsapp_Apple_App_Icon_Light_2026.webp" alt="WhatsApp"></a>
+
+<!-- ============ DADOS ESTRUTURADOS (JSON-LD) ============ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VeterinaryCare",
+  "name": "Rede POP Aparecida Centro",
+  "description": "Pet shop e agropet com veterinário no local (Dr. Deyve): ração, banho e tosa, remédios, acessórios e orientação veterinária. No Centro de Aparecida de Goiânia.",
+  "image": "https://redepopaparecida.com.br/img/og.webp",
+  "url": "https://redepopaparecida.com.br/",
+  "telephone": "+556296878312",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Av. das Nações, Qd 08 - Lt 04, Bairro Vera Cruz",
+    "addressLocality": "Aparecida de Goiânia",
+    "addressRegion": "GO",
+    "postalCode": "74976-190",
+    "addressCountry": "BR"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": -16.8250921, "longitude": -49.244759 },
+  "areaServed": "Aparecida de Goiânia e região",
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.6", "reviewCount": "94", "bestRating": "5", "worstRating": "1" },
+  "sameAs": ["https://www.instagram.com/agropop_aparecidacentro"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Preciso agendar?","acceptedAnswer":{"@type":"Answer","text":"Pode chamar no WhatsApp que a gente organiza o melhor horário pra você."}},
+    {"@type":"Question","name":"Quanto custa a consulta?","acceptedAnswer":{"@type":"Answer","text":"Preço de bairro, sem surpresa. Chama no WhatsApp que a gente te passa certinho."}},
+    {"@type":"Question","name":"Atende cães e gatos?","acceptedAnswer":{"@type":"Answer","text":"Sim! O Dr. Deyve cuida do seu pet com o mesmo carinho, seja cão ou gato."}},
+    {"@type":"Question","name":"É longe?","acceptedAnswer":{"@type":"Answer","text":"Estamos no Centro de Aparecida de Goiânia, fácil de chegar e com lugar pra parar."}}
+  ]
+}
+</script>
+
+<!-- Mede a altura do header p/ a faixa (.trust) grudar exatamente abaixo dele (sticky, responsivo) -->
+<script>
+(function(){
+  var h=document.querySelector('header');
+  function setH(){document.documentElement.style.setProperty('--header-h',((h&&h.offsetHeight)||72)+'px');}
+  setH();
+  window.addEventListener('load',setH);
+  window.addEventListener('resize',setH);
+})();
+</script>
+
+<!-- Depoimentos: coverflow manual (foco no centro, menor nas laterais, blur nas pontas) -->
+<script>
+(function(){
+  var car=document.querySelector('.depo-carousel'); if(!car) return;
+  var cards=[].slice.call(car.querySelectorAll('.g-card'));
+  var N=cards.length; if(!N) return;
+  var active=Math.floor(N/2);
+  // espaçamento máximo que ainda deixa a PONTA (distância 2) inteira dentro da tela + margem
+  function gap(){
+    var vw=car.clientWidth;
+    var cw=(cards[0] && cards[0].offsetWidth) || 330;
+    var edgeHalf=cw*0.66/2;         // metade da largura do card da ponta (escala .66)
+    var g=(vw/2 - edgeHalf - 20)/1.7; // 20px de respiro; /1.7 = fator de deslocamento da ponta (mais perto do centro)
+    return Math.max(40, Math.min(g, 320));
+  }
+  function render(){
+    var G=gap();
+    cards.forEach(function(c,i){
+      var d=i-active;
+      if(d>N/2) d-=N; if(d<-N/2) d+=N;
+      var ad=Math.abs(d);
+      var scale = ad===0?1 : ad===1?0.82 : 0.66;
+      var op    = ad===0?1 : ad===1?0.9  : 0.5;
+      var blur  = ad>=2?4:0;
+      var off = ad===0 ? 0 : ad===1 ? G : G*1.7;   // centro a 0, adjacentes a 1×G, pontas a 1.7×G
+      if(d<0) off=-off;
+      c.style.transform='translate(-50%,-50%) translateX('+off+'px) scale('+scale+')';
+      c.style.filter = blur? 'blur('+blur+'px)':'none';
+      c.style.opacity=op;
+      c.style.zIndex=String(100-ad);
+      c.style.pointerEvents = ad>=2? 'none':'auto';
+    });
+  }
+  function go(n){ active=(active+n+N)%N; render(); }
+  car.querySelector('.depo-nav.next').addEventListener('click',function(){ go(1); });
+  car.querySelector('.depo-nav.prev').addEventListener('click',function(){ go(-1); });
+  cards.forEach(function(c,i){ c.addEventListener('click',function(){
+    var d=i-active; if(d>N/2)d-=N; if(d<-N/2)d+=N;
+    if(d!==0) go(d>0?1:-1);
+  }); });
+  var x0=null;
+  car.addEventListener('touchstart',function(e){ x0=e.touches[0].clientX; },{passive:true});
+  car.addEventListener('touchend',function(e){ if(x0===null)return; var dx=e.changedTouches[0].clientX-x0; if(Math.abs(dx)>40) go(dx<0?1:-1); x0=null; });
+  window.addEventListener('resize',render);
+  render();
+})();
+</script>
+
+<!-- Grade de imagens dos serviços: rotaciona as fotos reais da loja em crossfade -->
+<script>
+(function(){
+  if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var pool=['img/serv-1.webp','img/serv-2.webp','img/serv-3.webp','img/serv-4.webp','img/serv-5.webp','img/serv-6.webp','img/serv-7.webp','img/serv-8.webp'];
+  var tiles=[document.getElementById('st0'),document.getElementById('st1'),document.getElementById('st2')];
+  if(tiles.some(function(t){return !t;})) return;
+  var off=0;
+  setInterval(function(){
+    off=(off+3)%pool.length;
+    tiles.forEach(function(t,i){
+      t.style.opacity=0;
+      setTimeout(function(){ t.src=pool[(off+i)%pool.length]; t.style.opacity=1; },350);
+    });
+  },3200);
+})();
+</script>
+
+</body>
+</html>
