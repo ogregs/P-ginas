@@ -1,0 +1,413 @@
+/* FONTES AUTO-HOSPEDADAS (31/08).
+   Com o Google Fonts bloqueado a headline virava SETE linhas no celular --
+   [8,7,1,11,2,10,11], com palavras picotadas -- porque o fallback do display
+   ("Arial Narrow") nao existe em Android nem Linux e cai numa fonte muito mais
+   larga. A pagina dependia de uma requisicao externa pra nao desmontar.
+   Servindo local: a metrica trava, somem 2 requisicoes de terceiro e o IP do
+   visitante deixa de ir pro Google. Licenca OFL nas duas familias. */
+@font-face{
+  font-family:'Big Shoulders Display';font-style:normal;font-weight:700;font-display:swap;
+  src:url('fontes/big-shoulders-display-700-latin.woff2') format('woff2');
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face{
+  font-family:'Big Shoulders Display';font-style:normal;font-weight:800;font-display:swap;
+  src:url('fontes/big-shoulders-display-800-latin.woff2') format('woff2');
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face{
+  font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;
+  src:url('fontes/inter-400-latin.woff2') format('woff2');
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face{
+  font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;
+  src:url('fontes/inter-500-latin.woff2') format('woff2');
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face{
+  font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;
+  src:url('fontes/inter-600-latin.woff2') format('woff2');
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face{
+  font-family:'Inter';font-style:normal;font-weight:700;font-display:swap;
+  src:url('fontes/inter-700-latin.woff2') format('woff2');
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+/* ==========================================================================
+   Suplementos BG (ex-M-THOR) — Landing Page
+   Tier de movimento: T1 (CSS + IntersectionObserver, zero biblioteca).
+   Paleta derivada da identidade REAL da loja (parede preta, placa vermelha do
+   logo, raio amarelo) — não de default de IA. O amarelo aparece 3x na página
+   inteira, sempre marcando o degrau final do preço.
+   ========================================================================== */
+
+:root{
+  --ink:#0B0B0C;
+  --surface:#141416;
+  --surface-2:#1B1B1F;
+  --line:#2B2B31;
+  --text:#EDEDEF;
+  --muted:#A2A2AC;
+  --paper:#F4F2EE;
+  --paper-ink:#141416;
+  --paper-muted:#5A5A63;
+  --red:#E01B24;
+  --red-deep:#A8121A;
+  --bolt:#FFC400;
+  /* variantes do vermelho com contraste AA: o #E01B24 da marca reprova
+     em texto pequeno tanto no preto (4.08) quanto no papel (4.32). */
+  --red-on-dark:#FF5A61;
+  --red-on-paper:#C1121B;
+
+  /* Margem lateral 10% de cada lado no WEB (Gabriel 31/08). O max(1120px)
+     e' o piso: sem ele o mesmo 80vw estrangulava o celular, que ja' vive
+     com 5% de goela pelo --pad -- a 390px o conteudo caia de 350 pra 312
+     e a pagina crescia de 5975 pra 8433px. O teto de 1600px existe pra
+     grade e tabela nao explodirem em ultra-wide. */
+  --wrap:min(1600px, max(1120px, calc(80vw + 2 * clamp(20px,5vw,40px))));
+  --pad:clamp(20px,5vw,40px);
+  --leitura:58ch;    /* teto de PROSA: linha de leitura, nao a casca */
+  --r:14px;
+
+  --display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;
+  --body:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--ink);
+  color:var(--text);
+  font-family:var(--body);
+  font-size:17px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+
+.wrap{width:100%;max-width:var(--wrap);margin:0 auto;padding-inline:var(--pad)}
+
+h1,h2,h3{font-family:var(--display);font-weight:800;line-height:.98;letter-spacing:-.01em;margin:0}
+h1{font-size:clamp(28px,9.7vw,60px);text-transform:uppercase}
+/* 320px: a 38px a headline quebrava em 3 linhas com "hoje." sozinha no meio.
+   O corte e' so' aqui -- em 360+ o tamanho cheio cabe e nao ha razao pra abrir mao dele. */
+h2{font-size:clamp(30px,5vw,52px);text-transform:uppercase}
+h3{font-size:clamp(21px,2.6vw,27px);text-transform:uppercase}
+/* quebras manuais de titulo servem ao ritmo do desktop; no celular a linha ja
+   quebra sozinha e o <br> produzia orfa de uma palavra ("AQUI" sozinho). */
+@media(max-width:640px){.br-lg{display:none}}
+p{margin:0 0 1em}
+p:last-child{margin-bottom:0}
+.lead{font-size:clamp(18px,2.1vw,21px);color:var(--muted);max-width:var(--leitura)}
+
+.eyebrow{
+  font-family:var(--body);font-size:12px;font-weight:700;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--muted);margin:0 0 14px;
+}
+.eyebrow--red{color:var(--red-on-dark)}
+.paper .eyebrow--red{color:var(--red-on-paper)}
+
+/* ---------- Botões ---------- */
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--body);font-weight:700;font-size:16px;
+  padding:16px 26px;border-radius:999px;text-decoration:none;
+  background:var(--red);color:#fff;border:0;cursor:pointer;
+  transition:transform .18s ease,background .18s ease,box-shadow .18s ease;
+  box-shadow:0 8px 24px rgba(224,27,36,.28);
+}
+.btn:hover{background:#f22630;transform:translateY(-2px)}
+.btn:focus-visible{outline:3px solid var(--bolt);outline-offset:3px}
+.btn--ghost{background:transparent;color:var(--text);border:1px solid var(--line);box-shadow:none}
+.btn--ghost:hover{background:var(--surface-2);border-color:#41414a}
+.btn--lg{font-size:18px;padding:19px 34px}
+.btn-note{font-size:13.5px;color:var(--muted);margin:12px 0 0}
+
+/* ---------- Header ---------- */
+.hdr{
+  position:sticky;top:0;z-index:50;
+  background:rgba(11,11,12,.86);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.hdr__in{display:flex;align-items:center;justify-content:space-between;gap:16px;height:66px}
+.logo{display:flex;align-items:center;text-decoration:none;flex:none}
+.logo img{height:32px;width:auto;display:block}
+@media(max-width:520px){.logo img{height:26px}}
+.hdr .btn{padding:11px 20px;font-size:14.5px;box-shadow:none;white-space:nowrap}
+.hdr__tel{display:none;font-size:14px;color:var(--muted);text-decoration:none}
+@media(min-width:760px){.hdr__tel{display:inline}}
+/* 320-520px: o botao do header estourava a largura do documento (sw=391 > iw=320).
+   Nessa faixa o CTA fixo da thumb-zone ja cobre a intencao, entao o header
+   troca o botao pelo telefone -- que e' util e nao empurra o layout. */
+@media(max-width:520px){
+  .hdr__in{height:58px}
+  .hdr .btn{display:none}
+  .hdr__tel{display:inline;font-size:15px;font-weight:700;color:var(--text)}
+  .logo{font-size:22px}
+}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero__bg{position:absolute;inset:0;z-index:0}
+.hero__bg img{width:100%;height:100%;object-fit:cover;filter:grayscale(.18) brightness(.52) contrast(1.06)}
+.hero__bg::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(105deg,rgba(11,11,12,.96) 0%,rgba(11,11,12,.86) 46%,rgba(11,11,12,.18) 100%);
+}
+.hero__in{position:relative;z-index:1;display:grid;gap:40px}
+/* sem a escada de preco o hero e' coluna unica: o texto ocupa a esquerda e a
+   foto da loja aparece de verdade a' direita, em vez de ficar atras de um card. */
+@media(min-width:940px){.hero__in{grid-template-columns:minmax(0,70%);align-items:center}}
+.hero h1{max-width:30ch}
+.hero h1 span{color:var(--red);display:block}
+.hero .lead{max-width:46ch;margin-top:22px;color:#D6D6DC;font-size:clamp(18.5px,1.9vw,19px)}
+.hero__cta{margin-top:30px}
+.hero__trust{
+  display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:26px;padding-top:20px;
+  border-top:1px solid var(--line);font-size:13.5px;color:var(--muted);
+  max-width:min(100%, 700px);   /* 2+2: a 820 o quarto selo ficava sozinho na linha */
+}
+.hero__trust span{display:flex;align-items:center;gap:7px}
+.hero__trust span::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--red)}
+
+
+/* ---------- Faixa de marcas ---------- */
+.brands{background:var(--surface);border-bottom:1px solid var(--line);padding-block:20px}
+.brands__in{display:flex;flex-wrap:wrap;align-items:center;gap:10px 26px;justify-content:center}
+.brands p{margin:0;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.brands li{list-style:none;font-family:var(--display);font-size:20px;font-weight:700;color:#8E8E99;letter-spacing:.02em;text-transform:uppercase}
+.brands ul{display:flex;flex-wrap:wrap;gap:8px 24px;margin:0;padding:0;justify-content:center}
+
+/* ---------- Seções ---------- */
+section{padding-block:clamp(56px,9vw,96px)}
+.sec-head{max-width:60ch;margin-bottom:clamp(30px,5vw,48px)}
+.sec-head p{color:var(--muted)}
+.sec-head h2 + p{margin-top:16px}
+.paper{background:var(--paper);color:var(--paper-ink)}
+.paper .sec-head p,.paper .muted{color:var(--paper-muted)}
+.paper h2,.paper h3{color:var(--paper-ink)}
+
+
+/* Tabela da conta */
+.conta{border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:var(--surface)}
+.conta table{width:100%;min-width:540px;border-collapse:collapse;font-size:15.5px}   /* largura cheia: ver F6 no auditoria.md */
+.conta th,.conta td{padding:15px 16px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+.conta thead th{font-family:var(--display);font-size:19px;text-transform:uppercase;letter-spacing:.01em;background:var(--surface-2);color:var(--text)}
+.conta thead th:last-child{color:var(--red)}
+.conta tbody tr:last-child td{border-bottom:0}
+.conta td:first-child{color:var(--muted);font-weight:600;width:26%}
+.conta td:last-child{color:var(--text);font-weight:600}
+.conta td:nth-child(2){color:var(--muted)}
+.conta-wrap{overflow-x:auto}
+/* <=560px: a coluna M-THOR -- que e' o argumento da secao -- ficava fora da
+   tela num scroll horizontal que ninguem faz. Abaixo desse ponto a tabela
+   vira blocos empilhados, com o rotulo da coluna em cada celula. */
+@media(max-width:560px){
+  .conta-wrap{overflow-x:visible}
+  .conta table{min-width:0}
+  .conta thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .conta table,.conta tbody,.conta tr,.conta td{display:block;width:auto}
+  .conta tr{padding:16px 16px 6px;border-bottom:1px solid rgba(20,20,22,.12)}
+  .conta tr:last-child{border-bottom:0}
+  .conta td{padding:0 0 10px;border:0}
+  .conta td:first-child{font-family:var(--display);font-size:20px;text-transform:uppercase;padding-bottom:12px}
+  .conta td[data-l]:not(:first-child)::before{
+    content:attr(data-l);display:block;font-size:10.5px;letter-spacing:.14em;
+    text-transform:uppercase;font-weight:700;opacity:.75;margin-bottom:2px;
+  }
+  .paper .conta td:last-child::before{color:var(--red-on-paper);opacity:1}
+}
+/* A tabela vive na faixa clara: as cores do tema escuro deixavam a coluna
+   M-THOR quase invisivel (#EDEDEF sobre branco). Override explicito. */
+.paper .conta{border-color:rgba(20,20,22,.14)}
+.paper .conta th,.paper .conta td{border-bottom-color:rgba(20,20,22,.12)}
+.paper .conta thead th{background:#141416;color:#F4F2EE}
+.paper .conta thead th:last-child{color:#FF5A61}
+.paper .conta td:first-child{color:#4A4A54}
+.paper .conta td:nth-child(2){color:#6E6E79}
+.paper .conta td:last-child{color:#141416;font-weight:700}
+
+/* Cards de diferencial */
+.cards{display:grid;gap:22px}
+@media(min-width:840px){.cards{grid-template-columns:repeat(3,1fr)}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column}
+.card img{aspect-ratio:19/16;object-fit:cover;object-position:50% 28%;width:100%}
+.card__body{padding:22px}
+.sub-bloco{font-size:15.5px;color:var(--muted);margin:0 0 20px;padding-top:6px;
+  border-top:1px solid var(--line)}
+.card h3{margin-bottom:10px;font-size:clamp(19px,1.72vw,23px);min-height:1.96em}
+.card p{color:var(--muted);font-size:15.5px;margin:0}
+/* cada porta de entrada tem o SEU proprio CTA: quem nao sabe o que precisa nao
+   pode cair no mesmo "peca agora" de quem ja' sabe. */
+.card__cta{margin-top:14px !important}
+.card__cta a{color:var(--red-on-dark);font-weight:700;font-size:15px;text-decoration:none;
+  border-bottom:1px solid rgba(255,90,97,.35);padding-bottom:2px}
+.card__cta a:hover{border-bottom-color:var(--red-on-dark)}
+.card__cta a:focus-visible{outline:3px solid var(--bolt);outline-offset:3px}
+.card__body{display:flex;flex-direction:column;flex:1}
+.card__cta{margin-top:auto !important;padding-top:14px}
+
+/* Ofertas */
+.disclaimer{font-size:13.5px;color:var(--muted);margin-top:20px;max-width:var(--leitura)}
+.paper .disclaimer{color:#6E6E79}
+/* a nota vive DENTRO da grade de etiquetas, ocupando a celula que sobrava */
+
+/* ---------- CATALOGO VISUAL ----------
+   Desde 31/08 esta e' a assinatura da pagina: Gabriel decidiu tirar todo preco
+   ("apenas catalogo sem valor"), e a escada DE/POR/NO PIX saiu junto. O que
+   vendia por numero passa a vender por imagem.
+   Nada de esconder tile em tela estreita: aqui o catalogo E' o conteudo, entao
+   ele quebra em linhas em vez de sumir -- diferente de quando era faixa auxiliar. */
+.produtos{display:grid;grid-template-columns:repeat(auto-fit,minmax(168px,1fr));
+  gap:16px;margin:0 0 22px;padding:0;list-style:none}
+.produtos li{margin:0}
+.produtos img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:var(--r);
+  border:1px solid rgba(20,20,22,.12);background:#fff;display:block}
+.produtos--grande li p{margin:10px 0 0;font-size:14px;line-height:1.35;font-weight:600;min-height:2.7em}
+.paper .produtos--grande li p{color:var(--paper-ink)}
+.produtos__nota{font-size:14.5px;margin:0;max-width:var(--leitura)}
+.paper .produtos__nota{color:var(--paper-muted)}
+@media(max-width:560px){.produtos{grid-template-columns:repeat(2,1fr);gap:12px}}
+
+/* Catálogo */
+.cats{display:grid;gap:26px}
+@media(min-width:780px){.cats{grid-template-columns:repeat(2,1fr);gap:26px 48px}}
+.cat h3{margin-bottom:14px}
+.cat ul{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+.cat li{border:1px solid var(--line);background:var(--surface-2);border-radius:999px;padding:7px 14px;font-size:14.5px;font-weight:500}
+.paper .cat li{border-color:rgba(20,20,22,.16);background:rgba(255,255,255,.66)}
+
+/* Prova */
+.prova{display:grid;gap:34px}
+@media(min-width:900px){.prova{grid-template-columns:.8fr 1fr;gap:56px;align-items:stretch}}
+.prova__img{border-radius:var(--r);overflow:hidden;border:1px solid var(--line)}
+.prova__img img{width:100%;height:100%;object-fit:cover;object-position:50% 45%}
+@media(max-width:899px){.prova__img img{max-height:470px}}
+.stat{font-family:var(--display);font-size:clamp(58px,11vw,104px);line-height:.9;margin:0 0 14px;color:var(--bolt);font-variant-numeric:tabular-nums}
+.stat + p{font-size:19px}
+.prova__txt p{max-width:var(--leitura)}
+.nota{border-left:3px solid var(--red);padding-left:18px;margin-top:26px;color:var(--muted);font-size:15px}
+
+/* FAQ */
+/* A2/B1: o FAQ tinha padding-top:0 -- o vao caia para 111px contra uma mediana
+   de 192px, a secao ficava colada em cima e solta embaixo (3px x 98px), e a
+   margem do primeiro filho colapsava para fora, desenhando uma faixa escura de
+   16px entre dois blocos claros. Sem o override, ele usa o padding padrao e o
+   vao volta para a mediana -- sem caso especial para manter calibrado. */
+.faq{max-width:none}   /* largura cheia: ver F7 no auditoria.md */
+.faq details{border-bottom:1px solid rgba(20,20,22,.14);padding:4px 0}
+.faq summary{
+  list-style:none;cursor:pointer;padding:20px 40px 20px 0;position:relative;
+  font-family:var(--display);font-size:clamp(19px,2.3vw,24px);text-transform:uppercase;line-height:1.1;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{
+  content:"";position:absolute;right:6px;top:50%;width:12px;height:12px;
+  border-right:2px solid var(--red);border-bottom:2px solid var(--red);
+  transform:translateY(-70%) rotate(45deg);transition:transform .2s ease;
+}
+.faq details[open] summary::after{transform:translateY(-30%) rotate(225deg)}
+.faq summary:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+.faq .a{padding:0 0 22px;color:var(--paper-muted);max-width:66ch}
+
+/* CTA final */
+.final{background:var(--surface);border-top:1px solid var(--line)}
+.final__in{display:grid;gap:36px}
+@media(min-width:900px){.final__in{grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}}
+.final h2 span{color:var(--red)}
+.endereco{background:var(--ink);border:1px solid var(--line);border-radius:var(--r);padding:26px}
+.endereco dl{margin:0;display:grid;gap:16px}
+.endereco dt{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.endereco dd{margin:4px 0 0;font-size:17px}
+.endereco a{color:var(--text);text-decoration:none;border-bottom:1px solid var(--red)}
+
+/* Footer */
+footer{border-top:1px solid var(--line);padding-block:34px;font-size:13.5px;color:var(--muted)}
+footer p{max-width:var(--leitura)}
+.foot__in{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;align-items:center}
+footer a{color:var(--muted)}
+
+/* CTA fixo no mobile (thumb-zone) */
+.sticky-cta{
+  position:fixed;left:0;right:0;bottom:0;z-index:60;padding:10px 14px calc(10px + env(safe-area-inset-bottom));
+  background:rgba(11,11,12,.94);backdrop-filter:blur(8px);border-top:1px solid var(--line);
+  transform:translateY(120%);transition:transform .3s ease;
+}
+.sticky-cta.on{transform:none}
+.sticky-cta .btn{width:100%;justify-content:center}
+@media(min-width:840px){.sticky-cta{display:none}}
+@media(max-width:839px){body{padding-bottom:76px}}
+
+/* Reveal (T1) -- progressive enhancement.
+   O estado escondido so' e' aplicado se o JS marcou <html class="js">.
+   Sem JS (ou com JS quebrado), o conteudo nasce visivel: nenhuma dobra
+   depende de animacao para existir. */
+.js .rv{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease}
+.js .rv.in{opacity:1;transform:none}
+
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .js .rv{opacity:1;transform:none;transition:none}
+  .btn,.faq summary::after,.sticky-cta{transition:none}
+  .sticky-cta{transform:none}
+}
+
+
+/* A9 -- alvo de toque minimo em telas de dedo (44px). Vale para o telefone do
+   header, que abaixo de 520px e' a acao principal, e para os links do cartao
+   de endereco. Padding vertical, nao altura fixa, para nao mexer no ritmo. */
+@media (max-width:840px), (pointer:coarse){
+  .hdr__tel{display:inline-flex;align-items:center;min-height:44px;padding:0 4px}
+  .logo{min-height:44px;align-items:center}
+  .endereco a{display:inline-block;padding:11px 0;margin:-11px 0}
+  .card__cta a{display:inline-block;padding:11px 0;margin:-11px 0}
+  footer a{display:inline-block;padding:11px 0;margin:-11px 0}
+}
+
+
+/* Os 3 passos do pedido (v5). Fundo de funil pergunta o PROCESSO -- e e' aqui
+   que a ausencia de preco se resolve: a pagina diz ONDE o valor aparece, em vez
+   de so' omitir. Numeracao real porque a ordem e' verdadeira (2.15). */
+.passos{list-style:none;margin:0 0 34px;padding:0;display:grid;gap:12px;counter-reset:p}
+@media(min-width:840px){.passos{grid-template-columns:repeat(3,1fr);gap:20px}}
+.passos li{display:flex;gap:12px;align-items:flex-start;font-size:15.5px;line-height:1.45;color:var(--muted)}
+.passos span{flex:none;width:26px;height:26px;border-radius:50%;background:var(--red);color:#fff;
+  font-family:var(--display);font-size:15px;font-weight:800;display:flex;align-items:center;
+  justify-content:center;margin-top:1px}
+
+
+/* Autoridade de permanencia (31/08). O numero grande passou a ser o tempo de
+   casa; "anos" vai num tamanho menor porque a unidade nao disputa com a
+   cifra -- com os dois no mesmo corpo o bloco vira uma palavra comprida e
+   perde o impacto de numero. */
+.stat__n{font-size:1em;letter-spacing:-.02em}
+.stat__u{font-size:.42em;letter-spacing:.01em;color:var(--muted);text-transform:uppercase}
+.prova__h{font-size:clamp(21px,2.4vw,27px);line-height:1.18;margin:0 0 26px;max-width:var(--leitura);color:#EDEDF2}
+
+/* Linha do tempo. Trilho continuo com marcador por marco: a ordem AQUI e'
+   verdadeira (2.15), entao a estrutura numera de fato, mesmo sem exibir
+   numero -- o que ordena e' o trilho. */
+.linha{list-style:none;margin:0;padding:0 0 0 26px;position:relative}
+.linha::before{content:"";position:absolute;left:5px;top:7px;bottom:9px;width:1px;background:var(--line)}
+.linha li{position:relative;padding:0 0 18px;font-size:16px;line-height:1.5;color:var(--muted);max-width:var(--leitura)}
+.linha li:last-child{padding-bottom:0}
+.linha li::before{content:"";position:absolute;left:-26px;top:7px;width:11px;height:11px;border-radius:50%;
+  background:var(--bg);border:2px solid var(--red)}
+.linha li:last-child::before{background:var(--red)}
+.linha strong{display:block;font-family:var(--display);font-size:14px;letter-spacing:.06em;
+  text-transform:uppercase;color:#EDEDF2;margin-bottom:3px}
+
+
+/* Celular: legendas sobem. 12px e 13,5px passam num monitor a 60cm e viram
+   letra miuda num telefone na mao (Gabriel, 31/08). O desktop nao muda. */
+@media(max-width:640px){
+  .eyebrow{font-size:13px;letter-spacing:.14em}
+  .hero__trust{font-size:15px}
+  .btn-note{font-size:15px}
+}
