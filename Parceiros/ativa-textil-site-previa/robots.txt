@@ -1,0 +1,3 @@
+# Previa para aprovacao do cliente: nao indexar este endereco.
+User-agent: *
+Disallow: /
