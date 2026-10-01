@@ -1,0 +1,28 @@
+
+@font-face{font-family:'Sora';font-weight:600 800;font-display:swap;src:url(fontes/sora.woff2) format('woff2')}
+@font-face{font-family:'Nunito Sans';font-weight:400 800;font-display:swap;src:url(fontes/nunitosans.woff2) format('woff2')}
+
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:#0E0F11;overflow:hidden}
+#vista{position:fixed;inset:0;overflow:hidden}
+#palco{position:absolute;left:50%;top:50%;width:1920px;height:1080px;transform-origin:0 0}
+#palco>section{position:absolute;inset:0;width:1920px;height:1080px;overflow:hidden}
+#palco>section:not(.ativo){display:none !important}
+section h1,section h2,section h3,section p,section ul,section table{margin:0}
+section ul{padding-left:1.1em}
+section li{margin:0 0 6px 0}
+section img{display:block}
+section table{border-collapse:collapse;width:100%}
+section th,section td{border-bottom:1px solid #34373E;padding:20px;vertical-align:top}
+section aside{display:none}
+#barra{position:fixed;left:0;right:0;bottom:0;display:flex;gap:12px;align-items:center;justify-content:center;flex-wrap:wrap;padding:10px;font:600 14px 'Nunito Sans',Arial,sans-serif;color:#C9C6BE}
+#barra button,#barra a{min-height:44px;display:inline-flex;align-items:center;background:#212328;color:#F8F7F4;border:1px solid #34373E;border-radius:8px;padding:10px 18px;font:inherit;cursor:pointer;text-decoration:none}
+#barra button:focus-visible,#barra a:focus-visible{outline:2px solid #F28C27;outline-offset:2px}
+
+#selo{position:fixed;left:0;right:0;top:0;margin:0;display:block;padding:4px 16px;background:rgba(14,15,17,.88);font:600 14px/1.4 'Nunito Sans',Arial,sans-serif;color:#C9C6BE;text-align:center;z-index:4}
+#selo b{color:#F28C27}
+#selo a{color:#F8F7F4;display:inline-block;line-height:44px;padding:0 8px}
+#barra{background:rgba(14,15,17,.88)}
+#barra a{background:#F28C27;color:#17191C;border-color:#F28C27}
+#gire{display:none}
+@media (orientation:portrait) and (max-width:820px){#gire{display:block;position:fixed;left:16px;right:16px;bottom:140px;padding:10px 14px;border-radius:10px;background:#212328;color:#E9E7E1;font:600 14px/1.4 'Nunito Sans',Arial,sans-serif;text-align:center}}
