@@ -1,0 +1,653 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<title>Talita Pereira · Viagem Turismo</title>
+<meta name="description" content="Talita Pereira: 26 anos no turismo. Abriu a Viagem Turismo em 2000, que hoje tem sede própria.">
+<link rel="icon" type="image/png" href="assets/monograma-vt.png">
+<style>
+/* Fontes locais (OFL), para a peça abrir igual sem internet */
+@font-face{font-family:"Cormorant Garamond";font-style:normal;font-weight:500;font-display:swap;src:url(assets/fontes/CormorantGaramond-500-latin.woff2) format("woff2")}
+@font-face{font-family:"Cormorant Garamond";font-style:normal;font-weight:600;font-display:swap;src:url(assets/fontes/CormorantGaramond-600-latin.woff2) format("woff2")}
+@font-face{font-family:"Cormorant Garamond";font-style:normal;font-weight:700;font-display:swap;src:url(assets/fontes/CormorantGaramond-700-latin.woff2) format("woff2")}
+@font-face{font-family:"Cormorant Garamond";font-style:italic;font-weight:500;font-display:swap;src:url(assets/fontes/CormorantGaramond-500i-latin.woff2) format("woff2")}
+@font-face{font-family:"Cormorant Garamond";font-style:italic;font-weight:600;font-display:swap;src:url(assets/fontes/CormorantGaramond-600i-latin.woff2) format("woff2")}
+@font-face{font-family:"Herr Von Muellerhoff";font-style:normal;font-weight:400;font-display:swap;src:url(assets/fontes/HerrVonMuellerhoff-400-latin.woff2) format("woff2")}
+@font-face{font-family:"Montserrat";font-style:normal;font-weight:400;font-display:swap;src:url(assets/fontes/Montserrat-400-latin.woff2) format("woff2")}
+@font-face{font-family:"Montserrat";font-style:normal;font-weight:500;font-display:swap;src:url(assets/fontes/Montserrat-500-latin.woff2) format("woff2")}
+@font-face{font-family:"Montserrat";font-style:normal;font-weight:600;font-display:swap;src:url(assets/fontes/Montserrat-600-latin.woff2) format("woff2")}
+
+/* Cores medidas no PDF dela (malva 198,167,177; faixa 211,190,198) e no logo (pêssego). */
+:root{
+  --malva:#C6A7B1;
+  --malva-faixa:#D3BEC6;
+  --malva-tinta:#DCC6CE;
+  --malva-texto:#8A5F70;
+  --papel:#FFFFFF;
+  --papel-2:#F7F1F2;
+  --texto:#101A3C;
+  --texto-suave:#3E4563;
+  --linha:rgba(16,26,60,.16);
+  --forte-fundo:#101A3C;
+  --forte-texto:#F6EEE8;
+  --forte-suave:#C9CDE0;
+  --forte-destaque:#E9C3A6;
+  --capa-fundo:#C6A7B1;
+  --capa-texto:#101A3C;
+  --barra-fundo:rgba(255,255,255,.94);
+  --padrao-fundo:#C6A7B1;
+  --padrao-opac:.95;
+  --logo-filtro:brightness(0);
+  --logo-opac:.78;
+  --sombra:0 24px 48px -28px rgba(16,26,60,.5);
+  --serif:"Cormorant Garamond", Garamond, "Times New Roman", serif;
+  --script:"Herr Von Muellerhoff", "Segoe Script", cursive;
+  --sans:"Montserrat", "Segoe UI", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --malva:#CDB0BA; --malva-faixa:#1A2347; --malva-tinta:#26305A; --malva-texto:#D9BCC6;
+    --papel:#0C1330; --papel-2:#121A3D; --texto:#F3EAE4; --texto-suave:#C3C7DA;
+    --linha:rgba(243,234,228,.16); --forte-fundo:#2B2140;
+    --capa-fundo:#0C1330; --capa-texto:#F3EAE4; --barra-fundo:rgba(12,19,48,.94);
+    --padrao-fundo:#2B2140; --padrao-opac:.5;
+    --logo-filtro:brightness(0) invert(1); --logo-opac:.85;
+    --sombra:0 24px 48px -28px rgba(0,0,0,.8);
+  }
+}
+:root[data-theme="dark"]{
+  --malva:#CDB0BA; --malva-faixa:#1A2347; --malva-tinta:#26305A; --malva-texto:#D9BCC6;
+  --papel:#0C1330; --papel-2:#121A3D; --texto:#F3EAE4; --texto-suave:#C3C7DA;
+  --linha:rgba(243,234,228,.16); --forte-fundo:#2B2140;
+  --capa-fundo:#0C1330; --capa-texto:#F3EAE4; --barra-fundo:rgba(12,19,48,.94);
+  --padrao-fundo:#2B2140; --padrao-opac:.5;
+  --logo-filtro:brightness(0) invert(1); --logo-opac:.85;
+  --sombra:0 24px 48px -28px rgba(0,0,0,.8);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--papel);color:var(--texto);font-family:var(--sans);font-size:clamp(15px,1.15vw + .35vh,17px);line-height:1.65;font-variant-numeric:lining-nums;overflow-x:clip}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+p{margin:0 0 .9em}
+strong{font-weight:600}
+
+/* Sete seções: orientam os tópicos, sem prender o conteúdo a uma tela */
+.secao{position:relative;padding:clamp(80px,11vw,140px) 0}
+.wrap{width:min(1080px,100% - 32px);margin-inline:auto}
+.duas{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(28px,6vw,88px);align-items:center}
+
+/* Títulos no desenho do PDF: versalete serifada + palavra manuscrita */
+.titulo{margin:0 0 clamp(18px,3vh,36px);line-height:1}
+.titulo .caps{display:block;font-family:var(--serif);font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:clamp(17px,min(2.3vw,3.2vh),30px);color:var(--malva-texto)}
+.titulo .mao{display:block;font-family:var(--script);font-weight:400;font-size:clamp(56px,min(8.6vw,12vh),116px);line-height:.95;margin-top:-.06em;padding-left:.3em;color:var(--texto)}
+.rotulo{font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--malva-texto);margin:0 0 14px}
+.texto{color:var(--texto-suave);max-width:34em}
+.texto strong{color:var(--texto)}
+
+/* Logos de terceiros: na cor do texto, discretos, como selo de história */
+.logo-terceiro{filter:var(--logo-filtro);opacity:var(--logo-opac)}
+
+/* Padrão do monograma VT (o mesmo das faixas do PDF), que corre com a rolagem */
+.padrao{background-color:var(--padrao-fundo);background-image:url(assets/monograma-vt.png);background-size:86px auto;background-repeat:repeat;background-position:0 var(--corre,0px)}
+.faixa-h{position:relative;height:clamp(64px,9vw,110px);background-position:var(--corre,0px) 0}
+.padrao::after{content:"";position:absolute;inset:0;background:var(--padrao-fundo);opacity:calc(1 - var(--padrao-opac))}
+
+/* 1 · capa */
+.capa{background:var(--capa-fundo);color:var(--capa-texto);min-height:100vh;min-height:100svh;display:flex;align-items:center;padding:clamp(24px,4vh,48px) 0;overflow:hidden}
+.capa .duas{grid-template-columns:1.25fr .85fr}
+.logo{width:clamp(96px,9vw,132px);height:auto;margin-bottom:clamp(16px,5vh,52px)}
+.capa .rotulo{color:var(--capa-texto);opacity:.8}
+.nome{position:relative;margin:0 0 clamp(16px,3vh,30px)}
+.nome-impresso{display:block;font-family:var(--serif);font-weight:700;text-transform:uppercase;letter-spacing:.02em;line-height:.86;font-size:clamp(60px,min(10.5vw,15vh),150px);color:var(--malva-tinta);user-select:none;transform:translateX(var(--nome-x,0px))}
+.nome h1{position:absolute;left:4%;top:50%;transform:translateY(-38%) rotate(-4deg);margin:0;font-family:var(--script);font-weight:400;line-height:1;font-size:clamp(72px,min(11vw,16vh),160px);color:var(--capa-texto);white-space:nowrap}
+.assinatura{display:inline-block;padding:0 .2em .1em}
+.js .assinatura{clip-path:inset(-20% 100% -20% 0);animation:escrever 2.2s cubic-bezier(.55,.1,.3,1) .5s forwards}
+@keyframes escrever{to{clip-path:inset(-20% -5% -20% 0)}}
+.lead{font-family:var(--serif);font-weight:500;font-size:clamp(22px,min(2.5vw,3.8vh),34px);line-height:1.3;max-width:19em;margin:0}
+.lead strong{font-weight:700}
+.retrato{position:relative;margin:0;transform:translateY(var(--retrato-y,0px))}
+.retrato img{width:100%;height:min(76vh,700px);object-fit:cover;object-position:50% 18%;box-shadow:var(--sombra)}
+.retrato::after{content:"";position:absolute;inset:12px;border:1px solid rgba(255,255,255,.55);pointer-events:none}
+.seguir{display:inline-flex;align-items:center;gap:14px;min-height:44px;margin-top:clamp(12px,3vh,32px);font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;opacity:.85}
+.seguir::after{content:"";width:56px;height:1px;background:currentColor}
+
+/* 2 · aos 18 */
+.manual{margin:clamp(18px,3vh,30px) 0;padding:clamp(16px,2.4vh,24px) 0 4px;border-top:1px solid var(--linha);border-bottom:1px solid var(--linha)}
+.cias{display:flex;flex-wrap:wrap;align-items:center;gap:18px 32px;margin:0 0 16px;padding:0;list-style:none}
+.cias img{height:26px;width:auto}
+.cias li:first-child img{height:52px}
+.cias li:nth-child(2) img{height:20px}
+.manual p{font-size:.92em}
+
+/* 3 · 2000 */
+.fundacao{background:var(--papel-2);padding-left:0;overflow:hidden}
+.fundacao .faixa-vt{position:absolute;right:0;top:0;bottom:0;width:clamp(56px,11vw,170px)}
+.ano-grande{font-family:var(--serif);font-weight:600;font-size:clamp(88px,min(14vw,22vh),200px);line-height:.8;letter-spacing:-.02em;color:var(--malva-texto);margin:0 0 .22em}
+.titulo-nasce .mao{padding-left:1.45em;margin-top:.14em}
+.logo-grande{width:min(300px,70%);margin-top:clamp(18px,3vh,30px);opacity:.95}
+
+/* 4 · o primeiro grande desafio */
+.desafio{background:var(--forte-fundo);color:var(--forte-texto)}
+.desafio .rotulo{color:var(--forte-destaque)}
+.desafio .contexto{max-width:42em;color:var(--forte-suave)}
+.quem-escolheu{display:flex;align-items:center;gap:14px;margin:6px 0 0;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--forte-suave)}
+.quem-escolheu img{height:40px;width:auto;filter:brightness(0) invert(1);opacity:.85}
+.fala{margin:clamp(40px,7vh,80px) 0}
+.fala blockquote{margin:0;max-width:16em;font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(32px,min(5vw,7.4vh),66px);line-height:1.12;color:var(--forte-texto)}
+.fala blockquote::before{content:"“";display:block;font-style:normal;font-size:1.4em;line-height:.6;color:var(--forte-destaque);margin-bottom:.1em}
+.js .fala .p{opacity:var(--acende,1);transition:opacity .25s linear}
+.fala figcaption{margin-top:14px;font-family:var(--script);font-size:clamp(36px,min(3.8vw,6vh),52px);line-height:1;color:var(--forte-destaque)}
+.numeros{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr) minmax(0,1fr);border-top:1px solid rgba(243,234,228,.22);margin-bottom:clamp(14px,3vh,32px)}
+.numeros div{padding:clamp(12px,2.2vh,22px) 16px 0 0}
+.numeros div+div{padding-left:16px;border-left:1px solid rgba(243,234,228,.22)}
+.numeros b{display:block;font-family:var(--serif);font-weight:600;font-size:clamp(24px,min(3.4vw,5.2vh),48px);line-height:1.05;color:var(--forte-texto);margin-bottom:6px}
+.numeros span{display:block;font-size:13px;line-height:1.45;color:var(--forte-suave)}
+.desafio .fim{color:var(--forte-suave);max-width:40em;margin:0}
+.desafio .fim strong{color:var(--forte-texto)}
+
+/* 5 · empresas */
+.abad{height:34px;width:auto;margin:4px 0 18px}
+.servicos{list-style:none;margin:clamp(12px,2.4vh,26px) 0 0;padding:0;border-top:1px solid var(--linha)}
+.servicos li{padding:clamp(8px,1.5vh,14px) 0;border-bottom:1px solid var(--linha);font-family:var(--serif);font-weight:600;font-size:clamp(19px,min(2.1vw,3.2vh),27px);line-height:1.2;color:var(--texto)}
+.assina-baixo{margin:clamp(12px,2.4vh,24px) 0 0;font-family:var(--serif);font-style:italic;font-size:clamp(18px,2vw,22px);color:var(--texto)}
+
+/* 6 · o mundo */
+.mundo{background:var(--papel-2);padding-bottom:0}
+.regioes{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 24px}
+.regioes li{padding:clamp(8px,1.4vh,14px) 0;border-top:1px solid var(--linha)}
+.regioes .larga{grid-column:1 / -1}
+.regioes b{display:block;font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--malva-texto);margin-bottom:2px}
+.regioes span{font-family:var(--serif);font-weight:600;font-size:clamp(17px,min(1.8vw,2.7vh),22px);line-height:1.25;color:var(--texto)}
+.citacao{margin:clamp(16px,3.4vh,36px) 0 0}
+.citacao p{font-family:var(--script);font-size:clamp(34px,min(3.8vw,6.2vh),58px);line-height:1.05;color:var(--texto);margin:0}
+.citacao span{display:block;margin-top:10px;font-family:var(--serif);font-weight:700;font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:var(--malva-texto)}
+
+/* A viagem: a seção fica presa e as fotos passam para o lado com a rolagem */
+.viagem{position:relative;margin-top:clamp(48px,8vw,100px)}
+.palco{position:sticky;top:0;height:100vh;height:100svh;display:flex;flex-direction:column;justify-content:center;overflow:hidden}
+.palco-topo{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-bottom:clamp(14px,3vh,28px)}
+.palco-topo .rotulo{margin:0}
+.nota{font-size:12px;color:var(--texto-suave);margin:0;display:flex;align-items:center;gap:8px}
+.nota i{display:inline-block;width:26px;height:16px;background:url(assets/monograma-vt.png) center/contain no-repeat;filter:var(--logo-filtro)}
+.trilha{display:flex;gap:clamp(14px,2vw,28px);padding-left:max(16px,calc((100vw - min(1080px,100vw - 32px)) / 2));padding-right:16px;transform:translateX(var(--anda,0px));will-change:transform}
+.cartao{flex:0 0 auto;width:clamp(220px,min(30vw,54vh),430px);margin:0}
+.cartao .foto{position:relative;overflow:hidden;box-shadow:var(--sombra)}
+.cartao img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.cartao .selo{position:absolute;left:12px;top:12px;width:64px;height:40px;background:url(assets/monograma-vt.png) center/contain no-repeat;filter:drop-shadow(0 1px 6px rgba(0,0,0,.55))}
+.cartao figcaption{margin-top:12px}
+.cartao b{display:block;font-family:var(--serif);font-weight:600;font-size:clamp(20px,2vw,26px);line-height:1.1;color:var(--texto)}
+.cartao small{display:block;margin-top:4px;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--malva-texto)}
+
+/* 7 · sede e contato */
+.final{background:var(--capa-fundo);color:var(--capa-texto)}
+.final .rotulo{color:var(--capa-texto);opacity:.85}
+.grande{font-family:var(--serif);font-weight:700;font-size:clamp(52px,min(8.5vw,13vh),118px);line-height:.92;text-transform:uppercase;margin:0 0 clamp(14px,3vh,26px)}
+.final .texto{color:var(--capa-texto)}
+.endereco{margin:clamp(12px,2.6vh,24px) 0 0;padding-top:clamp(12px,2vh,18px);border-top:1px solid currentColor;font-size:14px}
+.endereco b{display:block;font-family:var(--serif);font-weight:700;font-size:clamp(20px,2vw,24px)}
+.contato{text-align:center}
+.foto-mar{width:min(260px,62%);margin:0 auto clamp(18px,3vh,28px);border-radius:999px 999px 0 0;overflow:hidden;box-shadow:var(--sombra)}
+.foto-mar img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 30%}
+.contato .mao{font-family:var(--script);font-size:clamp(64px,min(9vw,14vh),124px);line-height:.9;margin:0 0 clamp(14px,3vh,28px)}
+.botoes{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+.botao{display:inline-flex;align-items:center;gap:10px;min-height:50px;padding:0 24px;border:1px solid currentColor;border-radius:999px;font-size:14px;font-weight:600;letter-spacing:.05em;text-decoration:none;transition:background .25s,color .25s}
+.botao.cheio,.botao:hover{background:var(--capa-texto);color:var(--capa-fundo);border-color:var(--capa-texto)}
+.botao svg{width:18px;height:18px}
+.marca{margin:clamp(20px,5vh,48px) auto 0;width:120px}
+.botao:focus-visible,.seguir:focus-visible{outline:2px solid currentColor;outline-offset:4px}
+.creditos{margin-top:clamp(48px,8vh,80px);font-size:11px;line-height:1.6;opacity:.85}
+.creditos summary{cursor:pointer;letter-spacing:.12em;text-transform:uppercase;font-weight:600;min-height:44px;display:inline-flex;align-items:center}
+.creditos ul{margin:8px 0 0;padding-left:18px}
+
+/* Trilho de anos (computador) e barra (celular) */
+.trilho-anos{position:fixed;left:clamp(14px,2vw,30px);top:50%;transform:translateY(-50%);z-index:20;display:none;pointer-events:none}
+.trilho-anos ol{list-style:none;margin:0;padding:0 0 0 18px;position:relative}
+.trilho-anos ol::before,.trilho-anos .cheio{content:"";position:absolute;left:3px;top:6px;width:1px;bottom:6px;background:var(--linha)}
+.trilho-anos .cheio{background:var(--texto);bottom:auto;height:0;transition:height .35s ease}
+.trilho-anos li{position:relative;font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--texto);opacity:.35;padding:8px 0;transition:opacity .4s}
+.trilho-anos li::before{content:"";position:absolute;left:-18px;top:50%;width:7px;height:7px;margin-top:-3.5px;border-radius:50%;background:var(--papel);border:1px solid var(--texto)}
+.trilho-anos li.ativo{opacity:1}
+.trilho-anos li.ativo::before{background:var(--texto)}
+.trilho-anos li.passou{opacity:.6}
+.trilho-anos{transition:opacity .3s}
+.trilho-anos.visivel{display:block}
+.trilho-anos.sobre-escuro{--texto:#F3EAE4;--linha:rgba(243,234,228,.25);--papel:#101A3C}
+.trilho-anos.sobre-capa{--texto:var(--capa-texto);--papel:var(--capa-fundo)}
+.trilho-anos.some{opacity:0}
+.barra{position:fixed;inset:0 0 auto 0;height:44px;z-index:20;display:none;align-items:center;justify-content:space-between;padding:0 16px;background:var(--barra-fundo);border-bottom:1px solid var(--linha);font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase}
+.barra .ano{color:var(--texto)}
+.barra .num{color:var(--malva-texto)}
+.barra i{position:absolute;left:0;bottom:-1px;height:2px;width:0;background:var(--texto);transition:width .35s ease}
+.barra.visivel{display:flex}
+@media (min-width:1180px){.barra{display:none!important}.wrap{width:min(1060px,100% - 320px)}}
+@media (max-width:1179px){.trilho-anos{display:none!important}}
+
+/* Entradas */
+.js .surge{opacity:0;transform:translateY(16px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+.js .surge.dentro{opacity:1;transform:none}
+
+@media (max-width:900px){
+  .duas,.capa .duas{grid-template-columns:1fr;gap:clamp(14px,2.6vh,28px)}
+  .capa{align-items:start}
+  .capa.secao{padding-top:16px}
+  .retrato{order:-1}
+  .retrato img{height:36svh;min-height:220px;object-position:50% 16%}
+  .logo{margin-bottom:10px}
+  .titulo .mao{padding-left:.12em}
+  .titulo-nasce .mao{padding-left:1.45em}
+  .fundacao .faixa-vt{position:relative;display:block;width:auto;height:72px;margin:-80px 0 56px}
+  .fundacao{padding-left:0}
+  .numeros div,.numeros div+div{padding-left:0;padding-right:8px}
+  .numeros div+div{padding-left:10px}
+  .numeros span{font-size:12px}
+  .regioes{grid-template-columns:1fr}
+  .regioes li{display:flex;gap:12px;align-items:baseline;padding:6px 0}
+  .regioes b{flex:0 0 92px;margin:0;font-size:10px;letter-spacing:.12em}
+  .regioes span{font-size:16px}
+  .palco-topo{flex-direction:column;align-items:flex-start;gap:6px}
+  .cartao{width:min(64vw,300px)}
+  .contato{text-align:left;padding-top:clamp(14px,3vh,24px);border-top:1px solid currentColor}
+  .foto-mar{margin-left:0;width:min(200px,55%)}
+  .botoes{justify-content:flex-start}
+  .marca{margin-left:0}
+}
+@media (min-width:901px){.fundacao .wrap{padding-right:clamp(56px,11vw,170px)}}
+@media (max-width:420px){.nome h1{left:0}}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js .assinatura{animation:none;clip-path:none}
+  .js .surge{opacity:1;transform:none;transition:none}
+  .retrato,.nome-impresso{transform:none}
+  .viagem{height:auto!important}
+  .palco{position:static;height:auto;padding:24px 0}
+  .trilha{transform:none;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:12px}
+  .cartao{scroll-snap-align:start}
+  .js .fala .p{opacity:1}
+}
+
+/* Celular: imagem abrindo cada seção, texto enxuto, tudo no eixo central e mais respiro */
+.so-cel{display:none}
+.regioes-curta{font-family:var(--serif);font-weight:600;font-size:19px;line-height:1.75;color:var(--texto);max-width:21em;margin:30px auto 0}
+.creditos{font-size:11px;line-height:1.6;opacity:.85;margin-top:28px}
+.creditos summary{cursor:pointer;letter-spacing:.12em;text-transform:uppercase;font-weight:600;min-height:44px;display:inline-flex;align-items:center}
+.creditos ul{margin:8px 0 0;padding-left:18px;text-align:left}
+@media (max-width:900px){
+  .so-pc{display:none!important}
+  .so-cel{display:block}
+  .secao{padding:120px 0 112px}
+  .capa.secao{padding:16px 0 56px}
+  .wrap{text-align:center}
+  .duas,.capa .duas{gap:40px}
+  .titulo{margin-bottom:30px}
+  .titulo .caps{font-size:15px;letter-spacing:.08em}
+  .titulo .mao,.titulo-nasce .mao{padding-left:0;margin-top:.06em}
+  .rotulo{margin-bottom:20px}
+  .texto{max-width:24em;margin-inline:auto}
+  p.so-cel{line-height:1.75;margin:0 auto 1.2em;max-width:24em}
+  p.nota-cel{font-size:.9em;opacity:.85;margin-top:1.8em}
+  .abre{margin:0 auto 44px}
+  .abre-foto{margin:0 -16px 44px}
+  .abre-foto img{width:100%;aspect-ratio:4/3;object-fit:cover}
+  .abre-cias{display:flex;flex-direction:column;align-items:center;gap:26px;padding:34px 0;border-top:1px solid var(--linha);border-bottom:1px solid var(--linha)}
+  .abre-cias img:nth-child(1){height:72px;width:auto}
+  .abre-cias img:nth-child(2){height:24px;width:auto}
+  .abre-cias img:nth-child(3){height:34px;width:auto}
+  .abre-vt{position:relative;height:190px;margin:0 -16px 44px;display:flex;align-items:center;justify-content:center}
+  .abre-vt img{position:relative;z-index:1;width:200px;padding:20px 24px;background:#101A3C;box-shadow:0 18px 36px -20px rgba(0,0,0,.6)}
+  .fundacao .faixa-vt{display:none}
+  .fundacao .wrap{padding:0}
+  .ano-grande{margin-inline:auto}
+  .quem-escolheu{display:flex;justify-content:center;margin-top:10px}
+  .fala{margin:48px 0}
+  .fala blockquote{max-width:none;font-size:30px;line-height:1.18}
+  .numeros{grid-template-columns:1fr;gap:26px;border-top:0;margin-bottom:40px}
+  .numeros div,.numeros div+div{border:0;padding:0}
+  .numeros b{font-size:46px}
+  .numeros span{font-size:13px}
+  .desafio .fim{margin:0 auto;max-width:24em}
+  .abad{margin:10px auto 26px}
+  .servicos li{padding:14px 0}
+  .assina-baixo{margin-top:26px}
+  .citacao{margin-top:36px}
+  .logo{margin:0 auto 14px}
+  .nome-impresso{text-align:center}
+  .nome h1{left:50%;transform:translate(-50%,-38%) rotate(-4deg)}
+  .lead{margin:0 auto}
+  .grande{margin-bottom:24px}
+  .endereco{max-width:20em;margin-inline:auto}
+  .contato{text-align:center;padding-top:40px}
+  .foto-mar,.marca{margin-left:auto;margin-right:auto}
+  .botoes{justify-content:center;flex-direction:column;align-items:center}
+  .palco-topo{align-items:center;text-align:center}
+  .cartao{width:min(80vw,340px)}
+}
+</style>
+</head>
+<body>
+
+<nav class="trilho-anos" aria-hidden="true">
+  <span class="cheio"></span>
+  <ol>
+    <li>aos 18</li>
+    <li>2000</li>
+    <li>1º grupo</li>
+    <li>empresas</li>
+    <li>o mundo</li>
+    <li>hoje</li>
+  </ol>
+</nav>
+<div class="barra" aria-hidden="true"><span class="ano">aos 18</span><span class="num">2 / 7</span><i></i></div>
+
+<main>
+
+<header class="secao capa" id="s1">
+  <div class="wrap duas">
+    <div>
+      <img class="logo" src="assets/logo-viagem-turismo.png" alt="Viagem Turismo" width="354" height="142">
+      <p class="rotulo">Turismo corporativo e personalizado</p>
+      <div class="nome">
+        <span class="nome-impresso" aria-hidden="true">Talita<br>Pereira</span>
+        <h1><span class="assinatura">Talita Pereira</span></h1>
+      </div>
+      <p class="lead">São <strong>26 anos no turismo</strong>. Em 2000, abri a Viagem Turismo, que hoje tem <strong>sede própria</strong>.</p>
+      <a class="seguir" href="#s2">Conheça a história</a>
+    </div>
+    <figure class="retrato">
+      <img src="assets/talita-retrato.jpg" alt="Retrato de Talita Pereira" width="853" height="1280">
+    </figure>
+  </div>
+</header>
+
+<section class="secao" id="s2">
+  <div class="wrap duas">
+    <div class="abre abre-cias so-cel surge" aria-hidden="true"><img class="logo-terceiro" src="assets/logos/varig.svg" alt="" width="120" height="44"><img class="logo-terceiro" src="assets/logos/transbrasil.svg" alt="" width="280" height="30"><img class="logo-terceiro" src="assets/logos/vasp.svg" alt="" width="128" height="30"></div>
+    <h2 class="titulo surge"><span class="caps">Uma história que começou</span><span class="mao">aos 18 anos</span></h2>
+    <div class="texto">
+      <p class="surge so-cel">Aos 18 anos, terminei um curso de emissão de passagens <strong>entre as três melhores da turma</strong>.</p>
+      <p class="surge so-cel">Ganhei um estágio numa agência de viagens. Foi amor à primeira vista.</p>
+      <p class="surge so-cel nota-cel">Sem internet, cada passagem era emitida por telefone e preenchida à mão.</p>
+      <p class="surge so-pc">Aos 18 anos, fiz um curso de emissão de passagens e me encantei pelo universo das agências de viagens. Terminei <strong>entre as três melhores alunas da turma</strong> e ganhei um estágio numa agência. Foi amor à primeira vista.</p>
+      <div class="manual surge so-pc">
+        <ul class="cias" aria-label="Companhias aéreas da época">
+          <li><img class="logo-terceiro" src="assets/logos/varig.svg" alt="Varig" width="120" height="44"></li>
+          <li><img class="logo-terceiro" src="assets/logos/transbrasil.svg" alt="Transbrasil" width="280" height="30"></li>
+          <li><img class="logo-terceiro" src="assets/logos/vasp.svg" alt="VASP" width="128" height="30"></li>
+        </ul>
+        <p>Não havia internet nem bilhete eletrônico. Cada passagem era emitida por telefone, direto com a companhia aérea, e preenchida à mão.</p>
+      </div>
+      <p class="surge so-pc">Depois de dois anos ali, nasceu o desejo de ter <strong>a minha própria empresa</strong>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="secao fundacao" id="s3">
+  <div class="faixa-vt padrao" aria-hidden="true"></div>
+  <div class="wrap duas">
+    <div class="abre abre-vt padrao so-cel surge" aria-hidden="true"><img src="assets/logo-viagem-turismo.png" alt="" width="354" height="142"></div>
+    <div>
+      <p class="ano-grande surge" aria-hidden="true">2000</p>
+      <h2 class="titulo titulo-nasce surge"><span class="caps">Nasce a</span><span class="mao">Viagem Turismo</span></h2>
+    </div>
+    <div class="texto">
+      <p class="surge so-cel">Dois anos depois, mesmo muito jovem, decidi ter a minha própria empresa.</p>
+      <p class="surge so-cel"><strong>Em 2000, abri a Viagem Turismo</strong>, ao lado dos meus irmãos e com o apoio da minha família.</p>
+      <p class="surge so-pc">Eu era muito jovem e tinha os medos de qualquer pessoa da minha idade. Decidi seguir em frente mesmo assim.</p>
+      <p class="surge so-pc"><strong>Em 2000, abri a Viagem Turismo</strong>, ao lado dos meus irmãos, num mercado que exigia conhecimento, relacionamento e credibilidade. Tive o apoio da minha família, especialmente do meu pai e da minha tia.</p>
+    </div>
+  </div>
+</section>
+
+<section class="secao desafio" id="s4" data-escuro>
+  <div class="wrap">
+    <figure class="abre abre-foto so-cel surge"><img src="assets/abre/rio.jpg" alt="Cristo Redentor e Pão de Açúcar, no Rio de Janeiro" width="1100" height="825" loading="lazy"></figure>
+    <p class="rotulo surge">2000 · o primeiro grande grupo</p>
+    <p class="contexto surge so-cel">A Associação Goiana de Supermercados escolheu a minha agência, entre várias, para levar cerca de 100 empresários a uma feira no Rio de Janeiro.</p>
+    <p class="contexto surge so-pc">Cerca de 100 empresários do setor supermercadista de Goiás iam a uma grande feira do segmento no Rio de Janeiro. A Associação Goiana de Supermercados selecionou várias agências para cuidar da viagem, e escolheu a minha.</p>
+    <p class="quem-escolheu surge"><img src="assets/logos/agos.png" alt="AGOS, Associação Goiana de Supermercados" width="350" height="125"></p>
+    <figure class="fala">
+      <blockquote>Assim que abri, surgiu meu primeiro grande desafio: acompanhar esses empresários nessa viagem.</blockquote>
+      <figcaption>Talita Pereira</figcaption>
+    </figure>
+    <div class="numeros surge">
+      <div><b>cerca de 100</b><span>empresários de Goiás</span></div>
+      <div><b>Rio de Janeiro</b><span>onde aconteceu a feira</span></div>
+      <div><b>2000</b><span>o primeiro grande grupo</span></div>
+    </div>
+    <p class="fim surge">Acompanhei o grupo durante toda a viagem e cuidei de toda a operação. <strong>O resultado foi um grande sucesso.</strong></p>
+  </div>
+</section>
+
+<section class="secao" id="s5">
+  <div class="wrap duas">
+    <figure class="abre abre-foto so-cel surge"><img src="assets/abre/evento.jpg" alt="Salão montado para um evento corporativo" width="1100" height="825" loading="lazy"></figure>
+    <h2 class="titulo surge"><span class="caps">Referência em grupos, eventos&nbsp;e</span><span class="mao">experiências corporativas</span></h2>
+    <div class="texto">
+      <p class="surge so-cel">Depois vieram grandes empresas e associações, como a <strong>ABAD</strong>, que atendi por muitos anos.</p>
+      <p class="surge so-pc">Depois desse grupo, vieram grandes empresas e associações, como a <strong>ABAD</strong>, que atendi por muitos anos nas feiras e eventos do setor atacadista.</p>
+      <img class="abad logo-terceiro surge" src="assets/logos/abad.png" alt="ABAD, Associação Brasileira de Atacadistas e Distribuidores" width="546" height="150">
+      <ul class="servicos surge" aria-label="Especialidades">
+        <li>Viagens de luxo</li>
+        <li>Viagens corporativas</li>
+        <li>Grupos de incentivo e viagens de premiação</li>
+        <li>Eventos e feiras</li>
+        <li>Programas de bonificação e experiências personalizadas</li>
+      </ul>
+      <p class="assina-baixo surge">Sempre perto do cliente, com atenção a cada detalhe da operação.</p>
+    </div>
+  </div>
+</section>
+
+<section class="secao mundo" id="s6">
+  <div class="wrap duas">
+    <div>
+      <h2 class="titulo surge"><span class="caps">Conhecer para</span><span class="mao">recomendar</span></h2>
+      <p class="texto surge">Em 26 anos no turismo, visitei pessoalmente destinos e resorts de perfis muito diferentes.</p>
+      <figure class="citacao surge">
+        <p>“Mais do que vender uma viagem, eu oriento a partir do que vivi.”</p>
+        <span>Talita Pereira</span>
+      </figure>
+    </div>
+    <p class="regioes-curta so-cel surge">Brasil · Argentina e Uruguai · República Dominicana e Cancún · Orlando e Miami · Grécia, Turquia, Itália, França, Suíça, Alemanha, Holanda e Espanha · Japão, China e Coreia</p>
+      <ul class="regioes surge so-pc">
+      <li><b>Brasil</b><span>Os principais destinos e resorts</span></li>
+      <li><b>América do Sul</b><span>Argentina e Uruguai</span></li>
+      <li><b>Caribe e México</b><span>República Dominicana e Cancún</span></li>
+      <li><b>Estados Unidos</b><span>Orlando e Miami</span></li>
+      <li><b>Ásia</b><span>Japão, China e Coreia</span></li>
+      <li class="larga"><b>Europa</b><span>Grécia, Turquia, Itália, França, Suíça, Alemanha, Holanda e Espanha</span></li>
+    </ul>
+  </div>
+
+  <div class="viagem" aria-label="Galeria de destinos">
+    <div class="palco">
+      <div class="wrap palco-topo">
+        <p class="rotulo">Do Brasil à Ásia</p>
+        <p class="nota"><i aria-hidden="true"></i>Com o selo: fotos das viagens da Talita.</p>
+      </div>
+      <div class="trilha">
+        <figure class="cartao"><div class="foto"><img src="assets/destinos/noronha.jpg" alt="Mar azul e falésias na Baía do Sancho, em Fernando de Noronha" width="1000" height="1250" loading="lazy"></div><figcaption><b>Brasil</b></figcaption></figure>
+        <figure class="cartao"><div class="foto"><img src="assets/destinos/buenos-aires.jpg" alt="Casas coloridas do Caminito, em Buenos Aires" width="1000" height="1250" loading="lazy"></div><figcaption><b>Argentina</b></figcaption></figure>
+        <figure class="cartao"><div class="foto"><img src="assets/destinos/cancun.jpg" alt="Praia de areia branca e mar turquesa em Cancún" width="1000" height="1250" loading="lazy"></div><figcaption><b>Cancún, México</b></figcaption></figure>
+        <figure class="cartao"><div class="foto"><img src="assets/destinos/miami.jpg" alt="Posto de salva-vidas listrado em Miami Beach" width="1000" height="1250" loading="lazy"></div><figcaption><b>Miami, Estados Unidos</b></figcaption></figure>
+        <figure class="cartao"><div class="foto"><img src="assets/destinos/santorini.jpg" alt="Casas brancas sobre o mar Egeu, na Grécia" width="1000" height="1250" loading="lazy"></div><figcaption><b>Grécia</b></figcaption></figure>
+        <figure class="cartao"><div class="foto"><img src="assets/destinos/capadocia.jpg" alt="Balões sobre os vales da Capadócia, na Turquia" width="1000" height="1250" loading="lazy"></div><figcaption><b>Turquia</b></figcaption></figure>
+        <figure class="cartao"><div class="foto"><img src="assets/destinos/dela-estrasburgo.jpg" alt="Talita e a irmã diante da Catedral de Estrasburgo" width="1000" height="1250" loading="lazy"><span class="selo" aria-hidden="true"></span></div><figcaption><b>Estrasburgo, França</b><small>Viagem da Talita</small></figcaption></figure>
+        <figure class="cartao"><div class="foto"><img src="assets/destinos/dela-rio-reno.jpg" alt="Talita e a irmã no convés de um barco no Rio Reno" width="1000" height="1250" loading="lazy"><span class="selo" aria-hidden="true"></span></div><figcaption><b>Rio Reno, Alemanha</b><small>Viagem da Talita</small></figcaption></figure>
+        <figure class="cartao"><div class="foto"><img src="assets/destinos/fuji.jpg" alt="Pagode vermelho com o Monte Fuji ao fundo, no Japão" width="1000" height="1250" loading="lazy"></div><figcaption><b>Japão</b></figcaption></figure>
+        <figure class="cartao"><div class="foto"><img src="assets/destinos/dela-xangai.jpg" alt="Talita e a irmã diante dos prédios de Xangai" width="1000" height="1250" loading="lazy"><span class="selo" aria-hidden="true"></span></div><figcaption><b>Xangai, China</b><small>Viagem da Talita</small></figcaption></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="faixa-vt faixa-h padrao" aria-hidden="true"></div>
+<footer class="secao final" id="s7">
+  <div class="wrap duas">
+    <div>
+      <p class="rotulo surge">Nosso espaço</p>
+      <h2 class="grande surge">Sede <br>própria</h2>
+      <p class="texto surge">Hoje a Viagem Turismo está na <strong>nossa sede própria</strong>.</p>
+      <p class="endereco surge"><b>Alameda das Rosas, nº 1383B</b>Setor Oeste</p>
+    </div>
+    <div class="contato">
+      <figure class="foto-mar surge"><img src="assets/talita-mar.jpg" alt="Talita Pereira sorrindo, com o mar ao fundo" width="900" height="1125" loading="lazy"></figure>
+      <p class="mao surge">Vamos viajar</p>
+      <div class="botoes surge">
+        <a class="botao cheio" href="https://wa.me/5562982284486" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.3-.4.8-1.3.1-.2 0-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.2-.2-.5-.3Z"/></svg>
+          (62) 98228-4486
+        </a>
+        <a class="botao" href="https://www.instagram.com/talitapereiraazzi/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r=".9" fill="currentColor"/></svg>
+          @talitapereiraazzi
+        </a>
+      </div>
+      <img class="marca surge" src="assets/logo-viagem-turismo.png" alt="" width="354" height="142">
+    </div>
+  </div>
+  <div class="wrap">
+    <details class="creditos">
+      <summary>Créditos das fotos de destinos</summary>
+      <ul>
+        <li>Brasil: Osaki, CC BY-SA 3.0, via Wikimedia Commons</li>
+        <li>Argentina: Diego Delso, CC BY-SA 3.0, via Wikimedia Commons</li>
+        <li>Cancún: Orange Liu, CC BY 3.0, via Wikimedia Commons</li>
+        <li>Miami: Summerbrize, CC BY-SA 4.0, via Wikimedia Commons</li>
+        <li>Grécia: Anna Tsolidou, CC BY-SA 4.0, via Wikimedia Commons</li>
+        <li>Turquia: José Luiz, CC BY-SA 3.0, via Wikimedia Commons</li>
+        <li>Japão: Supanut Arunoprayote, CC BY 4.0, via Wikimedia Commons</li>
+        <li>Rio de Janeiro: Arne Müseler, CC BY-SA 3.0 DE, via Wikimedia Commons</li>
+        <li>Evento: Paradisus Bali, CC BY-SA 4.0, via Wikimedia Commons</li>
+        <li>Logos da Varig, Transbrasil e VASP: domínio público, via Wikimedia Commons</li>
+      </ul>
+    </details>
+  </div>
+</footer>
+
+</main>
+
+<script>
+(function(){
+  var doc=document.documentElement;
+  doc.classList.add('js');
+  var reduz=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var secoes=[].slice.call(document.querySelectorAll('.secao'));
+  function lim(v){return Math.max(0,Math.min(1,v));}
+
+  // A frase dela: cada palavra vira um elemento, para acender com a rolagem
+  var bq=document.querySelector('.fala blockquote');
+  var palavras=[];
+  if(bq&&!reduz){
+    bq.innerHTML=bq.textContent.trim().split(/\s+/).map(function(w){return '<span class="p">'+w+'</span>';}).join(' ');
+    palavras=[].slice.call(bq.querySelectorAll('.p'));
+  }
+
+  // Entradas
+  var surgem=document.querySelectorAll('.surge');
+  if(!('IntersectionObserver' in window)||reduz){surgem.forEach(function(e){e.classList.add('dentro')});}
+  else{
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('dentro');io.unobserve(e.target);}})},{rootMargin:'0px 0px -6% 0px',threshold:.05});
+    surgem.forEach(function(e){io.observe(e)});
+  }
+
+  // Galeria: a altura da seção é o caminho que as fotos percorrem para o lado
+  var viagem=document.querySelector('.viagem'), trilha=document.querySelector('.trilha');
+  var percurso=0;
+  function mede(){
+    if(reduz){viagem.style.height='auto';return;}
+    percurso=Math.max(0,trilha.scrollWidth-window.innerWidth);
+    viagem.style.height=(window.innerHeight+percurso)+'px';
+  }
+
+  var trilho=document.querySelector('.trilho-anos'), barra=document.querySelector('.barra');
+  var itens=[].slice.call(trilho.querySelectorAll('li'));
+  var cheio=trilho.querySelector('.cheio');
+  var ano=barra.querySelector('.ano'), num=barra.querySelector('.num'), fio=barra.querySelector('i');
+  var retrato=document.querySelector('.retrato'), nomeImp=document.querySelector('.nome-impresso');
+  var faixas=[].slice.call(document.querySelectorAll('.faixa-vt'));
+
+  function atual(){
+    var h=window.innerHeight, a=0;
+    secoes.forEach(function(s,i){if(s.getBoundingClientRect().top<h*.5)a=i;});
+    return a;
+  }
+
+  function quadro(){
+    var h=window.innerHeight, y=window.scrollY;
+    if(!reduz){
+      // Capa: o retrato sobe mais devagar que a página e o nome impresso desliza
+      if(y<h*1.2){retrato.style.setProperty('--retrato-y',(y*.18)+'px');nomeImp.style.setProperty('--nome-x',(-y*.12)+'px');}
+      // Faixas do monograma correm com a rolagem
+      faixas.forEach(function(f){var r=f.getBoundingClientRect(); if(r.bottom>0&&r.top<h)f.style.setProperty('--corre',(-(r.top)*.35)+'px');});
+      // A frase acende palavra por palavra
+      if(palavras.length){
+        var r=bq.getBoundingClientRect();
+        var p=lim((h*.85-r.top)/(r.height+h*.4));
+        var n=p*palavras.length;
+        palavras.forEach(function(w,i){w.style.setProperty('--acende',(.22+.78*lim(n-i)).toFixed(3));});
+      }
+      // Galeria anda para o lado
+      var v=viagem.getBoundingClientRect();
+      var pv=lim(-v.top/Math.max(1,percurso));
+      trilha.style.setProperty('--anda',(-pv*percurso)+'px');
+    }
+    // Trilho de anos e barra
+    var a=atual(), k=a-1, mostra=a>0;
+    trilho.classList.toggle('visivel',mostra); barra.classList.toggle('visivel',mostra);
+    if(mostra){
+      itens.forEach(function(li,i){li.classList.toggle('ativo',i===k);li.classList.toggle('passou',i<k);});
+      cheio.style.height=(itens[k].offsetTop+itens[k].offsetHeight/2-6)+'px';
+      fio.style.width=((a+1)/secoes.length*100)+'%';
+      ano.textContent=itens[k].textContent;
+      num.textContent=(a+1)+' / '+secoes.length;
+      trilho.classList.toggle('sobre-escuro',secoes[a].hasAttribute('data-escuro'));
+      trilho.classList.toggle('sobre-capa',secoes[a].classList.contains('final'));
+      var pr=document.querySelector('.palco').getBoundingClientRect();
+      var fh=document.querySelector('.faixa-h').getBoundingClientRect();
+      trilho.classList.toggle('some',(pr.top<=1&&pr.bottom>=h-1)||(fh.top<h*.62&&fh.bottom>h*.38));
+    }
+  }
+  var pedido=false;
+  function pede(){if(!pedido){pedido=true;requestAnimationFrame(function(){pedido=false;quadro();});}}
+  window.addEventListener('scroll',pede,{passive:true});
+  window.addEventListener('resize',function(){mede();pede();});
+  window.addEventListener('load',function(){mede();quadro();});
+  mede(); quadro();
+
+  // Rolagem com inércia (mouse e trackpad): a página segue a roda com atraso e desacelera aos poucos.
+  // No toque, o celular já tem inércia própria; teclado e barra de rolagem continuam nativos.
+  if(!reduz&&window.matchMedia('(pointer:fine)').matches){
+    doc.style.scrollBehavior='auto';
+    var alvoY=window.scrollY, atualY=window.scrollY, deslizando=false;
+    function maxY(){return doc.scrollHeight-window.innerHeight;}
+    function desliza(){
+      atualY+=(alvoY-atualY)*.085;
+      if(Math.abs(alvoY-atualY)<.4){atualY=alvoY;deslizando=false;}
+      window.scrollTo(0,atualY);
+      if(deslizando)requestAnimationFrame(desliza);
+    }
+    function vaiPara(y){
+      alvoY=Math.max(0,Math.min(maxY(),y));
+      if(!deslizando){deslizando=true;atualY=window.scrollY;requestAnimationFrame(desliza);}
+    }
+    window.addEventListener('wheel',function(e){
+      if(e.ctrlKey||e.defaultPrevented)return;
+      e.preventDefault();
+      var d=e.deltaY*(e.deltaMode===1?40:e.deltaMode===2?window.innerHeight:1);
+      if(!deslizando)alvoY=window.scrollY;
+      vaiPara(alvoY+d);
+    },{passive:false});
+    window.addEventListener('scroll',function(){if(!deslizando){alvoY=atualY=window.scrollY;}},{passive:true});
+    document.querySelectorAll('a[href^="#s"]').forEach(function(a){
+      a.addEventListener('click',function(e){var t=document.querySelector(a.getAttribute('href'));if(!t)return;e.preventDefault();vaiPara(t.getBoundingClientRect().top+window.scrollY);});
+    });
+  }
+})();
+</script>
+</body>
+</html>
