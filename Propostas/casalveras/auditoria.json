@@ -1,0 +1,1385 @@
+{
+ "alvo": "C:/jarvis/vault/projects/zx-digital/clientes/previstos/lucas-veras/sites/casal-veras/index.html",
+ "achados": [
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "y 2577-2600 @320px",
+   "o_que": "faixa de 23px com a cor do fundo entre dois blocos de mesma cor",
+   "dado": {
+    "faixa": [
+     244,
+     239,
+     233
+    ],
+    "vizinhos": [
+     [
+      47,
+      116,
+      193
+     ],
+     [
+      176,
+      116,
+      74
+     ]
+    ]
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "A.marca @320px",
+   "o_que": "contraste 1.14 abaixo do minimo 3",
+   "dado": {
+    "texto": "Casal Veras",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 24
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "A. @320px",
+   "o_que": "contraste 1.14 abaixo do minimo 4.5",
+   "dado": {
+    "texto": "Foto e filme",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 11
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "A. @320px",
+   "o_que": "contraste 1.14 abaixo do minimo 4.5",
+   "dado": {
+    "texto": "Histórias",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 11
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "A. @320px",
+   "o_que": "contraste 1.14 abaixo do minimo 4.5",
+   "dado": {
+    "texto": "Quem somos",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 11
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "A. @320px",
+   "o_que": "contraste 1.14 abaixo do minimo 4.5",
+   "dado": {
+    "texto": "Agenda",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 11
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "EM. @320px",
+   "o_que": "contraste 1.14 abaixo do minimo 3",
+   "dado": {
+    "texto": "Veras",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 70
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "P.fecho @320px",
+   "o_que": "contraste 1.14 abaixo do minimo 3",
+   "dado": {
+    "texto": "Dois olhares, uma visão.",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 40
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "SPAN.eles @320px",
+   "o_que": "contraste 1.14 abaixo do minimo 4.5",
+   "dado": {
+    "texto": "Lucas e Jessica, atrás das câmeras",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 11
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "SPAN. @320px",
+   "o_que": "contraste 1.14 abaixo do minimo 4.5",
+   "dado": {
+    "texto": "Agenda 2026 e 2027 aberta",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 11
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "P.rotulo @320px",
+   "o_que": "contraste 1.50 abaixo do minimo 4.5",
+   "dado": {
+    "texto": "Pré-wedding",
+    "cor": "rgb(220, 192, 176)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 15
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "SPAN. @320px",
+   "o_que": "contraste 1.14 abaixo do minimo 3",
+   "dado": {
+    "texto": "Um",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 52
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "SPAN. @320px",
+   "o_que": "contraste 1.14 abaixo do minimo 3",
+   "dado": {
+    "texto": "ensaio",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 52
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "SPAN. @320px",
+   "o_que": "contraste 1.14 abaixo do minimo 3",
+   "dado": {
+    "texto": "que",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 52
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "SPAN. @320px",
+   "o_que": "contraste 1.14 abaixo do minimo 3",
+   "dado": {
+    "texto": "já",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 52
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "SPAN. @320px",
+   "o_que": "contraste 1.14 abaixo do minimo 3",
+   "dado": {
+    "texto": "conta",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 52
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "SPAN. @320px",
+   "o_que": "contraste 1.14 abaixo do minimo 3",
+   "dado": {
+    "texto": "a",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 52
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "SPAN. @320px",
+   "o_que": "contraste 1.14 abaixo do minimo 3",
+   "dado": {
+    "texto": "história.",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 52
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "P.surge @320px",
+   "o_que": "contraste 1.14 abaixo do minimo 4.5",
+   "dado": {
+    "texto": "Direção completa, locações estratégicas e um",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 15
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "FIGCAPTION. @320px",
+   "o_que": "contraste 1.14 abaixo do minimo 4.5",
+   "dado": {
+    "texto": "o nosso dia",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 17
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "A.marca @390px",
+   "o_que": "contraste 1.14 abaixo do minimo 3",
+   "dado": {
+    "texto": "Casal Veras",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 24
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "A. @390px",
+   "o_que": "contraste 1.14 abaixo do minimo 4.5",
+   "dado": {
+    "texto": "Foto e filme",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 11
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "A. @390px",
+   "o_que": "contraste 1.14 abaixo do minimo 4.5",
+   "dado": {
+    "texto": "Histórias",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 11
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "A. @390px",
+   "o_que": "contraste 1.14 abaixo do minimo 4.5",
+   "dado": {
+    "texto": "Quem somos",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 11
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "A. @390px",
+   "o_que": "contraste 1.14 abaixo do minimo 4.5",
+   "dado": {
+    "texto": "Agenda",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 11
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "H1. @390px",
+   "o_que": "contraste 1.14 abaixo do minimo 3",
+   "dado": {
+    "texto": "Casal",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 86
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "EM. @390px",
+   "o_que": "contraste 1.14 abaixo do minimo 3",
+   "dado": {
+    "texto": "Veras",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 86
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "P.sub @390px",
+   "o_que": "contraste 1.14 abaixo do minimo 4.5",
+   "dado": {
+    "texto": "Um casal que fotografa e filma o seu casamen",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 12
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "SPAN.eles @390px",
+   "o_que": "contraste 1.14 abaixo do minimo 4.5",
+   "dado": {
+    "texto": "Lucas e Jessica, atrás das câmeras",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 11
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "SPAN. @390px",
+   "o_que": "contraste 1.14 abaixo do minimo 4.5",
+   "dado": {
+    "texto": "Agenda 2026 e 2027 aberta",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 11
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "P.rotulo @390px",
+   "o_que": "contraste 1.50 abaixo do minimo 4.5",
+   "dado": {
+    "texto": "Pré-wedding",
+    "cor": "rgb(220, 192, 176)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 15
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "SPAN. @390px",
+   "o_que": "contraste 1.14 abaixo do minimo 3",
+   "dado": {
+    "texto": "Um",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 52
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "SPAN. @390px",
+   "o_que": "contraste 1.14 abaixo do minimo 3",
+   "dado": {
+    "texto": "ensaio",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 52
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "SPAN. @390px",
+   "o_que": "contraste 1.14 abaixo do minimo 3",
+   "dado": {
+    "texto": "que",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 52
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "SPAN. @390px",
+   "o_que": "contraste 1.14 abaixo do minimo 3",
+   "dado": {
+    "texto": "já",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 52
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "SPAN. @390px",
+   "o_que": "contraste 1.14 abaixo do minimo 3",
+   "dado": {
+    "texto": "conta",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 52
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "SPAN. @390px",
+   "o_que": "contraste 1.14 abaixo do minimo 3",
+   "dado": {
+    "texto": "a",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 52
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "SPAN. @390px",
+   "o_que": "contraste 1.14 abaixo do minimo 3",
+   "dado": {
+    "texto": "história.",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 52
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "P.surge @390px",
+   "o_que": "contraste 1.14 abaixo do minimo 4.5",
+   "dado": {
+    "texto": "Direção completa, locações estratégicas e um",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 15
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "FIGCAPTION. @390px",
+   "o_que": "contraste 1.14 abaixo do minimo 4.5",
+   "dado": {
+    "texto": "o nosso dia",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 17
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "A.marca @768px",
+   "o_que": "contraste 1.14 abaixo do minimo 3",
+   "dado": {
+    "texto": "Casal Veras",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 24
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "A. @768px",
+   "o_que": "contraste 1.14 abaixo do minimo 4.5",
+   "dado": {
+    "texto": "Foto e filme",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 11
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "A. @768px",
+   "o_que": "contraste 1.14 abaixo do minimo 4.5",
+   "dado": {
+    "texto": "Histórias",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 11
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "A. @768px",
+   "o_que": "contraste 1.14 abaixo do minimo 4.5",
+   "dado": {
+    "texto": "Quem somos",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 11
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "A. @768px",
+   "o_que": "contraste 1.14 abaixo do minimo 4.5",
+   "dado": {
+    "texto": "Agenda",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 11
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "H1. @768px",
+   "o_que": "contraste 1.14 abaixo do minimo 3",
+   "dado": {
+    "texto": "Casal",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 140
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "EM. @768px",
+   "o_que": "contraste 1.14 abaixo do minimo 3",
+   "dado": {
+    "texto": "Veras",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 140
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "P.sub @768px",
+   "o_que": "contraste 1.14 abaixo do minimo 4.5",
+   "dado": {
+    "texto": "Um casal que fotografa e filma o seu casamen",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 12
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "SPAN.eles @768px",
+   "o_que": "contraste 1.14 abaixo do minimo 4.5",
+   "dado": {
+    "texto": "Lucas e Jessica, atrás das câmeras",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 11
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "SPAN. @768px",
+   "o_que": "contraste 1.14 abaixo do minimo 4.5",
+   "dado": {
+    "texto": "Agenda 2026 e 2027 aberta",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 11
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "P.rotulo @768px",
+   "o_que": "contraste 1.50 abaixo do minimo 4.5",
+   "dado": {
+    "texto": "Pré-wedding",
+    "cor": "rgb(220, 192, 176)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 15
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "SPAN. @768px",
+   "o_que": "contraste 1.14 abaixo do minimo 3",
+   "dado": {
+    "texto": "Um",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 61
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "SPAN. @768px",
+   "o_que": "contraste 1.14 abaixo do minimo 3",
+   "dado": {
+    "texto": "ensaio",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 61
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "SPAN. @768px",
+   "o_que": "contraste 1.14 abaixo do minimo 3",
+   "dado": {
+    "texto": "que",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 61
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "SPAN. @768px",
+   "o_que": "contraste 1.14 abaixo do minimo 3",
+   "dado": {
+    "texto": "já",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 61
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "SPAN. @768px",
+   "o_que": "contraste 1.14 abaixo do minimo 3",
+   "dado": {
+    "texto": "conta",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 61
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "SPAN. @768px",
+   "o_que": "contraste 1.14 abaixo do minimo 3",
+   "dado": {
+    "texto": "a",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 61
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "SPAN. @768px",
+   "o_que": "contraste 1.14 abaixo do minimo 3",
+   "dado": {
+    "texto": "história.",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 61
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "P.surge @768px",
+   "o_que": "contraste 1.14 abaixo do minimo 4.5",
+   "dado": {
+    "texto": "Direção completa, locações estratégicas e um",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 15
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "FIGCAPTION. @768px",
+   "o_que": "contraste 1.14 abaixo do minimo 4.5",
+   "dado": {
+    "texto": "o nosso dia",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 17
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "A.marca @1440px",
+   "o_que": "contraste 1.14 abaixo do minimo 3",
+   "dado": {
+    "texto": "Casal Veras",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 24
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "A. @1440px",
+   "o_que": "contraste 1.14 abaixo do minimo 4.5",
+   "dado": {
+    "texto": "Foto e filme",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 11
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "A. @1440px",
+   "o_que": "contraste 1.14 abaixo do minimo 4.5",
+   "dado": {
+    "texto": "Histórias",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 11
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "A. @1440px",
+   "o_que": "contraste 1.14 abaixo do minimo 4.5",
+   "dado": {
+    "texto": "Quem somos",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 11
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "A. @1440px",
+   "o_que": "contraste 1.14 abaixo do minimo 4.5",
+   "dado": {
+    "texto": "Agenda",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 11
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "H1. @1440px",
+   "o_que": "contraste 1.14 abaixo do minimo 3",
+   "dado": {
+    "texto": "Casal",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 216
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "EM. @1440px",
+   "o_que": "contraste 1.14 abaixo do minimo 3",
+   "dado": {
+    "texto": "Veras",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 216
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "P.sub @1440px",
+   "o_que": "contraste 1.14 abaixo do minimo 4.5",
+   "dado": {
+    "texto": "Um casal que fotografa e filma o seu casamen",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 12
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "SPAN.eles @1440px",
+   "o_que": "contraste 1.14 abaixo do minimo 4.5",
+   "dado": {
+    "texto": "Lucas e Jessica, atrás das câmeras",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 11
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "SPAN. @1440px",
+   "o_que": "contraste 1.14 abaixo do minimo 4.5",
+   "dado": {
+    "texto": "Agenda 2026 e 2027 aberta",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 11
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "P.rotulo @1440px",
+   "o_que": "contraste 1.50 abaixo do minimo 4.5",
+   "dado": {
+    "texto": "Pré-wedding",
+    "cor": "rgb(220, 192, 176)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 17
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "SPAN. @1440px",
+   "o_que": "contraste 1.14 abaixo do minimo 3",
+   "dado": {
+    "texto": "Um",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 115
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "SPAN. @1440px",
+   "o_que": "contraste 1.14 abaixo do minimo 3",
+   "dado": {
+    "texto": "ensaio",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 115
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "SPAN. @1440px",
+   "o_que": "contraste 1.14 abaixo do minimo 3",
+   "dado": {
+    "texto": "que",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 115
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "SPAN. @1440px",
+   "o_que": "contraste 1.14 abaixo do minimo 3",
+   "dado": {
+    "texto": "já",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 115
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "SPAN. @1440px",
+   "o_que": "contraste 1.14 abaixo do minimo 3",
+   "dado": {
+    "texto": "conta",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 115
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "SPAN. @1440px",
+   "o_que": "contraste 1.14 abaixo do minimo 3",
+   "dado": {
+    "texto": "a",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 115
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "SPAN. @1440px",
+   "o_que": "contraste 1.14 abaixo do minimo 3",
+   "dado": {
+    "texto": "história.",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 115
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "P.surge @1440px",
+   "o_que": "contraste 1.14 abaixo do minimo 4.5",
+   "dado": {
+    "texto": "Direção completa, locações estratégicas e um",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 17
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "FIGCAPTION. @1440px",
+   "o_que": "contraste 1.14 abaixo do minimo 4.5",
+   "dado": {
+    "texto": "o nosso dia",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 17
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "A.marca @1920px",
+   "o_que": "contraste 1.14 abaixo do minimo 3",
+   "dado": {
+    "texto": "Casal Veras",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 24
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "A. @1920px",
+   "o_que": "contraste 1.14 abaixo do minimo 4.5",
+   "dado": {
+    "texto": "Foto e filme",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 11
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "A. @1920px",
+   "o_que": "contraste 1.14 abaixo do minimo 4.5",
+   "dado": {
+    "texto": "Histórias",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 11
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "A. @1920px",
+   "o_que": "contraste 1.14 abaixo do minimo 4.5",
+   "dado": {
+    "texto": "Quem somos",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 11
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "A. @1920px",
+   "o_que": "contraste 1.14 abaixo do minimo 4.5",
+   "dado": {
+    "texto": "Agenda",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 11
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "EM. @1920px",
+   "o_que": "contraste 1.14 abaixo do minimo 3",
+   "dado": {
+    "texto": "Veras",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 260
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "P.fecho @1920px",
+   "o_que": "contraste 1.14 abaixo do minimo 3",
+   "dado": {
+    "texto": "Dois olhares, uma visão.",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 110
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "SPAN.eles @1920px",
+   "o_que": "contraste 1.14 abaixo do minimo 4.5",
+   "dado": {
+    "texto": "Lucas e Jessica, atrás das câmeras",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 11
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "SPAN. @1920px",
+   "o_que": "contraste 1.14 abaixo do minimo 4.5",
+   "dado": {
+    "texto": "Agenda 2026 e 2027 aberta",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 11
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "P.rotulo @1920px",
+   "o_que": "contraste 1.50 abaixo do minimo 4.5",
+   "dado": {
+    "texto": "Pré-wedding",
+    "cor": "rgb(220, 192, 176)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 19
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "SPAN. @1920px",
+   "o_que": "contraste 1.14 abaixo do minimo 3",
+   "dado": {
+    "texto": "Um",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 150
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "SPAN. @1920px",
+   "o_que": "contraste 1.14 abaixo do minimo 3",
+   "dado": {
+    "texto": "ensaio",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 150
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "SPAN. @1920px",
+   "o_que": "contraste 1.14 abaixo do minimo 3",
+   "dado": {
+    "texto": "que",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 150
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "SPAN. @1920px",
+   "o_que": "contraste 1.14 abaixo do minimo 3",
+   "dado": {
+    "texto": "já",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 150
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "SPAN. @1920px",
+   "o_que": "contraste 1.14 abaixo do minimo 3",
+   "dado": {
+    "texto": "conta",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 150
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "SPAN. @1920px",
+   "o_que": "contraste 1.14 abaixo do minimo 3",
+   "dado": {
+    "texto": "a",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 150
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "SPAN. @1920px",
+   "o_que": "contraste 1.14 abaixo do minimo 3",
+   "dado": {
+    "texto": "história.",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 150
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "P.surge @1920px",
+   "o_que": "contraste 1.14 abaixo do minimo 4.5",
+   "dado": {
+    "texto": "Direção completa, locações estratégicas e um",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 19
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "FIGCAPTION. @1920px",
+   "o_que": "contraste 1.14 abaixo do minimo 4.5",
+   "dado": {
+    "texto": "o nosso dia",
+    "cor": "rgb(255, 255, 255)",
+    "fundo": "rgb(244, 239, 233)",
+    "px": 17
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "abertura -> manifesto @320px",
+   "o_que": "vao de 202px contra mediana 365px da pagina (razao 0.55)",
+   "dado": {
+    "vao": 202,
+    "mediana": 365
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "manifesto -> olhares @320px",
+   "o_que": "vao de 177px contra mediana 365px da pagina (razao 0.48)",
+   "dado": {
+    "vao": 177,
+    "mediana": 365
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "olhares -> historias @320px",
+   "o_que": "vao de 144px contra mediana 365px da pagina (razao 0.39)",
+   "dado": {
+    "vao": 144,
+    "mediana": 365
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "ensaios -> nos @320px",
+   "o_que": "vao de 234px contra mediana 365px da pagina (razao 0.64)",
+   "dado": {
+    "vao": 234,
+    "mediana": 365
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "manifesto -> olhares @390px",
+   "o_que": "vao de 177px contra mediana 448px da pagina (razao 0.40)",
+   "dado": {
+    "vao": 177,
+    "mediana": 448
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "ensaios -> nos @390px",
+   "o_que": "vao de 234px contra mediana 448px da pagina (razao 0.52)",
+   "dado": {
+    "vao": 234,
+    "mediana": 448
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "manifesto -> olhares @768px",
+   "o_que": "vao de 177px contra mediana 440px da pagina (razao 0.40)",
+   "dado": {
+    "vao": 177,
+    "mediana": 440
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "ensaios -> nos @768px",
+   "o_que": "vao de 234px contra mediana 440px da pagina (razao 0.53)",
+   "dado": {
+    "vao": 234,
+    "mediana": 440
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "manifesto -> olhares @1440px",
+   "o_que": "vao de 180px contra mediana 385px da pagina (razao 0.47)",
+   "dado": {
+    "vao": 180,
+    "mediana": 385
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "ensaios -> nos @1440px",
+   "o_que": "vao de 234px contra mediana 385px da pagina (razao 0.61)",
+   "dado": {
+    "vao": 234,
+    "mediana": 385
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "abertura -> manifesto @1920px",
+   "o_que": "vao de 188px contra mediana 294px da pagina (razao 0.64)",
+   "dado": {
+    "vao": 188,
+    "mediana": 294
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "manifesto -> olhares @1920px",
+   "o_que": "vao de 180px contra mediana 294px da pagina (razao 0.61)",
+   "dado": {
+    "vao": 180,
+    "mediana": 294
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "olhares -> historias @1920px",
+   "o_que": "vao de 144px contra mediana 294px da pagina (razao 0.49)",
+   "dado": {
+    "vao": 144,
+    "mediana": 294
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "A. @320px",
+   "o_que": "alvo de toque 284x42px (minimo 44 de altura)",
+   "dado": {
+    "sel": "A.",
+    "w": 284,
+    "h": 42,
+    "txt": "Para marcas e eventos: Con"
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "A. @390px",
+   "o_que": "alvo de toque 326x21px (minimo 44 de altura)",
+   "dado": {
+    "sel": "A.",
+    "w": 326,
+    "h": 21,
+    "txt": "Para marcas e eventos: Con"
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "A. @768px",
+   "o_que": "alvo de toque 326x21px (minimo 44 de altura)",
+   "dado": {
+    "sel": "A.",
+    "w": 326,
+    "h": 21,
+    "txt": "Para marcas e eventos: Con"
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "BAIXA",
+   "onde": "surge @390px",
+   "o_que": "medida de linha 53 caracteres (alvo 18-52)",
+   "dado": {
+    "sel": "surge",
+    "fs": 15,
+    "larg": 354,
+    "linhas": 3,
+    "cpl": 53
+   }
+  }
+ ]
+}
