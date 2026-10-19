@@ -1,0 +1,202 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Calculadora: quanto custa um cliente novo na sua empresa · ZX Digital</title>
+<meta name="description" content="Digite cinco números do último mês e veja quanto custou cada cliente novo, se a primeira compra paga esse custo e quanto vale um cliente que volta. A conta roda no seu celular.">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#17191C">
+<link rel="canonical" href="https://zetaxdigital.com.br/calculadora/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="ZX Digital">
+<meta property="og:title" content="Quanto custa um cliente novo na sua empresa?">
+<meta property="og:description" content="Cinco números do último mês, e a calculadora mostra quanto custou cada cliente novo e quanto vale um cliente que volta.">
+<meta property="og:url" content="https://zetaxdigital.com.br/calculadora/">
+<meta property="og:image" content="https://zetaxdigital.com.br/og-zx.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="preload" href="../fontes/nunitosans-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fontes/sora-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="calculadora.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebPage", "@id": "https://zetaxdigital.com.br/calculadora/#pagina", "url": "https://zetaxdigital.com.br/calculadora/", "name": "Calculadora: quanto custa um cliente novo na sua empresa", "description": "Digite cinco números do último mês e veja quanto custou cada cliente novo, se a primeira compra paga esse custo e quanto vale um cliente que volta.", "inLanguage": "pt-BR", "isAccessibleForFree": true, "publisher": {"@type": "Organization", "@id": "https://zetaxdigital.com.br/#organizacao", "name": "ZX Digital", "logo": "https://zetaxdigital.com.br/apple-touch-icon.png"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Início", "item": "https://zetaxdigital.com.br/"}, {"@type": "ListItem", "position": 2, "name": "Calculadora", "item": "https://zetaxdigital.com.br/calculadora/"}]}]}</script>
+<script src="jspdf.umd.min.js" defer></script>
+<script src="calculadora.js" defer></script>
+</head>
+<body>
+<a class="pular" href="#conteudo">Pular para a calculadora</a>
+<header class="barra">
+  <a class="marca-link" href="../" aria-label="ZX Digital, página inicial"><img class="marca" width="450" height="337" src="marca.svg" alt="ZX Digital"></a>
+  <nav aria-label="Navegação do site">
+    <a class="txt" href="../">A ZX</a>
+  </nav>
+</header>
+
+<main id="conteudo">
+<section class="abertura campo-esc">
+  <p class="selo">Calculadora gratuita</p>
+  <h1>Quanto custa um cliente novo na sua empresa?<span class="ac">E quanto vale um cliente que volta.</span></h1>
+  <p class="lede">Não é o preço do anúncio. Com cinco números do último mês fechado, a conta mostra quanto custou cada pessoa que de fato comprou, e se a primeira compra paga esse custo.</p>
+  <p class="privado"><span class="cadeado" aria-hidden="true"></span>A conta roda no seu celular. Os números só saem daqui se você pedir o resultado em PDF.</p>
+</section>
+
+<section class="miolo campo-cla" aria-labelledby="calc-titulo">
+  <form id="calc" class="calc" novalidate>
+    <h2 id="calc-titulo">Os números do último mês</h2>
+    <p class="calc-intro">Use um mês que já terminou: quem chamou nos últimos dias ainda pode estar decidindo.</p>
+
+    <div class="campo">
+      <label for="c-gasto"><span class="n">1</span>Quanto você gastou no mês para atrair contatos?</label>
+      <p class="ajuda" id="a-gasto">Anúncio, impulsionamento e o que você paga para quem cuida disso. Indicação não entra, porque não custou nada.</p>
+      <div class="entrada moeda"><span aria-hidden="true">R$</span><input id="c-gasto" name="gasto" type="text" inputmode="decimal" autocomplete="off" placeholder="1.500" aria-describedby="a-gasto e-gasto"></div>
+      <p class="erro" id="e-gasto" hidden></p>
+    </div>
+
+    <div class="campo">
+      <label for="c-chamaram"><span class="n">2</span>Quantas pessoas chamaram por causa disso?</label>
+      <p class="ajuda" id="a-chamaram">WhatsApp, direct e telefone. Se não sabe de onde a pessoa veio, pergunte na primeira mensagem: “como você chegou até nós?”</p>
+      <div class="entrada"><input id="c-chamaram" name="chamaram" type="text" inputmode="numeric" autocomplete="off" placeholder="60" aria-describedby="a-chamaram e-chamaram"><span class="un" aria-hidden="true">pessoas</span></div>
+      <p class="erro" id="e-chamaram" hidden></p>
+    </div>
+
+    <div class="campo">
+      <label for="c-fecharam"><span class="n">3</span>Quantas dessas pessoas fecharam e pagaram?</label>
+      <p class="ajuda" id="a-fecharam">Orçamento enviado não conta, e conversa animada também não.</p>
+      <div class="entrada"><input id="c-fecharam" name="fecharam" type="text" inputmode="numeric" autocomplete="off" placeholder="12" aria-describedby="a-fecharam e-fecharam"><span class="un" aria-hidden="true">clientes</span></div>
+      <p class="erro" id="e-fecharam" hidden></p>
+    </div>
+
+    <div class="campo">
+      <label for="c-ticket"><span class="n">4</span>Quanto um cliente paga, em média, na primeira compra?</label>
+      <p class="ajuda" id="a-ticket">O valor do primeiro serviço que ele contrata, e não o lucro.</p>
+      <div class="entrada moeda"><span aria-hidden="true">R$</span><input id="c-ticket" name="ticket" type="text" inputmode="decimal" autocomplete="off" placeholder="50" aria-describedby="a-ticket e-ticket"></div>
+      <p class="erro" id="e-ticket" hidden></p>
+    </div>
+
+    <div class="campo">
+      <label for="c-voltas"><span class="n">5</span>Depois da primeira compra, quantas vezes por ano um cliente costuma voltar?</label>
+      <p class="ajuda" id="a-voltas">Se quase ninguém volta, use 0. Se ele volta todo mês, use 11.</p>
+      <div class="entrada"><input id="c-voltas" name="voltas" type="text" inputmode="numeric" autocomplete="off" placeholder="11" aria-describedby="a-voltas e-voltas"><span class="un" aria-hidden="true">vezes</span></div>
+      <p class="erro" id="e-voltas" hidden></p>
+    </div>
+
+    <div class="acoes">
+      <button class="btn cheio" type="submit">Fazer a conta</button>
+      <button class="btn-texto" type="button" id="exemplo">Ver com números de exemplo</button>
+    </div>
+    <p class="exemplo-aviso" id="exemplo-aviso" hidden>Estes são números de uma barbearia de exemplo, só para mostrar a conta. Troque pelos da sua empresa.</p>
+  </form>
+
+  <div class="resultado" id="resultado" hidden>
+    <h2 id="resultado-titulo" tabindex="-1">O que a sua conta mostra</h2>
+    <div class="painel" id="painel" aria-live="polite">
+      <div class="kpis" id="kpis"></div>
+      <div class="graf">
+        <h3>Do contato ao cliente</h3>
+        <div id="caminho" class="caminho"></div>
+      </div>
+      <div class="graf" id="graf-dinheiro">
+        <h3>O que foi gasto e o que voltou</h3>
+        <div id="dinheiro" class="dinheiro"></div>
+      </div>
+    </div>
+    <div class="baixar">
+      <button class="btn cheio" type="button" id="baixar">Baixar o resultado em PDF</button>
+      <p class="baixar-aviso">Com os seus números, os gráficos e a leitura do resultado, para guardar ou mostrar ao sócio.</p>
+    </div>
+    <div id="resultado-blocos" class="res-lista"></div>
+    <div class="leitura" id="resultado-leitura" hidden>
+      <h3>Por onde começar a olhar</h3>
+      <p id="resultado-leitura-txt"></p>
+    </div>
+  </div>
+</section>
+
+<section class="porque campo-esc" aria-labelledby="porque-titulo">
+  <h2 id="porque-titulo">Por que a conta tem duas divisões</h2>
+  <p>O mesmo gasto é dividido duas vezes: primeiro por quem chamou, depois por quem fechou. O primeiro número mostra se o anúncio traz contatos a um preço razoável; o segundo mostra quanto custa cada cliente que de fato comprou, e é ele que decide se trazer cliente está valendo a pena.</p>
+  <p>Num caso real, um estúdio de tatuagem em São Paulo, a primeira divisão saiu assim: R$ 970 de Google para 130 pessoas que chamaram, R$ 7,46 cada, em três semanas. Esse é só o custo de quem chamou, porque o de cada cliente depende de quantos fecharam. É o resultado daquele caso, não promessa para o seu.</p>
+</section>
+
+<section class="chamada-sec campo-esc" aria-labelledby="chamada-titulo">
+  <div class="chamada">
+    <h2 id="chamada-titulo">Quer descobrir onde o cliente se perde no caminho?</h2>
+    <p>A conta mostra quanto custa cada cliente, mas não mostra por que tantas pessoas chamam e não fecham. No diagnóstico gratuito, a ZX olha com você de onde vêm os clientes, como é o atendimento até o fechamento e o que faz o cliente voltar, a partir dos seus números. É uma conversa, sem compromisso de contratar.</p>
+    <a class="btn cheio maior" id="whats" href="https://wa.me/5562993116017?text=Ol%C3%A1!%20Fiz%20a%20conta%20na%20calculadora%20da%20ZX.%20Quero%20o%20diagn%C3%B3stico%20gratuito%20da%20minha%20empresa." rel="noopener">Pedir o diagnóstico no WhatsApp</a>
+    <p class="whats-aviso" id="whats-aviso" hidden>A mensagem do WhatsApp já vai com o resultado da sua conta, e você pode apagar antes de enviar.</p>
+    <!-- [LINK DO FORMULÁRIO]: troque o valor de data-formulario pelo link do Google Forms
+         (formulário de aplicação, item B1 do plano de funis). Enquanto o valor não começar
+         com https://, esta linha fica escondida e só o WhatsApp aparece. -->
+    <p class="porta-formulario" id="porta-formulario" data-formulario="[LINK DO FORMULÁRIO]" hidden>Prefere responder por escrito? <a id="formulario" href="#" rel="noopener">Preencha o formulário do diagnóstico</a>.</p>
+  </div>
+</section>
+</main>
+
+<dialog class="popup" id="popup" aria-labelledby="popup-titulo">
+  <form id="lead" class="lead" novalidate>
+    <button class="fechar" type="button" id="popup-fechar" aria-label="Fechar">×</button>
+    <div id="lead-campos">
+      <p class="selo">Resultado em PDF</p>
+      <h2 id="popup-titulo">Para onde mandamos o seu resultado?</h2>
+      <p class="lead-intro">Preencha e o PDF baixa na hora, com os seus números e a leitura do resultado.</p>
+      <div class="lcampo">
+        <label for="l-nome">Nome completo</label>
+        <input id="l-nome" name="nome" type="text" autocomplete="name" maxlength="80" required aria-describedby="le-nome">
+        <p class="erro" id="le-nome" hidden></p>
+      </div>
+      <div class="lcampo">
+        <label for="l-email">E-mail</label>
+        <input id="l-email" name="email" type="email" inputmode="email" autocomplete="email" maxlength="120" required aria-describedby="le-email">
+        <p class="erro" id="le-email" hidden></p>
+      </div>
+      <div class="lcampo">
+        <label for="l-whatsapp">Seu WhatsApp, com DDD</label>
+        <input id="l-whatsapp" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" maxlength="20" placeholder="(62) 99999-9999" required aria-describedby="le-whatsapp">
+        <p class="erro" id="le-whatsapp" hidden></p>
+      </div>
+      <div class="lcampo">
+        <label for="l-empresa">Nome da empresa</label>
+        <input id="l-empresa" name="empresa" type="text" autocomplete="organization" maxlength="80" required aria-describedby="le-empresa">
+        <p class="erro" id="le-empresa" hidden></p>
+      </div>
+      <div class="lcampo">
+        <label for="l-cnpj">CNPJ <span class="opcional">(opcional)</span></label>
+        <input id="l-cnpj" name="cnpj" type="text" inputmode="numeric" autocomplete="off" maxlength="18" placeholder="00.000.000/0000-00" aria-describedby="le-cnpj">
+        <p class="erro" id="le-cnpj" hidden></p>
+      </div>
+      <div class="pote" aria-hidden="true"><label for="l-site">Não preencha</label><input id="l-site" name="site" type="text" tabindex="-1" autocomplete="off"></div>
+      <label class="aceite"><input id="l-aceite" type="checkbox" aria-describedby="le-aceite"><span>Autorizo a ZX a usar estes dados e os números da conta para me enviar o resultado e entrar em contato comigo, inclusive com conteúdos e ofertas, como explica a <a href="../privacidade.html" target="_blank" rel="noopener">política de privacidade</a>.</span></label>
+      <p class="erro" id="le-aceite" hidden></p>
+      <button class="btn cheio maior" type="submit" id="lead-enviar">Baixar meu PDF</button>
+      <p class="erro" id="le-geral" hidden></p>
+    </div>
+    <div id="lead-pronto" hidden>
+      <p class="selo">Pronto</p>
+      <h2 tabindex="-1" id="pronto-titulo">O seu PDF foi baixado.</h2>
+      <p class="lead-intro">Se ele não aparecer, procure na pasta de downloads do celular ou toque de novo abaixo.</p>
+      <button class="btn-texto" type="button" id="baixar-de-novo">Baixar o PDF de novo</button>
+      <p class="lead-intro" id="pronto-ok">Quer entender onde o cliente se perde no caminho? No diagnóstico gratuito, a ZX olha esse resultado com você.</p>
+      <p class="lead-aviso" id="pronto-falha" hidden>A conexão falhou e o seu contato não chegou até nós. Toque abaixo para mandar pelo WhatsApp: a mensagem já vai com o seu nome, a empresa e o resultado.</p>
+      <a class="btn cheio maior" id="whats-pronto" href="#" rel="noopener">Conversar no WhatsApp</a>
+    </div>
+  </form>
+</dialog>
+
+<footer class="campo-esc">
+  <div class="rodape-grade">
+    <div class="rodape-marca">
+      <img class="marca" width="450" height="337" src="marca.svg" alt="ZX Digital" loading="lazy">
+      <div class="rodape-linhas">
+        <p class="copyright">© 2026 ZX Digital · Todos os direitos reservados</p>
+        <p class="legais"><a href="../privacidade.html">Políticas de Privacidade</a><a href="../direitos-de-uso.html">Direitos de Uso</a></p>
+        <p>Gabriel Gregorio · Goiânia-GO</p>
+        <p>54.649.118/0001-74</p>
+      </div>
+    </div>
+    <div class="miudos">
+      <p class="creditos">Esta calculadora faz a conta com os números que você digita, no seu próprio navegador, e não usa cookie nem rastreador. Nada é enviado enquanto você só faz a conta; se pedir o resultado em PDF, o nome, o WhatsApp, a empresa e os números da conta vão para a ZX, como diz a política de privacidade. O resultado é uma estimativa feita com os seus dados e não é garantia de resultado. A ZX Digital não é representante, revendedora nem parceira oficial de Meta, Google ou Instagram; as marcas citadas pertencem aos seus donos.</p>
+    </div>
+  </div>
+</footer>
+</body></html>
