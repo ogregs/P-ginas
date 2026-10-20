@@ -1,0 +1,109 @@
+{
+ "alvo": "_deploy/deploy-plano-github-2026-10-20/Playbook-ZX-30D/plano-de-conteudo/index.html",
+ "achados": [
+  {
+   "meio": "web",
+   "gravidade": "BAIXA",
+   "onde": "obs @390px",
+   "o_que": "medida de linha 57 caracteres (alvo 18-52)",
+   "dado": {
+    "sel": "obs",
+    "fs": 14,
+    "larg": 358,
+    "linhas": 3,
+    "cpl": 57
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "BAIXA",
+   "onde": "obs @390px",
+   "o_que": "medida de linha 53 caracteres (alvo 18-52)",
+   "dado": {
+    "sel": "obs",
+    "fs": 14,
+    "larg": 358,
+    "linhas": 3,
+    "cpl": 53
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "BAIXA",
+   "onde": "obs @390px",
+   "o_que": "medida de linha 55 caracteres (alvo 18-52)",
+   "dado": {
+    "sel": "obs",
+    "fs": 14,
+    "larg": 358,
+    "linhas": 3,
+    "cpl": 55
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "BAIXA",
+   "onde": "kc @768px",
+   "o_que": "medida de linha 24 caracteres (alvo 26-78)",
+   "dado": {
+    "sel": "kc",
+    "fs": 15,
+    "larg": 303,
+    "linhas": 3,
+    "cpl": 24
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "BAIXA",
+   "onde": "p @768px",
+   "o_que": "medida de linha 81 caracteres (alvo 26-78)",
+   "dado": {
+    "sel": "p",
+    "fs": 15,
+    "larg": 566,
+    "linhas": 2,
+    "cpl": 81
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "BAIXA",
+   "onde": "obs @768px",
+   "o_que": "medida de linha 79 caracteres (alvo 26-78)",
+   "dado": {
+    "sel": "obs",
+    "fs": 14,
+    "larg": 480,
+    "linhas": 2,
+    "cpl": 79
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "BAIXA",
+   "onde": "p @1440px",
+   "o_que": "medida de linha 84 caracteres (alvo 45-82)",
+   "dado": {
+    "sel": "p",
+    "fs": 15,
+    "larg": 608,
+    "linhas": 2,
+    "cpl": 84
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "BAIXA",
+   "onde": "p @1440px",
+   "o_que": "medida de linha 85 caracteres (alvo 45-82)",
+   "dado": {
+    "sel": "p",
+    "fs": 15,
+    "larg": 608,
+    "linhas": 2,
+    "cpl": 85
+   }
+  }
+ ]
+}
