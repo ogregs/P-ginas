@@ -1,0 +1,4 @@
+# Previa para aprovacao do cliente: nao indexar este endereco.
+# Sai no deploy final, no dominio proprio da Ativa (ativatextil.com.br).
+User-agent: *
+Disallow: /
