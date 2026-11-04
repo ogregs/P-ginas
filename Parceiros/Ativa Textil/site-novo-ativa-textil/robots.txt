@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://ativatextil.com.br/sitemap.xml
