@@ -1,0 +1,584 @@
+{
+ "alvo": "C:\\jarvis\\vault\\projects\\zx-digital\\clientes\\ativos\\imperforte\\_producao\\site-novo-2026-11-03\\_deploy\\imperforte_site-deploy-aprovacao_vbeta7_2026-11-04",
+ "achados": [
+  {
+   "meio": "imagem",
+   "gravidade": "MEDIA",
+   "onde": "apple-touch-icon.png",
+   "o_que": "65% do quadro com branco estourado",
+   "dado": null
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "sec -> faixa-custo @320px",
+   "o_que": "vao de 68px contra mediana 104px da pagina (razao 0.65)",
+   "dado": {
+    "vao": 68,
+    "mediana": 104
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "faixa-custo -> sec @320px",
+   "o_que": "vao de 56px contra mediana 104px da pagina (razao 0.54)",
+   "dado": {
+    "vao": 56,
+    "mediana": 104
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "sec -> faixa-custo @390px",
+   "o_que": "vao de 68px contra mediana 104px da pagina (razao 0.65)",
+   "dado": {
+    "vao": 68,
+    "mediana": 104
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "faixa-custo -> sec @390px",
+   "o_que": "vao de 56px contra mediana 104px da pagina (razao 0.54)",
+   "dado": {
+    "vao": 56,
+    "mediana": 104
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "sec -> faixa-custo @768px",
+   "o_que": "vao de 56px contra mediana 104px da pagina (razao 0.54)",
+   "dado": {
+    "vao": 56,
+    "mediana": 104
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "faixa-custo -> sec @768px",
+   "o_que": "vao de 61px contra mediana 104px da pagina (razao 0.59)",
+   "dado": {
+    "vao": 61,
+    "mediana": 104
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "sec -> faixa-custo @1440px",
+   "o_que": "vao de 56px contra mediana 104px da pagina (razao 0.54)",
+   "dado": {
+    "vao": 56,
+    "mediana": 104
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "faixa-custo -> sec @1440px",
+   "o_que": "vao de 61px contra mediana 104px da pagina (razao 0.59)",
+   "dado": {
+    "vao": 61,
+    "mediana": 104
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "sec -> faixa-custo @1920px",
+   "o_que": "vao de 56px contra mediana 104px da pagina (razao 0.54)",
+   "dado": {
+    "vao": 56,
+    "mediana": 104
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "faixa-custo -> sec @1920px",
+   "o_que": "vao de 61px contra mediana 104px da pagina (razao 0.59)",
+   "dado": {
+    "vao": 61,
+    "mediana": 104
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "A. @320px",
+   "o_que": "alvo de toque 201x19px (minimo 44 de altura)",
+   "dado": {
+    "sel": "A.",
+    "w": 201,
+    "h": 19,
+    "txt": "Fonte: Guia da Engenharia"
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "A. @768px",
+   "o_que": "alvo de toque 201x19px (minimo 44 de altura)",
+   "dado": {
+    "sel": "A.",
+    "w": 201,
+    "h": 19,
+    "txt": "Fonte: Guia da Engenharia"
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "caixa -> capa @320px",
+   "o_que": "vao de 72px contra mediana 112px da pagina (razao 0.64)",
+   "dado": {
+    "vao": 72,
+    "mediana": 112
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "capa -> numeros-s @320px",
+   "o_que": "vao de 48px contra mediana 112px da pagina (razao 0.43)",
+   "dado": {
+    "vao": 48,
+    "mediana": 112
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "numeros-s -> sec @320px",
+   "o_que": "vao de 56px contra mediana 112px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 56,
+    "mediana": 112
+   }
+  },
+  {
+   "meio": "imagem",
+   "gravidade": "MEDIA",
+   "onde": "am712-152.webp",
+   "o_que": "43% do quadro com branco estourado",
+   "dado": null
+  },
+  {
+   "meio": "imagem",
+   "gravidade": "MEDIA",
+   "onde": "am712-300.webp",
+   "o_que": "44% do quadro com branco estourado",
+   "dado": null
+  },
+  {
+   "meio": "imagem",
+   "gravidade": "MEDIA",
+   "onde": "area-molhada-480.webp",
+   "o_que": "imagem mole (tamanho do arquivo -- passe --exibicao para julgar no tamanho real): variancia do laplaciano 46 (abaixo de 60 nao se conserta com filtro -- trocar a fonte)",
+   "dado": {
+    "nitidez": 46.0,
+    "escala": "tamanho do arquivo -- passe --exibicao para julgar no tamanho real"
+   }
+  },
+  {
+   "meio": "imagem",
+   "gravidade": "ALTA",
+   "onde": "area-molhada-720.webp",
+   "o_que": "imagem mole (tamanho do arquivo -- passe --exibicao para julgar no tamanho real): variancia do laplaciano 23 (abaixo de 60 nao se conserta com filtro -- trocar a fonte)",
+   "dado": {
+    "nitidez": 23.5,
+    "escala": "tamanho do arquivo -- passe --exibicao para julgar no tamanho real"
+   }
+  },
+  {
+   "meio": "imagem",
+   "gravidade": "MEDIA",
+   "onde": "flow-2300-152.webp",
+   "o_que": "55% do quadro com branco estourado",
+   "dado": null
+  },
+  {
+   "meio": "imagem",
+   "gravidade": "MEDIA",
+   "onde": "flow-2300-300.webp",
+   "o_que": "55% do quadro com branco estourado",
+   "dado": null
+  },
+  {
+   "meio": "imagem",
+   "gravidade": "MEDIA",
+   "onde": "injekt-1264-152.webp",
+   "o_que": "65% do quadro com branco estourado",
+   "dado": null
+  },
+  {
+   "meio": "imagem",
+   "gravidade": "MEDIA",
+   "onde": "injekt-1264-300.webp",
+   "o_que": "66% do quadro com branco estourado",
+   "dado": null
+  },
+  {
+   "meio": "imagem",
+   "gravidade": "MEDIA",
+   "onde": "injekt-2133-152.webp",
+   "o_que": "61% do quadro com branco estourado",
+   "dado": null
+  },
+  {
+   "meio": "imagem",
+   "gravidade": "MEDIA",
+   "onde": "injekt-2133-300.webp",
+   "o_que": "62% do quadro com branco estourado",
+   "dado": null
+  },
+  {
+   "meio": "imagem",
+   "gravidade": "MEDIA",
+   "onde": "og-imperforte.jpg",
+   "o_que": "43% do quadro com branco estourado",
+   "dado": null
+  },
+  {
+   "meio": "imagem",
+   "gravidade": "ALTA",
+   "onde": "piscina-480.webp",
+   "o_que": "imagem mole (tamanho do arquivo -- passe --exibicao para julgar no tamanho real): variancia do laplaciano 7 (abaixo de 60 nao se conserta com filtro -- trocar a fonte)",
+   "dado": {
+    "nitidez": 6.6,
+    "escala": "tamanho do arquivo -- passe --exibicao para julgar no tamanho real"
+   }
+  },
+  {
+   "meio": "imagem",
+   "gravidade": "ALTA",
+   "onde": "piscina-720.webp",
+   "o_que": "imagem mole (tamanho do arquivo -- passe --exibicao para julgar no tamanho real): variancia do laplaciano 14 (abaixo de 60 nao se conserta com filtro -- trocar a fonte)",
+   "dado": {
+    "nitidez": 13.6,
+    "escala": "tamanho do arquivo -- passe --exibicao para julgar no tamanho real"
+   }
+  },
+  {
+   "meio": "imagem",
+   "gravidade": "MEDIA",
+   "onde": "quick-152.webp",
+   "o_que": "53% do quadro com branco estourado",
+   "dado": null
+  },
+  {
+   "meio": "imagem",
+   "gravidade": "MEDIA",
+   "onde": "quick-300.webp",
+   "o_que": "54% do quadro com branco estourado",
+   "dado": null
+  },
+  {
+   "meio": "imagem",
+   "gravidade": "MEDIA",
+   "onde": "vulkem-350nf-152.webp",
+   "o_que": "55% do quadro com branco estourado",
+   "dado": null
+  },
+  {
+   "meio": "imagem",
+   "gravidade": "MEDIA",
+   "onde": "vulkem-350nf-300.webp",
+   "o_que": "56% do quadro com branco estourado",
+   "dado": null
+  },
+  {
+   "meio": "imagem",
+   "gravidade": "MEDIA",
+   "onde": "xypex-con-152.webp",
+   "o_que": "54% do quadro com branco estourado",
+   "dado": null
+  },
+  {
+   "meio": "imagem",
+   "gravidade": "MEDIA",
+   "onde": "xypex-con-300.webp",
+   "o_que": "54% do quadro com branco estourado",
+   "dado": null
+  },
+  {
+   "meio": "imagem",
+   "gravidade": "MEDIA",
+   "onde": "xypex-mod-152.webp",
+   "o_que": "54% do quadro com branco estourado",
+   "dado": null
+  },
+  {
+   "meio": "imagem",
+   "gravidade": "MEDIA",
+   "onde": "xypex-mod-300.webp",
+   "o_que": "55% do quadro com branco estourado",
+   "dado": null
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "y 991-1031 @320px",
+   "o_que": "faixa de 40px com a cor do fundo entre dois blocos de mesma cor",
+   "dado": {
+    "faixa": [
+     15,
+     27,
+     51
+    ],
+    "vizinhos": [
+     [
+      227,
+      230,
+      235
+     ],
+     [
+      227,
+      230,
+      235
+     ]
+    ]
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "sec -> faixa-custo @320px",
+   "o_que": "vao de 56px contra mediana 112px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 56,
+    "mediana": 112
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "faixa-custo -> sec @320px",
+   "o_que": "vao de 56px contra mediana 112px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 56,
+    "mediana": 112
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "sec -> faixa-custo @390px",
+   "o_que": "vao de 56px contra mediana 112px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 56,
+    "mediana": 112
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "faixa-custo -> sec @390px",
+   "o_que": "vao de 56px contra mediana 112px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 56,
+    "mediana": 112
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "sec -> faixa-custo @768px",
+   "o_que": "vao de 56px contra mediana 112px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 56,
+    "mediana": 112
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "faixa-custo -> sec @768px",
+   "o_que": "vao de 56px contra mediana 112px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 56,
+    "mediana": 112
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "sec -> faixa-custo @1440px",
+   "o_que": "vao de 56px contra mediana 112px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 56,
+    "mediana": 112
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "faixa-custo -> sec @1440px",
+   "o_que": "vao de 56px contra mediana 112px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 56,
+    "mediana": 112
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "sec -> faixa-custo @1920px",
+   "o_que": "vao de 56px contra mediana 112px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 56,
+    "mediana": 112
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "faixa-custo -> sec @1920px",
+   "o_que": "vao de 56px contra mediana 112px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 56,
+    "mediana": 112
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "BAIXA",
+   "onde": "historia-txt @768px",
+   "o_que": "medida de linha 79 caracteres (alvo 26-78)",
+   "dado": {
+    "sel": "historia-txt",
+    "fs": 17,
+    "larg": 604,
+    "linhas": 3,
+    "cpl": 79
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "BAIXA",
+   "onde": "aguarda @768px",
+   "o_que": "medida de linha 80 caracteres (alvo 26-78)",
+   "dado": {
+    "sel": "aguarda",
+    "fs": 17,
+    "larg": 604,
+    "linhas": 2,
+    "cpl": 80
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "y 890-901 @320px",
+   "o_que": "faixa de 11px com a cor do fundo entre dois blocos de mesma cor",
+   "dado": {
+    "faixa": [
+     255,
+     255,
+     255
+    ],
+    "vizinhos": [
+     [
+      22,
+      47,
+      101
+     ],
+     [
+      22,
+      47,
+      101
+     ]
+    ]
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "capa -> numeros-s @320px",
+   "o_que": "vao de 48px contra mediana 112px da pagina (razao 0.43)",
+   "dado": {
+    "vao": 48,
+    "mediana": 112
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "numeros-s -> sec @320px",
+   "o_que": "vao de 56px contra mediana 112px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 56,
+    "mediana": 112
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "A. @320px",
+   "o_que": "alvo de toque 258x39px (minimo 44 de altura)",
+   "dado": {
+    "sel": "A.",
+    "w": 258,
+    "h": 39,
+    "txt": "Veja como escolher o mater"
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "A. @390px",
+   "o_que": "alvo de toque 326x39px (minimo 44 de altura)",
+   "dado": {
+    "sel": "A.",
+    "w": 326,
+    "h": 39,
+    "txt": "Veja como escolher o mater"
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "A. @768px",
+   "o_que": "alvo de toque 226x16px (minimo 44 de altura)",
+   "dado": {
+    "sel": "A.",
+    "w": 226,
+    "h": 16,
+    "txt": "Veja como escolher o mater"
+   }
+  },
+  {
+   "meio": "texto",
+   "gravidade": "MEDIA",
+   "onde": "robots.txt",
+   "o_que": "secao vazia: 'Previa para aprovacao do cliente: nao indexa'",
+   "dado": null
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "capa -> numeros-s @320px",
+   "o_que": "vao de 48px contra mediana 113px da pagina (razao 0.42)",
+   "dado": {
+    "vao": 48,
+    "mediana": 113
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "numeros-s -> sec @320px",
+   "o_que": "vao de 56px contra mediana 113px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 56,
+    "mediana": 113
+   }
+  }
+ ]
+}
