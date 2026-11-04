@@ -1,0 +1,594 @@
+{
+ "alvo": "C:\\jarvis\\vault\\projects\\zx-digital\\clientes\\ativos\\ativa-textil\\_producao\\site-novo-2026-10-17\\_deploy\\ativa-textil_site-deploy-aprovacao_vbeta8_2026-11-04",
+ "achados": [
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "A. @320px",
+   "o_que": "alvo de toque 203x43px (minimo 44 de altura)",
+   "dado": {
+    "sel": "A.",
+    "w": 203,
+    "h": 43,
+    "txt": "Ver no mapa"
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "A. @390px",
+   "o_que": "alvo de toque 87x18px (minimo 44 de altura)",
+   "dado": {
+    "sel": "A.",
+    "w": 87,
+    "h": 18,
+    "txt": "Ver no mapa"
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "A. @768px",
+   "o_que": "alvo de toque 87x18px (minimo 44 de altura)",
+   "dado": {
+    "sel": "A.",
+    "w": 87,
+    "h": 18,
+    "txt": "Ver no mapa"
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "BAIXA",
+   "onde": "texto-corrido @768px",
+   "o_que": "medida de linha 83 caracteres (alvo 26-78)",
+   "dado": {
+    "sel": "texto-corrido",
+    "fs": 17,
+    "larg": 698,
+    "linhas": 3,
+    "cpl": 83
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "BAIXA",
+   "onde": "texto-corrido @768px",
+   "o_que": "medida de linha 85 caracteres (alvo 26-78)",
+   "dado": {
+    "sel": "texto-corrido",
+    "fs": 17,
+    "larg": 698,
+    "linhas": 3,
+    "cpl": 85
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "BAIXA",
+   "onde": "texto-corrido @768px",
+   "o_que": "medida de linha 90 caracteres (alvo 26-78)",
+   "dado": {
+    "sel": "texto-corrido",
+    "fs": 17,
+    "larg": 698,
+    "linhas": 2,
+    "cpl": 90
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "BAIXA",
+   "onde": "DIV @768px",
+   "o_que": "medida de linha 92 caracteres (alvo 26-78)",
+   "dado": {
+    "sel": "DIV",
+    "fs": 15,
+    "larg": 707,
+    "linhas": 2,
+    "cpl": 92
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "BAIXA",
+   "onde": "texto-corrido @768px",
+   "o_que": "medida de linha 81 caracteres (alvo 26-78)",
+   "dado": {
+    "sel": "texto-corrido",
+    "fs": 17,
+    "larg": 698,
+    "linhas": 2,
+    "cpl": 81
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "BAIXA",
+   "onde": "DIV @768px",
+   "o_que": "medida de linha 92 caracteres (alvo 26-78)",
+   "dado": {
+    "sel": "DIV",
+    "fs": 15,
+    "larg": 707,
+    "linhas": 2,
+    "cpl": 92
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "BAIXA",
+   "onde": "DIV.caixa @1440px",
+   "o_que": "irmaos da mesma fileira com alturas diferentes (delta 169px)",
+   "dado": {
+    "sel": "DIV.caixa",
+    "alturas": [
+     633,
+     464
+    ],
+    "delta": 169
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "BAIXA",
+   "onde": "DIV.caixa @1920px",
+   "o_que": "irmaos da mesma fileira com alturas diferentes (delta 169px)",
+   "dado": {
+    "sel": "DIV.caixa",
+    "alturas": [
+     633,
+     464
+    ],
+    "delta": 169
+   }
+  },
+  {
+   "meio": "imagem",
+   "gravidade": "MEDIA",
+   "onde": "flanela-480.webp",
+   "o_que": "22% do quadro com branco estourado",
+   "dado": null
+  },
+  {
+   "meio": "imagem",
+   "gravidade": "MEDIA",
+   "onde": "flanela-800.webp",
+   "o_que": "22% do quadro com branco estourado",
+   "dado": null
+  },
+  {
+   "meio": "imagem",
+   "gravidade": "MEDIA",
+   "onde": "gal-xadrez-240.webp",
+   "o_que": "14% do quadro com branco estourado",
+   "dado": null
+  },
+  {
+   "meio": "imagem",
+   "gravidade": "MEDIA",
+   "onde": "gal-xadrez-440.webp",
+   "o_que": "14% do quadro com branco estourado",
+   "dado": null
+  },
+  {
+   "meio": "imagem",
+   "gravidade": "MEDIA",
+   "onde": "microfibra-480.webp",
+   "o_que": "17% do quadro com branco estourado",
+   "dado": null
+  },
+  {
+   "meio": "imagem",
+   "gravidade": "MEDIA",
+   "onde": "microfibra-800.webp",
+   "o_que": "17% do quadro com branco estourado",
+   "dado": null
+  },
+  {
+   "meio": "imagem",
+   "gravidade": "MEDIA",
+   "onde": "pano-de-prato-120.webp",
+   "o_que": "26% do quadro com branco estourado",
+   "dado": null
+  },
+  {
+   "meio": "imagem",
+   "gravidade": "MEDIA",
+   "onde": "pano-de-prato-240.webp",
+   "o_que": "26% do quadro com branco estourado",
+   "dado": null
+  },
+  {
+   "meio": "imagem",
+   "gravidade": "MEDIA",
+   "onde": "ramo-mercado-360.webp",
+   "o_que": "16% do quadro com branco estourado",
+   "dado": null
+  },
+  {
+   "meio": "imagem",
+   "gravidade": "MEDIA",
+   "onde": "ramo-mercado-640.webp",
+   "o_que": "16% do quadro com branco estourado",
+   "dado": null
+  },
+  {
+   "meio": "imagem",
+   "gravidade": "MEDIA",
+   "onde": "regra-microfibra-320.webp",
+   "o_que": "15% do quadro com branco estourado",
+   "dado": null
+  },
+  {
+   "meio": "imagem",
+   "gravidade": "MEDIA",
+   "onde": "regra-microfibra-560.webp",
+   "o_que": "15% do quadro com branco estourado",
+   "dado": null
+  },
+  {
+   "meio": "imagem",
+   "gravidade": "MEDIA",
+   "onde": "regra-rodo-320.webp",
+   "o_que": "31% do quadro com branco estourado",
+   "dado": null
+  },
+  {
+   "meio": "imagem",
+   "gravidade": "MEDIA",
+   "onde": "regra-rodo-388.webp",
+   "o_que": "32% do quadro com branco estourado",
+   "dado": null
+  },
+  {
+   "meio": "imagem",
+   "gravidade": "MEDIA",
+   "onde": "rodo-388.webp",
+   "o_que": "38% do quadro com branco estourado",
+   "dado": null
+  },
+  {
+   "meio": "imagem",
+   "gravidade": "MEDIA",
+   "onde": "saco-retrato-320.webp",
+   "o_que": "13% do quadro com branco estourado",
+   "dado": null
+  },
+  {
+   "meio": "imagem",
+   "gravidade": "MEDIA",
+   "onde": "saco-retrato-480.webp",
+   "o_que": "13% do quadro com branco estourado",
+   "dado": null
+  },
+  {
+   "meio": "imagem",
+   "gravidade": "MEDIA",
+   "onde": "saco-retrato-640.webp",
+   "o_que": "13% do quadro com branco estourado",
+   "dado": null
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "A. @320px",
+   "o_que": "alvo de toque 203x43px (minimo 44 de altura)",
+   "dado": {
+    "sel": "A.",
+    "w": 203,
+    "h": 43,
+    "txt": "Ver no mapa"
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "A. @390px",
+   "o_que": "alvo de toque 87x18px (minimo 44 de altura)",
+   "dado": {
+    "sel": "A.",
+    "w": 87,
+    "h": 18,
+    "txt": "Ver no mapa"
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "A. @390px",
+   "o_que": "alvo de toque 131x20px (minimo 44 de altura)",
+   "dado": {
+    "sel": "A.",
+    "w": 131,
+    "h": 20,
+    "txt": "Incluir no pedido"
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "A. @390px",
+   "o_que": "alvo de toque 170x19px (minimo 44 de altura)",
+   "dado": {
+    "sel": "A.",
+    "w": 170,
+    "h": 19,
+    "txt": "Como funciona o balcão"
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "A. @768px",
+   "o_que": "alvo de toque 87x18px (minimo 44 de altura)",
+   "dado": {
+    "sel": "A.",
+    "w": 87,
+    "h": 18,
+    "txt": "Ver no mapa"
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "A. @768px",
+   "o_que": "alvo de toque 131x20px (minimo 44 de altura)",
+   "dado": {
+    "sel": "A.",
+    "w": 131,
+    "h": 20,
+    "txt": "Incluir no pedido"
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "heroi -> secao @390px",
+   "o_que": "vao de 33px contra mediana 128px da pagina (razao 0.26)",
+   "dado": {
+    "vao": 33,
+    "mediana": 128
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "heroi -> secao @768px",
+   "o_que": "vao de 37px contra mediana 138px da pagina (razao 0.27)",
+   "dado": {
+    "vao": 37,
+    "mediana": 138
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "heroi -> secao @1440px",
+   "o_que": "vao de 62px contra mediana 240px da pagina (razao 0.26)",
+   "dado": {
+    "vao": 62,
+    "mediana": 240
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "heroi -> secao @1920px",
+   "o_que": "vao de 44px contra mediana 240px da pagina (razao 0.18)",
+   "dado": {
+    "vao": 44,
+    "mediana": 240
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "BAIXA",
+   "onde": "balcao @768px",
+   "o_que": "medida de linha 81 caracteres (alvo 26-78)",
+   "dado": {
+    "sel": "balcao",
+    "fs": 16,
+    "larg": 621,
+    "linhas": 3,
+    "cpl": 81
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "BAIXA",
+   "onde": "DIV @768px",
+   "o_que": "medida de linha 92 caracteres (alvo 26-78)",
+   "dado": {
+    "sel": "DIV",
+    "fs": 15,
+    "larg": 707,
+    "linhas": 2,
+    "cpl": 92
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "BAIXA",
+   "onde": "DIV @768px",
+   "o_que": "medida de linha 92 caracteres (alvo 26-78)",
+   "dado": {
+    "sel": "DIV",
+    "fs": 15,
+    "larg": 707,
+    "linhas": 2,
+    "cpl": 92
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "BAIXA",
+   "onde": "DIV @768px",
+   "o_que": "medida de linha 92 caracteres (alvo 26-78)",
+   "dado": {
+    "sel": "DIV",
+    "fs": 15,
+    "larg": 707,
+    "linhas": 2,
+    "cpl": 92
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "A. @390px",
+   "o_que": "alvo de toque 131x20px (minimo 44 de altura)",
+   "dado": {
+    "sel": "A.",
+    "w": 131,
+    "h": 20,
+    "txt": "Incluir no pedido"
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "A. @390px",
+   "o_que": "alvo de toque 170x19px (minimo 44 de altura)",
+   "dado": {
+    "sel": "A.",
+    "w": 170,
+    "h": 19,
+    "txt": "Como funciona o balcão"
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "A. @768px",
+   "o_que": "alvo de toque 131x20px (minimo 44 de altura)",
+   "dado": {
+    "sel": "A.",
+    "w": 131,
+    "h": 20,
+    "txt": "Incluir no pedido"
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "BAIXA",
+   "onde": "balcao @768px",
+   "o_que": "medida de linha 81 caracteres (alvo 26-78)",
+   "dado": {
+    "sel": "balcao",
+    "fs": 16,
+    "larg": 621,
+    "linhas": 3,
+    "cpl": 81
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "BAIXA",
+   "onde": "DIV @768px",
+   "o_que": "medida de linha 92 caracteres (alvo 26-78)",
+   "dado": {
+    "sel": "DIV",
+    "fs": 15,
+    "larg": 707,
+    "linhas": 2,
+    "cpl": 92
+   }
+  },
+  {
+   "meio": "texto",
+   "gravidade": "MEDIA",
+   "onde": "robots.txt",
+   "o_que": "secao vazia: 'Previa para aprovacao do cliente: nao indexa'",
+   "dado": null
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "A. @320px",
+   "o_que": "alvo de toque 203x43px (minimo 44 de altura)",
+   "dado": {
+    "sel": "A.",
+    "w": 203,
+    "h": 43,
+    "txt": "Ver no mapa"
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "A. @390px",
+   "o_que": "alvo de toque 87x18px (minimo 44 de altura)",
+   "dado": {
+    "sel": "A.",
+    "w": 87,
+    "h": 18,
+    "txt": "Ver no mapa"
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "A. @768px",
+   "o_que": "alvo de toque 87x18px (minimo 44 de altura)",
+   "dado": {
+    "sel": "A.",
+    "w": 87,
+    "h": 18,
+    "txt": "Ver no mapa"
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "BAIXA",
+   "onde": "texto-corrido @768px",
+   "o_que": "medida de linha 88 caracteres (alvo 26-78)",
+   "dado": {
+    "sel": "texto-corrido",
+    "fs": 17,
+    "larg": 698,
+    "linhas": 3,
+    "cpl": 88
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "BAIXA",
+   "onde": "texto-corrido @768px",
+   "o_que": "medida de linha 87 caracteres (alvo 26-78)",
+   "dado": {
+    "sel": "texto-corrido",
+    "fs": 17,
+    "larg": 698,
+    "linhas": 2,
+    "cpl": 87
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "BAIXA",
+   "onde": "r @768px",
+   "o_que": "medida de linha 83 caracteres (alvo 26-78)",
+   "dado": {
+    "sel": "r",
+    "fs": 17,
+    "larg": 637,
+    "linhas": 3,
+    "cpl": 83
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "BAIXA",
+   "onde": "DIV @768px",
+   "o_que": "medida de linha 92 caracteres (alvo 26-78)",
+   "dado": {
+    "sel": "DIV",
+    "fs": 15,
+    "larg": 707,
+    "linhas": 2,
+    "cpl": 92
+   }
+  }
+ ]
+}
