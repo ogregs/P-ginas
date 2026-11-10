@@ -1,0 +1,1919 @@
+{
+ "alvo": "iesus_site-novo_deploy_vbeta6_2026-11-10/site",
+ "achados": [
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @320px",
+   "o_que": "vao de 72px contra mediana 170px da pagina (razao 0.42)",
+   "dado": {
+    "vao": 72,
+    "mediana": 170
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @390px",
+   "o_que": "vao de 72px contra mediana 175px da pagina (razao 0.41)",
+   "dado": {
+    "vao": 72,
+    "mediana": 175
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @768px",
+   "o_que": "vao de 77px contra mediana 189px da pagina (razao 0.41)",
+   "dado": {
+    "vao": 77,
+    "mediana": 189
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @1440px",
+   "o_que": "vao de 136px contra mediana 288px da pagina (razao 0.47)",
+   "dado": {
+    "vao": 136,
+    "mediana": 288
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @1920px",
+   "o_que": "vao de 136px contra mediana 288px da pagina (razao 0.47)",
+   "dado": {
+    "vao": 136,
+    "mediana": 288
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "contato",
+   "o_que": "a pagina publica 2 numeros diferentes: 556230976532, 556282041641",
+   "dado": null
+  },
+  {
+   "meio": "imagem",
+   "gravidade": "MEDIA",
+   "onde": "apple-touch-icon.png",
+   "o_que": "quadro subexposto: luminancia media 25 de 255",
+   "dado": null
+  },
+  {
+   "meio": "imagem",
+   "gravidade": "MEDIA",
+   "onde": "detalhe-familia-800.webp",
+   "o_que": "dimensao 800x600 para exibir a 362px (regra: no maximo ~2x)",
+   "dado": null
+  },
+  {
+   "meio": "imagem",
+   "gravidade": "MEDIA",
+   "onde": "detalhe-marmore-1200.webp",
+   "o_que": "imagem mole (tamanho do arquivo -- passe --exibicao para julgar no tamanho real): variancia do laplaciano 36 (abaixo de 60 nao se conserta com filtro -- trocar a fonte)",
+   "dado": {
+    "nitidez": 35.6,
+    "escala": "tamanho do arquivo -- passe --exibicao para julgar no tamanho real"
+   }
+  },
+  {
+   "meio": "imagem",
+   "gravidade": "MEDIA",
+   "onde": "detalhe-marmore-480.webp",
+   "o_que": "imagem mole (tamanho do arquivo -- passe --exibicao para julgar no tamanho real): variancia do laplaciano 26 (abaixo de 60 nao se conserta com filtro -- trocar a fonte)",
+   "dado": {
+    "nitidez": 26.0,
+    "escala": "tamanho do arquivo -- passe --exibicao para julgar no tamanho real"
+   }
+  },
+  {
+   "meio": "imagem",
+   "gravidade": "MEDIA",
+   "onde": "detalhe-marmore-800.webp",
+   "o_que": "imagem mole (tamanho do arquivo -- passe --exibicao para julgar no tamanho real): variancia do laplaciano 30 (abaixo de 60 nao se conserta com filtro -- trocar a fonte)",
+   "dado": {
+    "nitidez": 30.0,
+    "escala": "tamanho do arquivo -- passe --exibicao para julgar no tamanho real"
+   }
+  },
+  {
+   "meio": "imagem",
+   "gravidade": "MEDIA",
+   "onde": "detalhe-mesa-1200.webp",
+   "o_que": "imagem mole (tamanho do arquivo -- passe --exibicao para julgar no tamanho real): variancia do laplaciano 56 (abaixo de 60 nao se conserta com filtro -- trocar a fonte)",
+   "dado": {
+    "nitidez": 56.1,
+    "escala": "tamanho do arquivo -- passe --exibicao para julgar no tamanho real"
+   }
+  },
+  {
+   "meio": "imagem",
+   "gravidade": "MEDIA",
+   "onde": "detalhe-mesa-480.webp",
+   "o_que": "imagem mole (tamanho do arquivo -- passe --exibicao para julgar no tamanho real): variancia do laplaciano 49 (abaixo de 60 nao se conserta com filtro -- trocar a fonte)",
+   "dado": {
+    "nitidez": 49.0,
+    "escala": "tamanho do arquivo -- passe --exibicao para julgar no tamanho real"
+   }
+  },
+  {
+   "meio": "imagem",
+   "gravidade": "MEDIA",
+   "onde": "detalhe-mesa-800.webp",
+   "o_que": "imagem mole (tamanho do arquivo -- passe --exibicao para julgar no tamanho real): variancia do laplaciano 44 (abaixo de 60 nao se conserta com filtro -- trocar a fonte)",
+   "dado": {
+    "nitidez": 43.6,
+    "escala": "tamanho do arquivo -- passe --exibicao para julgar no tamanho real"
+   }
+  },
+  {
+   "meio": "imagem",
+   "gravidade": "MEDIA",
+   "onde": "favicon-32.png",
+   "o_que": "quadro subexposto: luminancia media 25 de 255",
+   "dado": null
+  },
+  {
+   "meio": "imagem",
+   "gravidade": "MEDIA",
+   "onde": "icon-512.png",
+   "o_que": "quadro subexposto: luminancia media 25 de 255",
+   "dado": null
+  },
+  {
+   "meio": "imagem",
+   "gravidade": "MEDIA",
+   "onde": "poster-cliente-por-anos.webp",
+   "o_que": "conteudo ativo nos 28%% de baixo -- zona que a UI do Reels cobre",
+   "dado": {
+    "linhas_ativas": 73
+   }
+  },
+  {
+   "meio": "imagem",
+   "gravidade": "MEDIA",
+   "onde": "poster-eleicoes-reforma.webp",
+   "o_que": "conteudo ativo nos 28%% de baixo -- zona que a UI do Reels cobre",
+   "dado": {
+    "linhas_ativas": 122
+   }
+  },
+  {
+   "meio": "video",
+   "gravidade": "BAIXA",
+   "onde": "iesus-cliente-por-anos.mp4",
+   "o_que": "GATE NAO MEDIDO: cortes e deriva NAO MEDIDO: 3 cortes detectados, sem --cortes para comparar"
+  },
+  {
+   "meio": "video",
+   "gravidade": "BAIXA",
+   "onde": "iesus-cliente-por-anos.mp4",
+   "o_que": "GATE NAO MEDIDO: marca em todos os quadros faixa da marca nao informada (--marca-de/--marca-ate)"
+  },
+  {
+   "meio": "video",
+   "gravidade": "BAIXA",
+   "onde": "iesus-cliente-por-anos",
+   "o_que": "LEGENDA NAO MEDIDA: mp4 sem projeto CapCut",
+   "dado": "este auditor so' le legenda pelo projeto; em video por codigo a legenda queimada nao entra em margem, area segura, tamanho nem cobertura de rosto e detalhe. Conferir na passada humana: folha de contato com 2 quadros por take e as linhas de 14% e 65% desenhadas"
+  },
+  {
+   "meio": "video",
+   "gravidade": "BAIXA",
+   "onde": "iesus-cliente-por-anos",
+   "o_que": "COR DA PELE NAO MEDIDA: geometria de apoio desconhecida",
+   "dado": "mp4 solto, sem projeto CapCut e sem --apoio: nao ha' como separar a cena de apoio (rosto/corpo de outra pessoa em tela cheia) da pele do apresentador, e medir pelo caminho ingenuo ja' produziu falso positivo real (DERIVA) no acervo. Declare --apoio \"\" se a peca de fato nao tem apoio nenhum, ou --apoio ini:fim,ini:fim se tem, ou audite a partir da pasta do projeto CapCut, que ja' traz a cobertura real."
+  },
+  {
+   "meio": "video",
+   "gravidade": "BAIXA",
+   "onde": "iesus-eleicoes-reforma-tributaria.mp4",
+   "o_que": "GATE NAO MEDIDO: cortes e deriva NAO MEDIDO: 11 cortes detectados, sem --cortes para comparar"
+  },
+  {
+   "meio": "video",
+   "gravidade": "BAIXA",
+   "onde": "iesus-eleicoes-reforma-tributaria.mp4",
+   "o_que": "GATE NAO MEDIDO: marca em todos os quadros faixa da marca nao informada (--marca-de/--marca-ate)"
+  },
+  {
+   "meio": "video",
+   "gravidade": "BAIXA",
+   "onde": "iesus-eleicoes-reforma-tributaria",
+   "o_que": "LEGENDA NAO MEDIDA: mp4 sem projeto CapCut",
+   "dado": "este auditor so' le legenda pelo projeto; em video por codigo a legenda queimada nao entra em margem, area segura, tamanho nem cobertura de rosto e detalhe. Conferir na passada humana: folha de contato com 2 quadros por take e as linhas de 14% e 65% desenhadas"
+  },
+  {
+   "meio": "video",
+   "gravidade": "BAIXA",
+   "onde": "iesus-eleicoes-reforma-tributaria",
+   "o_que": "COR DA PELE NAO MEDIDA: geometria de apoio desconhecida",
+   "dado": "mp4 solto, sem projeto CapCut e sem --apoio: nao ha' como separar a cena de apoio (rosto/corpo de outra pessoa em tela cheia) da pele do apresentador, e medir pelo caminho ingenuo ja' produziu falso positivo real (DERIVA) no acervo. Declare --apoio \"\" se a peca de fato nao tem apoio nenhum, ou --apoio ini:fim,ini:fim se tem, ou audite a partir da pasta do projeto CapCut, que ja' traz a cobertura real."
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "cap @320px",
+   "o_que": "parede de texto: 1027 caracteres de prosa e nenhuma imagem na seccao",
+   "dado": {
+    "nome": "cap",
+    "chars": 1027,
+    "midia": 0
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "contato",
+   "o_que": "a pagina publica 2 numeros diferentes: 556230976532, 556282041641",
+   "dado": null
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "A. @320px",
+   "o_que": "alvo de toque 175x42px (minimo 44 de altura)",
+   "dado": {
+    "sel": "A.",
+    "w": 175,
+    "h": 42,
+    "txt": "Política de privacidade"
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "A. @390px",
+   "o_que": "alvo de toque 250x19px (minimo 44 de altura)",
+   "dado": {
+    "sel": "A.",
+    "w": 250,
+    "h": 19,
+    "txt": "Acesse a área do cliente n"
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "A. @390px",
+   "o_que": "alvo de toque 270x42px (minimo 44 de altura)",
+   "dado": {
+    "sel": "A.",
+    "w": 270,
+    "h": 42,
+    "txt": "Política de privacidade"
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "A. @768px",
+   "o_que": "alvo de toque 250x19px (minimo 44 de altura)",
+   "dado": {
+    "sel": "A.",
+    "w": 250,
+    "h": 19,
+    "txt": "Acesse a área do cliente n"
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "A. @768px",
+   "o_que": "alvo de toque 164x18px (minimo 44 de altura)",
+   "dado": {
+    "sel": "A.",
+    "w": 164,
+    "h": 18,
+    "txt": "Política de privacidade"
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "contato",
+   "o_que": "a pagina publica 2 numeros diferentes: 556230976532, 556282041641",
+   "dado": null
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @320px",
+   "o_que": "vao de 72px contra mediana 144px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 72,
+    "mediana": 144
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @390px",
+   "o_que": "vao de 72px contra mediana 144px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 72,
+    "mediana": 144
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @768px",
+   "o_que": "vao de 77px contra mediana 153px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 77,
+    "mediana": 153
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @1440px",
+   "o_que": "vao de 136px contra mediana 272px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 136,
+    "mediana": 272
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @1920px",
+   "o_que": "vao de 136px contra mediana 272px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 136,
+    "mediana": 272
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "contato",
+   "o_que": "a pagina publica 2 numeros diferentes: 556230976532, 556282041641",
+   "dado": null
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @320px",
+   "o_que": "vao de 72px contra mediana 144px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 72,
+    "mediana": 144
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @390px",
+   "o_que": "vao de 72px contra mediana 144px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 72,
+    "mediana": 144
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @768px",
+   "o_que": "vao de 77px contra mediana 153px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 77,
+    "mediana": 153
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @1440px",
+   "o_que": "vao de 136px contra mediana 272px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 136,
+    "mediana": 272
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @1920px",
+   "o_que": "vao de 136px contra mediana 272px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 136,
+    "mediana": 272
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "contato",
+   "o_que": "a pagina publica 2 numeros diferentes: 556230976532, 556282041641",
+   "dado": null
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @320px",
+   "o_que": "vao de 72px contra mediana 144px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 72,
+    "mediana": 144
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @390px",
+   "o_que": "vao de 72px contra mediana 144px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 72,
+    "mediana": 144
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @768px",
+   "o_que": "vao de 77px contra mediana 153px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 77,
+    "mediana": 153
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @1440px",
+   "o_que": "vao de 136px contra mediana 272px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 136,
+    "mediana": 272
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @1920px",
+   "o_que": "vao de 136px contra mediana 272px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 136,
+    "mediana": 272
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "contato",
+   "o_que": "a pagina publica 2 numeros diferentes: 556230976532, 556282041641",
+   "dado": null
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @320px",
+   "o_que": "vao de 72px contra mediana 144px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 72,
+    "mediana": 144
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @390px",
+   "o_que": "vao de 72px contra mediana 144px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 72,
+    "mediana": 144
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @768px",
+   "o_que": "vao de 77px contra mediana 154px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 77,
+    "mediana": 154
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @1440px",
+   "o_que": "vao de 136px contra mediana 272px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 136,
+    "mediana": 272
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @1920px",
+   "o_que": "vao de 136px contra mediana 272px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 136,
+    "mediana": 272
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "contato",
+   "o_que": "a pagina publica 2 numeros diferentes: 556230976532, 556282041641",
+   "dado": null
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @320px",
+   "o_que": "vao de 72px contra mediana 144px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 72,
+    "mediana": 144
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @390px",
+   "o_que": "vao de 72px contra mediana 144px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 72,
+    "mediana": 144
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @768px",
+   "o_que": "vao de 77px contra mediana 153px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 77,
+    "mediana": 153
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @1440px",
+   "o_que": "vao de 136px contra mediana 272px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 136,
+    "mediana": 272
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @1920px",
+   "o_que": "vao de 136px contra mediana 272px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 136,
+    "mediana": 272
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "contato",
+   "o_que": "a pagina publica 2 numeros diferentes: 556230976532, 556282041641",
+   "dado": null
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @320px",
+   "o_que": "vao de 72px contra mediana 144px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 72,
+    "mediana": 144
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @390px",
+   "o_que": "vao de 72px contra mediana 144px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 72,
+    "mediana": 144
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @768px",
+   "o_que": "vao de 77px contra mediana 153px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 77,
+    "mediana": 153
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @1440px",
+   "o_que": "vao de 136px contra mediana 272px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 136,
+    "mediana": 272
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @1920px",
+   "o_que": "vao de 136px contra mediana 272px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 136,
+    "mediana": 272
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "contato",
+   "o_que": "a pagina publica 2 numeros diferentes: 556230976532, 556282041641",
+   "dado": null
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @320px",
+   "o_que": "vao de 72px contra mediana 144px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 72,
+    "mediana": 144
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @390px",
+   "o_que": "vao de 72px contra mediana 144px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 72,
+    "mediana": 144
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @768px",
+   "o_que": "vao de 77px contra mediana 153px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 77,
+    "mediana": 153
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @1440px",
+   "o_que": "vao de 136px contra mediana 272px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 136,
+    "mediana": 272
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @1920px",
+   "o_que": "vao de 136px contra mediana 272px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 136,
+    "mediana": 272
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "contato",
+   "o_que": "a pagina publica 2 numeros diferentes: 556230976532, 556282041641",
+   "dado": null
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @320px",
+   "o_que": "vao de 72px contra mediana 144px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 72,
+    "mediana": 144
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @390px",
+   "o_que": "vao de 72px contra mediana 144px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 72,
+    "mediana": 144
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @768px",
+   "o_que": "vao de 77px contra mediana 153px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 77,
+    "mediana": 153
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @1440px",
+   "o_que": "vao de 136px contra mediana 272px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 136,
+    "mediana": 272
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @1920px",
+   "o_que": "vao de 136px contra mediana 272px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 136,
+    "mediana": 272
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "contato",
+   "o_que": "a pagina publica 2 numeros diferentes: 556230976532, 556282041641",
+   "dado": null
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @320px",
+   "o_que": "vao de 71px contra mediana 144px da pagina (razao 0.49)",
+   "dado": {
+    "vao": 71,
+    "mediana": 144
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @390px",
+   "o_que": "vao de 71px contra mediana 144px da pagina (razao 0.49)",
+   "dado": {
+    "vao": 71,
+    "mediana": 144
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @768px",
+   "o_que": "vao de 76px contra mediana 149px da pagina (razao 0.51)",
+   "dado": {
+    "vao": 76,
+    "mediana": 149
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @1440px",
+   "o_que": "vao de 135px contra mediana 254px da pagina (razao 0.53)",
+   "dado": {
+    "vao": 135,
+    "mediana": 254
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @1920px",
+   "o_que": "vao de 135px contra mediana 254px da pagina (razao 0.53)",
+   "dado": {
+    "vao": 135,
+    "mediana": 254
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "contato",
+   "o_que": "a pagina publica 2 numeros diferentes: 556230976532, 556282041641",
+   "dado": null
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @320px",
+   "o_que": "vao de 72px contra mediana 144px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 72,
+    "mediana": 144
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @390px",
+   "o_que": "vao de 72px contra mediana 144px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 72,
+    "mediana": 144
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @768px",
+   "o_que": "vao de 77px contra mediana 154px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 77,
+    "mediana": 154
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @1440px",
+   "o_que": "vao de 136px contra mediana 272px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 136,
+    "mediana": 272
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @1920px",
+   "o_que": "vao de 136px contra mediana 272px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 136,
+    "mediana": 272
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "contato",
+   "o_que": "a pagina publica 2 numeros diferentes: 556230976532, 556282041641",
+   "dado": null
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @320px",
+   "o_que": "vao de 72px contra mediana 144px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 72,
+    "mediana": 144
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @390px",
+   "o_que": "vao de 72px contra mediana 144px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 72,
+    "mediana": 144
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @768px",
+   "o_que": "vao de 77px contra mediana 153px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 77,
+    "mediana": 153
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @1440px",
+   "o_que": "vao de 136px contra mediana 272px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 136,
+    "mediana": 272
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @1920px",
+   "o_que": "vao de 136px contra mediana 272px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 136,
+    "mediana": 272
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "contato",
+   "o_que": "a pagina publica 2 numeros diferentes: 556230976532, 556282041641",
+   "dado": null
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @320px",
+   "o_que": "vao de 72px contra mediana 144px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 72,
+    "mediana": 144
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @390px",
+   "o_que": "vao de 72px contra mediana 144px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 72,
+    "mediana": 144
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @768px",
+   "o_que": "vao de 77px contra mediana 153px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 77,
+    "mediana": 153
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @1440px",
+   "o_que": "vao de 136px contra mediana 272px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 136,
+    "mediana": 272
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @1920px",
+   "o_que": "vao de 136px contra mediana 272px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 136,
+    "mediana": 272
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "contato",
+   "o_que": "a pagina publica 2 numeros diferentes: 556230976532, 556282041641",
+   "dado": null
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @320px",
+   "o_que": "vao de 72px contra mediana 144px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 72,
+    "mediana": 144
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @390px",
+   "o_que": "vao de 72px contra mediana 144px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 72,
+    "mediana": 144
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @768px",
+   "o_que": "vao de 77px contra mediana 153px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 77,
+    "mediana": 153
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @1440px",
+   "o_que": "vao de 136px contra mediana 272px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 136,
+    "mediana": 272
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @1920px",
+   "o_que": "vao de 136px contra mediana 272px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 136,
+    "mediana": 272
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "contato",
+   "o_que": "a pagina publica 2 numeros diferentes: 556230976532, 556282041641",
+   "dado": null
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @320px",
+   "o_que": "vao de 72px contra mediana 144px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 72,
+    "mediana": 144
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @390px",
+   "o_que": "vao de 72px contra mediana 144px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 72,
+    "mediana": 144
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @768px",
+   "o_que": "vao de 77px contra mediana 154px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 77,
+    "mediana": 154
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @1440px",
+   "o_que": "vao de 136px contra mediana 272px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 136,
+    "mediana": 272
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @1920px",
+   "o_que": "vao de 136px contra mediana 272px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 136,
+    "mediana": 272
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "contato",
+   "o_que": "a pagina publica 2 numeros diferentes: 556230976532, 556282041641",
+   "dado": null
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @320px",
+   "o_que": "vao de 72px contra mediana 144px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 72,
+    "mediana": 144
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @390px",
+   "o_que": "vao de 72px contra mediana 144px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 72,
+    "mediana": 144
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @768px",
+   "o_que": "vao de 77px contra mediana 153px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 77,
+    "mediana": 153
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @1440px",
+   "o_que": "vao de 136px contra mediana 272px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 136,
+    "mediana": 272
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @1920px",
+   "o_que": "vao de 136px contra mediana 272px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 136,
+    "mediana": 272
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "contato",
+   "o_que": "a pagina publica 2 numeros diferentes: 556230976532, 556282041641",
+   "dado": null
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @320px",
+   "o_que": "vao de 72px contra mediana 144px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 72,
+    "mediana": 144
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @390px",
+   "o_que": "vao de 72px contra mediana 144px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 72,
+    "mediana": 144
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @768px",
+   "o_que": "vao de 77px contra mediana 153px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 77,
+    "mediana": 153
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @1440px",
+   "o_que": "vao de 136px contra mediana 272px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 136,
+    "mediana": 272
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @1920px",
+   "o_que": "vao de 136px contra mediana 272px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 136,
+    "mediana": 272
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "contato",
+   "o_que": "a pagina publica 2 numeros diferentes: 556230976532, 556282041641",
+   "dado": null
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "SPAN.ct-rot @320px",
+   "o_que": "texto sobre imagem: contraste 3.08 no pior caso (min 4.5)",
+   "dado": {
+    "texto": "Sua empresa",
+    "fundo_p95": [
+     162,
+     175,
+     188
+    ]
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "SPAN.ct-rot @1920px",
+   "o_que": "texto sobre imagem: contraste 3.08 no pior caso (min 4.5)",
+   "dado": {
+    "texto": "Sua empresa",
+    "fundo_p95": [
+     165,
+     174,
+     187
+    ]
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "cap -> retrato @320px",
+   "o_que": "vao de 71px contra mediana 169px da pagina (razao 0.42)",
+   "dado": {
+    "vao": 71,
+    "mediana": 169
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "cap -> sala @320px",
+   "o_que": "vao de 73px contra mediana 169px da pagina (razao 0.43)",
+   "dado": {
+    "vao": 73,
+    "mediana": 169
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "cap -> retrato @390px",
+   "o_que": "vao de 71px contra mediana 169px da pagina (razao 0.42)",
+   "dado": {
+    "vao": 71,
+    "mediana": 169
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "cap -> sala @390px",
+   "o_que": "vao de 73px contra mediana 169px da pagina (razao 0.43)",
+   "dado": {
+    "vao": 73,
+    "mediana": 169
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "cap -> retrato @768px",
+   "o_que": "vao de 76px contra mediana 186px da pagina (razao 0.41)",
+   "dado": {
+    "vao": 76,
+    "mediana": 186
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "cap -> sala @768px",
+   "o_que": "vao de 77px contra mediana 186px da pagina (razao 0.41)",
+   "dado": {
+    "vao": 77,
+    "mediana": 186
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "sala -> cap @768px",
+   "o_que": "vao de 77px contra mediana 186px da pagina (razao 0.41)",
+   "dado": {
+    "vao": 77,
+    "mediana": 186
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "cap -> retrato @1440px",
+   "o_que": "vao de 136px contra mediana 272px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 136,
+    "mediana": 272
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "retrato -> cap @1440px",
+   "o_que": "vao de 161px contra mediana 272px da pagina (razao 0.59)",
+   "dado": {
+    "vao": 161,
+    "mediana": 272
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "cap -> sala @1440px",
+   "o_que": "vao de 137px contra mediana 272px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 137,
+    "mediana": 272
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "sala -> cap @1440px",
+   "o_que": "vao de 136px contra mediana 272px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 136,
+    "mediana": 272
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "capa -> cena @1920px",
+   "o_que": "vao de 49px contra mediana 272px da pagina (razao 0.18)",
+   "dado": {
+    "vao": 49,
+    "mediana": 272
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "cap -> retrato @1920px",
+   "o_que": "vao de 136px contra mediana 272px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 136,
+    "mediana": 272
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "retrato -> cap @1920px",
+   "o_que": "vao de 161px contra mediana 272px da pagina (razao 0.59)",
+   "dado": {
+    "vao": 161,
+    "mediana": 272
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "cap -> sala @1920px",
+   "o_que": "vao de 137px contra mediana 272px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 137,
+    "mediana": 272
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "sala -> cap @1920px",
+   "o_que": "vao de 136px contra mediana 272px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 136,
+    "mediana": 272
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "A. @320px",
+   "o_que": "alvo de toque 175x42px (minimo 44 de altura)",
+   "dado": {
+    "sel": "A.",
+    "w": 175,
+    "h": 42,
+    "txt": "Política de privacidade"
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "A. @390px",
+   "o_que": "alvo de toque 270x42px (minimo 44 de altura)",
+   "dado": {
+    "sel": "A.",
+    "w": 270,
+    "h": 42,
+    "txt": "Política de privacidade"
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "A. @768px",
+   "o_que": "alvo de toque 164x18px (minimo 44 de altura)",
+   "dado": {
+    "sel": "A.",
+    "w": 164,
+    "h": 18,
+    "txt": "Política de privacidade"
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "BAIXA",
+   "onde": "DIV.cab @1440px",
+   "o_que": "bloco largo termina em R=1004; o trilho direito e' R=1320",
+   "dado": null
+  },
+  {
+   "meio": "web",
+   "gravidade": "BAIXA",
+   "onde": "DIV.cab @1440px",
+   "o_que": "bloco largo termina em R=1004; o trilho direito e' R=1320",
+   "dado": null
+  },
+  {
+   "meio": "web",
+   "gravidade": "BAIXA",
+   "onde": "DIV.cab @1440px",
+   "o_que": "bloco largo termina em R=1004; o trilho direito e' R=1320",
+   "dado": null
+  },
+  {
+   "meio": "web",
+   "gravidade": "BAIXA",
+   "onde": "manifesto @1440px",
+   "o_que": "medida de linha 36 caracteres (alvo 45-82)",
+   "dado": {
+    "sel": "manifesto",
+    "fs": 44,
+    "larg": 570,
+    "linhas": 4,
+    "cpl": 36
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "contato",
+   "o_que": "a pagina publica 2 numeros diferentes: 556230976532, 556282041641",
+   "dado": null
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "cap @320px",
+   "o_que": "parede de texto: 1824 caracteres de prosa e nenhuma imagem na seccao",
+   "dado": {
+    "nome": "cap",
+    "chars": 1824,
+    "midia": 0
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "cap @1920px",
+   "o_que": "parede de texto: 1824 caracteres de prosa e nenhuma imagem na seccao",
+   "dado": {
+    "nome": "cap",
+    "chars": 1824,
+    "midia": 0
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "A. @390px",
+   "o_que": "alvo de toque 306x20px (minimo 44 de altura)",
+   "dado": {
+    "sel": "A.",
+    "w": 306,
+    "h": 20,
+    "txt": "contato@iesuscontabilidade"
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "A. @390px",
+   "o_que": "alvo de toque 306x20px (minimo 44 de altura)",
+   "dado": {
+    "sel": "A.",
+    "w": 306,
+    "h": 20,
+    "txt": "contato@iesuscontabilidade"
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "A. @390px",
+   "o_que": "alvo de toque 200x20px (minimo 44 de altura)",
+   "dado": {
+    "sel": "A.",
+    "w": 200,
+    "h": 20,
+    "txt": "Preferências de cookies"
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "A. @768px",
+   "o_que": "alvo de toque 306x20px (minimo 44 de altura)",
+   "dado": {
+    "sel": "A.",
+    "w": 306,
+    "h": 20,
+    "txt": "contato@iesuscontabilidade"
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "A. @768px",
+   "o_que": "alvo de toque 306x20px (minimo 44 de altura)",
+   "dado": {
+    "sel": "A.",
+    "w": 306,
+    "h": 20,
+    "txt": "contato@iesuscontabilidade"
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "contato",
+   "o_que": "a pagina publica 2 numeros diferentes: 556230976532, 556282041641",
+   "dado": null
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "SPAN.sub @320px",
+   "o_que": "texto sobre imagem: contraste 1.81 no pior caso (min 4.5)",
+   "dado": {
+    "texto": "dinheiro no bolso",
+    "fundo_p95": [
+     92,
+     194,
+     242
+    ]
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @320px",
+   "o_que": "vao de 71px contra mediana 139px da pagina (razao 0.51)",
+   "dado": {
+    "vao": 71,
+    "mediana": 139
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "cap -> retrato @320px",
+   "o_que": "vao de 75px contra mediana 139px da pagina (razao 0.54)",
+   "dado": {
+    "vao": 75,
+    "mediana": 139
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @390px",
+   "o_que": "vao de 71px contra mediana 139px da pagina (razao 0.51)",
+   "dado": {
+    "vao": 71,
+    "mediana": 139
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "cap -> retrato @390px",
+   "o_que": "vao de 75px contra mediana 139px da pagina (razao 0.54)",
+   "dado": {
+    "vao": 75,
+    "mediana": 139
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @768px",
+   "o_que": "vao de 76px contra mediana 148px da pagina (razao 0.51)",
+   "dado": {
+    "vao": 76,
+    "mediana": 148
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "cap -> retrato @768px",
+   "o_que": "vao de 80px contra mediana 148px da pagina (razao 0.54)",
+   "dado": {
+    "vao": 80,
+    "mediana": 148
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "BAIXA",
+   "onde": "citacao @1440px",
+   "o_que": "medida de linha 33 caracteres (alvo 45-82)",
+   "dado": {
+    "sel": "citacao",
+    "fs": 27,
+    "larg": 496,
+    "linhas": 3,
+    "cpl": 33
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "contato",
+   "o_que": "a pagina publica 2 numeros diferentes: 556230976532, 556282041641",
+   "dado": null
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> retrato @320px",
+   "o_que": "vao de 47px contra mediana 144px da pagina (razao 0.33)",
+   "dado": {
+    "vao": 47,
+    "mediana": 144
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "retrato -> cap @320px",
+   "o_que": "vao de 72px contra mediana 144px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 72,
+    "mediana": 144
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> retrato @390px",
+   "o_que": "vao de 47px contra mediana 144px da pagina (razao 0.33)",
+   "dado": {
+    "vao": 47,
+    "mediana": 144
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "retrato -> cap @390px",
+   "o_que": "vao de 72px contra mediana 144px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 72,
+    "mediana": 144
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> retrato @768px",
+   "o_que": "vao de 53px contra mediana 153px da pagina (razao 0.35)",
+   "dado": {
+    "vao": 53,
+    "mediana": 153
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "retrato -> cap @768px",
+   "o_que": "vao de 76px contra mediana 153px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 76,
+    "mediana": 153
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "retrato -> cap @1440px",
+   "o_que": "vao de 136px contra mediana 272px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 136,
+    "mediana": 272
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "retrato -> cap @1920px",
+   "o_que": "vao de 136px contra mediana 272px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 136,
+    "mediana": 272
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "BAIXA",
+   "onde": "DIV.cab @1440px",
+   "o_que": "bloco largo termina em R=1004; o trilho direito e' R=1320",
+   "dado": null
+  },
+  {
+   "meio": "web",
+   "gravidade": "BAIXA",
+   "onde": "manifesto @1440px",
+   "o_que": "medida de linha 36 caracteres (alvo 45-82)",
+   "dado": {
+    "sel": "manifesto",
+    "fs": 38,
+    "larg": 496,
+    "linhas": 4,
+    "cpl": 36
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "BAIXA",
+   "onde": "citacao @1440px",
+   "o_que": "medida de linha 37 caracteres (alvo 45-82)",
+   "dado": {
+    "sel": "citacao",
+    "fs": 27,
+    "larg": 560,
+    "linhas": 5,
+    "cpl": 37
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "BAIXA",
+   "onde": "citacao @1440px",
+   "o_que": "medida de linha 36 caracteres (alvo 45-82)",
+   "dado": {
+    "sel": "citacao",
+    "fs": 27,
+    "larg": 560,
+    "linhas": 4,
+    "cpl": 36
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "contato",
+   "o_que": "a pagina publica 2 numeros diferentes: 556230976532, 556282041641",
+   "dado": null
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @320px",
+   "o_que": "vao de 72px contra mediana 144px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 72,
+    "mediana": 144
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @390px",
+   "o_que": "vao de 72px contra mediana 144px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 72,
+    "mediana": 144
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @768px",
+   "o_que": "vao de 77px contra mediana 153px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 77,
+    "mediana": 153
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @1440px",
+   "o_que": "vao de 136px contra mediana 297px da pagina (razao 0.46)",
+   "dado": {
+    "vao": 136,
+    "mediana": 297
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @1920px",
+   "o_que": "vao de 136px contra mediana 297px da pagina (razao 0.46)",
+   "dado": {
+    "vao": 136,
+    "mediana": 297
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "BAIXA",
+   "onde": "DIV.cab @1440px",
+   "o_que": "bloco largo termina em R=1004; o trilho direito e' R=1320",
+   "dado": null
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "contato",
+   "o_que": "a pagina publica 2 numeros diferentes: 556230976532, 556282041641",
+   "dado": null
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @320px",
+   "o_que": "vao de 72px contra mediana 144px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 72,
+    "mediana": 144
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @390px",
+   "o_que": "vao de 72px contra mediana 144px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 72,
+    "mediana": 144
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @768px",
+   "o_que": "vao de 77px contra mediana 153px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 77,
+    "mediana": 153
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @1440px",
+   "o_que": "vao de 136px contra mediana 272px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 136,
+    "mediana": 272
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "MEDIA",
+   "onde": "topo -> cap @1920px",
+   "o_que": "vao de 136px contra mediana 272px da pagina (razao 0.50)",
+   "dado": {
+    "vao": 136,
+    "mediana": 272
+   }
+  },
+  {
+   "meio": "web",
+   "gravidade": "ALTA",
+   "onde": "contato",
+   "o_que": "a pagina publica 2 numeros diferentes: 556230976532, 556282041641",
+   "dado": null
+  }
+ ]
+}
