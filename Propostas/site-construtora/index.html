@@ -1,0 +1,906 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Proposta de site</title>
+<meta name="description" content="Duas opções de site para a sua construtora, por Conteúdo Visual + ZX Digital.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Proposta de site para a sua construtora">
+<meta property="og:description" content="Duas opções de site, por Conteúdo Visual + ZX Digital.">
+<meta property="og:url" content="https://zetaxdigital.com.br/Parceiros/conteudo-visual/site-construtora/">
+<meta property="og:image" content="https://zetaxdigital.com.br/Parceiros/conteudo-visual/site-construtora/assets/img/poster-orcamento-site.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#17191C">
+<link rel="preload" href="assets/fonts/sora.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/nunitosans.woff2" as="font" type="font/woff2" crossorigin>
+<script>document.documentElement.className+=" js";</script>
+<style>
+@font-face{font-family:"Sora";font-style:normal;font-weight:100 800;font-display:swap;src:url(assets/fonts/sora.woff2) format("woff2")}
+@font-face{font-family:"Nunito Sans";font-style:normal;font-weight:200 1000;font-display:swap;src:url(assets/fonts/nunitosans.woff2) format("woff2")}
+
+:root{
+  --tinta:#17191C;
+  --grafite:#212328;
+  --grafite-2:#2A2D33;
+  --linha:#34373E;
+  --branco:#F8F7F4;
+  --papel:#E9E7E1;
+  --fraco:#A9A49A;
+  --sinal:#F28C27;
+  --cv:#ECEAE5;
+  --grad:linear-gradient(90deg,#F6DCB8,#F3C88E,#F2B163,#F29C3C,#F28C27,#E47714);
+  --r:18px;
+  --st:env(safe-area-inset-top,0px);
+  --sb:env(safe-area-inset-bottom,0px);
+  --sl:env(safe-area-inset-left,0px);
+  --sr:env(safe-area-inset-right,0px);
+  --topo:64px;
+  --base:84px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;background:var(--tinta)}
+body{
+  background-color:var(--tinta);
+  background-image:
+    radial-gradient(ellipse 70% 45% at 0% 0%,rgba(242,140,39,.20),rgba(242,140,39,0) 70%),
+    radial-gradient(rgba(242,178,110,.10) 1px,transparent 1.4px);
+  background-size:100% 100%,22px 22px;
+  background-repeat:no-repeat,repeat;
+  color:var(--branco);
+  font-family:"Nunito Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  font-size:1.0625rem;
+  line-height:1.7;
+  overflow-x:hidden;
+}
+img,svg,video{display:block;max-width:100%}
+button{font:inherit;color:inherit;cursor:pointer}
+.wrap{width:100%;max-width:1080px;margin:0 auto;padding:0 calc(16px + var(--sr)) 0 calc(16px + var(--sl))}
+@media (min-width:600px){.wrap{padding:0 calc(32px + var(--sr)) 0 calc(32px + var(--sl))}}
+
+/* assinatura */
+.topo{padding:calc(20px + var(--st)) 0 0}
+.assina{display:flex;align-items:center;flex-wrap:wrap;gap:10px 12px;font-size:.95rem}
+.cv,.zx{display:inline-flex;align-items:center;gap:8px;font-family:"Sora",sans-serif;font-weight:600;font-size:.98rem;color:var(--branco);line-height:1}
+.cv img{height:24px;width:24px}
+.mais{color:var(--fraco);font-weight:600}
+.zx img{height:18px;width:auto}
+
+/* abertura */
+.abre .wrap{padding-top:8px}
+.olho{font-family:"Sora",sans-serif;font-size:.82rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--sinal);margin-bottom:18px}
+h1{font-family:"Sora",sans-serif;font-weight:700;font-size:clamp(2rem,6.4vw,3.6rem);line-height:1.12;letter-spacing:-.025em;max-width:17ch}
+h1 em{font-style:normal;color:var(--sinal)}
+.abre p.sub{margin-top:22px;max-width:56ch;color:var(--papel);font-size:clamp(1.05rem,2.4vw,1.2rem)}
+.filete{height:2px;width:72px;background:var(--grad);border-radius:2px;margin-top:32px}
+
+/* video */
+.video .rot{font-family:"Sora",sans-serif;font-weight:600;font-size:.95rem;color:var(--papel);margin-bottom:14px}
+.tela{position:relative;border-radius:var(--r);overflow:hidden;background:#0E0F11;border:1px solid var(--linha);box-shadow:0 30px 80px -30px rgba(0,0,0,.7);aspect-ratio:16/9;width:100%;margin:0 auto}
+.tela video{width:100%;height:100%;object-fit:contain;background:#0E0F11}
+.play{position:absolute;inset:0;display:none;align-items:center;justify-content:center;gap:12px;flex-direction:column;background:rgba(14,15,17,.28);border:0;transition:background .2s}
+.js .play{display:flex}
+.play[hidden]{display:none}
+.play .bola{width:84px;height:84px;border-radius:50%;background:var(--sinal);display:flex;align-items:center;justify-content:center;box-shadow:0 14px 40px -10px rgba(242,140,39,.7);transition:transform .2s}
+.play .bola svg{width:30px;height:30px;margin-left:5px}
+.play span.txt{font-family:"Sora",sans-serif;font-weight:600;font-size:1rem;color:var(--branco);text-shadow:0 2px 12px rgba(0,0,0,.6)}
+.play:hover{background:rgba(14,15,17,.12)}
+.play:hover .bola{transform:scale(1.06)}
+.play:focus-visible{outline:3px solid var(--sinal);outline-offset:-3px}
+.ctrl{position:absolute;left:0;right:0;bottom:0;z-index:2;pointer-events:none}
+.ctrl[hidden]{display:none}
+.ctrl .bts{display:flex;align-items:center;gap:2px;padding:30px 8px 6px;background:linear-gradient(rgba(14,15,17,0),rgba(14,15,17,.8));opacity:0;transition:opacity .25s}
+.tela.ver .ctrl .bts,.tela:not(.tocando) .ctrl .bts{opacity:1;pointer-events:auto}
+.ctrl .esp{flex:1}
+.cb{width:44px;height:44px;display:inline-flex;align-items:center;justify-content:center;border:0;padding:0;background:transparent;color:var(--branco);border-radius:10px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.cb[hidden]{display:none}
+.cb svg{width:24px;height:24px;fill:currentColor}
+.cb:hover{background:rgba(248,247,244,.1)}
+.cb:focus-visible{outline:2px solid var(--sinal);outline-offset:-2px}
+.cb.leg span{font-family:"Sora",sans-serif;font-weight:700;font-size:.7rem;letter-spacing:.04em;line-height:1;border:1.8px solid currentColor;border-radius:5px;padding:3px 5px}
+.cb.leg[aria-pressed="false"]{color:var(--fraco)}
+.cb.leg[aria-pressed="false"] span{border-style:dashed}
+.i-pausa,.i-mudo,.i-fecha{display:none}
+.tela.tocando .i-play{display:none}.tela.tocando .i-pausa{display:block}
+.tela.mudo .i-som{display:none}.tela.mudo .i-mudo{display:block}
+.tela.cheia .i-abre{display:none}.tela.cheia .i-fecha{display:block}
+.barra{height:4px;background:rgba(248,247,244,.16)}
+.barra i{display:block;height:100%;background:linear-gradient(90deg,#E47714,#F28C27 60%,#F2B163);transform-origin:0 50%;transform:scaleX(0);transition:transform .3s linear}
+@media (max-width:600px){.barra{height:5px}}
+video::cue{font-family:"Nunito Sans",sans-serif;background:rgba(14,15,17,.74);color:#F8F7F4}
+.tela.cheia,.tela:fullscreen{width:100%!important;height:100%;max-width:none;min-width:0;aspect-ratio:auto;border:0;border-radius:0;background:#000}
+.tela.cheia .barra{height:5px}
+.tela.cheia .ctrl .bts{padding:40px 16px 10px}
+.tela.cheia.tocando:not(.ver){cursor:none}
+.pop{position:fixed;inset:0;z-index:50;display:flex;align-items:center;justify-content:center;background:rgba(6,7,8,.95);padding:calc(56px + var(--st)) var(--sr) var(--sb) var(--sl);overscroll-behavior:contain;touch-action:none}
+.pop[hidden]{display:none}
+.js .pop .tela{width:min(100%, calc((100vh - 56px - var(--st) - var(--sb)) * 16 / 9));width:min(100%, calc((100dvh - 56px - var(--st) - var(--sb)) * 16 / 9));min-width:0;border:0;border-radius:0;box-shadow:none;margin:0}
+.pop-x{position:absolute;top:calc(6px + var(--st));right:calc(6px + var(--sr));width:44px;height:44px;border:0;padding:0;border-radius:50%;background:rgba(248,247,244,.14);color:var(--branco);display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:3;-webkit-tap-highlight-color:transparent}
+.pop-x svg{width:22px;height:22px}
+.pop-x:focus-visible{outline:2px solid var(--sinal);outline-offset:2px}
+@media (orientation:landscape){.pop{padding-top:var(--st)}.js .pop .tela{width:min(100%, calc((100vh - var(--st) - var(--sb)) * 16 / 9));width:min(100%, calc((100dvh - var(--st) - var(--sb)) * 16 / 9))}}
+html.travar,html.travar body{overflow:hidden;overscroll-behavior:none}
+.video .nota{margin-top:12px;font-size:.9rem;color:var(--fraco)}
+.trava{display:none;margin-top:6px;font-size:.95rem;font-weight:600;color:var(--sinal)}
+.js .trava{display:block}
+.trava.ok{color:var(--papel)}
+
+/* opcoes */
+h2{font-family:"Sora",sans-serif;font-weight:700;font-size:clamp(1.55rem,4vw,2.2rem);line-height:1.2;letter-spacing:-.02em}
+.opcoes h2{margin-bottom:28px}
+.grade{display:grid;grid-template-columns:1fr;gap:24px}
+@media (min-width:820px){.grade{grid-template-columns:1fr 1fr;gap:28px}}
+.card{position:relative;display:flex;flex-direction:column;background:var(--grafite);border:1px solid var(--linha);border-radius:var(--r);padding:24px 20px 28px}
+@media (min-width:600px){.card{padding:32px 32px 34px}}
+.card.dest{border-color:rgba(242,140,39,.55);box-shadow:0 0 0 1px rgba(242,140,39,.18),0 28px 70px -36px rgba(242,140,39,.45)}
+.selo{position:absolute;top:18px;right:18px;font-family:"Sora",sans-serif;font-size:.74rem;font-weight:600;letter-spacing:.04em;color:var(--tinta);background:var(--sinal);border-radius:999px;padding:5px 12px;line-height:1.3}
+.desenho{background:var(--tinta);border:1px solid var(--linha);border-radius:14px;padding:18px 12px;margin-bottom:26px;display:flex;justify-content:center;align-items:center;min-height:230px}
+.desenho svg{width:100%;height:auto;max-height:240px}
+.num{font-family:"Sora",sans-serif;font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--sinal)}
+.card h3{font-family:"Sora",sans-serif;font-weight:700;font-size:clamp(1.35rem,3vw,1.6rem);line-height:1.25;letter-spacing:-.015em;margin:6px 0 10px}
+.card .res{color:var(--papel);max-width:46ch}
+.card ul{list-style:none;margin:20px 0 0;display:grid;gap:10px}
+.card li{position:relative;padding-left:26px;color:var(--papel);line-height:1.55}
+.card li::before{content:"";position:absolute;left:2px;top:.62em;width:10px;height:10px;border-radius:3px;background:var(--grad)}
+.card li small{display:block;color:var(--fraco);font-size:.88rem}
+.ideal{margin-top:22px;font-size:.95rem;color:var(--fraco)}
+.ideal b{color:var(--papel);font-weight:600}
+.preco{margin-top:auto;padding-top:26px}
+.preco .caixa{border-top:1px solid var(--linha);padding-top:22px}
+.valor{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;font-family:"Sora",sans-serif}
+.valor .pre{font-size:1.15rem;font-weight:600;color:var(--papel)}
+.valor strong{font-size:clamp(2.6rem,9vw,3.4rem);font-weight:800;line-height:1;letter-spacing:-.03em;color:var(--branco)}
+.valor .pos{font-size:1rem;font-weight:600;color:var(--sinal)}
+.alt{margin-top:12px;font-size:.92rem;color:var(--fraco)}
+.alt.forte{font-size:1.02rem;font-weight:600;color:var(--papel)}
+.alt + .alt{margin-top:4px}
+.alt.forte{margin-top:10px}
+.cond{margin-top:20px;font-size:.88rem;color:var(--fraco);max-width:38ch}
+@media (min-width:820px){.preco .caixa{min-height:150px}}
+
+/* fechamento */
+.fecha .bloco{background:var(--grafite);border:1px solid var(--linha);border-radius:var(--r);padding:36px 20px;position:relative;overflow:hidden}
+@media (min-width:600px){.fecha .bloco{padding:48px 44px}}
+.fecha .bloco::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--grad)}
+.fecha .bloco p{margin-top:12px;color:var(--papel);max-width:52ch;font-size:clamp(1.05rem,2.4vw,1.2rem)}
+.rodape{margin-top:40px;border-top:1px solid var(--linha);padding-top:24px}
+.rodape .assina{margin-bottom:10px}
+.rodape p{font-size:.88rem;color:var(--fraco);max-width:60ch}
+
+/* navegacao (so com JS) */
+.nav{display:none}
+
+/* sem JS: pagina corrida */
+html:not(.js) main > section{padding:56px 0 88px}
+
+/* ===== apresentacao em slides ===== */
+.js,.js body{height:100%;overflow:hidden}
+.js body{position:fixed;inset:0;overscroll-behavior:none}
+.js .topo{position:fixed;top:0;left:0;right:0;z-index:5;height:calc(var(--topo) + var(--st));padding-top:calc(18px + var(--st));background:linear-gradient(var(--tinta) 55%,rgba(23,25,28,0));pointer-events:none}
+.js .topo .assina{pointer-events:auto}
+.js main{position:fixed;inset:0;overflow:hidden}
+.js .slide{position:absolute;inset:0;overflow-y:auto;touch-action:pan-y;overflow-x:hidden;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;display:flex;flex-direction:column;padding:calc(var(--topo) + var(--st) + 16px) 0 calc(var(--base) + var(--sb) + 20px);opacity:0;visibility:hidden;transform:translateX(24px);transition:opacity .38s ease,transform .38s ease,visibility 0s linear .38s;outline:none}
+.js .slide > .wrap{margin-top:auto;margin-bottom:auto}
+.js .slide.antes{transform:translateX(-24px)}
+.js .slide.ativo{opacity:1;visibility:visible;transform:none;transition:opacity .38s ease,transform .38s ease,visibility 0s}
+.js .tela{width:min(100%, calc((100svh - var(--topo) - var(--base) - var(--st) - var(--sb) - 170px) * 16 / 9));min-width:min(100%,300px)}
+@supports not (height:100svh){.js .tela{width:min(100%, calc((100vh - var(--topo) - var(--base) - 170px) * 16 / 9))}}
+.js .video .rot,.js .video .nota,.js .trava{text-align:center}
+
+.js .nav{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:6;align-items:center;gap:12px;padding:12px calc(16px + var(--sr)) calc(14px + var(--sb)) calc(16px + var(--sl));background:linear-gradient(rgba(23,25,28,0),var(--tinta) 38%)}
+@media (min-width:600px){.js .nav{padding-left:calc(32px + var(--sl));padding-right:calc(32px + var(--sr))}}
+.nav .conta{font-family:"Sora",sans-serif;font-size:.85rem;font-weight:600;color:var(--fraco);min-width:3.2em;text-align:center}
+.nav .pontos{display:flex;gap:6px;margin-right:auto}
+.nav .pontos i{width:8px;height:8px;border-radius:50%;background:var(--linha);transition:background .3s,width .3s}
+.nav .pontos i.on{background:var(--sinal);width:22px;border-radius:4px}
+.bt{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 20px;border-radius:999px;font-family:"Sora",sans-serif;font-weight:600;font-size:.98rem;border:1px solid var(--linha);background:var(--grafite);color:var(--branco);transition:background .2s,opacity .2s,border-color .2s;-webkit-tap-highlight-color:transparent}
+.bt svg{width:18px;height:18px}
+.bt{white-space:nowrap}
+@media (max-width:420px){.js .nav{gap:8px}.bt{padding:0 14px;font-size:.92rem;gap:6px}.bt.volta{padding:0 13px}}
+.bt:hover{border-color:#4A4E57}
+.bt:focus-visible{outline:3px solid var(--sinal);outline-offset:2px}
+.bt.volta{padding:0 16px}
+.bt.volta[hidden]{display:none}
+.bt.vai{position:relative;overflow:hidden;background:var(--sinal);border-color:var(--sinal);color:var(--tinta)}
+.bt.vai:hover{background:#F59B3E}
+.bt.vai[hidden]{display:none}
+.bt.vai .enche{position:absolute;left:0;top:0;bottom:0;width:0;background:rgba(242,140,39,.32);transition:width .4s linear;pointer-events:none}
+.bt.vai span,.bt.vai svg{position:relative}
+.bt.vai[aria-disabled="true"]{background:var(--grafite);border-color:var(--linha);color:var(--fraco);cursor:not-allowed}
+.bt.vai[aria-disabled="true"]:hover{background:var(--grafite)}
+.bt .cad{display:none}
+.bt.vai[aria-disabled="true"] .cad{display:block}
+.bt.vai[aria-disabled="true"] .seta{display:none}
+@media (max-width:420px){.bt.volta .rt{display:none}.bt{padding:0 16px}}
+.lido{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+@media (prefers-reduced-motion:reduce){
+  .js .slide,.js .slide.ativo{transition:none;transform:none}
+  .nav .pontos i,.bt,.play,.play .bola,.bt.vai .enche,.barra i,.ctrl .bts{transition:none}
+}
+</style>
+</head>
+<body>
+
+<header class="topo">
+  <div class="wrap">
+    <div class="assina" aria-label="Conteúdo Visual + ZX Digital">
+      <span class="cv"><img src="assets/img/conteudo-visual-simbolo.svg" alt="" width="24" height="24">Conteúdo Visual</span>
+      <span class="mais" aria-hidden="true">+</span>
+      <span class="zx"><img src="assets/img/zx-simbolo-gradiente.svg" alt="" width="30" height="18">ZX Digital</span>
+    </div>
+  </div>
+</header>
+
+<main id="slides">
+  <section class="slide abre" aria-roledescription="slide" aria-label="1 de 4" tabindex="-1">
+    <div class="wrap">
+      <p class="olho">Proposta de site para sua construtora</p>
+      <h1>Um site que transforma visita em <em>pedido de orçamento</em>.</h1>
+      <p class="sub">Quem pesquisa uma obra ou um imóvel decide pela confiança que o site passa. Preparamos duas opções para a sua construtora.</p>
+      <div class="filete" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <section class="slide video" aria-roledescription="slide" aria-label="2 de 4, vídeo da proposta" tabindex="-1">
+    <div class="wrap">
+      <p class="rot">Antes de escolher, assista.</p>
+      <div class="tela" id="tela">
+        <video id="vsl" controls playsinline disablepictureinpicture disableremoteplayback preload="metadata" poster="assets/img/poster-orcamento-site.jpg">
+          <source src="assets/video/orcamento-site.mp4" type="video/mp4">
+          <track kind="subtitles" src="assets/video/orcamento-site.vtt" srclang="pt-BR" label="Português" default>
+        </video>
+        <div class="ctrl" id="ctrl" hidden>
+          <div class="bts">
+            <button type="button" class="cb" id="c-play" aria-label="Tocar">
+              <svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.6v14.8a1 1 0 0 0 1.5.86l12.2-7.4a1 1 0 0 0 0-1.72L8.5 3.74A1 1 0 0 0 7 4.6z"/></svg>
+              <svg class="i-pausa" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="4" width="4.2" height="16" rx="1.2"/><rect x="13.8" y="4" width="4.2" height="16" rx="1.2"/></svg>
+            </button>
+            <button type="button" class="cb" id="c-som" aria-label="Tirar o som" aria-pressed="false">
+              <svg class="i-som" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 9.4v5.2h3.7L12 18.8V5.2L7.2 9.4H3.5z"/><path d="M15.4 8.7a4.7 4.7 0 0 1 0 6.6M18.1 6.1a8.3 8.3 0 0 1 0 11.8" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
+              <svg class="i-mudo" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 9.4v5.2h3.7L12 18.8V5.2L7.2 9.4H3.5z"/><path d="M15.6 9.4l5 5.2M20.6 9.4l-5 5.2" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
+            </button>
+            <span class="esp"></span>
+            <button type="button" class="cb leg" id="c-leg" aria-label="Legenda" aria-pressed="true"><span aria-hidden="true">CC</span></button>
+            <button type="button" class="cb" id="c-tela" aria-label="Tela cheia">
+              <svg class="i-abre" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>
+              <svg class="i-fecha" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4v5H4M15 4v5h5M9 20v-5H4M15 20v-5h5"/></svg>
+            </button>
+          </div>
+          <div class="barra" aria-hidden="true"><i id="barra"></i></div>
+        </div>
+        <button class="play" id="play" type="button" aria-label="Assistir ao vídeo">
+          <span class="bola" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 3.8v16.4a1 1 0 0 0 1.5.86l13.2-8.2a1 1 0 0 0 0-1.72L7.5 2.94A1 1 0 0 0 6 3.8z" fill="#17191C"/></svg></span>
+          <span class="txt" aria-hidden="true">Clique para assistir</span>
+        </button>
+      </div>
+      <p class="nota">Tem legenda, se estiver sem som.</p>
+      <p class="trava" id="trava" aria-live="polite">Assista ao vídeo para ver as opções.</p>
+    </div>
+  </section>
+
+  <section class="slide opcoes" aria-roledescription="slide" aria-label="3 de 4, as duas opções" tabindex="-1">
+    <div class="wrap">
+      <h2 id="t-opcoes">Duas opções para a sua construtora</h2>
+      <div class="grade">
+
+        <article class="card">
+          <div class="desenho">
+            <svg viewBox="0 0 200 260" role="img" aria-label="Desenho de um celular mostrando a landing page em blocos: abertura, diferenciais, obras, perguntas e formulário">
+              <rect x="50" y="4" width="100" height="252" rx="17" fill="#212328" stroke="#3A3D44" stroke-width="1.5"/>
+              <rect x="86" y="10" width="28" height="4" rx="2" fill="#3A3D44"/>
+              <rect x="56" y="18" width="88" height="226" rx="9" fill="#F8F7F4"/>
+              <!-- abertura -->
+              <rect x="56" y="18" width="88" height="58" rx="9" fill="#2A2D33"/>
+              <rect x="56" y="60" width="88" height="16" fill="#2A2D33"/>
+              <rect x="64" y="30" width="56" height="5" rx="2.5" fill="#F8F7F4"/>
+              <rect x="64" y="39" width="40" height="5" rx="2.5" fill="#F8F7F4"/>
+              <rect x="64" y="49" width="48" height="3" rx="1.5" fill="#8E8A82"/>
+              <rect x="64" y="61" width="32" height="9" rx="4.5" fill="#F28C27"/>
+              <!-- diferenciais -->
+              <g fill="#E9E7E1" stroke="#D6D3CB" stroke-width=".6">
+                <rect x="62" y="83" width="24" height="20" rx="3"/>
+                <rect x="88" y="83" width="24" height="20" rx="3"/>
+                <rect x="114" y="83" width="24" height="20" rx="3"/>
+              </g>
+              <g fill="#F28C27"><circle cx="74" cy="90" r="2.6"/><circle cx="100" cy="90" r="2.6"/><circle cx="126" cy="90" r="2.6"/></g>
+              <g fill="#B9B5AC"><rect x="66" y="96" width="16" height="2.4" rx="1.2"/><rect x="92" y="96" width="16" height="2.4" rx="1.2"/><rect x="118" y="96" width="16" height="2.4" rx="1.2"/></g>
+              <!-- obras -->
+              <rect x="62" y="110" width="36" height="4" rx="2" fill="#2A2D33"/>
+              <g fill="#C9C6BE">
+                <rect x="62" y="118" width="37" height="22" rx="3"/>
+                <rect x="101" y="118" width="37" height="22" rx="3"/>
+                <rect x="62" y="142" width="37" height="22" rx="3"/>
+                <rect x="101" y="142" width="37" height="22" rx="3"/>
+              </g>
+              <g fill="#A9A49A"><path d="M66 136l8-9 6 6 4-4 9 7z"/><path d="M105 136l8-9 6 6 4-4 9 7z"/><path d="M66 160l8-9 6 6 4-4 9 7z"/><path d="M105 160l8-9 6 6 4-4 9 7z"/></g>
+              <!-- perguntas -->
+              <g fill="#B9B5AC"><rect x="62" y="172" width="58" height="3" rx="1.5"/><rect x="62" y="181" width="50" height="3" rx="1.5"/><rect x="62" y="190" width="54" height="3" rx="1.5"/></g>
+              <g fill="#F28C27"><rect x="130" y="172.5" width="6" height="2" rx="1"/><rect x="132" y="170.5" width="2" height="6" rx="1"/><rect x="130" y="181.5" width="6" height="2" rx="1"/><rect x="132" y="179.5" width="2" height="6" rx="1"/><rect x="130" y="190.5" width="6" height="2" rx="1"/><rect x="132" y="188.5" width="2" height="6" rx="1"/></g>
+              <!-- formulario -->
+              <g fill="#FFFFFF" stroke="#C9C6BE" stroke-width=".8"><rect x="62" y="202" width="76" height="9" rx="3"/><rect x="62" y="214" width="76" height="9" rx="3"/></g>
+              <rect x="62" y="227" width="76" height="10" rx="5" fill="#F28C27"/>
+              <!-- whatsapp -->
+              <circle cx="152" cy="214" r="12" fill="#2FB75A" stroke="#17191C" stroke-width="2"/>
+              <path d="M146.5 219.5l1.4-4.1a6.3 6.3 0 1 1 2.6 2.5z" fill="none" stroke="#FFFFFF" stroke-width="1.6" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <p class="num">Opção 1</p>
+          <h3>Landing page</h3>
+          <p class="res">Uma página única e completa, feita para quem chega pelo celular e quer pedir um orçamento.</p>
+          <ul>
+            <li>Abertura que mostra na hora o que a construtora faz</li>
+            <li>Diferenciais e obras entregues como prova</li>
+            <li>Respostas às dúvidas que seguram o pedido</li>
+            <li>Botão de WhatsApp e formulário de orçamento</li>
+            <li>Rápida e confortável no celular</li>
+          </ul>
+          <p class="ideal"><b>Para quem quer</b> foco total em receber pedidos de orçamento.</p>
+          <div class="preco">
+            <div class="caixa">
+              <p class="valor"><strong>R$ 1.500</strong><span class="pos">à vista no Pix</span></p>
+              <p class="alt">ou R$ 1.700 no cartão, em até 10x de R$ 170 sem juros</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="card dest">
+          <span class="selo">Mais completo</span>
+          <div class="desenho">
+            <svg viewBox="0 0 280 196" role="img" aria-label="Desenho da árvore de páginas: a página inicial ligada a cinco páginas internas">
+              <!-- ligacoes -->
+              <g stroke="#5A5750" stroke-width="1.5" fill="none">
+                <path d="M140 74v24"/>
+                <path d="M28 98h224"/>
+                <path d="M28 98v18M84 98v18M140 98v18M196 98v18M252 98v18"/>
+              </g>
+              <!-- inicio -->
+              <rect x="88" y="8" width="104" height="66" rx="7" fill="#F8F7F4" stroke="#F28C27" stroke-width="2"/>
+              <rect x="88" y="8" width="104" height="11" rx="7" fill="#E9E7E1"/>
+              <rect x="88" y="14" width="104" height="5" fill="#E9E7E1"/>
+              <g fill="#B9B5AC"><circle cx="95" cy="13.5" r="1.8"/><circle cx="101" cy="13.5" r="1.8"/><circle cx="107" cy="13.5" r="1.8"/></g>
+              <rect x="94" y="24" width="92" height="24" rx="3" fill="#2A2D33"/>
+              <rect x="100" y="30" width="44" height="4" rx="2" fill="#F8F7F4"/>
+              <rect x="100" y="38" width="22" height="6" rx="3" fill="#F28C27"/>
+              <g fill="#C9C6BE"><rect x="94" y="53" width="28" height="15" rx="2"/><rect x="126" y="53" width="28" height="15" rx="2"/><rect x="158" y="53" width="28" height="15" rx="2"/></g>
+              <!-- paginas internas -->
+              <g fill="#F8F7F4" stroke="#5A5750" stroke-width="1">
+                <rect x="6" y="116" width="44" height="58" rx="5"/>
+                <rect x="62" y="116" width="44" height="58" rx="5"/>
+                <rect x="118" y="116" width="44" height="58" rx="5"/>
+                <rect x="174" y="116" width="44" height="58" rx="5"/>
+                <rect x="230" y="116" width="44" height="58" rx="5"/>
+              </g>
+              <!-- sobre -->
+              <circle cx="28" cy="132" r="7" fill="#C9C6BE"/>
+              <g fill="#B9B5AC"><rect x="12" y="145" width="32" height="3" rx="1.5"/><rect x="12" y="152" width="28" height="3" rx="1.5"/><rect x="12" y="159" width="30" height="3" rx="1.5"/></g>
+              <!-- servicos -->
+              <g fill="#F28C27"><rect x="68" y="125" width="7" height="7" rx="2"/><rect x="68" y="139" width="7" height="7" rx="2"/><rect x="68" y="153" width="7" height="7" rx="2"/></g>
+              <g fill="#B9B5AC"><rect x="79" y="127" width="21" height="3" rx="1.5"/><rect x="79" y="141" width="21" height="3" rx="1.5"/><rect x="79" y="155" width="21" height="3" rx="1.5"/></g>
+              <!-- obras -->
+              <g fill="#C9C6BE"><rect x="123" y="123" width="16" height="20" rx="2"/><rect x="141" y="123" width="16" height="20" rx="2"/><rect x="123" y="146" width="16" height="20" rx="2"/><rect x="141" y="146" width="16" height="20" rx="2"/></g>
+              <!-- contato -->
+              <g fill="#FFFFFF" stroke="#C9C6BE" stroke-width=".8"><rect x="180" y="125" width="32" height="7" rx="2"/><rect x="180" y="136" width="32" height="7" rx="2"/><rect x="180" y="147" width="32" height="7" rx="2"/></g>
+              <rect x="180" y="159" width="32" height="8" rx="4" fill="#F28C27"/>
+              <!-- privacidade -->
+              <g fill="#B9B5AC"><rect x="236" y="125" width="32" height="2.4" rx="1.2"/><rect x="236" y="131" width="28" height="2.4" rx="1.2"/><rect x="236" y="137" width="32" height="2.4" rx="1.2"/><rect x="236" y="143" width="24" height="2.4" rx="1.2"/><rect x="236" y="149" width="32" height="2.4" rx="1.2"/><rect x="236" y="155" width="30" height="2.4" rx="1.2"/><rect x="236" y="161" width="20" height="2.4" rx="1.2"/></g>
+            </svg>
+          </div>
+          <p class="num">Opção 2</p>
+          <h3>Site completo</h3>
+          <p class="res">A construtora apresentada por inteiro, para quem está comparando antes de fechar.</p>
+          <ul>
+            <li>Página inicial<small>com tudo o que a landing page da opção 1 tem</small></li>
+            <li>Sobre nós</li>
+            <li>Serviços</li>
+            <li>Obras e empreendimentos</li>
+            <li>Contato e orçamento</li>
+            <li>Política de privacidade</li>
+          </ul>
+          <p class="ideal"><b>Para quem quer</b> mostrar a história, os serviços e cada obra.</p>
+          <div class="preco">
+            <div class="caixa">
+              <p class="valor"><span class="pre">12x de</span><strong>R$ 297</strong><span class="pos">sem juros no cartão</span></p>
+              <p class="alt">total R$ 3.564</p>
+              <p class="alt forte">ou R$ 3.300 à vista no Pix</p>
+            </div>
+          </div>
+        </article>
+
+      </div>
+      <p class="cond">Desconto à vista válido para pagamento no Pix. No cartão, o valor é o total parcelado, em qualquer número de parcelas.</p>
+    </div>
+  </section>
+
+  <section class="slide fecha" aria-roledescription="slide" aria-label="4 de 4" tabindex="-1">
+    <div class="wrap">
+      <div class="bloco">
+        <h2 id="t-fecha">Escolheu?</h2>
+        <p>Responda ao Lucas e à Jessica com a opção escolhida.</p>
+      </div>
+      <footer class="rodape">
+        <div class="assina">
+          <span class="cv"><img src="assets/img/conteudo-visual-simbolo.svg" alt="" width="24" height="24">Conteúdo Visual</span>
+          <span class="mais" aria-hidden="true">+</span>
+          <span class="zx"><img src="assets/img/zx-simbolo-gradiente.svg" alt="" width="30" height="18">ZX Digital</span>
+        </div>
+        <p>Site feito pela ZX Digital, assessoria parceira da Conteúdo Visual.</p>
+      </footer>
+    </div>
+  </section>
+</main>
+
+<nav class="nav" aria-label="Navegação da apresentação">
+  <div class="pontos" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+  <span class="conta" id="conta" aria-hidden="true">1 / 4</span>
+  <button class="bt volta" id="volta" type="button" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="rt">Voltar</span></button>
+  <button class="bt vai" id="vai" type="button"><span class="enche" id="enche"></span><svg class="cad" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5" fill="none" stroke="currentColor" stroke-width="2"/></svg><span id="vai-txt">Começar</span><svg class="seta" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  <p class="lido" id="lido" aria-live="polite"></p>
+</nav>
+
+<div class="pop" id="pop" role="dialog" aria-modal="true" aria-label="Vídeo da proposta" hidden>
+  <button type="button" class="pop-x" id="pop-x" aria-label="Fechar o vídeo"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+</div>
+
+<script type="text/plain" id="vtt-reserva">
+WEBVTT
+
+1
+00:00:00.250 --> 00:00:04.487
+Antes de pedir um orçamento, o seu cliente pesquisa a sua construtora no Google.
+
+2
+00:00:04.775 --> 00:00:08.896
+E o que ele encontra ali decide se ele chama você ou o concorrente.
+
+3
+00:00:09.248 --> 00:00:13.508
+Quem vai comprar um imóvel ou contratar uma obra quer ver obra entregue.
+
+4
+00:00:13.528 --> 00:00:14.748
+Quer sentir confiança.
+
+5
+00:00:14.768 --> 00:00:17.225
+E quer um jeito fácil de falar com você.
+
+6
+00:00:17.582 --> 00:00:19.794
+Um site bem feito faz isso todos os dias,
+
+7
+00:00:19.814 --> 00:00:22.493
+mesmo quando a sua equipe está no canteiro.
+
+8
+00:00:22.894 --> 00:00:26.072
+Por isso, nós preparamos duas opções para a sua construtora.
+
+9
+00:00:26.392 --> 00:00:28.554
+A primeira é a landing page.
+
+10
+00:00:28.574 --> 00:00:30.322
+Uma página única e completa,
+
+11
+00:00:30.342 --> 00:00:33.648
+feita para transformar visita em pedido de orçamento.
+
+12
+00:00:33.840 --> 00:00:35.125
+Ela abre forte,
+
+13
+00:00:35.145 --> 00:00:36.662
+mostra os seus diferenciais,
+
+14
+00:00:36.682 --> 00:00:39.312
+as suas obras e a prova de quem já confiou em você.
+
+15
+00:00:39.790 --> 00:00:41.092
+Responde às perguntas mais comuns
+
+16
+00:00:41.112 --> 00:00:43.957
+e leva direto para o WhatsApp ou para o formulário.
+
+17
+00:00:44.021 --> 00:00:45.908
+Rápida, e boa de ver no celular.
+
+18
+00:00:46.260 --> 00:00:48.774
+A segunda é o site completo.
+
+19
+00:00:48.839 --> 00:00:53.276
+A página inicial já é uma landing page inteira, com tudo da primeira opção.
+
+20
+00:00:53.468 --> 00:00:55.464
+E ganha mais cinco páginas:
+
+21
+00:00:55.484 --> 00:00:57.166
+Sobre nós, Serviços,
+
+22
+00:00:57.186 --> 00:00:58.736
+Obras e empreendimentos,
+
+23
+00:00:58.756 --> 00:00:59.976
+Contato e orçamento,
+
+24
+00:00:59.996 --> 00:01:02.135
+e Política de privacidade.
+
+25
+00:01:02.359 --> 00:01:05.463
+É a sua construtora com presença de empresa grande,
+
+26
+00:01:05.483 --> 00:01:07.819
+para quem pesquisa com calma antes de fechar.
+
+27
+00:01:08.203 --> 00:01:11.836
+A landing page sai por R$ 1.500 à vista no Pix.
+
+28
+00:01:11.856 --> 00:01:13.456
+No cartão, R$ 1.700,
+
+29
+00:01:13.476 --> 00:01:16.642
+em até 10x de R$ 170 sem juros.
+
+30
+00:01:16.930 --> 00:01:21.736
+O site completo sai em 12x de R$ 297 sem juros no cartão,
+
+31
+00:01:21.756 --> 00:01:24.275
+ou R$ 3.300 à vista no Pix.
+
+32
+00:01:24.563 --> 00:01:27.237
+Se a sua construtora quer ser referência na região,
+
+33
+00:01:27.257 --> 00:01:29.213
+o site completo é a nossa recomendação.
+
+34
+00:01:29.565 --> 00:01:32.476
+Mais pedidos de orçamento começam por aqui.
+
+35
+00:01:32.524 --> 00:01:34.322
+Fale com o Lucas e a Jessica
+
+36
+00:01:34.342 --> 00:01:35.715
+e escolha a sua opção.
+</script>
+<script>
+(function(){
+  "use strict";
+  var CHAVE="veras-orcamento-site-assistiu";
+  var slides=[].slice.call(document.querySelectorAll(".slide"));
+  var pontos=[].slice.call(document.querySelectorAll(".nav .pontos i"));
+  var vai=document.getElementById("vai"),vaiTxt=document.getElementById("vai-txt"),volta=document.getElementById("volta");
+  var conta=document.getElementById("conta"),lido=document.getElementById("lido"),enche=document.getElementById("enche");
+  var v=document.getElementById("vsl"),play=document.getElementById("play"),trava=document.getElementById("trava");
+  var ROTULOS=["Começar","Ver as opções","Próximo",""];
+  var VIDEO=1,atual=0,liberado=false,maxVisto=0,vigia=null,parado=null,comecou=false;
+
+  function ler(){try{return window.localStorage.getItem(CHAVE)==="1"}catch(e){return false}}
+  function gravar(){try{window.localStorage.setItem(CHAVE,"1")}catch(e){}}
+
+  function travado(){return atual===VIDEO&&!liberado}
+
+  function pintar(){
+    slides.forEach(function(s,i){
+      var on=i===atual;
+      s.classList.toggle("ativo",on);
+      s.classList.toggle("antes",i<atual);
+      s.setAttribute("aria-hidden",on?"false":"true");
+      if(on){s.removeAttribute("inert")}else{s.setAttribute("inert","")}
+    });
+    pontos.forEach(function(p,i){p.classList.toggle("on",i===atual)});
+    conta.textContent=(atual+1)+" / "+slides.length;
+    volta.hidden=atual===0;
+    vai.hidden=atual===slides.length-1;
+    vaiTxt.textContent=ROTULOS[atual];
+    var t=travado();
+    vai.setAttribute("aria-disabled",t?"true":"false");
+    vai.title=t?"Assista ao vídeo para ver as opções":"";
+    enche.style.width=t?pct()+"%":"0";
+  }
+
+  function pct(){
+    var d=v.duration;
+    if(!d||!isFinite(d))return 0;
+    return Math.round(curva(Math.min(1,maxVisto/(d*0.95)))*100);
+  }
+
+  function ir(n,foco){
+    if(n<0||n>=slides.length||n===atual)return;
+    if(n>atual&&travado()){avisar();return}
+    if(atual===VIDEO&&!v.paused){v.pause()}
+    if(atual===VIDEO&&emTela()){sairTela()}
+    atual=n;
+    pintar();
+    var s=slides[atual];
+    s.scrollTop=0;
+    lido.textContent="Slide "+(atual+1)+" de "+slides.length;
+    if(foco!==false){try{s.focus({preventScroll:true})}catch(e){s.focus()}}
+  }
+
+  function avisar(){
+    trava.textContent="Assista ao vídeo para ver as opções.";
+    trava.classList.remove("ok");
+    trava.animate&&!reduzido()&&trava.animate([{transform:"translateX(0)"},{transform:"translateX(-6px)"},{transform:"translateX(6px)"},{transform:"translateX(0)"}],{duration:260});
+  }
+
+  function reduzido(){return window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches}
+
+  function liberar(motivo){
+    if(liberado)return;
+    liberado=true;
+    limparVigias();
+    if(motivo==="assistiu"){gravar();trava.textContent="Pronto. Agora veja as opções.";}
+    else if(motivo==="ja"){trava.textContent="Você já assistiu. Pode seguir para as opções.";}
+    else{trava.textContent="O vídeo não carregou agora. Você pode seguir para as opções.";}
+    trava.classList.add("ok");
+    pintar();
+  }
+
+  function limparVigias(){clearTimeout(vigia);clearTimeout(parado);vigia=parado=null}
+
+  /* video: clique para assistir, sem pular adiante, controles proprios (sem contador de tempo) */
+  var tela=document.getElementById("tela"),ctrl=document.getElementById("ctrl"),barra=document.getElementById("barra");
+  var cPlay=document.getElementById("c-play"),cSom=document.getElementById("c-som"),cLeg=document.getElementById("c-leg"),cTela=document.getElementById("c-tela");
+  var avanco=0,terminou=false,some=null;
+  v.removeAttribute("controls");
+  if(ler()){liberado=true;maxVisto=Infinity;trava.textContent="Você já assistiu. Pode seguir para as opções.";trava.classList.add("ok");play.querySelector(".txt").textContent="Assistir de novo"}
+
+  /* barra: anda rapido no comeco e devagar no fim; nunca volta, chega a 100% no fim */
+  function curva(p){return 1-Math.pow(1-Math.max(0,Math.min(1,p)),2.2)}
+  function pintarBarra(){
+    var d=v.duration;
+    if(d&&isFinite(d)){avanco=Math.max(avanco,v.currentTime>=d-0.05?1:curva(v.currentTime/d))}
+    barra.style.transform="scaleX("+avanco+")";
+  }
+
+  /* legenda: ligada por padrao; sobe uma linha para nao ficar sob os controles */
+  var faixa=v.textTracks&&v.textTracks[0];
+  function legendas(on){
+    try{if(faixa){faixa.mode=on?"showing":"hidden"}}catch(e){}
+    cLeg.setAttribute("aria-pressed",on?"true":"false");
+  }
+  function subirLegenda(){try{if(faixa&&faixa.cues){for(var i=0;i<faixa.cues.length;i++){faixa.cues[i].line=-3}}}catch(e){}}
+  var trilhaEl=v.querySelector("track");
+  if(trilhaEl){trilhaEl.addEventListener("load",subirLegenda)}
+  legendas(true);subirLegenda();
+  /* aberta direto do arquivo (file://), o navegador recusa o .vtt: monta a mesma legenda a partir da copia na pagina */
+  function seg(m,i){return (+m[i])*3600+(+m[i+1])*60+(+m[i+2])+(+m[i+3])/1000}
+  function legendaReserva(){
+    var fonteVtt=document.getElementById("vtt-reserva");
+    if(!fonteVtt||!window.VTTCue||!v.addTextTrack||(faixa&&faixa.cues&&faixa.cues.length))return;
+    var nova=v.addTextTrack("subtitles","Português","pt-BR");
+    fonteVtt.textContent.split(/\r?\n\r?\n/).forEach(function(bl){
+      var m=bl.match(/(\d+):(\d+):(\d+)\.(\d+)\s*-->\s*(\d+):(\d+):(\d+)\.(\d+)[^\n]*\n([\s\S]+)/);
+      if(m){try{nova.addCue(new VTTCue(seg(m,1),seg(m,5),m[9].trim()))}catch(e){}}
+    });
+    if(faixa){try{faixa.mode="disabled"}catch(e){}}
+    faixa=nova;
+    legendas(cLeg.getAttribute("aria-pressed")!=="false");subirLegenda();
+  }
+  if(trilhaEl){trilhaEl.addEventListener("error",legendaReserva);if(trilhaEl.readyState===3){legendaReserva()}}
+
+  /* tela cheia no invólucro (video + controles); iPhone nao tem: fica na pagina */
+  var temTela=!!((tela.requestFullscreen&&document.fullscreenEnabled)||(tela.webkitRequestFullscreen&&document.webkitFullscreenEnabled));
+  if(!temTela){cTela.hidden=true}
+  function telaCheia(){return document.fullscreenElement||document.webkitFullscreenElement||null}
+  function emTela(){return telaCheia()===tela}
+  function entrarTela(){
+    if(!temTela||emTela())return;
+    try{
+      var r=tela.requestFullscreen?tela.requestFullscreen():tela.webkitRequestFullscreen();
+      if(r&&r.catch){r.catch(function(){})}
+    }catch(e){}
+  }
+  function sairTela(depois){
+    var feito=false,d=document;
+    function fim(){if(feito)return;feito=true;if(depois)depois()}
+    try{
+      if(d.fullscreenElement&&d.exitFullscreen){var r=d.exitFullscreen();if(r&&r.then){r.then(fim,fim)}}
+      else if(d.webkitFullscreenElement&&d.webkitExitFullscreen){d.webkitExitFullscreen()}
+    }catch(e){}
+    setTimeout(fim,450);
+  }
+  function aoMudarTela(){
+    var on=emTela();
+    tela.classList.toggle("cheia",on);
+    cTela.setAttribute("aria-label",on?"Sair da tela cheia":"Tela cheia");
+    mostrar();
+  }
+  document.addEventListener("fullscreenchange",aoMudarTela);
+  document.addEventListener("webkitfullscreenchange",aoMudarTela);
+
+  /* celular: o video abre numa janela por cima da pagina, sem tela cheia nativa */
+  var pop=document.getElementById("pop"),popX=document.getElementById("pop-x");
+  var casa=tela.parentNode,depoisDe=tela.nextSibling,popAberto=false,fora=[];
+  function ehIos(){var n=navigator;return /iP(hone|od|ad)/.test(n.userAgent||"")||(n.platform==="MacIntel"&&n.maxTouchPoints>1)}
+  function modoPop(){
+    if(ehIos())return true;
+    var mm=window.matchMedia;
+    return !!(mm&&(mm("(pointer: coarse)").matches||mm("(max-width: 768px)").matches));
+  }
+  function abrirPop(){
+    if(popAberto)return;
+    popAberto=true;
+    pop.appendChild(tela);
+    pop.hidden=false;
+    document.documentElement.classList.add("travar");
+    fora=[document.getElementById("slides"),document.querySelector(".nav"),document.querySelector(".topo")];
+    fora.forEach(function(el){if(el){el.setAttribute("inert","");el.setAttribute("aria-hidden","true")}});
+    cTela.hidden=true;
+    try{popX.focus({preventScroll:true})}catch(e){popX.focus()}
+  }
+  function fecharPop(depois){
+    if(!popAberto)return;
+    popAberto=false;
+    if(!v.paused&&!v.ended){v.pause()}
+    casa.insertBefore(tela,depoisDe);
+    pop.hidden=true;
+    document.documentElement.classList.remove("travar");
+    fora.forEach(function(el){if(el){el.removeAttribute("inert");el.removeAttribute("aria-hidden")}});
+    cTela.hidden=!temTela||modoPop();
+    if(depois){depois();return}
+    ctrl.hidden=true;
+    play.querySelector(".txt").textContent="Continuar assistindo";
+    play.hidden=false;
+    try{play.focus({preventScroll:true})}catch(e){play.focus()}
+  }
+  popX.addEventListener("click",function(){fecharPop()});
+  pop.addEventListener("touchmove",function(e){e.preventDefault()},{passive:false});
+  document.addEventListener("keydown",function(e){
+    if(!popAberto)return;
+    if(e.key==="Escape"||e.key==="Esc"){e.preventDefault();e.stopPropagation();fecharPop();return}
+    if(e.key==="Tab"){
+      var f=[].slice.call(pop.querySelectorAll("button")).filter(function(b){return !b.hidden&&b.offsetParent!==null});
+      if(!f.length)return;
+      var i=f.indexOf(document.activeElement);
+      if(e.shiftKey&&i<=0){e.preventDefault();f[f.length-1].focus()}
+      else if(!e.shiftKey&&(i<0||i===f.length-1)){e.preventDefault();f[0].focus()}
+    }
+  },true);
+  tela.addEventListener("focusin",function(){if(comecou){mostrar()}});
+  if(modoPop()){cTela.hidden=true}
+
+  /* controles somem tocando, voltam ao mexer */
+  function mostrar(){
+    tela.classList.add("ver");
+    clearTimeout(some);
+    if(!v.paused){some=setTimeout(function(){tela.classList.remove("ver")},2600)}
+  }
+  function estadoPlay(){
+    var tocando=!v.paused&&!v.ended;
+    tela.classList.toggle("tocando",tocando);
+    cPlay.setAttribute("aria-label",tocando?"Pausar":"Tocar");
+    mostrar();
+  }
+
+  function tocar(){
+    var usarPop=modoPop();
+    if(usarPop){abrirPop()}
+    play.hidden=true;
+    ctrl.hidden=false;
+    comecou=true;
+    if(terminou){terminou=false;avanco=0;pintarBarra()}
+    var p;
+    try{p=v.play()}catch(e){falhou();return}
+    if(!usarPop){entrarTela()}
+    if(p&&p.catch){p.catch(function(err){if(err&&err.name==="NotAllowedError"){play.hidden=false;if(emTela()){sairTela()}if(popAberto){fecharPop()}return}falhou()})}
+    clearTimeout(vigia);
+    vigia=setTimeout(function(){if(v.currentTime<0.3){falhou()}},15000);
+  }
+  function falhou(){if(popAberto){fecharPop(function(){})}if(!liberado){liberar("falha")}}
+
+  play.addEventListener("click",tocar);
+  cPlay.addEventListener("click",function(){if(v.paused||v.ended){if(v.ended){terminou=true}tocar()}else{v.pause()}});
+  cSom.addEventListener("click",function(){
+    v.muted=!v.muted;
+    cSom.setAttribute("aria-pressed",v.muted?"true":"false");
+    cSom.setAttribute("aria-label",v.muted?"Ligar o som":"Tirar o som");
+    tela.classList.toggle("mudo",v.muted);
+    mostrar();
+  });
+  cLeg.addEventListener("click",function(){legendas(cLeg.getAttribute("aria-pressed")!=="true");mostrar()});
+  cTela.addEventListener("click",function(){if(emTela()){sairTela()}else{entrarTela()}});
+  /* clique no video: mouse pausa/toca; no toque, a tela so mostra ou esconde os controles (pausar e pelo botao) */
+  v.addEventListener("click",function(){if(!comecou)return;if(v.paused){tocar()}else{v.pause()}});
+  tela.addEventListener("pointermove",function(e){if(e.pointerType==="mouse"&&comecou){mostrar()}});
+  tela.addEventListener("touchstart",function(e){
+    if(!comecou||e.target.closest("button"))return;
+    e.preventDefault();
+    if(tela.classList.contains("ver")&&!v.paused){clearTimeout(some);tela.classList.remove("ver")}else{mostrar()}
+  },{passive:false});
+
+  v.addEventListener("play",function(){if(!popAberto&&modoPop()){v.pause();return}play.hidden=true;ctrl.hidden=false;comecou=true;estadoPlay()});
+  v.addEventListener("pause",estadoPlay);
+  v.addEventListener("timeupdate",function(){
+    if(!v.seeking&&v.currentTime>maxVisto&&v.currentTime-maxVisto<Math.max(2,(v.playbackRate||1)*1.5)){maxVisto=v.currentTime}
+    if(v.currentTime>0.3){clearTimeout(vigia)}
+    clearTimeout(parado);
+    if(!liberado&&v.duration&&isFinite(v.duration)&&maxVisto>=v.duration*0.95){liberar("assistiu")}
+    if(atual===VIDEO&&!liberado){enche.style.width=pct()+"%"}
+    pintarBarra();
+  });
+  v.addEventListener("seeking",function(){
+    if(liberado)return;
+    if(v.currentTime>maxVisto+0.6){v.currentTime=maxVisto}
+  });
+  v.addEventListener("ended",function(){
+    terminou=true;
+    avanco=1;pintarBarra();
+    estadoPlay();
+    if(!liberado){liberar("assistiu")}
+    if(popAberto){fecharPop(function(){if(atual===VIDEO){ir(VIDEO+1)}})}
+    else if(emTela()){sairTela(function(){if(atual===VIDEO){ir(VIDEO+1)}})}
+  });
+  v.addEventListener("waiting",function(){
+    if(liberado||!comecou)return;
+    clearTimeout(parado);
+    parado=setTimeout(falhou,20000);
+  });
+  v.addEventListener("playing",function(){clearTimeout(parado)});
+  v.addEventListener("error",falhou);
+  var fonte=v.querySelector("source");
+  if(fonte){fonte.addEventListener("error",falhou)}
+  if(v.error){falhou()}
+
+  /* botoes */
+  vai.addEventListener("click",function(){ir(atual+1)});
+  volta.addEventListener("click",function(){ir(atual-1)});
+
+  /* teclado */
+  document.addEventListener("keydown",function(e){
+    if(e.altKey||e.ctrlKey||e.metaKey)return;
+    var alvo=e.target;
+    if(popAberto||alvo===v||(alvo.closest&&alvo.closest(".tela"))||telaCheia())return;
+    var k=e.key;
+    if(k==="ArrowRight"||k==="PageDown"){e.preventDefault();ir(atual+1)}
+    else if(k==="ArrowLeft"||k==="PageUp"){e.preventDefault();ir(atual-1)}
+    else if(k==="Home"&&alvo.tagName!=="INPUT"){e.preventDefault();ir(0)}
+  });
+
+  /* toque: arrastar para o lado */
+  var x0=null,y0=0,t0=0;
+  document.addEventListener("touchstart",function(e){
+    if(e.touches.length!==1||(e.target.closest&&e.target.closest("video,.tela,.pop,button"))){x0=null;return}
+    x0=e.touches[0].clientX;y0=e.touches[0].clientY;t0=Date.now();
+  },{passive:true});
+  document.addEventListener("touchend",function(e){
+    if(x0===null)return;
+    var t=e.changedTouches[0],dx=t.clientX-x0,dy=t.clientY-y0;
+    x0=null;
+    if(Math.abs(dx)<56||Math.abs(dx)<Math.abs(dy)*1.4||Date.now()-t0>900)return;
+    if(dx<0){ir(atual+1,false)}else{ir(atual-1,false)}
+  },{passive:true});
+
+  pintar();
+})();
+</script>
+</body>
+</html>
